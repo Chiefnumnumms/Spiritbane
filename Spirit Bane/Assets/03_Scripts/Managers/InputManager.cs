@@ -7,10 +7,13 @@ public class InputManager : MonoBehaviour
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
     AnimationManager animationManager;
+    Swinging swingingManager;
+
     private void Awake()
     {
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        swingingManager = GetComponent<Swinging>();
     }
 
     public Vector2 movementInput;
@@ -20,6 +23,13 @@ public class InputManager : MonoBehaviour
 
     public bool sprintPressed;
     public bool jumpPressed;
+
+    // SWINGING - AA
+    public bool swingPressed;
+    public bool w_Pressed;
+    public bool a_Pressed;
+    public bool s_Pressed;
+    public bool d_Pressed;
 
     private void OnEnable()
     {
@@ -31,6 +41,10 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Sprint.performed += inputContext => sprintPressed = true;
             playerControls.PlayerActions.Sprint.canceled += inputContext => sprintPressed = false;
             playerControls.PlayerActions.Jump.performed += inputContext => jumpPressed = true;
+
+            // SWINGING - AA
+            playerControls.PlayerActions.Swing.performed += inputContext => swingPressed = true;
+            playerControls.PlayerActions.Swing.canceled += inputContext => swingPressed = false;
         }
         playerControls.Enable();
     }
@@ -48,6 +62,7 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintingInput();
         HandleJumpingInput();
+        HandleSwingingInput();
     }
 
     //-----------------------------------------------------------------------------
@@ -82,6 +97,19 @@ public class InputManager : MonoBehaviour
         {
             playerLocomotion.HandleJump();
             jumpPressed = false;
+        }
+    }
+
+    private void HandleSwingingInput()
+    {
+        if (swingPressed)
+        {
+            swingingManager.HandleSwingAction();
+
+        }
+        else // NOT SWINGING
+        {
+            swingingManager.StopSwing();
         }
     }
 }

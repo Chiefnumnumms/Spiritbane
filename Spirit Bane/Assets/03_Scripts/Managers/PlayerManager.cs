@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     Animator animator;
     PlayerLocomotion playerLocomotion;
+    Swinging swingingManager;
 
     public bool isInteracting;
 
@@ -15,6 +16,7 @@ public class PlayerManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         animator = GetComponent<Animator>();
+        swingingManager = GetComponent<Swinging>();
     }
 
     private void Update()
@@ -28,6 +30,12 @@ public class PlayerManager : MonoBehaviour
     private void FixedUpdate()
     {
         playerLocomotion.HandleAllMovements();
+
+        // SWINGING - AA
+        if (inputManager.swingPressed)
+        {
+            swingingManager.DrawRope();
+        }
     }
 
     private void LateUpdate()
