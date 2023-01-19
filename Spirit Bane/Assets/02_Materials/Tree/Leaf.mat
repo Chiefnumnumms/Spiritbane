@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+--- !u!114 &-5376783173509209892
+========
+--- !u!114 &-5030533469166898619
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,12 +24,22 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+  m_Name: Material #44 1
+  m_Shader: {fileID: -6465566751694194690, guid: 44245ab89240f51459a5077d7145c452,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
+  m_LightmapFlags: 2
+========
   m_Name: Leaf
   m_Shader: {fileID: -6465566751694194690, guid: 6bf06253095194d459a7143f05ae9e08,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -21,47 +48,40 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
+    - _BASE_COLOR_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _BumpMap:
+    - _BUMP_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
+    - _EMISSION_COLOR_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DetailMask:
+    - _METALNESS_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
+    - _REFLECTIONS_COLOR_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
+    - _REFLECTIONS_IOR_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+    - _REFLECTIONS_ROUGHNESS_MAP:
+        m_Texture: {fileID: 0}
+========
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7f2959fa75e95a34b832bd509d6c297c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 777ac8e72d1459a459c4307b2e441966, type: 3}
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
+    - _TRANSPARENCY_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -80,7 +100,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+    - _BASE_COLOR_WEIGHT: 1
+    - _BUMP_MAP_STRENGTH: 0.3
+========
     - _AlphaCutoff: 0.5
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -90,43 +115,47 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EMISSION_WEIGHT: 1
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _METALNESS: 0
     - _Metallic: 0
+    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.005
+    - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _REFLECTIONS_IOR: 1.52
+    - _REFLECTIONS_ROUGHNESS: 0
+    - _REFLECTIONS_WEIGHT: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+    - _TRANSPARENCY: 0
+    - _UVSec: 0
+========
     - _WiggleOffset: 0
-    - _WindSpeed: 1.2
+    - _WindSpeed: 0.5
     - _WindStrength: 0.2
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BASE_COLOR: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColor: {r: 0.7353569, g: 0.7353569, b: 0.7353569, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+<<<<<<<< HEAD:Spirit Bane/Assets/02_Materials/WhiteboxMaterials/Material #44 1.mat
+    - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
+========
+>>>>>>>> StartingVillageBackup:Spirit Bane/Assets/02_Materials/Tree/Leaf.mat
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &2494868399210371456
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
