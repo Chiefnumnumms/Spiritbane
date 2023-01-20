@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
@@ -8,11 +9,12 @@ public class PlayerLocomotion : MonoBehaviour
     PlayerManager playerManager;
     AnimationManager animationManager;
     Swinging swingingManager;
+    Grappling grapplingManager;
 
     Vector3 moveDir;
     Transform playerCamera;
 
-    Rigidbody playerRb;
+    public Rigidbody playerRb;
 
     [Header("Falling")]
     public float inAirTimer;
@@ -36,14 +38,20 @@ public class PlayerLocomotion : MonoBehaviour
     public float sprintSpeed = 7;
     public float rotationSpeed = 15;
 
+    [Header("Grappling & Swinging")]
+    private Vector3 velocityToSet;
+    public bool activeGrapple = true;
+    public bool enableMovementAfterGrapple;
+
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
         animationManager = GetComponent<AnimationManager>();
         inputManager = GetComponent<InputManager>();
-        swingingManager = GetComponent<Swinging>();
         playerRb = GetComponent<Rigidbody>();
         playerCamera = Camera.main.transform;
+        swingingManager = GetComponent<Swinging>();
+        grapplingManager = GetComponent<Grappling>();
     }
 
     //-----------------------------------------------------------------------------
@@ -62,6 +70,7 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
 
+
         HandleMovement();
         HandleRotation();
     }
@@ -70,6 +79,9 @@ public class PlayerLocomotion : MonoBehaviour
     // adjusts the players movement based on cameras direction and what the users input is
     private void HandleMovement()
     {
+        if (swingingManager.isSwinging) return;
+        //if (activeGrapple) return;
+
         moveDir = playerCamera.forward * inputManager.vertInput;
         moveDir = moveDir + playerCamera.right * inputManager.horizInput;
         moveDir.Normalize();
@@ -131,7 +143,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (!isGrounded && !isJumping)
         {
-            if (!playerManager.isInteracting)
+            if (!playerManager.isInteracting && !swingingManager.isSwinging)
             {
                 animationManager.PlayTargetAnim("Falling Idle", true);
             }
@@ -144,7 +156,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             if (!isGrounded && !playerManager.isInteracting)
             {
-                animationManager.PlayTargetAnim("Landing", true);
+                animationManager.PlayTargetAnim("Landing", false);
             }
             inAirTimer = 0;
             isGrounded = true;
@@ -160,7 +172,9 @@ public class PlayerLocomotion : MonoBehaviour
     // handles how the player moves when the jump button is pressed
     public void HandleJump()
     {
-        if(isGrounded)
+        if (swingingManager.isSwinging) return;
+
+        if (isGrounded)
         {
             animationManager.animator.SetBool("isJumping", true);
             animationManager.PlayTargetAnim("Jump", false);
@@ -169,6 +183,57 @@ public class PlayerLocomotion : MonoBehaviour
             Vector3 playerVel = moveDir;
             playerVel.y = jumpingVel;
             playerRb.velocity = playerVel;
+        }
+    }
+
+    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        // DISPLACEMENT VALUES FOR XYZ
+        float gravity = Physics.gravity.y;
+        float displacementY = endPoint.y - startPoint.y;
+        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)
+                                             + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+        return velocityXZ + velocityY;
+    }
+
+    public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+    {
+        activeGrapple = true;
+
+        velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+
+        // APPLY FORCE WITH A LITTLE BIT OF A DELAY (AFTER 0.1 SECONDS)
+        Invoke(nameof(SetVelocity), 0.1f);
+
+        // RESET MOVEMENT INCASE OF ANYTHING GOING WRONG WHEN GRAPPLING MULTIPLE TIMES
+        Invoke(nameof(ResetMovementRestrictions), 3f);
+    }
+
+
+    public void SetVelocity()
+    {
+        enableMovementAfterGrapple = true;
+        playerRb.velocity = velocityToSet;
+    }
+
+    public void ResetMovementRestrictions()
+    {
+        activeGrapple = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (enableMovementAfterGrapple)
+        {
+            // RESET ALL MOVEMENT RESTRICTIONS AND ALLOW PLAYER TO MOVE FREELY AFTER GRAPPLE
+            enableMovementAfterGrapple = false;
+            ResetMovementRestrictions();
+
+            grapplingManager.StopGrapple();
         }
     }
 }

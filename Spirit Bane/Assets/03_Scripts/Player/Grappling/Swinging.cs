@@ -1,25 +1,29 @@
+// ==========================================
+//           Andrew Anderious
+//              2023-01-12
+//        SWINGING MECHANIC SCRIPT
+// ==========================================
+
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
-using Unity.VisualScripting;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 public class Swinging : MonoBehaviour
 {
     public InputManager inputManager;
+    public PlayerLocomotion playerLocomotionManager;
 
     [Header("References")]
-    public LineRenderer lr;
-    public Transform gunTip, cam, player;
+    public LineRenderer lineRenderer;
+    public Transform gunTip, mainCamera, playerModel;
     public LayerMask whatIsGrappleable;
 
     [Header("Swinging")]
     private float maxSwingDistance = 25f;
     private Vector3 swingPoint;
-    private SpringJoint joint;
-
-    [Header("Input")]
-    //public KeyCode swingKey = KeyCode.Mouse0;
+    private SpringJoint springJoint;
 
     [Header("In Air Movement")]
     public Rigidbody rb;
@@ -28,13 +32,12 @@ public class Swinging : MonoBehaviour
     public float forwardThrustForce;
     public float extendCableSpeed;
 
-    [Header("Prediction")]
+    [Header("Prediction Point")]
     public RaycastHit predictionHit;
     public float predictionSphereCastRadius;
     public Transform predictionPoint;
 
-    public List<GameObject> grapplePoints = new List<GameObject>();
-
+    [Header("Grapple Point Settings")]
     public Material desiredMaterial;
     public Material originalMaterial;
 
@@ -42,21 +45,24 @@ public class Swinging : MonoBehaviour
     public bool isLookingAtGrapplePoint;
 
     private Vector3 currentGrapplePosition;
+    public float maxIndicationDistance = 25.0f;
 
-    public List<GameObject> grapplePointsList = new List<GameObject>();
-    public List<SpringJoint> sprintJointsList = new List<SpringJoint>();
+    private List<GameObject> grapplePoints = new List<GameObject>();
+    private List<SpringJoint> sprintJointsList = new List<SpringJoint>();
+    private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
     private void Start()
     {
+        // FINDS ALL GRAPPLE POINTS IN THE SCENE
         FindGrapplePointsOnStart();
 
         inputManager = GetComponent<InputManager>();
+        playerLocomotionManager = GetComponent<PlayerLocomotion>();
     }
-
 
     public void HandleSwingAction()
     {
-        if (inputManager.swingPressed)
+        if (inputManager.swing_Pressed) 
         {
             StartSwing();
         }
@@ -65,77 +71,93 @@ public class Swinging : MonoBehaviour
             StopSwing();
         }
 
-        CheckForSwingPoints();
-        HighlightGrapplePoint();
-
-        if (joint != null) InAirMovement();
+        // ONLY HANDLE IN AIR MOVEMENT IF THERE IS A SPRING JOINT TO WORK WITH
+        if (springJoint != null) InAirMovement();
     }
 
     private void StartSwing()
     {
-        // return if predictionHit not found
+        // IF PREDICTION POINT DOESN'T FIND ANYTHING EXIT
         if (predictionHit.point == Vector3.zero) return;
 
-        isSwinging = true;
-        swingPoint = predictionHit.point;
-        joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = swingPoint;
+        // IF THERE IS NO JOINT CURRENTLY
+        if (springJoint == null)
+        {
+            // THEN CREATE A JOINT AND ALLOW THE PLAYER TO SWING
+            isSwinging = true;
+            swingPoint = predictionHit.point;
+            springJoint = playerModel.gameObject.AddComponent<SpringJoint>();
+            springJoint.autoConfigureConnectedAnchor = false;
+            springJoint.connectedAnchor = swingPoint;
+        }
 
-        // ADD SPRINT JOIN TO A LIST
-        sprintJointsList.Add(joint);
+        // THE DISTANCE HOW FAR THE PLAYER IS FROM THE GRAPPLE POINT WHEN GRAPPLING
+        // THE LOWER THE MAX VALUE THE CLOSER THE PLAYER IS ABLE TO SWING TOWARDS THE GRAPPLE POINT
+        float distanceFromPoint = Vector3.Distance(playerModel.position, swingPoint);
+        springJoint.maxDistance = distanceFromPoint * 0.8f;
+        springJoint.minDistance = distanceFromPoint * 0.25f;
 
-        float distanceFromPoint = Vector3.Distance(player.position, swingPoint);
-
-        // the distance grapple will try to keep from grapple point. 
-        joint.maxDistance = distanceFromPoint * 0.8f;
-        joint.minDistance = distanceFromPoint * 0.25f;
-
-        // customize values as you like
-        joint.spring = 4.5f;
-        joint.damper = 7f;
-        joint.massScale = 4.5f;
-
-        lr.positionCount = 2;
+        // CUSTOMIZE JOINT PROPERTIES
+        springJoint.spring = 4.5f;
+        springJoint.damper = 7f;
+        springJoint.massScale = 4.5f;
+ 
+        lineRenderer.positionCount = 2;
         currentGrapplePosition = gunTip.position;
     }
 
-    private void CheckForSwingPoints()
+    public void CheckForSwingPoints()
     {
-        if (joint != null) return;
+        if (springJoint != null) return;
 
+        // SETUP RAYCAST VARIABLES
         RaycastHit sphereCastHit;
-        Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward,
-                            out sphereCastHit, maxSwingDistance, whatIsGrappleable);
-
         RaycastHit raycastHit;
-        Physics.Raycast(cam.position, cam.forward,
-                            out raycastHit, maxSwingDistance, whatIsGrappleable);
 
-        Vector3 realHitPoint;
+        // HANDLE SPHERE CAST AND RAY CAST 
+        Physics.SphereCast(mainCamera.position, predictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, whatIsGrappleable);
+        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxSwingDistance, whatIsGrappleable);
 
-        // Option 1 - Direct Hit
-        if (raycastHit.point != Vector3.zero)
-            realHitPoint = raycastHit.point;
+        Vector3 hitPoint;
 
-        // Option 2 - Indirect (predicted) Hit No Raycast Hit
-        else if (sphereCastHit.point != Vector3.zero)
-            realHitPoint = sphereCastHit.point;
-
-        // Option 3 - Miss (nothing in the way)
-        else
-            realHitPoint = Vector3.zero;
-
-        // realHitPoint found
-        if (realHitPoint != Vector3.zero)
+        if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
-            predictionPoint.gameObject.SetActive(true);
-            predictionPoint.position = realHitPoint;
+            hitPoint = raycastHit.point;
+
         }
-        // realHitPoint not found
-        else
+        else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
+
         {
+            hitPoint = sphereCastHit.point;
+            HighlightGrapplePoint(maxIndicationDistance);
+        }
+        else                                              // NOTHING IN THE WAY 
+        {
+            hitPoint = Vector3.zero;
+
+        }
+
+
+        if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
+        {
+            // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
+            predictionPoint.gameObject.SetActive(true);
+
+            // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
+            predictionPoint.position = hitPoint;
+
+            // HIGHLIGHT GRAPPLE POINT TO INDICATE THAT IT IS A VALID POINT
+            HighlightGrapplePoint(maxIndicationDistance);
+        }
+        else                                                // NOTHING FOUND ON HIT POINT
+        {
+            // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
             predictionPoint.gameObject.SetActive(false);
+
+            foreach (MeshRenderer meshes in meshRenderers)
+            {
+                meshes.material = originalMaterial;
+            }
         }
 
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
@@ -143,9 +165,9 @@ public class Swinging : MonoBehaviour
 
     public void StopSwing()
     {
-        lr.positionCount = 0;
+        lineRenderer.positionCount = 0;
         isSwinging = false;
-        Destroy(joint);
+        Destroy(springJoint);
         DestroyAllJoints();
     }
 
@@ -165,27 +187,40 @@ public class Swinging : MonoBehaviour
 
     public void DrawRope()
     {
-        if (!joint) return;
+        if (!springJoint) return;
 
+        // DRAW THE ROPE BASED ON THE CURRENT GRAPPLE POSITION AND THE SWINGPOINT IT IS GOING TOWARDS
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
 
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, currentGrapplePosition);
+        // SET LR POSITIONS
+        lineRenderer.SetPosition(0, gunTip.position);
+        lineRenderer.SetPosition(1, currentGrapplePosition);
     }
 
     private void InAirMovement()
     {
-        //// Swing In Air Right Side
-        //if (Input.GetKey(KeyCode.D)) rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+        // IF THE PLAYER IS NOT IN THE AIR, THEN DONT PERFORM INAIRMOVEMENT
+        if (playerLocomotionManager.isGrounded) return;
 
-        //// Swing In Air Left Side
-        //if (Input.GetKey(KeyCode.A)) rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
+        if (inputManager.d_Pressed) // SWING RIGHT
+        {
+            // APPLY HORIZONTAL FORCE TO THE RIGIDBODY
+            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+        }
+        else if (inputManager.a_Pressed) // SWING LEFT
+        {
+            // APPLY HORIZONTAL FORCE TO THE RIGIDBODY
+            rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
+        }
+        else if (inputManager.w_Pressed) // SWING FORWARD
+        {
+            // APPLY FORWARD FORCE TO THE RIGIDBODY
+            rb.AddForce(orientation.forward * forwardThrustForce * Time.deltaTime);
+        }
 
-        //// Swing In Air Forward
-        //if (Input.GetKey(KeyCode.W)) rb.AddForce(orientation.right * forwardThrustForce * Time.deltaTime);
-
-        // Shorten Cable
-        if (Input.GetMouseButtonDown(1))
+        // WHEN THE MOUSE BUTTON IS BEING HELD TO SWING, THE CABLE SLOWLY SHRINKS
+        // SO THE PLAYER SLOWLY MOVES TOWARDS THE GRAPPLE POINT
+        if (inputManager.swing_Pressed)
         {
             Vector3 directionToPoint = swingPoint - transform.position;
             rb.AddForce(directionToPoint.normalized * forwardThrustForce * Time.deltaTime);
@@ -193,68 +228,50 @@ public class Swinging : MonoBehaviour
             float distancFromPoint = Vector3.Distance(transform.position, swingPoint);
 
             // Recalculate Joint Distance
-            joint.maxDistance = distancFromPoint * 0.8f;
-            joint.minDistance = distancFromPoint * 0.25f;
+            springJoint.maxDistance = distancFromPoint * 0.8f;
+            springJoint.minDistance = distancFromPoint * 0.25f;
         }
 
-        // Extend Cable
-        if (Input.GetKey(KeyCode.S))
+        // HANDLES INPUT TO EXTEND THE CABLE WHEN SWINGING
+        if (inputManager.rope_Adjust_Pressed)
         {
             float extendedDistanceFromPoint = Vector3.Distance(transform.position, swingPoint) + extendCableSpeed;
 
             // Recalculate Join Distance
-            joint.maxDistance = extendedDistanceFromPoint * 0.8f;
-            joint.minDistance = extendedDistanceFromPoint * 0.25f;
+            springJoint.maxDistance = extendedDistanceFromPoint * 0.8f;
+            springJoint.minDistance = extendedDistanceFromPoint * 0.25f;
         }
 
     }
 
-    public void HighlightGrapplePoint()
+    public void HighlightGrapplePoint(float maxRange)
     {
-        // Set up the raycast variables
+        // HIGHLIGHTS ALL GRAPPLE POINTS
+        // RAYCAST VARIABLES
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Cast the ray and check if it hits a grapple point on the proper layer
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity) && hit.transform.gameObject.layer == LayerMask.NameToLayer("GrapplePoint"))
+        // CAST THE RAY TO CHECK IF IT COLLIDES/HITS A GRAPPLE POINT LAYER GIVEN A SPECIFIC MAX RANGE
+        if (Physics.Raycast(ray, out hit, maxRange) && hit.transform.gameObject.layer == LayerMask.NameToLayer("GrapplePoint"))
         {
             isLookingAtGrapplePoint = true;
 
-            // Check if the player is looking at the hit grapple point or swinging on it
-            if (isSwinging || isLookingAtGrapplePoint)
+            // PLAYER IS LOOKING AT A VALID GRAPPLE POINT
+            if (isLookingAtGrapplePoint)
             {
-                // Change the material of the hit grapple point to the desired material
+                // CHANGE THE MATERIAL OF THE POINT PLAYER IS LOOKING TOWARDS
                 MeshRenderer grapplePointRenderer = hit.transform.gameObject.GetComponent<MeshRenderer>();
                 grapplePointRenderer.material = desiredMaterial;
+
+                meshRenderers.Add(grapplePointRenderer);
             }
-            else
-            {
-                // Reset the material of the hit grapple point to the original material
-                MeshRenderer grapplePointRenderer = hit.transform.gameObject.GetComponent<MeshRenderer>();
-                grapplePointRenderer.material = originalMaterial;
-            }
-        }
-        else
-        {
-            isLookingAtGrapplePoint = false;
         }
     }
 
     public void FindGrapplePointsOnStart()
     {
-        GameObject[] grapplePointObjects = GameObject.FindGameObjectsWithTag("GrapplePoint");
-
-        foreach (GameObject gp in grapplePointObjects)
-        {
-            grapplePointsList.Add(gp);
-        }
-    }
-
-
-
-    /*
-    private void Start()
-    {
+        // FIND ALL GRAPPLE POINTS WITH THE PROPER TAG TO STORE THEM IN AS VALID GRAPPLE POINTS
         GameObject[] grapplePointObjects = GameObject.FindGameObjectsWithTag("GrapplePoint");
 
         foreach (GameObject gp in grapplePointObjects)
@@ -263,173 +280,5 @@ public class Swinging : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(swingKey)) StartSwing();
-        if (Input.GetKeyUp(swingKey)) StopSwing();
 
-        CheckForSwingPoints();
-        HighlightGrapplePoint();
-
-        if (joint != null) InAirMovement();
-    }
-
-    void LateUpdate()
-    {
-        DrawRope();
-    }
-
-    private void StartSwing()
-    {
-        // return if predictionHit not found
-        if (predictionHit.point == Vector3.zero) return;
-
-        isSwinging = true;
-        swingPoint = predictionHit.point;
-        joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = swingPoint;
-
-        float distanceFromPoint = Vector3.Distance(player.position, swingPoint);
-
-        // the distance grapple will try to keep from grapple point. 
-        joint.maxDistance = distanceFromPoint * 0.8f;
-        joint.minDistance = distanceFromPoint * 0.25f;
-
-        // customize values as you like
-        joint.spring = 4.5f;
-        joint.damper = 7f;
-        joint.massScale = 4.5f;
-
-        lr.positionCount = 2;
-        currentGrapplePosition = gunTip.position;
-    }
-
-    private void CheckForSwingPoints()
-    {
-        if (joint != null) return;
-
-        RaycastHit sphereCastHit;
-        Physics.SphereCast(cam.position, predictionSphereCastRadius, cam.forward,
-                            out sphereCastHit, maxSwingDistance, whatIsGrappleable);
-
-        RaycastHit raycastHit;
-        Physics.Raycast(cam.position, cam.forward,
-                            out raycastHit, maxSwingDistance, whatIsGrappleable);
-
-        Vector3 realHitPoint;
-
-        // Option 1 - Direct Hit
-        if (raycastHit.point != Vector3.zero)
-            realHitPoint = raycastHit.point;
-
-        // Option 2 - Indirect (predicted) Hit No Raycast Hit
-        else if (sphereCastHit.point != Vector3.zero)
-            realHitPoint = sphereCastHit.point;
-
-        // Option 3 - Miss (nothing in the way)
-        else
-            realHitPoint = Vector3.zero;
-
-        // realHitPoint found
-        if (realHitPoint != Vector3.zero)
-        {
-            predictionPoint.gameObject.SetActive(true);
-            predictionPoint.position = realHitPoint;
-        }
-        // realHitPoint not found
-        else
-        {
-            predictionPoint.gameObject.SetActive(false);
-        }
-
-        predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
-    }
-
-    void StopSwing()
-    {
-        lr.positionCount = 0;
-        isSwinging = false;
-        Destroy(joint);
-    }
-
-    private Vector3 currentGrapplePosition;
-
-    void DrawRope()
-    {
-        if (!joint) return;
-
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
-
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, currentGrapplePosition);
-    }
-
-    private void InAirMovement()
-    {
-        // Swing In Air Right Side
-        if (Input.GetKey(KeyCode.D)) rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
-
-        // Swing In Air Left Side
-        if (Input.GetKey(KeyCode.A)) rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
-
-        // Swing In Air Forward
-        if (Input.GetKey(KeyCode.W)) rb.AddForce(orientation.right * forwardThrustForce * Time.deltaTime);
-
-        // Shorten Cable
-        if (Input.GetMouseButton(1))
-        {
-            Vector3 directionToPoint = swingPoint - transform.position;
-            rb.AddForce(directionToPoint.normalized * forwardThrustForce * Time.deltaTime);
-
-            float distancFromPoint = Vector3.Distance(transform.position, swingPoint);
-
-            // Recalculate Joint Distance
-            joint.maxDistance = distancFromPoint * 0.8f;
-            joint.minDistance = distancFromPoint * 0.25f;
-        }
-
-        // Extend Cable
-        if (Input.GetKey(KeyCode.S))
-        {
-            float extendedDistanceFromPoint = Vector3.Distance(transform.position, swingPoint) + extendCableSpeed;
-
-            // Recalculate Join Distance
-            joint.maxDistance = extendedDistanceFromPoint * 0.8f;
-            joint.minDistance = extendedDistanceFromPoint * 0.25f;
-        }
-
-    }
-
-    public void HighlightGrapplePoint()
-    {
-        // Set up the raycast variables
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        // Cast the ray and check if it hits a grapple point on the proper layer
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity) && hit.transform.gameObject.layer == LayerMask.NameToLayer("GrapplePoint"))
-        {
-            isLookingAtGrapplePoint = true;
-
-            // Check if the player is looking at the hit grapple point or swinging on it
-            if (isSwinging || isLookingAtGrapplePoint)
-            {
-                // Change the material of the hit grapple point to the desired material
-                MeshRenderer grapplePointRenderer = hit.transform.gameObject.GetComponent<MeshRenderer>();
-                grapplePointRenderer.material = desiredMaterial;
-            }
-            else
-            {
-                // Reset the material of the hit grapple point to the original material
-                MeshRenderer grapplePointRenderer = hit.transform.gameObject.GetComponent<MeshRenderer>();
-                grapplePointRenderer.material = originalMaterial;
-            }
-        }
-        else
-        {
-            isLookingAtGrapplePoint = false;
-        }
-    }
-    */
 }

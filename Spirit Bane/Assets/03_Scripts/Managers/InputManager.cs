@@ -8,12 +8,14 @@ public class InputManager : MonoBehaviour
     PlayerLocomotion playerLocomotion;
     AnimationManager animationManager;
     Swinging swingingManager;
+    Grappling grapplingManager;
 
     private void Awake()
     {
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();
+        grapplingManager = GetComponent<Grappling>();
     }
 
     public Vector2 movementInput;
@@ -25,11 +27,18 @@ public class InputManager : MonoBehaviour
     public bool jumpPressed;
 
     // SWINGING - AA
-    public bool swingPressed;
+    public bool swing_Pressed;
+    public bool rope_Adjust_Pressed;
     public bool w_Pressed;
     public bool a_Pressed;
     public bool s_Pressed;
     public bool d_Pressed;
+
+    // PICKUP SYSTEM - AA
+    public bool e_Pressed;
+
+    // GRAPPLING - AA
+    public bool grapple_Pressed;
 
     private void OnEnable()
     {
@@ -43,8 +52,21 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Jump.performed += inputContext => jumpPressed = true;
 
             // SWINGING - AA
-            playerControls.PlayerActions.Swing.performed += inputContext => swingPressed = true;
-            playerControls.PlayerActions.Swing.canceled += inputContext => swingPressed = false;
+            playerControls.SwingingActions.Swing.performed += inputContext => swing_Pressed = true;               
+            playerControls.SwingingActions.Swing.canceled += inputContext => swing_Pressed = false;
+            playerControls.SwingingActions.AdjustRope.performed += inputContext => rope_Adjust_Pressed = true;
+            playerControls.SwingingActions.AdjustRope.canceled += inputContext => rope_Adjust_Pressed = false;
+
+            playerControls.SwingingActions.SwingForward.performed += inputContext => w_Pressed = true;
+            playerControls.SwingingActions.SwingForward.canceled += inputContext => w_Pressed = false;
+            playerControls.SwingingActions.SwingRight.performed += inputContext => d_Pressed = true;
+            playerControls.SwingingActions.SwingRight.canceled += inputContext => d_Pressed = false;
+            playerControls.SwingingActions.SwingLeft.performed += inputContext => a_Pressed = true;
+            playerControls.SwingingActions.SwingLeft.canceled += inputContext => a_Pressed = false;
+
+            // GRAPPLING - AA
+            playerControls.GrapplingActions.Grapple.performed += inputContext => grapple_Pressed = true;
+            playerControls.GrapplingActions.Grapple.canceled += inputContext => grapple_Pressed = false;
         }
         playerControls.Enable();
     }
@@ -62,7 +84,13 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintingInput();
         HandleJumpingInput();
+
+        // SWINGING - AA
         HandleSwingingInput();
+        HandlePickupActionButtonInput();
+
+        // GRAPPLING - AA
+        HandleGrapplingInput();
     }
 
     //-----------------------------------------------------------------------------
@@ -100,16 +128,37 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    //-----------------------------------------------------------------
+    // HANDLES ALL SWINGING MECHANICS - AA
     private void HandleSwingingInput()
     {
-        if (swingPressed)
+        if (swing_Pressed) // PLAYER SWINGING
         {
             swingingManager.HandleSwingAction();
-
         }
         else // NOT SWINGING
         {
             swingingManager.StopSwing();
+            swing_Pressed = false;
         }
+    }
+
+    private void HandleGrapplingInput()
+    {
+        if (grapple_Pressed)
+        {
+            // GRAPPLE
+            grapplingManager.StartGrapple();
+        }
+        else // NOT GRAPPLING
+        {
+            grapplingManager.StopGrapple();
+            grapple_Pressed = false;
+        }
+    }
+
+    private void HandlePickupActionButtonInput()
+    {
+        playerControls.PlayerActions.Pickup.performed += inputContext => e_Pressed = true;
     }
 }
