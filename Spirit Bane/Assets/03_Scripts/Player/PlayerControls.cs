@@ -162,6 +162,142 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SwingingActions"",
+            ""id"": ""e1ba6984-24a5-424e-a621-e14f01e3f6f2"",
+            ""actions"": [
+                {
+                    ""name"": ""Swing"",
+                    ""type"": ""Button"",
+                    ""id"": ""a93f9a56-f1d7-4569-9dd7-79fc324b2529"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AdjustRope"",
+                    ""type"": ""Button"",
+                    ""id"": ""67ab7b60-1cd2-4232-a43a-2d83ea17a628"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwingForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce480f59-a08d-4cee-b34d-8ef842f243bd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwingRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""e14132e1-4d95-4451-8b67-a766255282b8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwingLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""17829cd8-0ad2-44bf-b5aa-b0251c752ede"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""eaaeef65-a2f4-40a7-b216-5f267af72231"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10b88757-0764-4649-b5ee-4d7b2e6041b5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdjustRope"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54e99d70-7d45-4d84-97e4-28673bcac9bc"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwingForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75432f95-e8c5-475d-b1d7-f43296c1fca3"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwingRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e9819d7-697e-4348-914f-f687f3357622"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwingLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""GrapplingActions"",
+            ""id"": ""d301c56a-95b2-4963-901b-01356418b0ae"",
+            ""actions"": [
+                {
+                    ""name"": ""Grapple"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3a032f6-ba24-4dcb-9171-14980a779c4c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6b93fdd1-b679-4cf4-ad7f-324d8a4a5bf4"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grapple"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -174,6 +310,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Swing = m_PlayerActions.FindAction("Swing", throwIfNotFound: true);
+        // SwingingActions
+        m_SwingingActions = asset.FindActionMap("SwingingActions", throwIfNotFound: true);
+        m_SwingingActions_Swing = m_SwingingActions.FindAction("Swing", throwIfNotFound: true);
+        m_SwingingActions_AdjustRope = m_SwingingActions.FindAction("AdjustRope", throwIfNotFound: true);
+        m_SwingingActions_SwingForward = m_SwingingActions.FindAction("SwingForward", throwIfNotFound: true);
+        m_SwingingActions_SwingRight = m_SwingingActions.FindAction("SwingRight", throwIfNotFound: true);
+        m_SwingingActions_SwingLeft = m_SwingingActions.FindAction("SwingLeft", throwIfNotFound: true);
+        // GrapplingActions
+        m_GrapplingActions = asset.FindActionMap("GrapplingActions", throwIfNotFound: true);
+        m_GrapplingActions_Grapple = m_GrapplingActions.FindAction("Grapple", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -311,6 +457,104 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // SwingingActions
+    private readonly InputActionMap m_SwingingActions;
+    private ISwingingActionsActions m_SwingingActionsActionsCallbackInterface;
+    private readonly InputAction m_SwingingActions_Swing;
+    private readonly InputAction m_SwingingActions_AdjustRope;
+    private readonly InputAction m_SwingingActions_SwingForward;
+    private readonly InputAction m_SwingingActions_SwingRight;
+    private readonly InputAction m_SwingingActions_SwingLeft;
+    public struct SwingingActionsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public SwingingActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Swing => m_Wrapper.m_SwingingActions_Swing;
+        public InputAction @AdjustRope => m_Wrapper.m_SwingingActions_AdjustRope;
+        public InputAction @SwingForward => m_Wrapper.m_SwingingActions_SwingForward;
+        public InputAction @SwingRight => m_Wrapper.m_SwingingActions_SwingRight;
+        public InputAction @SwingLeft => m_Wrapper.m_SwingingActions_SwingLeft;
+        public InputActionMap Get() { return m_Wrapper.m_SwingingActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SwingingActionsActions set) { return set.Get(); }
+        public void SetCallbacks(ISwingingActionsActions instance)
+        {
+            if (m_Wrapper.m_SwingingActionsActionsCallbackInterface != null)
+            {
+                @Swing.started -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwing;
+                @Swing.performed -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwing;
+                @Swing.canceled -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwing;
+                @AdjustRope.started -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnAdjustRope;
+                @AdjustRope.performed -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnAdjustRope;
+                @AdjustRope.canceled -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnAdjustRope;
+                @SwingForward.started -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingForward;
+                @SwingForward.performed -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingForward;
+                @SwingForward.canceled -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingForward;
+                @SwingRight.started -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingRight;
+                @SwingRight.performed -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingRight;
+                @SwingRight.canceled -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingRight;
+                @SwingLeft.started -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingLeft;
+                @SwingLeft.performed -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingLeft;
+                @SwingLeft.canceled -= m_Wrapper.m_SwingingActionsActionsCallbackInterface.OnSwingLeft;
+            }
+            m_Wrapper.m_SwingingActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Swing.started += instance.OnSwing;
+                @Swing.performed += instance.OnSwing;
+                @Swing.canceled += instance.OnSwing;
+                @AdjustRope.started += instance.OnAdjustRope;
+                @AdjustRope.performed += instance.OnAdjustRope;
+                @AdjustRope.canceled += instance.OnAdjustRope;
+                @SwingForward.started += instance.OnSwingForward;
+                @SwingForward.performed += instance.OnSwingForward;
+                @SwingForward.canceled += instance.OnSwingForward;
+                @SwingRight.started += instance.OnSwingRight;
+                @SwingRight.performed += instance.OnSwingRight;
+                @SwingRight.canceled += instance.OnSwingRight;
+                @SwingLeft.started += instance.OnSwingLeft;
+                @SwingLeft.performed += instance.OnSwingLeft;
+                @SwingLeft.canceled += instance.OnSwingLeft;
+            }
+        }
+    }
+    public SwingingActionsActions @SwingingActions => new SwingingActionsActions(this);
+
+    // GrapplingActions
+    private readonly InputActionMap m_GrapplingActions;
+    private IGrapplingActionsActions m_GrapplingActionsActionsCallbackInterface;
+    private readonly InputAction m_GrapplingActions_Grapple;
+    public struct GrapplingActionsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public GrapplingActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Grapple => m_Wrapper.m_GrapplingActions_Grapple;
+        public InputActionMap Get() { return m_Wrapper.m_GrapplingActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GrapplingActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IGrapplingActionsActions instance)
+        {
+            if (m_Wrapper.m_GrapplingActionsActionsCallbackInterface != null)
+            {
+                @Grapple.started -= m_Wrapper.m_GrapplingActionsActionsCallbackInterface.OnGrapple;
+                @Grapple.performed -= m_Wrapper.m_GrapplingActionsActionsCallbackInterface.OnGrapple;
+                @Grapple.canceled -= m_Wrapper.m_GrapplingActionsActionsCallbackInterface.OnGrapple;
+            }
+            m_Wrapper.m_GrapplingActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Grapple.started += instance.OnGrapple;
+                @Grapple.performed += instance.OnGrapple;
+                @Grapple.canceled += instance.OnGrapple;
+            }
+        }
+    }
+    public GrapplingActionsActions @GrapplingActions => new GrapplingActionsActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -320,5 +564,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSwing(InputAction.CallbackContext context);
+    }
+    public interface ISwingingActionsActions
+    {
+        void OnSwing(InputAction.CallbackContext context);
+        void OnAdjustRope(InputAction.CallbackContext context);
+        void OnSwingForward(InputAction.CallbackContext context);
+        void OnSwingRight(InputAction.CallbackContext context);
+        void OnSwingLeft(InputAction.CallbackContext context);
+    }
+    public interface IGrapplingActionsActions
+    {
+        void OnGrapple(InputAction.CallbackContext context);
     }
 }

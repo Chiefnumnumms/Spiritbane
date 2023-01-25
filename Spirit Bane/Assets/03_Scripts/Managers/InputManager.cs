@@ -34,9 +34,6 @@ public class InputManager : MonoBehaviour
     public bool s_Pressed;
     public bool d_Pressed;
 
-    // PICKUP SYSTEM - AA
-    public bool e_Pressed;
-
     // GRAPPLING - AA
     public bool grapple_Pressed;
 
@@ -87,7 +84,6 @@ public class InputManager : MonoBehaviour
 
         // SWINGING - AA
         HandleSwingingInput();
-        HandlePickupActionButtonInput();
 
         // GRAPPLING - AA
         HandleGrapplingInput();
@@ -157,8 +153,4 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void HandlePickupActionButtonInput()
-    {
-        playerControls.PlayerActions.Pickup.performed += inputContext => e_Pressed = true;
-    }
 }

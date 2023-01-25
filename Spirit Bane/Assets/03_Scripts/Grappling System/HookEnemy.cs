@@ -8,7 +8,6 @@ public class HookEnemy : MonoBehaviour
 {
     public InputManager inputManager;
 
-    private GameObject playerObj;
     private GameObject enemyObj;
 
     LineRenderer lineRenderer;
@@ -25,13 +24,8 @@ public class HookEnemy : MonoBehaviour
     public float hookSpeed = 1500.0f;
     public const float maxHookDistance = 5.0f;
 
-    public const float X_OFFSET = -0.08f;
-    public const float Z_OFFSET = 4.06f;
-
-
     private void Awake()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
         lineRenderer = GetComponent<LineRenderer>();
         returnPoint = GameObject.Find("ReturnPoint");
 

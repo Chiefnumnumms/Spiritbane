@@ -8,7 +8,6 @@ public class PlayerManager : MonoBehaviour
     Animator animator;
     PlayerLocomotion playerLocomotion;
     Swinging swingingManager;
-    PickupManager pickupManager;
     Grappling grappleManager;
 
     public bool isInteracting;
@@ -20,7 +19,6 @@ public class PlayerManager : MonoBehaviour
         animator = GetComponent<Animator>();
         swingingManager = GetComponent<Swinging>();
         grappleManager = GetComponent<Grappling>();
-        pickupManager = FindObjectOfType<PickupManager>();
     }
 
     private void Update()
@@ -34,8 +32,6 @@ public class PlayerManager : MonoBehaviour
         // LOCK CURSOR - AA
         Cursor.lockState = CursorLockMode.Locked;
 
-        // PICKUP SYSTEM - AA
-        CheckForInteractableObject();
     }
 
     private void FixedUpdate()
@@ -53,36 +49,6 @@ public class PlayerManager : MonoBehaviour
     {
         isInteracting = animator.GetBool("isInteracting");
         playerLocomotion.isJumping = animator.GetBool("isJumping");
-        animator.SetBool("isGrounded", playerLocomotion.isGrounded);
-
-
-        // PICKUP SYSTEM - AA
-        inputManager.e_Pressed = false;
-    }
-
-    public void CheckForInteractableObject()
-    {
-        RaycastHit hit;
-
-        if (Physics.SphereCast(transform.position, 2.5f, swingingManager.gunTip.forward, out hit, 1f, pickupManager.pickupLayer))
-        {
-            if (hit.collider.tag == "Interactable")
-            {
-                InteractableManager interactableObject = hit.collider.GetComponent<InteractableManager>();
-
-                if(interactableObject != null)
-                {
-                    string interactableText = interactableObject.interactableText;
-
-                    // SET THE UI TEXT TO THE INTERACTABLE OBJECT'S TEXT
-                    // SET THE TEXT POP UP TO TRUE
-
-                    if (inputManager.e_Pressed)
-                    {
-                        hit.collider.GetComponent<InteractableManager>().Interact(this);
-                    }
-                }
-            }
-        }
+        animator.SetBool("isGrounded", playerLocomotion.isGrounded);        
     }
 }
