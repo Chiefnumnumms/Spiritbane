@@ -53,6 +53,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerCamera = Camera.main.transform;
         swingingManager = GetComponent<Swinging>();
         grapplingManager = GetComponent<Grappling>();
+        
     }
 
     //-----------------------------------------------------------------------------
@@ -70,6 +71,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             return;
         }
+
 
 
         HandleMovement();
