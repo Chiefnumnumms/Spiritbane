@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     AnimationManager animationManager;
     Swinging swingingManager;
     Grappling grapplingManager;
+    ItemPickup itemPickup;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class InputManager : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();
         grapplingManager = GetComponent<Grappling>();
+        itemPickup = FindObjectOfType<ItemPickup>();
     }
 
     public Vector2 movementInput;
@@ -64,6 +66,8 @@ public class InputManager : MonoBehaviour
             // GRAPPLING - AA
             playerControls.GrapplingActions.Grapple.performed += inputContext => grapple_Pressed = true;
             playerControls.GrapplingActions.Grapple.canceled += inputContext => grapple_Pressed = false;
+
+            // PICKUP - AA
         }
         playerControls.Enable();
     }
@@ -87,6 +91,9 @@ public class InputManager : MonoBehaviour
 
         // GRAPPLING - AA
         HandleGrapplingInput();
+
+        // ITEM PICKUP - AA
+        HandlePickupInput();
     }
 
     //-----------------------------------------------------------------------------
@@ -150,6 +157,25 @@ public class InputManager : MonoBehaviour
         {
             grapplingManager.StopGrapple();
             grapple_Pressed = false;
+        }
+    }
+
+
+    private void HandlePickupInput()
+    {
+        itemPickup.ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(itemPickup.ray, out itemPickup.hit, itemPickup.rayLength))
+        {
+            if (itemPickup.hit.collider.CompareTag("Interactable"))
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    itemPickup.items.Add(itemPickup.hit.collider.gameObject);
+                    itemPickup.itemText.text = "Items: " + itemPickup.items.Count;
+                    itemPickup.hit.collider.gameObject.SetActive(false);
+                }
+            }
         }
     }
 

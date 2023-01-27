@@ -43,6 +43,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool activeGrapple = true;
     public bool enableMovementAfterGrapple;
 
+
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -160,7 +161,6 @@ public class PlayerLocomotion : MonoBehaviour
             }
             inAirTimer = 0;
             isGrounded = true;
-
         }
         else
         {

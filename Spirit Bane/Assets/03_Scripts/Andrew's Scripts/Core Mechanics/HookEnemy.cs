@@ -9,9 +9,7 @@ public class HookEnemy : MonoBehaviour
     public InputManager inputManager;
 
     private GameObject enemyObj;
-
     LineRenderer lineRenderer;
-
     Rigidbody rb;
 
     bool isHooking;
@@ -22,7 +20,10 @@ public class HookEnemy : MonoBehaviour
     GameObject returnPoint;
 
     public float hookSpeed = 1500.0f;
-    public const float maxHookDistance = 5.0f;
+    public const float maxHookDistance = 25.0f;
+
+    private BoxCollider hookCollider;
+
 
     private void Awake()
     {
@@ -37,6 +38,9 @@ public class HookEnemy : MonoBehaviour
         originalPosition = new Vector3(returnPoint.transform.position.x, returnPoint.transform.position.y, returnPoint.transform.position.z);
 
         rb = GetComponent<Rigidbody>();
+
+        hookCollider = GetComponent<BoxCollider>();
+        hookCollider.enabled = false;
     }
 
     private void Update()
@@ -59,8 +63,14 @@ public class HookEnemy : MonoBehaviour
     {
         isHooking = true;
 
+        // ENABLE COLLIDER 
+        hookCollider.enabled = true;
+        Debug.Log("ENABLED THE HOOK COLLIDER");
+
         rb.isKinematic = false;
         rb.AddForce(transform.forward * hookSpeed);
+
+        Vector3 dir = Vector3.right;
     }
 
     private void ReturnHook()
@@ -75,6 +85,7 @@ public class HookEnemy : MonoBehaviour
                 rb.isKinematic = true;
                 transform.position = originalPosition;
                 isHooking = false;
+                hookCollider.enabled = false;
             }
         }
     }
