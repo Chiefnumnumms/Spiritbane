@@ -4,8 +4,8 @@
 //  Date: January 24, 2023
 //  Purpose:  Script To Handle Overall Game Functionality
 
-using Cinemachine;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,9 +13,8 @@ using UnityEngine.SceneManagement;
 // This Class Represents The Game Manager
 [RequireComponent(typeof(InputManager))]
 [RequireComponent(typeof(PlayerManager))]
-[RequireComponent(typeof(AnimationManager))]
+[RequireComponent(typeof(ScenesManager))]
 [RequireComponent(typeof(AudioManager))]
-[RequireComponent(typeof(SceneManager))]
 public class GameManager : Singleton<GameManager>
 {
     #region Enums
@@ -23,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     // Enums
 
     public enum GameState { START, LOAD, MAIN_MENU, PAUSE_MENU, OPTIONS, CREDITS, CUTSCENE, PLAYING, VICTORY, GAME_OVER }
+    public enum Scenes { MainMenu, StartingVillage, CrystalCavernsWhitebox, FloatingRocks, ArenaWhitebox, CoreMechanicDemo }
 
     #endregion
 
@@ -33,24 +33,29 @@ public class GameManager : Singleton<GameManager>
     // Managers
     public InputManager InputManager { get; private set; }
     public PlayerManager PlayerManager { get; private set; }
-    public SceneManager SceneManager { get; private set; }
-    public AnimationManager AnimationManager { get; private set; }
+    public ScenesManager ScenesManager { get; private set; }
     public AudioManager AudioManager { get; private set; }
 
     // Cache Reference To Player Game Object
     public GameObject PlayerGO { get; private set; }
 
+    // Cache Reference To Camera
+    public Camera Cam { get; private set; }
+
     // Keep Track Of Game State
-    public GameState State { get; private set; }
+    public GameState CurrentState { get; private set; }
 
     #endregion
-
+    
+    public AudioClip AreaMusic { get { return instance.levelMusic; } }
+    public AudioClip AltMusic { get { return instance.altMusic; } }
 
     #region Public Events
     //-------------------------------------------------------------------------
     // Public Events
 
     public static event Action<GameState> OnGameStateChanged;
+    //public static event Action<Scenes> OnDesiredSceneChanged;
 
     #endregion
 
@@ -58,6 +63,14 @@ public class GameManager : Singleton<GameManager>
     #region Editor Access Members
     //-------------------------------------------------------------------------
     // Editor Access Members
+
+    [Header("Desired Scene To Load")]
+    [SerializeField] public Scenes DesiredScene = Scenes.StartingVillage;
+
+    [SerializeField]
+    private AudioClip levelMusic;
+    [SerializeField]
+    private AudioClip altMusic;
 
     [Header("Debug Log Toggle")]
     [SerializeField]
@@ -79,13 +92,15 @@ public class GameManager : Singleton<GameManager>
 
     public void UpdateGameState(GameState newState)
     {
-        State = newState;
+        CurrentState = newState;
 
         switch (newState)
         {
             case GameState.START:
                 //StartCoroutine(InitializeGame);
-                State = GameState.MAIN_MENU;
+
+                // Skip To Main Menu For Now
+                CurrentState = GameState.MAIN_MENU;
                 break;
 
             case GameState.LOAD:
@@ -93,7 +108,8 @@ public class GameManager : Singleton<GameManager>
                 break;
 
             case GameState.MAIN_MENU:
-
+                // Skip To Playing For Now
+                CurrentState = GameState.PLAYING;
                 break;
 
             case GameState.PAUSE_MENU:
@@ -145,58 +161,55 @@ public class GameManager : Singleton<GameManager>
     //-------------------------------------------------------------------------
     protected override void Initialize()
     {
-        /*
         // Initialize Things Here For Call In base.Awake()
-       inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
+       InputManager = GetComponent<InputManager>();
         if(debugLog)
         {
-            if (inputManager != null)
-                Debug.Log("Input Manager Cached");
-            else
-                Debug.Log("Input Manager Not Cached");
+            if (InputManager != null) Debug.Log("Input Manager Cached");
+            else Debug.Log("Input Manager Not Cached");
         }
 
-        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        PlayerManager = GetComponent<PlayerManager>();
         if (debugLog)
         {
-            if (playerManager != null)
-                Debug.Log("Player Manager Cached");
-            else
-                Debug.Log("Player Manager Not Cached");
+            if (PlayerManager != null) Debug.Log("Player Manager Cached");
+            else Debug.Log("Player Manager Not Cached");
         }
 
-        animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
+        ScenesManager = GetComponent<ScenesManager>();
         if (debugLog)
         {
-            if (animationManager != null)
-                Debug.Log("Animation Manager Cached");
-            else
-                Debug.Log("Animation Manager Not Cached");
+            if (ScenesManager != null) Debug.Log("Scenes Manager Cached");
+            else Debug.Log("Scenes Manager Not Cached");
         }
 
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        AudioManager = GetComponent<AudioManager>();
         if (debugLog)
         {
-            if (audioManager != null)
-                Debug.Log("Audio Manager Cached");
-            else
-                Debug.Log("Audio Manager Not Cached");
+            if (AudioManager != null) Debug.Log("Audio Manager Cached");
+            else Debug.Log("Audio Manager Not Cached");
         }
 
         PlayerGO = GameObject.FindGameObjectWithTag("Player");
         if(debugLog)
         {
-            if (PlayerGO != null)
-                Debug.Log("PlayerGO Cached");
-            else
-                Debug.Log("PlayerGO Not Cached");
+            if (PlayerGO != null) Debug.Log("PlayerGO Cached");
+            else Debug.Log("PlayerGO Not Cached");
         }
-        */
+
+        Cam = Camera.main;
 
         // LOCK CURSOR
         Cursor.lockState = CursorLockMode.Locked;
 
-        UpdateGameState(GameState.START);
+        StartCoroutine(InitializeGame());
+                
+        //base.Initialize();
+    }
+
+    public void LoadScene(int i)
+    {
+        SceneManager.LoadScene(i);
     }
 
     #endregion
@@ -206,6 +219,68 @@ public class GameManager : Singleton<GameManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
+    private IEnumerator InitializeGame()
+    {
+        // Show Company Splash Screen 
+        //yield return new WaitForSeconds(0.5f);
+
+        // Show Game Title Card
+        //yield return new WaitForSeconds(0.5f);
+
+        // Show Main Menu
+        UpdateGameState(GameState.START);
+        yield return null;
+    }
+
+    private void StartGame()
+    {
+        //DesiredScene = Scenes.StartingVillage;
+        //StartCoroutine("LoadNextScene", DesiredScene);
+    }
+
+    private IEnumerator LoadNextScene()
+    {
+
+
+        yield return null;
+    }
+    /*
+
+    private void DebugWarp()
+    {
+        if (Input.GetKey(KeyCode.Alpha0))
+        {
+            LoadScene(0);
+        }
+        else if (Input.GetKey(KeyCode.Alpha1))
+        {
+            LoadScene(1);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            LoadScene(2);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            LoadScene(3);
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            LoadScene(4);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DebugWarp();
+    }
+    */
+
+    private void Exit()
+    {
+        Application.Quit();
+    }
 
     #endregion
 
@@ -290,5 +365,45 @@ public class ThirdPersonCam : MonoBehaviour
         currentStyle = newStyle;
     }
 }
+
+
+
+
+
+
+    public void LoadScene(int i)
+    {
+        SceneManager.LoadScene(i);
+    }
+
+    private void DebugWarp()
+    {
+        if (Input.GetKey(KeyCode.Alpha0))
+        {
+            LoadScene(0);
+        }
+        else if (Input.GetKey(KeyCode.Alpha1))
+        {
+            LoadScene(1);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            LoadScene(2);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            LoadScene(3);
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            LoadScene(4);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DebugWarp();
+    }
 
  */ 
