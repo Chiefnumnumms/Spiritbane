@@ -3445,6 +3445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
+  characterManager: {fileID: 0}
   inAirTimer: 0
   leapingVel: 3
   fallingVel: 10
@@ -3979,7 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939c0e7748ccdc343a9a9ac5606ab265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 50
 --- !u!1 &1518059336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,7 +4122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939c0e7748ccdc343a9a9ac5606ab265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 75
 --- !u!1 &1553536506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,7 +5469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939c0e7748ccdc343a9a9ac5606ab265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 25
 --- !u!1 &2142142268
 GameObject:
   m_ObjectHideFlags: 3
@@ -5538,7 +5539,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142142268}
-  m_LocalRotation: {x: -0.005960106, y: -0.04665203, z: -0.0002783591, w: 0.9988934}
+  m_LocalRotation: {x: -0.005960109, y: -0.04665203, z: -0.00027835928, w: 0.9988934}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6539,6 +6540,7 @@ MonoBehaviour:
   healthLevel: 10
   maxHealth: 0
   currentHealth: 0
+  isdead: 0
   healthBar: {fileID: 793223094}
   respawnPosition: {fileID: 711902189}
 --- !u!137 &2239203199568952243

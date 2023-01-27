@@ -8,6 +8,8 @@ public class CharacterManager : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    public bool isdead;
+
     public HealthBar healthBar;
     AnimationManager animationManager;
 
@@ -57,6 +59,7 @@ public class CharacterManager : MonoBehaviour
             currentHealth = 0;
 
             // PLAY DEATH ANIMATION
+            isdead = true;
             animationManager.PlayTargetAnim("Death", true);
             Debug.Log("PLAYER IS DEAD");
 
@@ -68,7 +71,7 @@ public class CharacterManager : MonoBehaviour
     public void HandleRespawn()
     {
         transform.position = respawnPosition.position;
-
+        isdead = false;
         HandleHealthCalculation(); 
     }
 
