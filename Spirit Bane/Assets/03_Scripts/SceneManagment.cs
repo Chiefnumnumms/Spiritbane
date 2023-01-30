@@ -30,6 +30,11 @@ public class SceneManagment : MonoBehaviour
         particleManager.GatherParticles();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     private void DebugWarp()
     {
         if (Input.GetKey(KeyCode.Alpha0))
