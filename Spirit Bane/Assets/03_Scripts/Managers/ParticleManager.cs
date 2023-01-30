@@ -1,37 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class ParticleManager : MonoBehaviour
 {
-    [SerializeField]
-    private List<GameObject> particleList = new List<GameObject>();
+    public static List<GameObject> particleList = new List<GameObject>();
+    
 
     [SerializeField]
-    private Transform playerTransform;
+    private static Transform playerTransform;
 
     [SerializeField]
     private float activateDistance;
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         if(playerTransform == null)
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+        if(particleList.Count == 0)
+        {
+            foreach (GameObject particle in GameObject.FindGameObjectsWithTag("Particle"))
+            {
+                particleList.Add(particle);
+            }
+        }
+    }
+
+    public void GatherParticles()
+    {
+        foreach (GameObject particle in GameObject.FindGameObjectsWithTag("Particle"))
+        {
+            particleList.Add(particle);
+        }
+    }
+
+    public void ClearParticleList()
+    {
+        foreach( GameObject particle in particleList)
+        {
+            particleList.Remove(particle);
         }
     }
 
     private void Update()
     {
-        foreach (var particle in particleList)
+        if(particleList.Count != 0)
         {
-            if(Vector3.Distance(particle.transform.position,playerTransform.position) <= activateDistance)
+            foreach (var particle in particleList)
             {
-                EnableParticals(particle);
-            }
-            else if(Vector3.Distance(particle.transform.position,playerTransform.position) > activateDistance )
-            {
-                DisableParticals(particle);
+                if (Vector3.Distance(particle.transform.position, playerTransform.position) <= activateDistance)
+                {
+                    EnableParticals(particle);
+                }
+                else if (Vector3.Distance(particle.transform.position, playerTransform.position) > activateDistance)
+                {
+                    DisableParticals(particle);
+                }
             }
         }
     }

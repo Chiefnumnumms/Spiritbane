@@ -7,6 +7,9 @@ public class SceneManagment : MonoBehaviour
 {
     private static bool created = false;
 
+    [SerializeField]
+    private ParticleManager particleManager;
+
     void Awake()
     {
         if (!created)
@@ -14,11 +17,17 @@ public class SceneManagment : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             created = true;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void LoadScene(int i)
     {
         SceneManager.LoadScene(i);
+        particleManager.ClearParticleList();
+        particleManager.GatherParticles();
     }
 
     private void DebugWarp()
@@ -43,6 +52,10 @@ public class SceneManagment : MonoBehaviour
         {
             LoadScene(4);
         }
+        else if(Input.GetKey(KeyCode.Alpha5))
+            LoadScene(5);
+        else if (Input.GetKey(KeyCode.Alpha6))
+            LoadScene(6);
     }
 
     // Update is called once per frame
