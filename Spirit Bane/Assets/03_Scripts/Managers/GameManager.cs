@@ -47,15 +47,11 @@ public class GameManager : Singleton<GameManager>
 
     #endregion
     
-    public AudioClip AreaMusic { get { return instance.levelMusic; } }
-    public AudioClip AltMusic { get { return instance.altMusic; } }
-
     #region Public Events
     //-------------------------------------------------------------------------
     // Public Events
 
     public static event Action<GameState> OnGameStateChanged;
-    //public static event Action<Scenes> OnDesiredSceneChanged;
 
     #endregion
 
@@ -63,14 +59,6 @@ public class GameManager : Singleton<GameManager>
     #region Editor Access Members
     //-------------------------------------------------------------------------
     // Editor Access Members
-
-    [Header("Desired Scene To Load")]
-    [SerializeField] public Scenes DesiredScene = Scenes.StartingVillage;
-
-    [SerializeField]
-    private AudioClip levelMusic;
-    [SerializeField]
-    private AudioClip altMusic;
 
     [Header("Debug Log Toggle")]
     [SerializeField]

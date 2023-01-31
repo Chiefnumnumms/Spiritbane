@@ -13,30 +13,94 @@ using UnityEngine.Audio;
 // This Class Represents The Audio Manager
 public class AudioManager : Singleton<AudioManager>
 {
+    #region Public Members
+    //-------------------------------------------------------------------------
+    // Public Members
+
+    public float MasterVolume { get; set; }
+    public float MusicVolume { get; set; }
+    public float EffectsVolume { get; set; }
+    public float AmbienceVolume { get; set; }
+
+    public AudioClip AreaMusic { get { return instance.areaMusic; } }
+    public AudioClip Ambience { get { return instance.ambience; } }
+    public AudioClip SoundEffects { get { return instance.sfx; } }
+
+    #endregion
+
+
+    #region Editor Access Members
+    //-------------------------------------------------------------------------
+    // Editor Access Members
+
     [SerializeField] private AudioMixer mainMixer;
 
-    [SerializeField] private AudioSource musicAudioSource;    
-    [SerializeField] private AudioSource fxAudioSource;
-    
+    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private AudioSource effectsAudioSource;
+    [SerializeField] private AudioSource ambienceAudioSource;
+
+    [SerializeField]
+    private AudioClip areaMusic;
+    [SerializeField]
+    private AudioClip ambience;
+    [SerializeField]
+    private AudioClip sfx;
+
+    #endregion
+
+
+    #region Private Members
+    //-------------------------------------------------------------------------
+    // Private Members
+
     private AudioMixerGroup master;
     private AudioMixerGroup music;
     private AudioMixerGroup effects;
 
+    private float masterVolume;
+    private float musicVolume;
+    private float effectsVolume;
+
     private float minVolume = -16.0f;
 
-    private float masterVolume;
-    public float MasterVolume { get; set; }
-    private float musicVolume;
-    public float MusicVolume { get; set; }
-    private float effectsVolume;
-    public float EffectsVolume { get; set; }
+    #endregion
 
-    void Update()
+    #region Private Functions
+    //-------------------------------------------------------------------------
+    // Private Functions
+
+    private void UpdateMasterVolume()
     {
         instance.mainMixer.SetFloat("masterVolume", masterVolume);
         instance.mainMixer.SetFloat("musicVolume", musicVolume);
         instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
     }
+
+    private void UpdateMusicVolume()
+    {
+        instance.mainMixer.SetFloat("masterVolume", masterVolume);
+        instance.mainMixer.SetFloat("musicVolume", musicVolume);
+        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
+    }
+
+    private void UpdateEffectsVolume()
+    {
+        instance.mainMixer.SetFloat("masterVolume", masterVolume);
+        instance.mainMixer.SetFloat("musicVolume", musicVolume);
+        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
+    }
+    
+    private void UpdateAmbienceVolume()
+    {
+        instance.mainMixer.SetFloat("masterVolume", masterVolume);
+        instance.mainMixer.SetFloat("musicVolume", musicVolume);
+        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
+    }
+
+
+
+    #endregion
+
 
     public static void LevelLoadComplete()
     {

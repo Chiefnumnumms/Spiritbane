@@ -36,19 +36,18 @@ public class ScenesManager : Singleton<ScenesManager>
     // Public Members
 
     //public Scenes CurrentScene { get; private set; }
-
     public Observable<Scenes> CurrentScene = new Observable<Scenes>();
 
     public Scenes DesiredScene
     {
         get
         {
-            return DesiredScene;
+            return desiredScene;
         }
         set
         {
-            DesiredSceneChanged(DesiredScene, value);
-            DesiredScene = value;
+            DesiredSceneChanged(desiredScene, value);
+            desiredScene = value;
         }
     }
 
@@ -57,6 +56,19 @@ public class ScenesManager : Singleton<ScenesManager>
         //whatever
     }
 
+
+    #endregion
+
+    #region Editor Access Members
+    //-------------------------------------------------------------------------
+    // Editor Access Members
+
+    [Header("Desired Scene To Load")]
+    [SerializeField] private Scenes desiredScene = Scenes.StartingVillage;
+
+    [Header("Debug Log Toggle")]
+    [SerializeField]
+    public bool debugLog = false;      // Turn Debug.Log On Or Off
 
     #endregion
 
@@ -74,16 +86,16 @@ public class ScenesManager : Singleton<ScenesManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
-    public void LoadMainMenu()
-    {
-        UpdateScene(Scenes.MainMenu);
-        //SceneManager.LoadScene(Scenes.MainMenu.ToString());
-    }
-
     public void LoadNewGame()
     {
         UpdateScene(Scenes.StartingVillage);
         //SceneManager.LoadScene(Scenes.StartingVillage.ToString());
+    }
+
+    public void LoadMainMenu()
+    {
+        UpdateScene(Scenes.MainMenu);
+        //SceneManager.LoadScene(Scenes.MainMenu.ToString());
     }
 
     public void LoadScene(Scene scene)
@@ -146,7 +158,7 @@ public class ScenesManager : Singleton<ScenesManager>
     //-------------------------------------------------------------------------
     protected override void Initialize()
     {
-        UpdateScene(Scenes.MainMenu);
+        UpdateScene(DesiredScene);
         CurrentScene.Changed += OnValueChanged;
 
 
