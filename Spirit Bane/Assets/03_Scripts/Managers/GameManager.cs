@@ -58,13 +58,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     public bool debugLog = false;      // Turn Debug.Log On Or Off
 
-
-    //[SerializeField] private Button btnPrefab;
-
-    //[Header("Canvas Prefab For Scene Change")]
-    //[SerializeField] private GameObject canvasPrefab;
-
-
     #endregion
 
 
@@ -231,80 +224,6 @@ public class GameManager : Singleton<GameManager>
                 ScenesManager.instance.DesiredScene = (ScenesManager.Scenes)index;
             }
         }
-    }
-
-    /*
-    public void CreateButton(Transform panel, Vector3 position, Vector2 size, UnityEngine.Events.UnityAction method)
-    {
-        GameObject button = new GameObject();
-        button.transform.parent = panel;
-        button.AddComponent<RectTransform>();
-        button.AddComponent<Button>();
-        button.transform.position = position;
-        button.GetComponent<RectTransform>().(size);
-        button.GetComponent<Button>().onClick.AddListener(method);
-    }
-    */
-
-    /*
-    private void InitButtons()
-    {
-        //Button btnTemp = btnPrefab;
-
-        Button[] btns = canvasPrefab.GetComponentsInChildren<Button>();  //new Button[Enum.GetValues(typeof(ScenesManager.Scenes)).Length];
-        //btns = canvasPrefab.GetComponentsInChildren<Button>();
-        string[] names;
-
-        for(int i = 0; i < btns.Length; i++)
-        {
-
-        }
-
-        foreach(Button btn in btns)
-        {
-
-        }
-
-        for (int i = 0; i < btns.Length; i++)
-        {            
-            int sceneIndex;
-            btns[i].name = Enum.GetNames(typeof(ScenesManager.Scenes), number);
-
-            if(Enum.TryParse(btns[i].name, out sceneIndex))
-            {
-                btns[i].onClick.AddListener(() => TaskOnClick(sceneIndex));
-            }
-        }
-
-        foreach (string i in commands)
-        {
-            GameObject newButton = (GameObject)Instantiate(newButtonPrefab);
-            newButton.transform.SetParent(buttonsContentPanel.transform, false);
-            newButton.transform.localScale = new Vector3(1, 1, 1);
-            Button tempButton = newButton.GetComponent<Button>();
-            tempButton.name = i;
-            tempButton.onClick.AddListener(() => ButtonOnClick(i));
-        }
-        /*
-        foreach(Button btn in btns)
-        {
-            int index = 0;
-
-            btn.enabled = true;
-            btn.interactable = true;
-            btn.name = Enum.GetName(typeof(ScenesManager.Scenes), index);
-            btn.transform.position = new Vector3(20.0f + 10.0f * index, 20.0f, 0.0f);
-            btn.GetComponent<Text>().text = btn.name;                         
-            
-            index++;
-        } 
-        * /
-    }
-    */
-
-    public void TaskOnClick(int buttonIndex)
-    {
-        ScenesManager.DesiredScene = (ScenesManager.Scenes)buttonIndex;
     }
 
     #endregion
