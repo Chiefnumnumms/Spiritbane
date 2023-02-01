@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class EnemyStats : MonoBehaviour
 {
     public int healthLevel = 10;
     public int maxHealth;
     public int currentHealth;
 
-    public bool isdead;
+    public bool isDead;
 
-    public HealthBar healthBar;
+    public EnemyStats healthBar;
     AnimationManager animationManager;
 
-    public Transform respawnPosition;
+    public CameraShake cameraShake;
 
     private void Awake()
     {
         animationManager = GetComponentInChildren<AnimationManager>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     private void Start()
@@ -26,7 +27,7 @@ public class CharacterManager : MonoBehaviour
         currentHealth = maxHealth;
 
         // SET CHARACTERS MAX HEALTH BASED ON THE HEALTH LEVEL
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -40,14 +41,14 @@ public class CharacterManager : MonoBehaviour
     {
         currentHealth = currentHealth - damage;
 
-        // UPDATE CURRENT HEALTH BASED ON DAMAGE TAKEN
-        healthBar.SetCurrentHealth(currentHealth);
-
         // PLAY HIT ANIMATION
-        animationManager.PlayTargetAnim("Pain Gesture", true);
+        //animationManager.PlayTargetAnim("Pain Gesture", true);
 
         // HANDLE DEATH AND RESPAWN
         HandleDeath();
+
+        // SHAKE THE CAMERA
+        cameraShake.ScreenShake(transform.right);
     }
 
     public void HandleDeath()
@@ -59,20 +60,21 @@ public class CharacterManager : MonoBehaviour
             currentHealth = 0;
 
             // PLAY DEATH ANIMATION
-            isdead = true;
-            animationManager.PlayTargetAnim("Death", true);
+            isDead = true;
+            //animationManager.PlayTargetAnim("Death", true);
             Debug.Log("PLAYER IS DEAD");
 
             // RESPAWN TO PROPER POINT
-            StartCoroutine(Respawn(3.5f));
+            //StartCoroutine(Respawn(3.5f));
+
+            cameraShake.ScreenShake(transform.right);
         }
     }
 
     public void HandleRespawn()
     {
-        transform.position = respawnPosition.position;
-        isdead = false;
-        HandleHealthCalculation(); 
+        isDead = false;
+        HandleHealthCalculation();
     }
 
     public IEnumerator Respawn(float duration)
