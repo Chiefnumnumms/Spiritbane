@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     Swinging swingingManager;
     Grappling grapplingManager;
     ItemPickup itemPickup;
-    CharacterManager characterManager;
+    PlayerStats characterManager;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
         swingingManager = GetComponent<Swinging>();
         grapplingManager = GetComponent<Grappling>();
         itemPickup = FindObjectOfType<ItemPickup>();
-        characterManager = GetComponent<CharacterManager>();
+        characterManager = GetComponent<PlayerStats>();
     }
 
     public Vector2 movementInput;
@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour
     // calls all the methods to check for player inputs
     public void HandleAllInputs()
     {
-        if (characterManager.isdead)
+        if (characterManager.isDead)
         {
             return;
         }

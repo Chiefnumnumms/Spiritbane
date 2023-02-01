@@ -24,6 +24,7 @@ public class HookEnemy : MonoBehaviour
 
     private BoxCollider hookCollider;
 
+    EnemyStats enemyHealth;
 
     private void Awake()
     {
@@ -41,6 +42,8 @@ public class HookEnemy : MonoBehaviour
 
         hookCollider = GetComponent<BoxCollider>();
         hookCollider.enabled = false;
+
+        enemyHealth = FindObjectOfType<EnemyStats>();
     }
 
     private void Update()
@@ -108,6 +111,8 @@ public class HookEnemy : MonoBehaviour
         if (collider.gameObject.tag.Equals("Enemy"))
         {
             Debug.Log("ENEMY WAS HOOKED");
+
+            enemyHealth.TakeDamage(25);
 
             wasEnemyHooked = true;
             enemyObj = collider.gameObject;
