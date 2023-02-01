@@ -46,15 +46,20 @@ public class CharacterManager : MonoBehaviour
         // PLAY HIT ANIMATION
         animationManager.PlayTargetAnim("Pain Gesture", true);
 
-        // HANDLE DEATH AND RESPAWN
-        HandleDeath();
+        // Screen Shake Slightly Each Time
+
+            // HANDLE DEATH AND RESPAWN
+        if (currentHealth <= 0)
+        {
+            HandleDeath();
+            // Slow Mode Shake And Focus Camera
+        }
+
+
     }
 
     public void HandleDeath()
     {
-        // CHECK IF PLAYER IS BELOW 0 HEALTH (DEAD)
-        if (currentHealth <= 0)
-        {
             // MAKE SURE TO SET IT TO 0 EXACTLY
             currentHealth = 0;
 
@@ -65,7 +70,7 @@ public class CharacterManager : MonoBehaviour
 
             // RESPAWN TO PROPER POINT
             StartCoroutine(Respawn(3.5f));
-        }
+        
     }
 
     public void HandleRespawn()
