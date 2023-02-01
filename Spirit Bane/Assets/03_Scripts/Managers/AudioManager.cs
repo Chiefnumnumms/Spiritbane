@@ -5,7 +5,6 @@
 //  Purpose:  Script To Handle Game Audio
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -17,14 +16,14 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Public Members
 
-    public float MasterVolume { get; set; }
-    public float MusicVolume { get; set; }
-    public float EffectsVolume { get; set; }
-    public float AmbienceVolume { get; set; }
+    public float MasterVolume { get { return masterVolume; } set { masterVolume = value; } }
+    public float MusicVolume { get { return musicVolume; } set { musicVolume = value; } }
+    public float AmbienceVolume { get { return ambienceVolume; } set { ambienceVolume = value; } }
+    public float SFXVolume { get { return sfxVolume; } set { sfxVolume = value; } }
 
-    public AudioClip AreaMusic { get { return instance.areaMusic; } }
-    public AudioClip Ambience { get { return instance.ambience; } }
-    public AudioClip SoundEffects { get { return instance.sfx; } }
+    public AudioClip[] Music { get { return instance.music; } }
+    public AudioClip[] Ambience { get { return instance.ambience; } }
+    public AudioClip[] SFX { get { return instance.sfx; } }
 
     #endregion
 
@@ -36,15 +35,15 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioMixer mainMixer;
 
     [SerializeField] private AudioSource musicAudioSource;
-    [SerializeField] private AudioSource effectsAudioSource;
     [SerializeField] private AudioSource ambienceAudioSource;
+    [SerializeField] private AudioSource sfxAudioSource;
 
     [SerializeField]
-    private AudioClip areaMusic;
+    private AudioClip[] music;
     [SerializeField]
-    private AudioClip ambience;
+    private AudioClip[] ambience;
     [SerializeField]
-    private AudioClip sfx;
+    private AudioClip[] sfx;
 
     #endregion
 
@@ -53,15 +52,18 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Members
 
-    private AudioMixerGroup master;
-    private AudioMixerGroup music;
-    private AudioMixerGroup effects;
+    private AudioMixerGroup masterGroup;
+    private AudioMixerGroup musicGroup;
+    private AudioMixerGroup ambienceGroup;
+    private AudioMixerGroup sfxGroup;
 
     private float masterVolume;
     private float musicVolume;
-    private float effectsVolume;
+    private float ambienceVolume;
+    private float sfxVolume;
 
     private float minVolume = -16.0f;
+    private float maxVolume = -80.0f;
 
     #endregion
 
@@ -72,67 +74,50 @@ public class AudioManager : Singleton<AudioManager>
     private void UpdateMasterVolume()
     {
         instance.mainMixer.SetFloat("masterVolume", masterVolume);
-        instance.mainMixer.SetFloat("musicVolume", musicVolume);
-        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
     }
 
     private void UpdateMusicVolume()
     {
-        instance.mainMixer.SetFloat("masterVolume", masterVolume);
         instance.mainMixer.SetFloat("musicVolume", musicVolume);
-        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
+    }
+    private void UpdateAmbienceVolume()
+    {
+        instance.mainMixer.SetFloat("ambienceVolume", ambienceVolume);
     }
 
     private void UpdateEffectsVolume()
     {
-        instance.mainMixer.SetFloat("masterVolume", masterVolume);
-        instance.mainMixer.SetFloat("musicVolume", musicVolume);
-        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
+        instance.mainMixer.SetFloat("sfxVolume", sfxVolume);
     }
     
-    private void UpdateAmbienceVolume()
-    {
-        instance.mainMixer.SetFloat("masterVolume", masterVolume);
-        instance.mainMixer.SetFloat("musicVolume", musicVolume);
-        instance.mainMixer.SetFloat("effectsVolume", effectsVolume);
-    }
-
-
-
     #endregion
 
 
-    public static void LevelLoadComplete()
+    public void StartAreaMusic()
     {
-        //AudioClip levelMusic;
-        //if (GameManager.instance.CurrentLevelIndex >= 2)
-        //{
-            //levelMusic = LevelManager.Instance.AltMusic;
-        //}
-        //else
-        //{
-            //levelMusic = LevelManager.Instance.LevelMusic;
-        //}
+        int areaIndex = (int)ScenesManager.instance.CurrentScene.Value;
 
-        //if (levelMusic)
-        //{
+        AudioClip areaMusic = music[areaIndex];
+
+        if (areaMusic)
+        {
             // Play The Level Music For The Current Level
-          //  instance.musicAudioSource.loop = true;
-            //instance.musicAudioSource.clip = levelMusic;
-            //instance.musicAudioSource.Play();
-            //instance.AudioFadeLevelStart();
-        //}
+            instance.musicAudioSource.loop = true;
+            instance.musicAudioSource.clip = areaMusic;
+            instance.musicAudioSource.Play();
+            instance.AudioFadeIn();
+        }
     }
 
-    private IEnumerator LerpVolume(float startVol, float endVol, float time)
+    private IEnumerator LerpVolume(float startVol, float endVol, float duration)
     {
         float currentVolume = startVol;
         float currentTime = 0.0f;
-        while (currentTime < time)
+        while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            currentTime = Mathf.Clamp(currentTime, 0.0f, time);
-            currentVolume = Mathf.Lerp(startVol, endVol, currentTime / time);
+            currentTime = Mathf.Clamp(currentTime, 0.0f, duration);
+            currentVolume = Mathf.Lerp(startVol, endVol, currentTime / duration);
             instance.mainMixer.SetFloat("masterVolume", currentVolume);
 
             yield return null;
@@ -141,19 +126,13 @@ public class AudioManager : Singleton<AudioManager>
         yield return null;
     }
 
-    public void IntroSound()
+    public void AudioFadeIn()
     {
-        musicAudioSource.Play();
-        //fxAudioSource.Play();
+        instance.StartCoroutine(LerpVolume(maxVolume, minVolume, 1.5f));
     }
 
-    public void AudioFadeLevelStart()
+    public IEnumerator AudioFadeOut()
     {
-        instance.StartCoroutine(LerpVolume(-80.0f, minVolume, 1.5f));
-    }
-
-    public IEnumerator UnloadLevel()
-    {
-        yield return LerpVolume(minVolume, -80.0f, 1.0f);
+        yield return LerpVolume(minVolume, maxVolume, 1.0f);
     }
 }
