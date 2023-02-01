@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyHealthBar : MonoBehaviour
 {
     Slider slider;
     float timeUntilBarIsHidden = 3.0f;
