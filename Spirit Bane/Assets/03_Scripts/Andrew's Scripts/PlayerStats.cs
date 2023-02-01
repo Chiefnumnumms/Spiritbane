@@ -49,18 +49,28 @@ public class PlayerStats : MonoBehaviour
         // PLAY HIT ANIMATION
         animationManager.PlayTargetAnim("Pain Gesture", true);
 
+<<<<<<< HEAD:Spirit Bane/Assets/03_Scripts/Andrew's Scripts/CharacterManager.cs
+        // Screen Shake Slightly Each Time
+
+            // HANDLE DEATH AND RESPAWN
+        if (currentHealth <= 0)
+        {
+            HandleDeath();
+            // Slow Mode Shake And Focus Camera
+        }
+
+
+=======
         // HANDLE DEATH AND RESPAWN
         HandleDeath();
 
         // SHAKE THE CAMERA
         cameraShake.ScreenShake(transform.right);
+>>>>>>> ef099a4afe6d643ee0b77dfe9597795e0a388c4d:Spirit Bane/Assets/03_Scripts/Andrew's Scripts/PlayerStats.cs
     }
 
     public void HandleDeath()
     {
-        // CHECK IF PLAYER IS BELOW 0 HEALTH (DEAD)
-        if (currentHealth <= 0)
-        {
             // MAKE SURE TO SET IT TO 0 EXACTLY
             currentHealth = 0;
 
@@ -71,9 +81,13 @@ public class PlayerStats : MonoBehaviour
 
             // RESPAWN TO PROPER POINT
             StartCoroutine(Respawn(3.5f));
+<<<<<<< HEAD:Spirit Bane/Assets/03_Scripts/Andrew's Scripts/CharacterManager.cs
+        
+=======
 
             cameraShake.ScreenShake(transform.right);
         }
+>>>>>>> ef099a4afe6d643ee0b77dfe9597795e0a388c4d:Spirit Bane/Assets/03_Scripts/Andrew's Scripts/PlayerStats.cs
     }
 
     public void HandleRespawn()
