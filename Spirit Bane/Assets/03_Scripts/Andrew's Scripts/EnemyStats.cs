@@ -10,7 +10,7 @@ public class EnemyStats : MonoBehaviour
 
     public bool isDead;
 
-    public EnemyHealthBar healthBar;
+    public EnemyStats healthBar;
     AnimationManager animationManager;
 
     public CameraShake cameraShake;
