@@ -7,12 +7,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Game Manager
-[RequireComponent(typeof(InputManager))]
-[RequireComponent(typeof(PlayerManager))]
 [RequireComponent(typeof(ScenesManager))]
 [RequireComponent(typeof(AudioManager))]
 public class GameManager : Singleton<GameManager>
@@ -31,8 +28,6 @@ public class GameManager : Singleton<GameManager>
     // Public Members
 
     // Managers
-    public InputManager InputManager { get; private set; }
-    public PlayerManager PlayerManager { get; private set; }
     public ScenesManager ScenesManager { get; private set; }
     public AudioManager AudioManager { get; private set; }
 
@@ -62,7 +57,8 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Debug Log Toggle")]
     [SerializeField]
-    public bool debugLog = false;      // Turn Debug.Log On Or Off
+    public bool debugLog = false;      // Turn Debug.Log On Or OffA
+
 
     #endregion
 
@@ -71,6 +67,7 @@ public class GameManager : Singleton<GameManager>
     //-------------------------------------------------------------------------
     // Private Members
 
+    private Observable<bool> isLoading;
 
     #endregion
 
@@ -117,8 +114,8 @@ public class GameManager : Singleton<GameManager>
                 break;
 
             case GameState.PLAYING:
-                //var objects = FindObjectsOfType<Collectable>();
-                //if (objects.Any(c => c.Outcome == Outcome.Winner)) UpdateGameState(GameState.VICTORY);
+                //var objects = FindObjectsOfType<Interaction>();
+                //if (objects.Any(c => c.Swingable == Outcome.Winner)) UpdateGameState(GameState.VICTORY);
                 //if(health <= 0.0f) UpdateGameState(GameState.GAME_OVER);
 
                 break;
@@ -149,21 +146,7 @@ public class GameManager : Singleton<GameManager>
     //-------------------------------------------------------------------------
     protected override void Initialize()
     {
-        // Initialize Things Here For Call In base.Awake()
-       InputManager = GetComponent<InputManager>();
-        if(debugLog)
-        {
-            if (InputManager != null) Debug.Log("Input Manager Cached");
-            else Debug.Log("Input Manager Not Cached");
-        }
-
-        PlayerManager = GetComponent<PlayerManager>();
-        if (debugLog)
-        {
-            if (PlayerManager != null) Debug.Log("Player Manager Cached");
-            else Debug.Log("Player Manager Not Cached");
-        }
-
+        // Initialize Things Here For Call In base.Awake()       
         ScenesManager = GetComponent<ScenesManager>();
         if (debugLog)
         {
@@ -187,17 +170,14 @@ public class GameManager : Singleton<GameManager>
 
         Cam = Camera.main;
 
+        isLoading.Value = false;
+
         // LOCK CURSOR
         Cursor.lockState = CursorLockMode.Locked;
 
         StartCoroutine(InitializeGame());
                 
         //base.Initialize();
-    }
-
-    public void LoadScene(int i)
-    {
-        SceneManager.LoadScene(i);
     }
 
     #endregion
@@ -220,52 +200,17 @@ public class GameManager : Singleton<GameManager>
         yield return null;
     }
 
-    private void StartGame()
+    public void Credits()
     {
-        //DesiredScene = Scenes.StartingVillage;
-        //StartCoroutine("LoadNextScene", DesiredScene);
+        ScenesManager.instance.LoadMainMenu();
     }
 
-    private IEnumerator LoadNextScene()
+    public void StartNewGame()
     {
-
-
-        yield return null;
-    }
-    /*
-
-    private void DebugWarp()
-    {
-        if (Input.GetKey(KeyCode.Alpha0))
-        {
-            LoadScene(0);
-        }
-        else if (Input.GetKey(KeyCode.Alpha1))
-        {
-            LoadScene(1);
-        }
-        else if (Input.GetKey(KeyCode.Alpha2))
-        {
-            LoadScene(2);
-        }
-        else if (Input.GetKey(KeyCode.Alpha3))
-        {
-            LoadScene(3);
-        }
-        else if (Input.GetKey(KeyCode.Alpha4))
-        {
-            LoadScene(4);
-        }
+        ScenesManager.instance.LoadNewGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        DebugWarp();
-    }
-    */
-
-    private void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
@@ -273,125 +218,3 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
 }
-
-/*
- using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ThirdPersonCam : MonoBehaviour
-{
-    [Header("References")]
-    public Transform orientation;
-    public Transform player;
-    public Transform playerObj;
-    public Rigidbody rb;
-
-    public float rotationSpeed;
-
-    public Transform combatLookAt;
-
-    public GameObject thirdPersonCam;
-    public GameObject combatCam;
-    public GameObject topDownCam;
-
-    public CameraStyle currentStyle;
-    public enum CameraStyle
-    {
-        Basic,
-        Combat,
-        Topdown
-    }
-
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    private void Update()
-    {
-        // switch styles
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchCameraStyle(CameraStyle.Basic);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchCameraStyle(CameraStyle.Combat);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchCameraStyle(CameraStyle.Topdown);
-
-        // rotate orientation
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
-
-        // roate player object
-        if (currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
-        {
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
-            if (inputDir != Vector3.zero)
-                playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
-        }
-
-        else if (currentStyle == CameraStyle.Combat)
-        {
-            Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
-            orientation.forward = dirToCombatLookAt.normalized;
-
-            playerObj.forward = dirToCombatLookAt.normalized;
-        }
-    }
-
-    private void SwitchCameraStyle(CameraStyle newStyle)
-    {
-        combatCam.SetActive(false);
-        thirdPersonCam.SetActive(false);
-        topDownCam.SetActive(false);
-
-        if (newStyle == CameraStyle.Basic) thirdPersonCam.SetActive(true);
-        if (newStyle == CameraStyle.Combat) combatCam.SetActive(true);
-        if (newStyle == CameraStyle.Topdown) topDownCam.SetActive(true);
-
-        currentStyle = newStyle;
-    }
-}
-
-
-
-
-
-
-    public void LoadScene(int i)
-    {
-        SceneManager.LoadScene(i);
-    }
-
-    private void DebugWarp()
-    {
-        if (Input.GetKey(KeyCode.Alpha0))
-        {
-            LoadScene(0);
-        }
-        else if (Input.GetKey(KeyCode.Alpha1))
-        {
-            LoadScene(1);
-        }
-        else if (Input.GetKey(KeyCode.Alpha2))
-        {
-            LoadScene(2);
-        }
-        else if (Input.GetKey(KeyCode.Alpha3))
-        {
-            LoadScene(3);
-        }
-        else if (Input.GetKey(KeyCode.Alpha4))
-        {
-            LoadScene(4);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        DebugWarp();
-    }
-
- */ 
