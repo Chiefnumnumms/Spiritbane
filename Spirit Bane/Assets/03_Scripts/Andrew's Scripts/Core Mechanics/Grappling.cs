@@ -11,6 +11,7 @@ public enum GrappleMode
 public class Grappling : MonoBehaviour
 {
     [Header("References")]
+    private PlayerManager playerManager;
     private InputManager inputManager;
     private PlayerLocomotion playerLocomotion;
     public Transform mainCamera;
@@ -35,6 +36,7 @@ public class Grappling : MonoBehaviour
 
     private void Start()
     {
+        playerManager = GetComponent<PlayerManager>();
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
     }

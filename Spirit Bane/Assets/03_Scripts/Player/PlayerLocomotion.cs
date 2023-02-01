@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-[RequireComponent(typeof(InputManager))]
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(AnimationManager))]
-[RequireComponent(typeof(Swinging))]
-[RequireComponent(typeof(Grappling))]
 public class PlayerLocomotion : MonoBehaviour
 {
     InputManager inputManager;
-    Animator animator;
+    PlayerManager playerManager;
     AnimationManager animationManager;
     Swinging swingingManager;
     Grappling grapplingManager;
@@ -20,8 +15,6 @@ public class PlayerLocomotion : MonoBehaviour
     Transform playerCamera;
 
     public Rigidbody playerRb;
-
-    public bool isInteracting;
 
     [Header("Falling")]
     public float inAirTimer;
@@ -53,7 +46,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        playerManager = GetComponent<PlayerManager>();
         animationManager = GetComponent<AnimationManager>();
         inputManager = GetComponent<InputManager>();
         playerRb = GetComponent<Rigidbody>();
@@ -69,7 +62,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if(isInteracting)
+        if(playerManager.isInteracting)
         {
             return;
         }
@@ -153,7 +146,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (!isGrounded && !isJumping)
         {
-            if (!isInteracting && !swingingManager.isSwinging)
+            if (!playerManager.isInteracting && !swingingManager.isSwinging)
             {
                 animationManager.PlayTargetAnim("Falling Idle", true);
             }
@@ -164,7 +157,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, groundLayer))
         {
-            if (!isGrounded && !isInteracting)
+            if (!isGrounded && !playerManager.isInteracting)
             {
                 animationManager.PlayTargetAnim("Landing", false);
             }
@@ -244,35 +237,5 @@ public class PlayerLocomotion : MonoBehaviour
 
             grapplingManager.StopGrapple();
         }
-    }
-    private void Update()
-    {
-        inputManager.HandleAllInputs();
-
-        // SWINGING - AA
-        swingingManager.CheckForSwingPoints();
-        swingingManager.HighlightGrapplePoint(swingingManager.maxIndicationDistance);
-
-        // LOCK CURSOR - AA
-        Cursor.lockState = CursorLockMode.Locked;
-
-    }
-
-    private void FixedUpdate()
-    {
-        HandleAllMovements();
-
-        // SWINGING - AA
-        if (inputManager.swing_Pressed)
-        {
-            swingingManager.DrawRope();
-        }
-    }
-
-    private void LateUpdate()
-    {
-        isInteracting = animator.GetBool("isInteracting");
-        isJumping = animator.GetBool("isJumping");
-        animator.SetBool("isGrounded", isGrounded);
     }
 }

@@ -5,8 +5,10 @@
 //  Purpose:  Script To Handle Scene Flow
 
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using static GameManager;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Scenes Manager
@@ -51,9 +53,7 @@ public class ScenesManager : Singleton<ScenesManager>
 
     private void DesiredSceneChanged(Scenes oldValue, Scenes newValue)
     {
-        // Do whatever
-
-        UpdateScene(newValue);
+        //whatever
     }
 
 
@@ -65,6 +65,10 @@ public class ScenesManager : Singleton<ScenesManager>
 
     [Header("Desired Scene To Load")]
     [SerializeField] private Scenes desiredScene = Scenes.StartingVillage;
+
+    [Header("Debug Log Toggle")]
+    [SerializeField]
+    public bool debugLog = false;      // Turn Debug.Log On Or Off
 
     #endregion
 
@@ -156,6 +160,8 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         UpdateScene(DesiredScene);
         CurrentScene.Changed += OnValueChanged;
+
+
     }
 
     protected void OnDestroy()
