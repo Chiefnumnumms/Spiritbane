@@ -96,6 +96,7 @@ public class InputManager : MonoBehaviour
         }
 
         HandleMovementInput();
+
         HandleSprintingInput();
         HandleJumpingInput();
 
