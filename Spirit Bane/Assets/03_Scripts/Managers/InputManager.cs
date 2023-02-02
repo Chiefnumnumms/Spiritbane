@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     PlayerLocomotion playerLocomotion;
     AnimationManager animationManager;
     Swinging swingingManager;
-    Grappling grapplingManager;
+    ObjectGrapple grapplingManager;
     ItemPickup itemPickup;
     PlayerStats characterManager;
 
@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();
-        grapplingManager = GetComponent<Grappling>();
+        grapplingManager = GetComponent<ObjectGrapple>();
         itemPickup = FindObjectOfType<ItemPickup>();
         characterManager = GetComponent<PlayerStats>();
     }
@@ -40,6 +40,9 @@ public class InputManager : MonoBehaviour
 
     // GRAPPLING - AA
     public bool grapple_Pressed;
+
+    // GRAPPLE OBJECT - AA
+    public bool grappleObject_Pressed;
 
     private void OnEnable()
     {
@@ -69,6 +72,9 @@ public class InputManager : MonoBehaviour
             playerControls.GrapplingActions.Grapple.performed += inputContext => grapple_Pressed = true;
             playerControls.GrapplingActions.Grapple.canceled += inputContext => grapple_Pressed = false;
 
+            playerControls.Grapple.GrappleObject.performed += inputContext => grappleObject_Pressed = true;
+            playerControls.Grapple.GrappleObject.canceled += inputContext => grappleObject_Pressed = false;
+
             // PICKUP - AA
         }
         playerControls.Enable();
@@ -97,7 +103,7 @@ public class InputManager : MonoBehaviour
         HandleSwingingInput();
 
         // GRAPPLING - AA
-        //HandleGrapplingInput();
+        HandleGrapplingInput();
 
         // ITEM PICKUP - AA
         HandlePickupInput();
@@ -153,20 +159,15 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    //private void HandleGrapplingInput()
-    //{
-    //    if (grapple_Pressed)
-    //    {
-    //        // GRAPPLE
-    //        grapplingManager.StartGrapple();
-    //    }
-    //    else // NOT GRAPPLING
-    //    {
-    //        grapplingManager.StopGrapple();
-    //        grapple_Pressed = false;
-    //    }
-    //}
-
+    private void HandleGrapplingInput()
+    {
+        if (grappleObject_Pressed)
+        {
+            // GRAPPLE
+            grapplingManager.StartGrapple();
+            grappleObject_Pressed = false;
+        }
+    }
 
     private void HandlePickupInput()
     {

@@ -9,7 +9,7 @@ public class PlayerLocomotion : MonoBehaviour
     PlayerManager playerManager;
     AnimationManager animationManager;
     Swinging swingingManager;
-    Grappling grapplingManager;
+    ObjectGrapple grapplingManager;
 
     Vector3 moveDir;
     Transform playerCamera;
@@ -52,7 +52,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerCamera = Camera.main.transform;
         swingingManager = GetComponent<Swinging>();
-        grapplingManager = GetComponent<Grappling>();
+        grapplingManager = GetComponent<ObjectGrapple>();
         
     }
 

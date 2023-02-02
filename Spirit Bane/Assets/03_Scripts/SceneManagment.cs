@@ -61,6 +61,8 @@ public class SceneManagment : MonoBehaviour
             LoadScene(5);
         else if (Input.GetKey(KeyCode.Alpha6))
             LoadScene(6);
+        else if (Input.GetKey(KeyCode.Alpha7))
+            LoadScene(7);
     }
 
     // Update is called once per frame
