@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    Slider slider;
-    float timeUntilBarIsHidden = 3.0f;
+    public Slider slider;
+    float timeUntilBarIsHidden = 1.0f;
 
-    private void Awake()
+    public void SetCurrentHealth(int currentHealth)
     {
-        slider = GetComponentInChildren<Slider>();
-    }
-
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-        timeUntilBarIsHidden = 3.0f;
+        slider.value = currentHealth;
     }
 
     public void SetMaxHealth(int maxHealth)
@@ -25,26 +19,26 @@ public class EnemyHealthBar : MonoBehaviour
         slider.value = maxHealth;
     }
 
-    private void Update()
-    {
-        timeUntilBarIsHidden = timeUntilBarIsHidden * Time.deltaTime;
+    //private void Update()
+    //{
+    //    timeUntilBarIsHidden = timeUntilBarIsHidden * Time.deltaTime;
 
-        if (timeUntilBarIsHidden <= 0)
-        {
-            timeUntilBarIsHidden = 0;
-            slider.gameObject.SetActive(false);
-        }
-        else
-        {
-            if (!slider.gameObject.activeInHierarchy)
-            {
-                slider.gameObject.SetActive(true);
-            }
+    //    if (timeUntilBarIsHidden <= 0)
+    //    {
+    //        timeUntilBarIsHidden = 0;
+    //        slider.gameObject.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        if (!slider.gameObject.activeInHierarchy)
+    //        {
+    //            slider.gameObject.SetActive(true);
+    //        }
 
-            if (slider.value <= 0)
-            {
-                Destroy(slider.gameObject);
-            }
-        }
-    }
+    //        if (slider.value <= 0)
+    //        {
+    //            Destroy(slider.gameObject);
+    //        }
+    //    }
+    //}
 }

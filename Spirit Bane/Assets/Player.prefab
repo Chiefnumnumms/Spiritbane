@@ -496,7 +496,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997502692021801944}
-  m_LocalRotation: {x: 0.035313647, y: -0.04662297, z: 0.0016492524, w: 0.99828684}
+  m_LocalRotation: {x: 0.035314612, y: -0.046622965, z: 0.0016492974, w: 0.9982868}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -640,8 +640,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019958123578769485}
-  m_LocalRotation: {x: 0.014644161, y: -0.046647158, z: 0.0006839266, w: 0.9988039}
-  m_LocalPosition: {x: -34.664276, y: 5.1968384, z: -40.177895}
+  m_LocalRotation: {x: 0.014645127, y: -0.04664708, z: 0.0006839705, w: 0.99880385}
+  m_LocalPosition: {x: 226.66574, y: 310.60684, z: 123.8021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -980,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408219815466533753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -260.46426, y: -303.41202, z: -167.88719}
+  m_LocalPosition: {x: 0.8657532, y: 1.9979916, z: -3.907196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2092,8 +2092,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2797212801043515918}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -261.33002, y: -305.41, z: -163.98}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2421,13 +2421,13 @@ MonoBehaviour:
   gunTip: {fileID: 1919158365788285137}
   whatIsGrappable:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
   lineRenderer: {fileID: 3804640905650110385}
-  maxGrappleDistance: 10
-  grappleDelayTime: 0.5
-  overShootYAxis: 0.25
+  maxGrappleDistance: 25
+  grappleDelayTime: 0.25
+  overShootYAxis: 10
   grapplingCd: 1
-  grapplingCdTimer: 1.25
+  grapplingCdTimer: 2
   isGrappling: 0
   freezePlayer: 0
 --- !u!1 &2818683303442161618
@@ -4331,7 +4331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5108844654672540073}
-  m_LocalRotation: {x: -0.005960975, y: -0.046651296, z: -0.00027839525, w: 0.99889344}
+  m_LocalRotation: {x: -0.005960004, y: -0.046651285, z: -0.00027834985, w: 0.99889344}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4600,7 +4600,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5684320834806398516}
-  m_LocalRotation: {x: 0.014644157, y: -0.046647135, z: 0.000683926, w: 0.99880385}
+  m_LocalRotation: {x: 0.014645121, y: -0.0466471, z: 0.0006839705, w: 0.99880385}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

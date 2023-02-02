@@ -27,7 +27,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth = maxHealth;
 
         // SET CHARACTERS MAX HEALTH BASED ON THE HEALTH LEVEL
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -40,6 +40,9 @@ public class EnemyStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
+
+        // UPDATE CURRENT HEALTH BASED ON DAMAGE TAKEN
+        healthBar.SetCurrentHealth(currentHealth);
 
         // PLAY HIT ANIMATION
         //animationManager.PlayTargetAnim("Pain Gesture", true);
@@ -66,6 +69,7 @@ public class EnemyStats : MonoBehaviour
 
             // RESPAWN TO PROPER POINT
             //StartCoroutine(Respawn(3.5f));
+            Destroy(gameObject);
 
             cameraShake.ScreenShake(transform.right);
         }
