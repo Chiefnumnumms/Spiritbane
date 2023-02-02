@@ -97,7 +97,7 @@ public class InputManager : MonoBehaviour
         HandleSwingingInput();
 
         // GRAPPLING - AA
-        HandleGrapplingInput();
+        //HandleGrapplingInput();
 
         // ITEM PICKUP - AA
         HandlePickupInput();
@@ -153,19 +153,19 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void HandleGrapplingInput()
-    {
-        if (grapple_Pressed)
-        {
-            // GRAPPLE
-            grapplingManager.StartGrapple();
-        }
-        else // NOT GRAPPLING
-        {
-            grapplingManager.StopGrapple();
-            grapple_Pressed = false;
-        }
-    }
+    //private void HandleGrapplingInput()
+    //{
+    //    if (grapple_Pressed)
+    //    {
+    //        // GRAPPLE
+    //        grapplingManager.StartGrapple();
+    //    }
+    //    else // NOT GRAPPLING
+    //    {
+    //        grapplingManager.StopGrapple();
+    //        grapple_Pressed = false;
+    //    }
+    //}
 
 
     private void HandlePickupInput()

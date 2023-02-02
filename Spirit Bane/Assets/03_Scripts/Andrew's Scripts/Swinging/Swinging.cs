@@ -65,6 +65,7 @@ public class Swinging : MonoBehaviour
         if (inputManager.swing_Pressed) 
         {
             StartSwing();
+            DrawRope();
         }
         else
         {
@@ -134,7 +135,6 @@ public class Swinging : MonoBehaviour
         else                                              // NOTHING IN THE WAY 
         {
             hitPoint = Vector3.zero;
-
         }
 
 
@@ -189,6 +189,8 @@ public class Swinging : MonoBehaviour
     {
         if (!springJoint) return;
 
+        Debug.Log("Rope Drawn!");
+
         // DRAW THE ROPE BASED ON THE CURRENT GRAPPLE POSITION AND THE SWINGPOINT IT IS GOING TOWARDS
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
 
@@ -225,11 +227,11 @@ public class Swinging : MonoBehaviour
             Vector3 directionToPoint = swingPoint - transform.position;
             rb.AddForce(directionToPoint.normalized * forwardThrustForce * Time.deltaTime);
 
-            float distancFromPoint = Vector3.Distance(transform.position, swingPoint);
+            float distanceFromPoint = Vector3.Distance(transform.position, swingPoint);
 
             // Recalculate Joint Distance
-            springJoint.maxDistance = distancFromPoint * 0.8f;
-            springJoint.minDistance = distancFromPoint * 0.25f;
+            springJoint.maxDistance = distanceFromPoint * 0.8f;
+            springJoint.minDistance = distanceFromPoint * 0.25f;
         }
 
         // HANDLES INPUT TO EXTEND THE CABLE WHEN SWINGING
