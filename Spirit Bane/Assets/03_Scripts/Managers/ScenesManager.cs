@@ -5,10 +5,8 @@
 //  Purpose:  Script To Handle Scene Flow
 
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using static GameManager;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Scenes Manager
@@ -18,7 +16,7 @@ public class ScenesManager : Singleton<ScenesManager>
     //-------------------------------------------------------------------------
     // Enums
 
-    public enum Scenes { MainMenu, StartingVillage, CrystalCavernsWhitebox, FloatingRocks, ArenaWhitebox, CoreMechanicDemo }
+    public enum Scenes { MainMenu, StartingVillage, CrystalCavernsWhitebox, FloatingRocks, ArenaWhitebox, CoreMechanicDemo, SwordDemo }
 
     #endregion
 
@@ -27,7 +25,6 @@ public class ScenesManager : Singleton<ScenesManager>
     // Public Events
 
     public static event Action<Scenes> OnSceneChanged;
-    //public static event Action<Scenes> OnDesiredSceneChanged;
 
     #endregion
 
@@ -35,7 +32,6 @@ public class ScenesManager : Singleton<ScenesManager>
     //-------------------------------------------------------------------------
     // Public Members
 
-    //public Scenes CurrentScene { get; private set; }
     public Observable<Scenes> CurrentScene = new Observable<Scenes>();
 
     public Scenes DesiredScene
@@ -53,7 +49,10 @@ public class ScenesManager : Singleton<ScenesManager>
 
     private void DesiredSceneChanged(Scenes oldValue, Scenes newValue)
     {
-        //whatever
+        // Do Whatever Needed Before Updating Scene
+
+        
+        UpdateScene(newValue);
     }
 
 
@@ -65,10 +64,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
     [Header("Desired Scene To Load")]
     [SerializeField] private Scenes desiredScene = Scenes.StartingVillage;
-
-    [Header("Debug Log Toggle")]
-    [SerializeField]
-    public bool debugLog = false;      // Turn Debug.Log On Or Off
 
     #endregion
 
@@ -89,33 +84,59 @@ public class ScenesManager : Singleton<ScenesManager>
     public void LoadNewGame()
     {
         UpdateScene(Scenes.StartingVillage);
-        //SceneManager.LoadScene(Scenes.StartingVillage.ToString());
     }
 
     public void LoadMainMenu()
     {
         UpdateScene(Scenes.MainMenu);
-        //SceneManager.LoadScene(Scenes.MainMenu.ToString());
+    }
+
+    public void LoadCrystalCavern()
+    {
+        UpdateScene(Scenes.CrystalCavernsWhitebox);
+    }
+
+    public void LoadFloatingRocks()
+    {
+        UpdateScene(Scenes.FloatingRocks);
+    }
+    public void LoadArena()
+    {
+        UpdateScene(Scenes.ArenaWhitebox);
+    }
+    public void LoadCoreMechanicDemo()
+    {
+        UpdateScene(Scenes.CoreMechanicDemo);
+    }
+
+    public void LoadSwordDemo()
+    {
+        UpdateScene(Scenes.SwordDemo);
+    }
+
+    public void LoadDesiredScene()
+    {
+        UpdateScene(DesiredScene);
     }
 
     public void LoadScene(Scene scene)
     {
         UpdateScene((Scenes)scene.buildIndex);
-        //SceneManager.LoadScene(scene.ToString());
     }
 
     public void LoadLastScene()
     {
         UpdateScene((Scenes)SceneManager.GetActiveScene().buildIndex - 1);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void LoadNextScene()
     {
         UpdateScene((Scenes)SceneManager.GetActiveScene().buildIndex + 1);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    //-------------------------------------------------------------------------
+    // UpdateScene - Handle The Switching Of Scene, Updating CurrentScene
+    //-------------------------------------------------------------------------
     private void UpdateScene(Scenes newScene)
     {
         CurrentScene.Value = newScene;
@@ -140,10 +161,14 @@ public class ScenesManager : Singleton<ScenesManager>
             case Scenes.CoreMechanicDemo:
                 SceneManager.LoadScene(Scenes.CoreMechanicDemo.ToString());
                 break;
+            case Scenes.SwordDemo:
+                SceneManager.LoadScene(Scenes.SwordDemo.ToString());
+                break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newScene), newScene, null);
         }
 
+        // If OnSceneChanged Subscribers Is Not Null, Invoke Anything Subscribed
         OnSceneChanged?.Invoke(newScene);
     }
 
@@ -159,16 +184,22 @@ public class ScenesManager : Singleton<ScenesManager>
     protected override void Initialize()
     {
         UpdateScene(DesiredScene);
+
+        // Subscribe To Event For Observable Class
         CurrentScene.Changed += OnValueChanged;
-
-
     }
 
+    //-------------------------------------------------------------------------
+    // OnDestroy - Housekeeping By Unsubscribing To Event For Observable Class
+    //-------------------------------------------------------------------------
     protected void OnDestroy()
     {
         CurrentScene.Changed -= OnValueChanged;
     }
 
+    //-------------------------------------------------------------------------
+    // OnValueChanged - Triggered Upon Enum Scenes Variable (CurrentScene) Change
+    //-------------------------------------------------------------------------
     protected void OnValueChanged(object target, Observable<Scenes>.ChangedEventArgs args)
     {
         if (GameManager.instance.debugLog)
@@ -176,6 +207,8 @@ public class ScenesManager : Singleton<ScenesManager>
             Debug.Log("Old Value Was: " + args.OldValue);
             Debug.Log("New Value Was: " + args.NewValue);
         }
+
+        // Anything Needed To Do When Switching CurrentScene
     }
 
     #endregion
