@@ -37,12 +37,6 @@ public class PlayerManager : MonoBehaviour
     private void FixedUpdate()
     {
         playerLocomotion.HandleAllMovements();
-
-        // SWINGING - AA
-        if (inputManager.swing_Pressed)
-        {
-            swingingManager.DrawRope();
-        }
     }
 
     private void LateUpdate()
