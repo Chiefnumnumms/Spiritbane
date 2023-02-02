@@ -34,9 +34,7 @@ public class LockedDoors : MonoBehaviour
     private Animator rightDoorAnim;
 
 
-    [Header("Fade Time")]
-    [SerializeField]
-    private float fadeSpeed = 1.5f;
+    
 
     [Header("Players Inventory")]
     [SerializeField]
