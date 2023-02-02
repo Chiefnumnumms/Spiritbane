@@ -165,6 +165,7 @@ public class InputManager : MonoBehaviour
         {
             // GRAPPLE
             grapplingManager.StartGrapple();
+            grappleObject_Pressed = false;
         }
     }
 

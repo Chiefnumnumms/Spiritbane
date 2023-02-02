@@ -84,6 +84,8 @@ public class ObjectGrapple : MonoBehaviour
 
             // EXECUTE THE GRAPPLE WITH A DELAY TIMER
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+
+
             Debug.Log("GRAPPLING EXECUTED");
         }
         else
