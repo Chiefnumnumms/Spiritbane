@@ -29,6 +29,9 @@ public class PlayerManager : MonoBehaviour
         swingingManager.CheckForSwingPoints();
         swingingManager.HighlightGrapplePoint(swingingManager.maxIndicationDistance);
 
+        // GRAPPLING - AA
+        grappleManager.CheckForGrappleObject();
+
         // LOCK CURSOR - AA
         Cursor.lockState = CursorLockMode.Locked;
 

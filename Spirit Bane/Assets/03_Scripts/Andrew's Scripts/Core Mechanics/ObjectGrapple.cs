@@ -24,6 +24,11 @@ public class ObjectGrapple : MonoBehaviour
     public float grappleDelayTime;
     public float overShootYAxis;
 
+    [Header("Prediction Point")]
+    public RaycastHit predictionHit;
+    public float predictionSphereCastRadius;
+    public Transform predictionPoint;
+
     private Vector3 grapplePoint;
 
     [Header("Cooldown")]
@@ -32,6 +37,8 @@ public class ObjectGrapple : MonoBehaviour
 
     public bool isGrappling;
     public bool freezePlayer;
+
+    public SlowMotion slowMotion;
 
 
     private void Start()
@@ -135,6 +142,51 @@ public class ObjectGrapple : MonoBehaviour
         grapplingCdTimer = grapplingCd;
 
         // DISABLE THE LINE RENDERER
-        lineRenderer.enabled = false;   
+        lineRenderer.enabled = false;
+
+        slowMotion.StartSlowMotionSequence(2.0f, 0.3f);
+    }
+
+    public void CheckForGrappleObject()
+    {
+        // SETUP RAYCAST VARIABLES
+        RaycastHit sphereCastHit;
+        RaycastHit raycastHit;
+
+        // HANDLE SPHERE CAST AND RAY CAST 
+        Physics.SphereCast(mainCamera.position, predictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxGrappleDistance, whatIsGrappable);
+        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxGrappleDistance, whatIsGrappable);
+
+        Vector3 hitPoint;
+
+        if (raycastHit.point != Vector3.zero)               // DIRECT HIT
+        {
+            hitPoint = raycastHit.point;
+
+        }
+        else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
+
+        {
+            hitPoint = sphereCastHit.point;
+        }
+        else                                              // NOTHING IN THE WAY 
+        {
+            hitPoint = Vector3.zero;
+        }
+
+
+        if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
+        {
+            // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
+            predictionPoint.gameObject.SetActive(true);
+
+            // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
+            predictionPoint.position = hitPoint;
+        }
+        else
+        {            
+            predictionPoint.gameObject.SetActive(false);
+        }
+
     }
 }

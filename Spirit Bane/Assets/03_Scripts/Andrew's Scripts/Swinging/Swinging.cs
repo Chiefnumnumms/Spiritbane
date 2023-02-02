@@ -51,6 +51,7 @@ public class Swinging : MonoBehaviour
     private List<SpringJoint> sprintJointsList = new List<SpringJoint>();
     private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
+
     private void Start()
     {
         // FINDS ALL GRAPPLE POINTS IN THE SCENE
@@ -281,6 +282,5 @@ public class Swinging : MonoBehaviour
             grapplePoints.Add(gp);
         }
     }
-
 
 }
