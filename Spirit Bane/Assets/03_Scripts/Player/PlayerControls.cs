@@ -298,6 +298,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Grapple"",
+            ""id"": ""63d989bc-bc69-4a6a-9510-63a1f746c9f3"",
+            ""actions"": [
+                {
+                    ""name"": ""GrappleObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6cdb835-3711-424f-b484-8c84e0480fbd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e5f340e9-fa76-4cc6-a03a-125436087655"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GrappleObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -320,6 +348,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // GrapplingActions
         m_GrapplingActions = asset.FindActionMap("GrapplingActions", throwIfNotFound: true);
         m_GrapplingActions_Grapple = m_GrapplingActions.FindAction("Grapple", throwIfNotFound: true);
+        // Grapple
+        m_Grapple = asset.FindActionMap("Grapple", throwIfNotFound: true);
+        m_Grapple_GrappleObject = m_Grapple.FindAction("GrappleObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -555,6 +586,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public GrapplingActionsActions @GrapplingActions => new GrapplingActionsActions(this);
+
+    // Grapple
+    private readonly InputActionMap m_Grapple;
+    private IGrappleActions m_GrappleActionsCallbackInterface;
+    private readonly InputAction m_Grapple_GrappleObject;
+    public struct GrappleActions
+    {
+        private @PlayerControls m_Wrapper;
+        public GrappleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @GrappleObject => m_Wrapper.m_Grapple_GrappleObject;
+        public InputActionMap Get() { return m_Wrapper.m_Grapple; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GrappleActions set) { return set.Get(); }
+        public void SetCallbacks(IGrappleActions instance)
+        {
+            if (m_Wrapper.m_GrappleActionsCallbackInterface != null)
+            {
+                @GrappleObject.started -= m_Wrapper.m_GrappleActionsCallbackInterface.OnGrappleObject;
+                @GrappleObject.performed -= m_Wrapper.m_GrappleActionsCallbackInterface.OnGrappleObject;
+                @GrappleObject.canceled -= m_Wrapper.m_GrappleActionsCallbackInterface.OnGrappleObject;
+            }
+            m_Wrapper.m_GrappleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @GrappleObject.started += instance.OnGrappleObject;
+                @GrappleObject.performed += instance.OnGrappleObject;
+                @GrappleObject.canceled += instance.OnGrappleObject;
+            }
+        }
+    }
+    public GrappleActions @Grapple => new GrappleActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -576,5 +640,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IGrapplingActionsActions
     {
         void OnGrapple(InputAction.CallbackContext context);
+    }
+    public interface IGrappleActions
+    {
+        void OnGrappleObject(InputAction.CallbackContext context);
     }
 }

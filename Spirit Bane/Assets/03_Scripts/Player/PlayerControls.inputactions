@@ -276,6 +276,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Grapple",
+            "id": "63d989bc-bc69-4a6a-9510-63a1f746c9f3",
+            "actions": [
+                {
+                    "name": "GrappleObject",
+                    "type": "Button",
+                    "id": "e6cdb835-3711-424f-b484-8c84e0480fbd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e5f340e9-fa76-4cc6-a03a-125436087655",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrappleObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

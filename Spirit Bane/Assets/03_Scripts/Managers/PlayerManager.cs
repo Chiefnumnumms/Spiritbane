@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     Animator animator;
     PlayerLocomotion playerLocomotion;
     Swinging swingingManager;
-    Grappling grappleManager;
+    ObjectGrapple grappleManager;
 
     public bool isInteracting;
 
@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion = GetComponent<PlayerLocomotion>();
         animator = GetComponent<Animator>();
         swingingManager = GetComponent<Swinging>();
-        grappleManager = GetComponent<Grappling>();
+        grappleManager = GetComponent<ObjectGrapple>();
     }
 
     private void Update()

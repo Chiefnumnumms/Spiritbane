@@ -192,11 +192,11 @@ public class Swinging : MonoBehaviour
         Debug.Log("Rope Drawn!");
 
         // DRAW THE ROPE BASED ON THE CURRENT GRAPPLE POSITION AND THE SWINGPOINT IT IS GOING TOWARDS
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
+        //currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, swingPoint, Time.deltaTime * 8f);
 
         // SET LR POSITIONS
         lineRenderer.SetPosition(0, gunTip.position);
-        lineRenderer.SetPosition(1, currentGrapplePosition);
+        lineRenderer.SetPosition(1, swingPoint);
     }
 
     private void InAirMovement()
