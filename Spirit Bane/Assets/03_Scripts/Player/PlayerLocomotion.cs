@@ -89,13 +89,13 @@ public class PlayerLocomotion : MonoBehaviour
         moveDir = moveDir + playerCamera.right * inputManager.horizInput;
         moveDir.Normalize();
 
-        if(isSprinting)
+        if(isSprinting && inputManager.moveAmount > 0)
         {
             moveDir = sprintSpeed * moveDir;
         }
         else
         {
-            if (inputManager.moveAmount >= 0.5f)
+            if (inputManager.moveAmount > 0.5f)
             {
                 moveDir = runSpeed * moveDir;
             }
