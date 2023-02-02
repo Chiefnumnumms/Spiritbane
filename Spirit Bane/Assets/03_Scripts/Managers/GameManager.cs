@@ -212,6 +212,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.anyKeyDown) SwitchScenesByKey();
     }
+
     private void SwitchScenesByKey()
     {
         if (Input.inputString != "")
