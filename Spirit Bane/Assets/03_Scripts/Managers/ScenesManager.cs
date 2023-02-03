@@ -141,8 +141,6 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         CurrentScene.Value = newScene;
 
-        AudioManager.instance.StartAreaMusic();
-    
         switch (newScene)
         {
             case Scenes.MainMenu:
@@ -212,5 +210,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
         // Anything Needed To Do When Switching CurrentScene
     }
+
     #endregion
 }

@@ -101,8 +101,6 @@ public class AudioManager : Singleton<AudioManager>
 
         if (areaMusic)
         {
-            instance.StartCoroutine(AudioFadeOut());
-
             // Play The Level Music For The Current Level
             instance.musicAudioSource.loop = true;
             instance.musicAudioSource.clip = areaMusic;
@@ -137,17 +135,4 @@ public class AudioManager : Singleton<AudioManager>
     {
         yield return LerpVolume(minVolume, maxVolume, 1.0f);
     }
-
-    /*
-    public void SetMusic(int index)
-    {
-        if (music.Length < index) return;
-
-        instance.StartCoroutine(AudioFadeOut());
-        musicAudioSource.clip = music[index];
-        musicAudioSource.enabled = true;
-
-
-    }
-    */
 }

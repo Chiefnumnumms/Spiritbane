@@ -7654,7 +7654,6 @@ GameObject:
   m_Component:
   - component: {fileID: 436314296}
   - component: {fileID: 436314295}
-  - component: {fileID: 436314297}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -7703,31 +7702,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &436314297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436314294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e0a82e83b773914bb0607aa93d404ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 80e7152a5c0eb47489be488e9fca0a0c,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!43 &448997357
 Mesh:
   m_ObjectHideFlags: 0
@@ -19613,17 +19587,17 @@ PrefabInstance:
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.005960004
+      value: -0.0059600035
       objectReference: {fileID: 0}
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.046651285
+      value: -0.046651322
       objectReference: {fileID: 0}
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00027834985
+      value: -0.00027835
       objectReference: {fileID: 0}
     - target: {fileID: 6830070011452170145, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}

@@ -486,7 +486,6 @@ GameObject:
   - component: {fileID: 2225366443647373102}
   - component: {fileID: 2225366443647373101}
   - component: {fileID: 5730974926212646755}
-  - component: {fileID: 9145575082162965320}
   m_Layer: 6
   m_Name: LowPolyMan
   m_TagString: Player
@@ -589,10 +588,7 @@ MonoBehaviour:
   healthLevel: 10
   maxHealth: 0
   currentHealth: 0
-  isDead: 0
   healthBar: {fileID: 0}
-  respawnPosition: {fileID: 0}
-  cameraShake: {fileID: 0}
 --- !u!114 &2225366443647373092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +614,6 @@ MonoBehaviour:
   s_Pressed: 0
   d_Pressed: 0
   grapple_Pressed: 0
-  grappleObject_Pressed: 0
 --- !u!114 &2225366443647373093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,21 +725,10 @@ MonoBehaviour:
   maxGrappleDistance: 25
   grappleDelayTime: 0.25
   overShootYAxis: 50
-  predictionSphereCastRadius: 0
-  predictionPoint: {fileID: 0}
   grapplingCd: 1
   grapplingCdTimer: 0
   isGrappling: 0
   freezePlayer: 0
-  slowMotion: {fileID: 0}
---- !u!81 &9145575082162965320
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307028147218073506}
-  m_Enabled: 1
 --- !u!1 &1314983158284151998
 GameObject:
   m_ObjectHideFlags: 0

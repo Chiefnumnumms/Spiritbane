@@ -898,12 +898,12 @@ PrefabInstance:
     - target: {fileID: 1019958123578769480, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.046647877
+      value: -0.04664781
       objectReference: {fileID: 0}
     - target: {fileID: 1019958123578769480, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00068397744
+      value: 0.0006839764
       objectReference: {fileID: 0}
     - target: {fileID: 1408219815466533751, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
@@ -1008,12 +1008,12 @@ PrefabInstance:
     - target: {fileID: 2077232016425868099, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.046647854
+      value: -0.046647824
       objectReference: {fileID: 0}
     - target: {fileID: 2077232016425868099, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0006839769
+      value: 0.00068397645
       objectReference: {fileID: 0}
     - target: {fileID: 5546813267490624339, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
@@ -1033,7 +1033,7 @@ PrefabInstance:
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0059601087
+      value: -0.005960106
       objectReference: {fileID: 0}
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
@@ -1043,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 6269023977337531281, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00027835905
+      value: -0.0002783589
       objectReference: {fileID: 0}
     - target: {fileID: 6830070011452170145, guid: b1bc0c9c8216dcb4fa160a37beab52b7,
         type: 3}
@@ -6859,7 +6859,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1714979458}
   - component: {fileID: 1714979457}
-  - component: {fileID: 1714979459}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -6908,31 +6907,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1714979459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714979456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e0a82e83b773914bb0607aa93d404ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 886864cf27dc25e40ae3dbd322a3e0f4,
-      type: 2}
-  decodeBank: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &1764750960 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2186831759980423571, guid: 58b8f8ee660d75e4ca826384868cb262,
