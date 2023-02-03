@@ -32,8 +32,6 @@ public class LockedDoors : MonoBehaviour
     private Animator leftDoorAnim;
     [SerializeField]
     private Animator rightDoorAnim;
-
-
     
 
     [Header("Players Inventory")]

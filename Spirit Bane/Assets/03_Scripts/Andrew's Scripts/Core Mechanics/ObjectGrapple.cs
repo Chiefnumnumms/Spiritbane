@@ -144,7 +144,7 @@ public class ObjectGrapple : MonoBehaviour
         // DISABLE THE LINE RENDERER
         lineRenderer.enabled = false;
 
-        slowMotion.StartSlowMotionSequence(2.0f, 0.3f);
+        slowMotion.StartSlowMotionSequence(1.5f, 0.5f);
     }
 
     public void CheckForGrappleObject()
