@@ -166,7 +166,7 @@ public class GameManager : Singleton<GameManager>
         Cam = Camera.main;
 
         // LOCK CURSOR
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         StartCoroutine(InitializeGame());
                 
@@ -203,7 +203,7 @@ public class GameManager : Singleton<GameManager>
         ScenesManager.instance.LoadMainMenu();
     }
 
-    private void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
