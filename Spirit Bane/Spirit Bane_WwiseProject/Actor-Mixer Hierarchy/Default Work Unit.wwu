@@ -1,6 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{EAF03962-9060-44A2-AB6D-66C9430289D4}" SchemaVersion="110">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{EAF03962-9060-44A2-AB6D-66C9430289D4}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{EAF03962-9060-44A2-AB6D-66C9430289D4}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="NonWorld" ID="{C0DCE431-4596-4327-90BD-334F3D5B60A6}" ShortID="214184509">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="music" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" ShortID="142437017">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="music" ID="{95AD3ADB-B048-42EF-89D8-537DC1D5A6DB}">
+									<Language>SFX</Language>
+									<AudioFile>music.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="883904423"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="music" ID="{95AD3ADB-B048-42EF-89D8-537DC1D5A6DB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Charybdis - Looping" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" ShortID="994968386">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Charybdis - Looping" ID="{A8FABF77-92D1-4E7F-8D78-1E14BA3AAB90}">
+									<Language>SFX</Language>
+									<AudioFile>Charybdis - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="838073785"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Charybdis - Looping" ID="{A8FABF77-92D1-4E7F-8D78-1E14BA3AAB90}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Currents - Looping" ID="{DAF476D4-19B4-4430-9200-1BFCFDDC8449}" ShortID="946041968">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Currents - Looping" ID="{12892D62-4470-4417-BF2A-E2BB9470E8C0}">
+									<Language>SFX</Language>
+									<AudioFile>Currents - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="737087826"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Currents - Looping" ID="{12892D62-4470-4417-BF2A-E2BB9470E8C0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pirouette - Looping" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" ShortID="212975641">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pirouette - Looping" ID="{5D2EEF8F-F788-4516-B479-EE083BCFC923}">
+									<Language>SFX</Language>
+									<AudioFile>Pirouette - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="528585997"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pirouette - Looping" ID="{5D2EEF8F-F788-4516-B479-EE083BCFC923}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Predawn - Looping" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" ShortID="689069655">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Predawn - Looping" ID="{6F6E27D2-77C2-4A6E-9A2B-00FA99B8B359}">
+									<Language>SFX</Language>
+									<AudioFile>Predawn - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="810247583"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Predawn - Looping" ID="{6F6E27D2-77C2-4A6E-9A2B-00FA99B8B359}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Predawn - Looping 02" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" ShortID="762074999">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Predawn - Looping 02" ID="{D7760623-DDEB-48A6-A45E-540AE5CE5F16}">
+									<Language>SFX</Language>
+									<AudioFile>Predawn - Looping 02.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="280765531"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Predawn - Looping 02" ID="{D7760623-DDEB-48A6-A45E-540AE5CE5F16}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sea Dragon - Looping" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" ShortID="195585458">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sea Dragon - Looping" ID="{FE7BEDD5-6405-42AA-819D-9FA956037C25}">
+									<Language>SFX</Language>
+									<AudioFile>Sea Dragon - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="925631500"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sea Dragon - Looping" ID="{FE7BEDD5-6405-42AA-819D-9FA956037C25}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Shibuya - Looping" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" ShortID="895741964">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Shibuya - Looping" ID="{E266DBC2-8EDA-4265-981C-362428B2D022}">
+									<Language>SFX</Language>
+									<AudioFile>Shibuya - Looping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="963530319"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Shibuya - Looping" ID="{E266DBC2-8EDA-4265-981C-362428B2D022}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sequoia Throne" ID="{BCB3C573-8A8E-4AA8-AD4E-61F44B65B6D6}" ShortID="1846077">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Protest the Hero - Sequoia Throne - Instrumental" ID="{E06AB90A-8481-4D36-9D91-55A54FCEAC3C}">
+									<Language>SFX</Language>
+									<AudioFile>Protest the Hero - Sequoia Throne - Instrumental.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="110402214"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Protest the Hero - Sequoia Throne - Instrumental" ID="{E06AB90A-8481-4D36-9D91-55A54FCEAC3C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="World" ID="{DB8ABCDD-CF9A-4B74-84BB-BEC96D4A4B62}" ShortID="184340817">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="Ambient" ID="{45283934-2420-4730-8DF6-AA8C0E55094C}" PersistMode="Reference"/>
+						<WorkUnit Name="Enemies" ID="{7162EB04-C027-40F1-8C28-6F97A0BC37C4}" PersistMode="Reference"/>
+						<WorkUnit Name="NPCs" ID="{839CCD04-5087-46C9-8F87-B68578E7C722}" PersistMode="Reference"/>
+						<WorkUnit Name="Objects" ID="{5E34E07A-9839-46A7-9FB3-920FDF7AB6FE}" PersistMode="Reference"/>
+						<WorkUnit Name="Player" ID="{2DF27AF8-1E47-49FC-A62F-B8B81FEF18AD}" PersistMode="Reference"/>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

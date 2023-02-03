@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_music" ID="{3A3CA2DC-A3A5-47B6-AC97-04DABAFCE0C5}">
+					<ChildrenList>
+						<Action Name="" ID="{728B55C8-3C6E-47E2-866A-63444C7D73BB}" ShortID="746928288">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="music" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Charybdis___Looping" ID="{9101858C-E360-4C14-A84D-A925241FFCC5}">
+					<ChildrenList>
+						<Action Name="" ID="{C36F8A46-5AFD-44BD-93D8-7AA088DDA94F}" ShortID="973848208">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Charybdis - Looping" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Currents___Looping" ID="{4B3539DF-BD32-42A2-8C5D-7C6419C2CB6C}">
+					<ChildrenList>
+						<Action Name="" ID="{A50AC66E-C511-446D-ACD3-B1435A046E0B}" ShortID="11087871">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Currents - Looping" ID="{DAF476D4-19B4-4430-9200-1BFCFDDC8449}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Pirouette___Looping" ID="{AA741F7E-3D8C-4130-A9C1-CDF70422FF40}">
+					<ChildrenList>
+						<Action Name="" ID="{90B0C7C3-F57D-4685-9749-A128E550ED79}" ShortID="571169288">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pirouette - Looping" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Predawn___Looping" ID="{E5F3564F-1EA9-468D-B25F-93A3356CC49C}">
+					<ChildrenList>
+						<Action Name="" ID="{25E2950A-453A-4946-B2A0-608E7ABCF9EB}" ShortID="480974340">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Predawn - Looping" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Predawn___Looping_02" ID="{1B644DAB-AC2E-4368-8CF5-EBD1B0804DB9}">
+					<ChildrenList>
+						<Action Name="" ID="{3364529F-DA29-4C03-B60A-41E636C284A0}" ShortID="456173669">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Predawn - Looping 02" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sea_Dragon___Looping" ID="{308CC373-6D6D-44E0-905B-68E148776EE7}">
+					<ChildrenList>
+						<Action Name="" ID="{53BD8F95-8718-47AE-876E-DCBF20DF1F81}" ShortID="972262780">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sea Dragon - Looping" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sequoia_Throne" ID="{63E79E25-3CEC-437D-9D0B-7C0DCAA39EC6}">
+					<ChildrenList>
+						<Action Name="" ID="{00D3BDF4-0938-450C-8736-845442E98152}" ShortID="877388397">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sequoia Throne" ID="{BCB3C573-8A8E-4AA8-AD4E-61F44B65B6D6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Shibuya___Looping" ID="{A1C62004-ED70-4E0E-AAC7-8BA28F0AC404}">
+					<ChildrenList>
+						<Action Name="" ID="{E7EFCB1D-DA43-4F26-B8B7-89049F515A62}" ShortID="669128109">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Shibuya - Looping" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
