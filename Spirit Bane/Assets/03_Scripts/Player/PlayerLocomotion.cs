@@ -12,6 +12,7 @@ public class PlayerLocomotion : MonoBehaviour
     ObjectGrapple grapplingManager;
 
     Vector3 moveDir;
+    [SerializeField]
     Transform playerCamera;
 
     public Rigidbody playerRb;
@@ -49,7 +50,11 @@ public class PlayerLocomotion : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
         inputManager = GetComponent<InputManager>();
         playerRb = GetComponent<Rigidbody>();
-        playerCamera = Camera.main.transform;
+        if(playerCamera == null)
+        {
+            playerCamera = Camera.main.transform;
+        }
+        
         swingingManager = GetComponent<Swinging>();
         grapplingManager = GetComponent<ObjectGrapple>();
         
