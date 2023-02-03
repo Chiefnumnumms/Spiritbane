@@ -9,14 +9,7 @@ public class LockedDoors : MonoBehaviour
     [SerializeField]
     private string keyName;
 
-    [SerializeField]
-    private string interactableName;
-
     private bool hasKey = false;
-    private bool hasInteracted = false;
-
-    private bool doorOpened = false;
-
 
     public Ray ray;
     public RaycastHit hit;
@@ -45,29 +38,13 @@ public class LockedDoors : MonoBehaviour
     [SerializeField]
     private ItemPickup playersItems;
 
-    [Header("Interacted Items")]
-    [SerializeField]
-    private InteractionHandler interactedItems;
-
 
     private void Update()
     {
-        if(keyName != "")
+        if (!hasKey)
         {
-            if (!hasKey)
-            {
-                CheckInvForKey();
-            }
+            CheckInvForKey();
         }
-
-        if(interactableName != "")
-        {
-            if(!hasInteracted)
-            {
-                CheckForInteraction();
-            }
-        }
-
         HandleDoorOpening();
 
 
@@ -84,23 +61,12 @@ public class LockedDoors : MonoBehaviour
         }
     }
 
-    private void CheckForInteraction()
-    {
-        GameObject temp = interactedItems.interactableObjects.Find(x => x.name == interactableName);
-
-        if (temp != null)
-        {
-            hasInteracted = true;
-            Debug.Log("It Fucking Works");
-        }
-    }
-
     private void HandleDoorOpening()
     {
         ray = new Ray(raycastOrigin.position, raycastOrigin.forward);
         if (Physics.Raycast(ray, out hit, rayLength))
         {
-            if (hit.collider.CompareTag("Door") && !doorOpened)
+            if (hit.collider.CompareTag("Door"))
             {
                 if (Input.GetKeyDown(KeyCode.E) && hasKey)
                 {
@@ -113,20 +79,6 @@ public class LockedDoors : MonoBehaviour
 
                     leftDoorAnim.Play("DoorSwingLeft", 0, 0f);
                     rightDoorAnim.Play("DoorSwingRight", 0, 0f);
-                    doorOpened = true;
-                }
-                else if(Input.GetKeyDown(KeyCode.E) && hasInteracted)
-                {
-                    Debug.Log("Oh Shit Is That A Key");
-                    this.gameObject.GetComponent<BoxCollider>().enabled = false;
-
-                    doorLock.SetActive(false);
-                    doorChain1.SetActive(false);
-                    doorChain2.SetActive(false);
-
-                    leftDoorAnim.Play("DoorSwingLeft", 0, 0f);
-                    rightDoorAnim.Play("DoorSwingRight", 0, 0f);
-                    doorOpened = true;
                 }
             }
         }
