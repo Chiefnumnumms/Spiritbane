@@ -31,7 +31,7 @@ public class ItemPickup : MonoBehaviour
         ray = new Ray(raycastOrigin.position, raycastOrigin.forward);
         if (Physics.Raycast(ray, out hit, rayLength))
         {
-            if (hit.collider.CompareTag("Interactable"))
+            if (hit.collider.CompareTag("Pickup"))
             {
                 itemText.enabled = true;
 
