@@ -29,6 +29,7 @@ public class InteractionHandler : MonoBehaviour
                 {
                     interactableObjects.Add(hit.collider.gameObject);
                     Debug.Log("Hit Boyo");
+                    hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
                 }
             }
         }
