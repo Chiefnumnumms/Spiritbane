@@ -11,7 +11,7 @@ ModelImporter:
     second: Walk 1
   - first:
       74: 3626560145371590887
-    second: Jump 1
+    second: Jump 1 Start
   - first:
       74: 3720120687377066192
     second: Run 1
@@ -39,6 +39,12 @@ ModelImporter:
   - first:
       74: -6329467378651277153
     second: Injured 2
+  - first:
+      74: -4330643359009328501
+    second: Jump 1 Finish
+  - first:
+      74: -8895642931429070185
+    second: Jump 1 Falling Idle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -127,11 +133,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Jump 1
+      name: Jump 1 Start
       takeName: Take 001
       internalID: 0
-      firstFrame: 131
-      lastFrame: 160
+      firstFrame: 129
+      lastFrame: 144
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -393,6 +399,64 @@ ModelImporter:
       internalID: 0
       firstFrame: 519
       lastFrame: 540
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump 1 Finish
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 145
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump 1 Falling Idle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 144
+      lastFrame: 145
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
