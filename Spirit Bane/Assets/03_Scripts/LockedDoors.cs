@@ -100,7 +100,7 @@ public class LockedDoors : MonoBehaviour
         ray = new Ray(raycastOrigin.position, raycastOrigin.forward);
         if (Physics.Raycast(ray, out hit, rayLength))
         {
-            if (hit.collider.CompareTag("Door") && !doorOpened)
+            if (hit.collider == this.gameObject.GetComponent<BoxCollider>() && !doorOpened)
             {
                 if (Input.GetKeyDown(KeyCode.E) && hasKey)
                 {
