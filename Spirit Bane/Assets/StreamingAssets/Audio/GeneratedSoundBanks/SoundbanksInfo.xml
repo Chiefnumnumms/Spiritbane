@@ -9,9 +9,43 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{966A2C93-136E-53BE-D1FC-4D45AE753B48}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{65248559-07F9-A842-0674-CAEFBB4D735C}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
+			<Media>
+				<File Id="816109488" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Waterfall.wav</ShortName>
+					<CachePath>SFX/Waterfall_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="467174588" Name="Play_Waterfall" MaxAttenuation="70" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="816109488"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="152105657" Type="User" Language="SFX" Hash="{F2BE5407-A4D7-BA4A-14A4-A11E854B3EAD}">
+			<ShortName>TitleScreen</ShortName>
+			<Path>TitleScreen.bnk</Path>
+			<Media>
+				<File Id="810247583" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Predawn - Looping.wav</ShortName>
+					<CachePath>SFX/Predawn - Looping_FE3C364F.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1699343283" Name="Play_Music_Menu" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="810247583"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="529873620" Type="User" Language="SFX" Hash="{A040B852-D0F7-76DC-4AC0-B5E5D9F02553}">
+			<ShortName>DLC</ShortName>
+			<Path>DLC.bnk</Path>
 			<Media>
 				<File Id="963530319" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Shibuya - Looping.wav</ShortName>
@@ -19,47 +53,26 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2305161028" Name="Play_Shibuya___Looping" DurationType="Infinite">
+				<Event Id="925456677" Name="Play_Music_Shibuya" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="963530319"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="152105657" Type="User" Language="SFX" Hash="{97742805-EC84-04CA-9960-8773E301946B}">
-			<ShortName>TitleScreen</ShortName>
-			<Path>TitleScreen.bnk</Path>
-			<Media>
-				<File Id="810247583" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Predawn - Looping.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping_D79FB2B7.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="1177824902" Name="Play_Predawn___Looping" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="810247583"/>
-					</MediaRefs>
-				</Event>
-			</Events>
-		</SoundBank>
-		<SoundBank Id="529873620" Type="User" Language="SFX" Hash="{A5E0A271-DD56-72B0-1EEE-EAB574591531}">
-			<ShortName>DLC</ShortName>
-			<Path>DLC.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{010BE67F-2C3D-CE9B-7E05-525A588A765C}">
+		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{D66A4510-E1B6-DC93-871D-E2DB7F7ADC96}">
 			<ShortName>Arena</ShortName>
 			<Path>Arena.bnk</Path>
 			<Media>
-				<File Id="925631500" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Sea Dragon - Looping.wav</ShortName>
-					<CachePath>SFX/Sea Dragon - Looping_D79FB2B7.wem</CachePath>
+				<File Id="838073785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Charybdis - Looping.wav</ShortName>
+					<CachePath>SFX/Charybdis - Looping_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2488923102" Name="Play_Sea_Dragon___Looping" DurationType="Infinite">
+				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="925631500"/>
+						<MediaRef Id="838073785"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -77,34 +90,34 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{4F485AA9-8B04-021B-9648-0BEDDD48220F}">
+		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{61F0B55E-977A-93B9-2A51-263F5DB7DCF7}">
 			<ShortName>Rocks</ShortName>
 			<Path>Rocks.bnk</Path>
 			<Media>
-				<File Id="838073785" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Charybdis - Looping.wav</ShortName>
-					<CachePath>SFX/Charybdis - Looping_D79FB2B7.wem</CachePath>
+				<File Id="925631500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sea Dragon - Looping.wav</ShortName>
+					<CachePath>SFX/Sea Dragon - Looping_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="258753968" Name="Play_Charybdis___Looping" DurationType="Infinite">
+				<Event Id="3619110380" Name="Play_Music_Rocks" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="838073785"/>
+						<MediaRef Id="925631500"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2201105581" Type="User" Language="SFX" Hash="{A155FDFB-8ABA-12D3-D055-EE157836BDC1}">
+		<SoundBank Id="2201105581" Type="User" Language="SFX" Hash="{C3082D4D-A7BD-1AA6-2058-7EA2C1AF0B16}">
 			<ShortName>Credits</ShortName>
 			<Path>Credits.bnk</Path>
 			<Media>
 				<File Id="280765531" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Predawn - Looping 02.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping 02_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Predawn - Looping 02_6E925AD8.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="529165847" Name="Play_Predawn___Looping_02" DurationType="Infinite">
+				<Event Id="3315549719" Name="Play_Music_Finale" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="280765531"/>
 					</MediaRefs>
@@ -127,24 +140,24 @@
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{2C118B0A-E5EB-995A-3521-00494D25C41B}">
+		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{F1A3171D-D04D-5A0F-E8E6-C4B13E908DAF}">
 			<ShortName>Cavern</ShortName>
 			<Path>Cavern.bnk</Path>
 			<Media>
 				<File Id="528585997" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Pirouette - Looping.wav</ShortName>
-					<CachePath>SFX/Pirouette - Looping_D79FB2B7.wem</CachePath>
+					<CachePath>SFX/Pirouette - Looping_6384875E.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1717684604" Name="Play_Pirouette___Looping" DurationType="Infinite">
+				<Event Id="3247040845" Name="Play_Music_Cavern" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="528585997"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{148EE4EC-8AB3-9262-F174-670AFE0DB3F4}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{6FB227C8-57B9-A41B-50DB-1D7549223644}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
@@ -154,7 +167,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1369314679" Name="Play_Currents___Looping___Seamless" DurationType="Infinite">
+				<Event Id="4125690526" Name="Play_Music_Village" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="754771720"/>
 					</MediaRefs>
@@ -162,5 +175,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DFCC8FB0-BE29-F2D0-17F6-3C931693DC62}</FileHash>
+	<FileHash>{A0C1E6C5-FDE8-65A4-3271-844E75296CFA}</FileHash>
 </SoundBanksInfo>

@@ -4,7 +4,9 @@
 		<WorkUnit Name="DLC" ID="{68566911-1436-4106-8972-4EB659F32034}" OwnerID="{7DA68FAA-32E0-447D-A87A-CF7F7BBC2535}" PersistMode="Nested">
 			<ChildrenList>
 				<SoundBank Name="DLC" ID="{A97E7D33-697F-46E7-AB83-195E490441D3}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Music_Shibuya" ID="{78F68F12-47BB-4C07-9453-4236089B0DEE}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

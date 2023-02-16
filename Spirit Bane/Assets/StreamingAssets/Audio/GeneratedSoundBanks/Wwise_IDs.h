@@ -13,13 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_CHARYBDIS___LOOPING = 258753968U;
-        static const AkUniqueID PLAY_CURRENTS___LOOPING___SEAMLESS = 1369314679U;
-        static const AkUniqueID PLAY_PIROUETTE___LOOPING = 1717684604U;
-        static const AkUniqueID PLAY_PREDAWN___LOOPING = 1177824902U;
-        static const AkUniqueID PLAY_PREDAWN___LOOPING_02 = 529165847U;
-        static const AkUniqueID PLAY_SEA_DRAGON___LOOPING = 2488923102U;
-        static const AkUniqueID PLAY_SHIBUYA___LOOPING = 2305161028U;
+        static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
+        static const AkUniqueID PLAY_MUSIC_CAVERN = 3247040845U;
+        static const AkUniqueID PLAY_MUSIC_FINALE = 3315549719U;
+        static const AkUniqueID PLAY_MUSIC_MENU = 1699343283U;
+        static const AkUniqueID PLAY_MUSIC_ROCKS = 3619110380U;
+        static const AkUniqueID PLAY_MUSIC_SHIBUYA = 925456677U;
+        static const AkUniqueID PLAY_MUSIC_VILLAGE = 4125690526U;
+        static const AkUniqueID PLAY_WATERFALL = 467174588U;
     } // namespace EVENTS
 
     namespace BANKS

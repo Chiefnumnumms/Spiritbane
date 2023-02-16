@@ -13,9 +13,34 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Sound Name="music" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" ShortID="142437017">
+						<Sound Name="Music_Cavern_Alt" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" ShortID="142437017">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>28</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>38</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>50</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -27,6 +52,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="music" ID="{95AD3ADB-B048-42EF-89D8-537DC1D5A6DB}">
+									<PropertyList>
+										<Property Name="FadeInShape" Type="int16" Value="0"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="3.13091856658982"/>
+										<Property Name="LoopEnd" Type="Real64" Value="64.3956378903026"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>music.wav</AudioFile>
 									<MediaIDList>
@@ -38,9 +69,29 @@
 								<ActiveSource Name="music" ID="{95AD3ADB-B048-42EF-89D8-537DC1D5A6DB}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Charybdis - Looping" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" ShortID="994968386">
+						<Sound Name="Music_Boss" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" ShortID="994968386">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>32</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>39</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -63,34 +114,34 @@
 								<ActiveSource Name="Charybdis - Looping" ID="{A8FABF77-92D1-4E7F-8D78-1E14BA3AAB90}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Currents - Looping" ID="{DAF476D4-19B4-4430-9200-1BFCFDDC8449}" ShortID="946041968">
+						<Sound Name="Music_Cavern" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" ShortID="212975641">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>22</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Currents - Looping" ID="{12892D62-4470-4417-BF2A-E2BB9470E8C0}">
-									<Language>SFX</Language>
-									<AudioFile>Currents - Looping.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="737087826"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Currents - Looping" ID="{12892D62-4470-4417-BF2A-E2BB9470E8C0}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pirouette - Looping" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" ShortID="212975641">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -102,6 +153,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Pirouette - Looping" ID="{5D2EEF8F-F788-4516-B479-EE083BCFC923}">
+									<PropertyList>
+										<Property Name="CrossfadeShape" Type="int16" Value="0"/>
+										<Property Name="FadeInShape" Type="int16" Value="0"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.206740481488509"/>
+										<Property Name="LoopEnd" Type="Real64" Value="69.4847034408792"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Pirouette - Looping.wav</AudioFile>
 									<MediaIDList>
@@ -113,9 +171,29 @@
 								<ActiveSource Name="Pirouette - Looping" ID="{5D2EEF8F-F788-4516-B479-EE083BCFC923}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Predawn - Looping" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" ShortID="689069655">
+						<Sound Name="Music_Menu" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" ShortID="689069655">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>29</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -127,6 +205,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Predawn - Looping" ID="{6F6E27D2-77C2-4A6E-9A2B-00FA99B8B359}">
+									<PropertyList>
+										<Property Name="CrossfadeShape" Type="int16" Value="0"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.11021725141044"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Predawn - Looping.wav</AudioFile>
 									<MediaIDList>
@@ -138,9 +220,24 @@
 								<ActiveSource Name="Predawn - Looping" ID="{6F6E27D2-77C2-4A6E-9A2B-00FA99B8B359}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Predawn - Looping 02" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" ShortID="762074999">
+						<Sound Name="Music_Finale" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" ShortID="762074999">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>35</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -152,6 +249,15 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Predawn - Looping 02" ID="{D7760623-DDEB-48A6-A45E-540AE5CE5F16}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="2"/>
+										<Property Name="CrossfadeShape" Type="int16" Value="0"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.1"/>
+										<Property Name="FadeInShape" Type="int16" Value="0"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+										<Property Name="FadeOutShape" Type="int16" Value="9"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Predawn - Looping 02.wav</AudioFile>
 									<MediaIDList>
@@ -163,9 +269,29 @@
 								<ActiveSource Name="Predawn - Looping 02" ID="{D7760623-DDEB-48A6-A45E-540AE5CE5F16}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Sea Dragon - Looping" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" ShortID="195585458">
+						<Sound Name="Music_Rocks" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" ShortID="195585458">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>35</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>37</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -188,9 +314,29 @@
 								<ActiveSource Name="Sea Dragon - Looping" ID="{FE7BEDD5-6405-42AA-819D-9FA956037C25}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Shibuya - Looping" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" ShortID="895741964">
+						<Sound Name="Music_Shibuya" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" ShortID="895741964">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-25</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -213,12 +359,27 @@
 								<ActiveSource Name="Shibuya - Looping" ID="{E266DBC2-8EDA-4265-981C-362428B2D022}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Currents - Looping - Seamless" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" ShortID="429170439">
+						<Sound Name="Music_Village" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" ShortID="429170439">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-19</Value>
+										<Value>-25</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -266,6 +427,35 @@
 						<WorkUnit Name="Player" ID="{2DF27AF8-1E47-49FC-A62F-B8B81FEF18AD}" PersistMode="Reference"/>
 					</ChildrenList>
 				</ActorMixer>
+				<Sound Name="Waterfall" ID="{6EAB7D4F-2A61-4A7B-8B23-5AA8BBE23DAA}" ShortID="1010693448">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="WaterfallAttenuation" ID="{F40A20AA-EA1D-407B-9E84-2D5B347408EB}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}">
+							<Language>SFX</Language>
+							<AudioFile>Waterfall.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="816109488"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
