@@ -14,6 +14,9 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="music" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" ShortID="142437017">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -36,6 +39,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Charybdis - Looping" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" ShortID="994968386">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -58,6 +64,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Currents - Looping" ID="{DAF476D4-19B4-4430-9200-1BFCFDDC8449}" ShortID="946041968">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -80,6 +89,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Pirouette - Looping" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" ShortID="212975641">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -102,6 +114,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Predawn - Looping" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" ShortID="689069655">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -124,6 +139,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Predawn - Looping 02" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" ShortID="762074999">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -146,6 +164,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Sea Dragon - Looping" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" ShortID="195585458">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -168,6 +189,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Shibuya - Looping" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" ShortID="895741964">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -189,7 +213,15 @@
 								<ActiveSource Name="Shibuya - Looping" ID="{E266DBC2-8EDA-4265-981C-362428B2D022}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Sequoia Throne" ID="{BCB3C573-8A8E-4AA8-AD4E-61F44B65B6D6}" ShortID="1846077">
+						<Sound Name="Currents - Looping - Seamless" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" ShortID="429170439">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-19</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -199,16 +231,20 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Protest the Hero - Sequoia Throne - Instrumental" ID="{E06AB90A-8481-4D36-9D91-55A54FCEAC3C}">
+								<AudioFileSource Name="Currents - Looping - Seamless" ID="{30E8FF38-38A3-48E7-8B83-D3179B809AF2}">
+									<PropertyList>
+										<Property Name="LoopEnd" Type="Real64" Value="124.66517"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>Protest the Hero - Sequoia Throne - Instrumental.wav</AudioFile>
+									<AudioFile>Currents - Looping - Seamless.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="110402214"/>
+										<MediaID ID="754771720"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Protest the Hero - Sequoia Throne - Instrumental" ID="{E06AB90A-8481-4D36-9D91-55A54FCEAC3C}" Platform="Linked"/>
+								<ActiveSource Name="Currents - Looping - Seamless" ID="{30E8FF38-38A3-48E7-8B83-D3179B809AF2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -13,12 +13,12 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_MUSIC = 2932040671U;
+        static const AkUniqueID PLAY_CHARYBDIS___LOOPING = 258753968U;
+        static const AkUniqueID PLAY_CURRENTS___LOOPING___SEAMLESS = 1369314679U;
         static const AkUniqueID PLAY_PIROUETTE___LOOPING = 1717684604U;
         static const AkUniqueID PLAY_PREDAWN___LOOPING = 1177824902U;
         static const AkUniqueID PLAY_PREDAWN___LOOPING_02 = 529165847U;
         static const AkUniqueID PLAY_SEA_DRAGON___LOOPING = 2488923102U;
-        static const AkUniqueID PLAY_SEQUOIA_THRONE = 2207642950U;
         static const AkUniqueID PLAY_SHIBUYA___LOOPING = 2305161028U;
     } // namespace EVENTS
 

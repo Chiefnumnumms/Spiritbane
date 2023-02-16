@@ -80,23 +80,26 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Sequoia_Throne" ID="{63E79E25-3CEC-437D-9D0B-7C0DCAA39EC6}">
-					<ChildrenList>
-						<Action Name="" ID="{00D3BDF4-0938-450C-8736-845442E98152}" ShortID="877388397">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Sequoia Throne" ID="{BCB3C573-8A8E-4AA8-AD4E-61F44B65B6D6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_Shibuya___Looping" ID="{A1C62004-ED70-4E0E-AAC7-8BA28F0AC404}">
 					<ChildrenList>
 						<Action Name="" ID="{E7EFCB1D-DA43-4F26-B8B7-89049F515A62}" ShortID="669128109">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Shibuya - Looping" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Currents___Looping___Seamless" ID="{D6D10989-450C-450D-93BA-E0653C3616B6}">
+					<ChildrenList>
+						<Action Name="" ID="{BDA4F832-2E07-4E77-A9F4-ACDD34D063EA}" ShortID="23971543">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Currents - Looping - Seamless" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
