@@ -19,11 +19,14 @@ public class ObjectGrapple : MonoBehaviour
     public Transform gunTip;
     public LayerMask whatIsGrappable;
     public LineRenderer lineRenderer;
+    public Rigidbody rb;
+
 
     [Header("Grappling")]
     public float maxGrappleDistance;
     public float grappleDelayTime;
     public float overShootYAxis;
+    public float forwardBoostVelocity;
 
     [Header("Prediction Point")]
     public RaycastHit predictionHit;
@@ -45,6 +48,7 @@ public class ObjectGrapple : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -95,7 +99,6 @@ public class ObjectGrapple : MonoBehaviour
                 // EXECUTE THE GRAPPLE WITH A DELAY TIMER
                 Invoke(nameof(ExecuteGrapple), grappleDelayTime);
 
-                playerLocomotion.playerRb.AddForce(transform.forward * playerLocomotion.leapingVel, ForceMode.Impulse);
 
                 Debug.Log("GRAPPLING EXECUTED");
             }
@@ -130,6 +133,9 @@ public class ObjectGrapple : MonoBehaviour
 
         // JUMP TOWARDS THE HIGHEST POINT
         playerLocomotion.JumpToPosition(grapplePoint, highestPointOnArc);
+
+        // BOOST THE PLAYER FORWARD
+        rb.AddForce(transform.forward * forwardBoostVelocity, ForceMode.Acceleration);
 
         // WAIT A SECOND THEN STOP THE GRAPPLE
         Invoke(nameof(StopGrapple), 1f);
