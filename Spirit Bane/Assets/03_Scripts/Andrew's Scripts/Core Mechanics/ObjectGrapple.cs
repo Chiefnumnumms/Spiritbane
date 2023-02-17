@@ -38,9 +38,6 @@ public class ObjectGrapple : MonoBehaviour
     public bool isGrappling;
     public bool freezePlayer;
 
-    public SlowMotion slowMotion;
-
-
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -143,8 +140,6 @@ public class ObjectGrapple : MonoBehaviour
 
         // DISABLE THE LINE RENDERER
         lineRenderer.enabled = false;
-
-        slowMotion.StartSlowMotionSequence(1.5f, 0.5f);
     }
 
     public void CheckForGrappleObject()

@@ -179,6 +179,7 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 targetPos;
         rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffset;
         targetPos = transform.position;
+        float origY = transform.position.y;
 
         if (!isGrounded && !isJumping)
         {
@@ -193,6 +194,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, groundLayer))
         {
+            if (transform.position.y == origY) { isGrounded = true; playerManager.isInteracting = false; }
+
             if (!isGrounded && !playerManager.isInteracting)
             {
                 animationManager.PlayTargetAnim("Landing", false);
