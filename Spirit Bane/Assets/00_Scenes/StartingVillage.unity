@@ -22028,7 +22028,6 @@ MonoBehaviour:
   grapplingCdTimer: 0.5
   isGrappling: 0
   freezePlayer: 0
-  slowMotion: {fileID: 0}
 --- !u!114 &1588139843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22210,7 +22209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  canRotate: 0
 --- !u!114 &1588139851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22237,6 +22235,7 @@ MonoBehaviour:
   isJumping: 0
   jumpHeight: 3
   gravityIntensity: -15
+  myTransform: {fileID: 0}
   walkSpeed: 4
   runSpeed: 8
   sprintSpeed: 12
@@ -22256,6 +22255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteracting: 0
+  canRotate: 0
 --- !u!114 &1588139853
 MonoBehaviour:
   m_ObjectHideFlags: 0
