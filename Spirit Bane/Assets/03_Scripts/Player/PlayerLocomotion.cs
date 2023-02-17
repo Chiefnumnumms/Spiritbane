@@ -33,6 +33,9 @@ public class PlayerLocomotion : MonoBehaviour
     public float jumpHeight = 3f;
     public float gravityIntensity = -8.91f;
 
+    [HideInInspector]
+    public Transform myTransform;
+
     [Header("Movement Speeds")]
     public float walkSpeed = 2;
     public float runSpeed = 5;
@@ -57,6 +60,8 @@ public class PlayerLocomotion : MonoBehaviour
         
         swingingManager = GetComponent<Swinging>();
         grapplingManager = GetComponent<ObjectGrapple>();
+
+        myTransform = transform;
         
     }
 
@@ -120,22 +125,47 @@ public class PlayerLocomotion : MonoBehaviour
     // adjusts the players rotation based on camera direction and player movement
     private void HandleRotation()
     {
-        Vector3 targetDir = Vector3.zero;
-
-        targetDir = playerCamera.forward * inputManager.vertInput;
-        targetDir = targetDir + playerCamera.right *inputManager.horizInput;
-        targetDir.Normalize();
-
-        targetDir.y = 0;
-        if(targetDir == Vector3.zero)
+        if (playerManager.canRotate)
         {
-            targetDir = transform.forward;
-        }
+            Vector3 targetDir = Vector3.zero;
 
-        Quaternion targetRot = Quaternion.LookRotation(targetDir);
-        Quaternion playerRot = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
-        
-        transform.rotation = playerRot;
+            targetDir = playerCamera.forward * inputManager.vertInput;
+            targetDir = targetDir + playerCamera.right * inputManager.horizInput;
+            targetDir.Normalize();
+
+            targetDir.y = 0;
+            if (targetDir == Vector3.zero)
+            {
+                targetDir = transform.forward;
+            }
+
+            Quaternion targetRot = Quaternion.LookRotation(targetDir);
+            Quaternion playerRot = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
+
+            transform.rotation = playerRot;
+        }
+        else
+        {
+            Vector3 targetDir = Vector3.zero;
+            float moveOverride = inputManager.moveAmount;
+
+            targetDir = playerCamera.forward * inputManager.vertInput;
+            targetDir += playerCamera.right * inputManager.horizInput;
+
+            targetDir.Normalize();
+            targetDir.y = 0;
+
+            if (targetDir == Vector3.zero)
+            {
+                targetDir = myTransform.forward;
+            }
+
+            float rs = rotationSpeed;
+            Quaternion tr = Quaternion.LookRotation(targetDir);
+            Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * Time.deltaTime);
+
+            myTransform.rotation = targetRotation;
+        }
     }
 
     //---------------------------------------------------------------------------------------
@@ -199,7 +229,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (isGrounded)
         {
             animationManager.animator.SetBool("isJumping", true);
-            animationManager.PlayTargetAnim("Jump", false);
+            animationManager.PlayTargetAnim("Jump", false, true);
 
             float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
             Vector3 playerVel = moveDir;

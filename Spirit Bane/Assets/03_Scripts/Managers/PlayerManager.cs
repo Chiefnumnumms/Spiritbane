@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     ObjectGrapple grappleManager;
 
     public bool isInteracting;
+    public bool canRotate;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class PlayerManager : MonoBehaviour
     {
         isInteracting = animator.GetBool("isInteracting");
         playerLocomotion.isJumping = animator.GetBool("isJumping");
+        canRotate = animator.GetBool("canRotate");
         animator.SetBool("isGrounded", playerLocomotion.isGrounded);        
     }
 }
