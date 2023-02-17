@@ -14,6 +14,7 @@ public class ObjectGrapple : MonoBehaviour
     private PlayerManager playerManager;
     private InputManager inputManager;
     private PlayerLocomotion playerLocomotion;
+    private Swinging swingingManager;
     public Transform mainCamera;
     public Transform gunTip;
     public LayerMask whatIsGrappable;
@@ -43,6 +44,7 @@ public class ObjectGrapple : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        swingingManager = GetComponent<Swinging>();
     }
 
     private void Update()
@@ -72,25 +74,31 @@ public class ObjectGrapple : MonoBehaviour
     {
         // DONT ALLOW PLAYER TO GRAPPLE IF COOL DOWN IS IN EFFECT
         if (grapplingCdTimer > 0) return;
+        if (swingingManager.isSwinging) return;
 
-        isGrappling = true;
-        Debug.Log("GRAPPLING");
-
-        // FREEZE THE PLAYER FOR A SECOND
-        freezePlayer = true;
 
         RaycastHit hit;
 
         if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, maxGrappleDistance, whatIsGrappable))
         {
-            // STORE THE HIT POINT AS THE GRAPPLE POINT
-            grapplePoint = hit.point;
+            isGrappling = true;
+            Debug.Log("GRAPPLING");
 
-            // EXECUTE THE GRAPPLE WITH A DELAY TIMER
-            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            if (!swingingManager.isSwinging)
+            {
+                // FREEZE THE PLAYER FOR A SECOND
+                freezePlayer = true;
 
+                // STORE THE HIT POINT AS THE GRAPPLE POINT
+                grapplePoint = hit.point;
 
-            Debug.Log("GRAPPLING EXECUTED");
+                // EXECUTE THE GRAPPLE WITH A DELAY TIMER
+                Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+
+                playerLocomotion.playerRb.AddForce(transform.forward * playerLocomotion.leapingVel, ForceMode.Impulse);
+
+                Debug.Log("GRAPPLING EXECUTED");
+            }
         }
         else
         {

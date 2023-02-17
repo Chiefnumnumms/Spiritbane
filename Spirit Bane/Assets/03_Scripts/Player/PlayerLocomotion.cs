@@ -179,6 +179,7 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 targetPos;
         rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffset;
         targetPos = transform.position;
+
         float origY = transform.position.y;
 
         if (!isGrounded && !isJumping)
@@ -231,13 +232,17 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (isGrounded)
         {
-            animationManager.animator.SetBool("isJumping", true);
-            animationManager.PlayTargetAnim("Jump", false, true);
+            if (inputManager.jumpPressed)
+            {
+                animationManager.animator.SetBool("isJumping", true);
+                animationManager.PlayTargetAnim("Jump", false);
 
-            float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
-            Vector3 playerVel = moveDir;
-            playerVel.y = jumpingVel;
-            playerRb.velocity = playerVel;
+                float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+                Vector3 playerVel = moveDir;
+                playerVel.y = jumpingVel;
+                playerRb.velocity = playerVel;
+            }
+      
         }
     }
 
