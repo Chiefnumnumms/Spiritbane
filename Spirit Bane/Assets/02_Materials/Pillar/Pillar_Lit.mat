@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pillar_Lit
-  m_Shader: {fileID: -6465566751694194690, guid: f724519e1fb166f42956bbbb0f32d4af,
+  m_Shader: {fileID: -6465566751694194690, guid: 227c1c85c916a54418a1cd0e13cddb51,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a0c7cc3e699f6ec41930f007c6c0e962, type: 3}
+        m_Texture: {fileID: 2800000, guid: d4b2f4fe684228640aeffc68b6362b49, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -107,9 +107,10 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionIntensity: 3
+    - _EmissiveIntensity: 3.08
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 0
+    - _Glossiness: 0.001
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -117,7 +118,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimAmount: 0.222
+    - _RimAmount: 0.7
     - _RimThreshold: 0.535
     - _Smoothness: 0.146
     - _SmoothnessTextureChannel: 0
@@ -127,11 +128,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AmbientColor: {r: 1, g: 0.5154153, b: 0, a: 0}
+    - _AmbientColor: {r: 0.71, g: 0.71, b: 0.71, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0.8784314, g: 0.84592503, b: 0.60784316, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
