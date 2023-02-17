@@ -12,8 +12,13 @@ public class ObjectHazard : MonoBehaviour
     public List<GameObject> hazardObjects = new List<GameObject>();
     public List<Rigidbody> hazardRigidBody = new List<Rigidbody>();
 
+    public float fallingForce = 3.0f;
+
+    CameraShake cameraShake;
+
     private void Awake()
     {
+        cameraShake = GameObject.FindObjectOfType<CameraShake>();
         FindAllHazards();
     }
 
@@ -42,7 +47,6 @@ public class ObjectHazard : MonoBehaviour
 
             // ADD ALL THE CRYSTAL RIGIDBODY
             hazardRigidBody.Add(h.GetComponent<Rigidbody>());
-
         }
 
     }
@@ -55,13 +59,29 @@ public class ObjectHazard : MonoBehaviour
             rb.isKinematic = false;
             rb.useGravity = true;
 
+            // ADD RANDOM FORCE
+            float randomForce = Random.RandomRange(15, 50);
+            rb.AddForce(-Vector3.up * randomForce, ForceMode.Impulse);
+
             // DELAY BETWEEN THE CRYSTALS FALLING
             yield return new WaitForSeconds(duration);
+
+            cameraShake.ScreenShake(transform.up);
 
             // ENABLE KINEMATIC WHEN IT HITS THE GROUND
             rb.isKinematic = true;
             rb.useGravity = false;
+
+            cameraShake.ScreenShake(transform.right);
+            cameraShake.ScreenShake(-transform.right);
+
+
         }
+    }
+
+    public void HandleCameraShake()
+    {
+        cameraShake.ScreenShake(transform.position);
     }
 
 }
