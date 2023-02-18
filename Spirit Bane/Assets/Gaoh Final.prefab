@@ -561,7 +561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880986804303554838}
-  m_LocalRotation: {x: 0.045506053, y: -0.03091946, z: 0.0014091585, w: 0.99848443}
+  m_LocalRotation: {x: 0.045506053, y: -0.030919455, z: 0.0014091581, w: 0.99848443}
   m_LocalPosition: {x: 226.77232, y: 303.68335, z: 122.68489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3621,7 +3621,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5547513317561636719}
-  m_LocalRotation: {x: 0.045506056, y: -0.030919457, z: 0.0014091581, w: 0.9984845}
+  m_LocalRotation: {x: 0.045506056, y: -0.030919446, z: 0.0014091576, w: 0.9984845}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4428,6 +4428,16 @@ MonoBehaviour:
   rotationSpeed: 15
   activeGrapple: 1
   enableMovementAfterGrapple: 0
+  playerFootstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0be5caea2aa056e4e8824a68a457daa5,
+      type: 2}
+  playerJump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ab55f76ee9e24174693ebe52986e051b,
+      type: 2}
 --- !u!114 &152693951317955664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4490,9 +4500,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lineRenderer: {fileID: 3950420931592050410}
+  rb: {fileID: 0}
   maxGrappleDistance: 25
   grappleDelayTime: 0.25
   overShootYAxis: 25
+  forwardBoostVelocity: 0
   predictionSphereCastRadius: 0
   predictionPoint: {fileID: 0}
   grapplingCd: 0.1

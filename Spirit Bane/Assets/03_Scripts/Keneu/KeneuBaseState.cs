@@ -16,6 +16,7 @@ public abstract class KeneuBaseState : State
     // Enums
 
     public enum StateNames { Default, Grounded, Flying, Dead }
+    public enum PhaseNames { Begin, Phase1, Phase2, Phase3, End }
 
     #endregion
 
@@ -308,6 +309,14 @@ public abstract class KeneuBaseState : State
                 stateMachine.SwitchState(new KeneuDeadState(stateMachine));
                 break;
         }
+    }
+
+    protected void NextPhase()
+    {
+        //switch(currentPhase)
+        //{
+
+        //}
     }
 
     //-------------------------------------------------------------------------

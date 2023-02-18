@@ -106,7 +106,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4B35675E-A660-276F-5A47-E7E26E92F585}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0F459959-800A-4810-8368-54ECB88C107D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -186,7 +186,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{7B0D26CF-3B0D-236B-42E8-B45BA10424BA}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{F10CD7C6-D791-2DCC-2B41-630B62D3AE13}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
@@ -199,6 +199,11 @@
 					<CachePath>SFX/Waterfall_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="642532550" Name="New_Pitch_Shifter" LibName="Wwise Pitch Shifter" LibId="8912899"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="4125690526" Name="Play_Music_Village" DurationType="Infinite">
 					<MediaRefs>
@@ -209,9 +214,14 @@
 					<MediaRefs>
 						<MediaRef Id="816109488"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="642532550"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D5DCC2C9-A115-76CD-A09C-77C1E8229C9F}</FileHash>
+	<FileHash>{24A6FA76-9A91-5829-AA51-95A76101E75D}</FileHash>
 </SoundBanksInfo>
