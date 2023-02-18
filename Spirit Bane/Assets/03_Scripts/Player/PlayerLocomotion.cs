@@ -101,7 +101,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void Step()
     {
         // If Speed Is Too Low Back Out
-        if (playerRb.velocity.magnitude < 1.0f) return;
+        if (playerRb.velocity.magnitude < 1.0f || !isGrounded) return;
 
         // If Sound Not Playing, Play Sound, Record Time, Set Flag For Sound Playing
         if (!stepPlaying)
@@ -121,12 +121,14 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void JumpSFX()
     {
-        Debug.Log("Jumped");
+        if (!isGrounded) return;
+
         playerJump.Post(gameObject);
     }
 
     private void LandSFX()
     {
+        if (isGrounded) return;
         playerLand.Post(gameObject);
     }
 
