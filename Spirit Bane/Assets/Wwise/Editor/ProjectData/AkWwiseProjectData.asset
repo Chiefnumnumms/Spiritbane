@@ -163,7 +163,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\DLC
     guid: 116956683614064189724eb659f32034
     GuidInternal: 
-    m_lastTime: -8585249437314997356
+    m_lastTime: -8585249298029119634
     List:
     - name: DLC
       guid: 337d7ea97f69e746ab83195e490441d3
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\General
     guid: 0220347ab5f56b4489c58f538193df7d
     GuidInternal: 
-    m_lastTime: -8585249437314987360
+    m_lastTime: -8585249295737915089
     List:
     - name: Credits
       guid: 29cd4dcf34b19b44a6f0eab5853f751c
@@ -263,7 +263,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Region
     guid: bc75a5ac78b09043be18cae213300bc7
     GuidInternal: 
-    m_lastTime: -8585249437314977367
+    m_lastTime: -8585249295737805365
     List:
     - name: Arena
       guid: 3b9f04fd02a2c24c8b235ad7b3da2c21
@@ -345,8 +345,85 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
-    m_lastTime: -8585249437355027357
+    m_lastTime: -8585249298028680790
     List:
+    - name: Environment
+      guid: 83fc1ddfd0a159449defcc184053307e
+      id: 1229948536
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      Path: Events\Default Work Unit\Environment
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Footstep
+      guid: 4b4b34c0d8f9194093ad87c337b8a4a2
+      id: 1866025847
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Footstep
+        ObjectType: 4
+        guid: 4b4b34c0d8f9194093ad87c337b8a4a2
+      Path: Events\Default Work Unit\Player\Footstep
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music
+      guid: df7c344a69e66f419a4d680f4b47cc7a
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      Path: Events\Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Footstep_Dirt
+      guid: 5c4fabaa69bee6499a4ef99d93b2116c
+      id: 779807780
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Footstep
+        ObjectType: 4
+        guid: 4b4b34c0d8f9194093ad87c337b8a4a2
+      - ElementName: Play_Footstep_Dirt
+        ObjectType: 3
+        guid: 5c4fabaa69bee6499a4ef99d93b2116c
+      Path: Events\Default Work Unit\Player\Footstep\Play_Footstep_Dirt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Music_Boss
       guid: f8a25ae00427c04bb35195a284fece24
       id: 2155613437
@@ -357,10 +434,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Boss
         ObjectType: 3
         guid: f8a25ae00427c04bb35195a284fece24
-      Path: Events\Default Work Unit\Play_Music_Boss
+      Path: Events\Default Work Unit\Music\Play_Music_Boss
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -374,10 +454,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Cavern
         ObjectType: 3
         guid: a1919f85a2d1104a902ba33b10c91bfe
-      Path: Events\Default Work Unit\Play_Music_Cavern
+      Path: Events\Default Work Unit\Music\Play_Music_Cavern
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -391,10 +474,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Cavern_Alt
         ObjectType: 3
         guid: 0a80ce2910d4ab40980fcb0e73fb8145
-      Path: Events\Default Work Unit\Play_Music_Cavern_Alt
+      Path: Events\Default Work Unit\Music\Play_Music_Cavern_Alt
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -408,10 +494,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Finale
         ObjectType: 3
         guid: 58c8c5e53018a345961ce6cc53a2f28f
-      Path: Events\Default Work Unit\Play_Music_Finale
+      Path: Events\Default Work Unit\Music\Play_Music_Finale
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -425,10 +514,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Menu
         ObjectType: 3
         guid: 5567ece29466ec4d9a0ffb5e6a046443
-      Path: Events\Default Work Unit\Play_Music_Menu
+      Path: Events\Default Work Unit\Music\Play_Music_Menu
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -442,10 +534,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Rocks
         ObjectType: 3
         guid: 709b2a9d4683c0479c8079b5af155f5a
-      Path: Events\Default Work Unit\Play_Music_Rocks
+      Path: Events\Default Work Unit\Music\Play_Music_Rocks
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -459,10 +554,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Shibuya
         ObjectType: 3
         guid: 128ff678bb47074c94534236089b0dee
-      Path: Events\Default Work Unit\Play_Music_Shibuya
+      Path: Events\Default Work Unit\Music\Play_Music_Shibuya
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -476,10 +574,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
       - ElementName: Play_Music_Village
         ObjectType: 3
         guid: 3f7d3d2c9c377342b4874601352818fd
-      Path: Events\Default Work Unit\Play_Music_Village
+      Path: Events\Default Work Unit\Music\Play_Music_Village
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -493,10 +594,30 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
       - ElementName: Play_Waterfall
         ObjectType: 3
         guid: 3e2815caeb90bc428db06f79a3738ced
-      Path: Events\Default Work Unit\Play_Waterfall
+      Path: Events\Default Work Unit\Environment\Play_Waterfall
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player
+      guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      Path: Events\Default Work Unit\Player
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -556,9 +677,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585249437314907365
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedFileSystemItemIds: 02000000030000000500000006000000
+  ExpandedWaapiItemIds: 02000000030000000500000006000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

@@ -47,8 +47,12 @@ public class PlayerLocomotion : MonoBehaviour
     public bool activeGrapple = true;
     public bool enableMovementAfterGrapple;
 
+    // Wwise
     [Header("Wwise Events")]
     public AK.Wwise.Event playerFootstep;
+    private bool stepPlaying = false;
+    private float lastStepTime = 0.0f;
+    private float currentVelocity = 0.0f;
 
     private void Awake()
     {
@@ -65,7 +69,8 @@ public class PlayerLocomotion : MonoBehaviour
         grapplingManager = GetComponent<ObjectGrapple>();
 
         myTransform = transform;
-        
+
+        lastStepTime = Time.time;
     }
 
     //-----------------------------------------------------------------------------
@@ -93,7 +98,23 @@ public class PlayerLocomotion : MonoBehaviour
     // KH
     private void Step()
     {
-        playerFootstep.Post(gameObject);
+        // If Speed Is Too Low Back Out
+        if (playerRb.velocity.magnitude < 1.0f) return;
+
+        // If Sound Not Playing, Play Sound, Record Time, Set Flag For Sound Playing
+        if (!stepPlaying)
+        {
+            playerFootstep.Post(gameObject);
+            lastStepTime = Time.time;
+            stepPlaying = true;
+        }
+        else
+        {
+            if (Time.time - lastStepTime > 500.0f / playerRb.velocity.magnitude * Time.deltaTime)
+            {
+                stepPlaying = false;
+            }
+        }
     }
 
     //------------------------------------------------------------------------------------
