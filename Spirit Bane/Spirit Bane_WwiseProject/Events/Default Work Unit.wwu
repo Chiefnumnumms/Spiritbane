@@ -97,7 +97,7 @@
 				</Folder>
 				<Folder Name="Player" ID="{1D6DC66B-AD2B-4AF4-8711-389CA2D9EEC3}" ShortID="1058699026">
 					<ChildrenList>
-						<Folder Name="Footstep" ID="{C0344B4B-F9D8-4019-93AD-87C337B8A4A2}" ShortID="276889945">
+						<Folder Name="Foot" ID="{C0344B4B-F9D8-4019-93AD-87C337B8A4A2}" ShortID="276889945">
 							<ChildrenList>
 								<Event Name="Play_Footstep_Dirt" ID="{AAAB4F5C-BE69-49E6-9A4E-F99D93B2116C}">
 									<ChildrenList>
@@ -116,6 +116,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Landing" ID="{2276C82E-70BE-4BA7-86BC-FB876FB03156}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Jumping" ID="{61DF45A5-C7A7-47CC-979C-E308EBF7DC0F}">
+									<ChildrenList>
+										<Action Name="" ID="{ADF2A6B4-EF41-46C9-8F65-DF8136EAC15F}" ShortID="937637825">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Jumping" ID="{FF22FC36-6CBB-427D-8655-994196585DFA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -9,13 +9,17 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{C9DF8715-42BA-1411-B41A-2FCBEB45CF67}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{1A2583D5-C360-E924-7FDA-9E3509DE617F}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
 				<File Id="622781877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close.wav</ShortName>
 					<CachePath>SFX/289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close_D8D246B0.wem</CachePath>
+				</File>
+				<File Id="731857351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PM_SDGS_213 Footstep Step Dry Grass Skid Drag.wav</ShortName>
+					<CachePath>SFX/PM_SDGS_213 Footstep Step Dry Grass Skid Drag_10C4C929.wem</CachePath>
 				</File>
 				<File Id="820998479" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirt02.wav</ShortName>
@@ -32,6 +36,7 @@
 			</Media>
 			<Plugins>
 				<ShareSets>
+					<Plugin Id="484763476" Name="New_Pitch_Shifter_01" LibName="Wwise Pitch Shifter" LibId="8912899"/>
 					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
 				</ShareSets>
 			</Plugins>
@@ -45,6 +50,16 @@
 					<PluginRefs>
 						<ShareSets>
 							<PluginRef Id="3657550167"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="2756694246" Name="Play_Jumping" DurationType="OneShot" DurationMin="1.4746875" DurationMax="1.4746875">
+					<MediaRefs>
+						<MediaRef Id="731857351"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="484763476"/>
 						</ShareSets>
 					</PluginRefs>
 				</Event>
@@ -223,5 +238,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{24A6FA76-9A91-5829-AA51-95A76101E75D}</FileHash>
+	<FileHash>{60930C7B-E270-FE6B-D7A1-4C82099DAB98}</FileHash>
 </SoundBanksInfo>

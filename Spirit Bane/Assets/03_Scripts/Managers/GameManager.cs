@@ -7,6 +7,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Game Manager
