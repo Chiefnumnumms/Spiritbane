@@ -345,7 +345,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
-    m_lastTime: -8585249298028680790
+    m_lastTime: -8585249207879745114
     List:
     - name: Environment
       guid: 83fc1ddfd0a159449defcc184053307e
@@ -421,6 +421,29 @@ MonoBehaviour:
         ObjectType: 3
         guid: 5c4fabaa69bee6499a4ef99d93b2116c
       Path: Events\Default Work Unit\Player\Footstep\Play_Footstep_Dirt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Landing
+      guid: d4d041f368ca474aa46d19b948a42ed1
+      id: 2323405115
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Footstep
+        ObjectType: 4
+        guid: 4b4b34c0d8f9194093ad87c337b8a4a2
+      - ElementName: Play_Landing
+        ObjectType: 3
+        guid: d4d041f368ca474aa46d19b948a42ed1
+      Path: Events\Default Work Unit\Player\Footstep\Play_Landing
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

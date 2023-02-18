@@ -50,6 +50,7 @@ public class PlayerLocomotion : MonoBehaviour
     // Wwise
     [Header("Wwise Events")]
     public AK.Wwise.Event playerFootstep;
+    public AK.Wwise.Event playerJump;
     private bool stepPlaying = false;
     private float lastStepTime = 0.0f;
     private float currentVelocity = 0.0f;
@@ -115,6 +116,12 @@ public class PlayerLocomotion : MonoBehaviour
                 stepPlaying = false;
             }
         }
+    }
+
+    private void Jump()
+    {
+        Debug.Log("Jumped");
+        playerJump.Post(gameObject);
     }
 
     //------------------------------------------------------------------------------------

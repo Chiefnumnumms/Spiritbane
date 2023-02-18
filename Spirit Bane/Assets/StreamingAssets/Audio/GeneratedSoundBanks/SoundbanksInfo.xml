@@ -9,10 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{DC067ED8-C9B8-2580-0A9A-54A878FEF037}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{C9DF8715-42BA-1411-B41A-2FCBEB45CF67}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
+				<File Id="622781877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close.wav</ShortName>
+					<CachePath>SFX/289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close_D8D246B0.wem</CachePath>
+				</File>
 				<File Id="820998479" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirt02.wav</ShortName>
 					<CachePath>SFX/FootstepDirt02_10C4C929.wem</CachePath>
@@ -43,6 +47,11 @@
 							<PluginRef Id="3657550167"/>
 						</ShareSets>
 					</PluginRefs>
+				</Event>
+				<Event Id="2323405115" Name="Play_Landing" DurationType="OneShot" DurationMin="0.54355574" DurationMax="0.54355574">
+					<MediaRefs>
+						<MediaRef Id="622781877"/>
+					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
@@ -204,5 +213,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BD1F0715-0051-708B-5F78-98E1107566C6}</FileHash>
+	<FileHash>{6FC5E0D7-5567-081B-B758-5AB2F7041A08}</FileHash>
 </SoundBanksInfo>

@@ -581,6 +581,56 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<Sound Name="Landing" ID="{2276C82E-70BE-4BA7-86BC-FB876FB03156}" ShortID="808700299">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>16</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-430</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close" ID="{8728857D-EE11-41F5-A985-3FE0A2A40962}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0761041666666666"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.94631845238095"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.37032738095238"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="622781877"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close" ID="{8728857D-EE11-41F5-A985-3FE0A2A40962}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
