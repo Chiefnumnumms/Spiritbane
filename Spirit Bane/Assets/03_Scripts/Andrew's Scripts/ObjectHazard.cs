@@ -75,7 +75,6 @@ public class ObjectHazard : MonoBehaviour
             cameraShake.ScreenShake(transform.right);
             cameraShake.ScreenShake(-transform.right);
 
-
         }
     }
 

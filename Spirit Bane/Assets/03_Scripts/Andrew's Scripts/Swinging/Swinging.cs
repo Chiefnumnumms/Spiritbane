@@ -4,6 +4,7 @@
 //        SWINGING MECHANIC SCRIPT
 // ==========================================
 
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor.Timeline.Actions;
@@ -122,16 +123,20 @@ public class Swinging : MonoBehaviour
 
         Vector3 hitPoint;
 
+        Vector3 lookAtPoint = raycastHit.point;
+
+
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
             hitPoint = raycastHit.point;
-
+            gunTip.LookAt(lookAtPoint);
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
 
         {
             hitPoint = sphereCastHit.point;
             HighlightGrapplePoint(maxIndicationDistance);
+            gunTip.LookAt(lookAtPoint);
         }
         else                                              // NOTHING IN THE WAY 
         {
