@@ -47,6 +47,9 @@ public class PlayerLocomotion : MonoBehaviour
     public bool activeGrapple = true;
     public bool enableMovementAfterGrapple;
 
+    [Header("Wwise Events")]
+    public AK.Wwise.Event playerFootstep;
+
     private void Awake()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -85,6 +88,12 @@ public class PlayerLocomotion : MonoBehaviour
 
         HandleMovement();
         HandleRotation();
+    }
+
+    // KH
+    private void Step()
+    {
+        playerFootstep.Post(gameObject);
     }
 
     //------------------------------------------------------------------------------------

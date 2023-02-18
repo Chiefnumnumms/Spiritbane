@@ -9,30 +9,50 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{65248559-07F9-A842-0674-CAEFBB4D735C}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{C0495E2C-68A4-528B-7E70-F4F0B9DF3339}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
-				<File Id="816109488" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Waterfall.wav</ShortName>
-					<CachePath>SFX/Waterfall_D79FB2B7.wem</CachePath>
+				<File Id="820998479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FootstepDirt02.wav</ShortName>
+					<CachePath>SFX/FootstepDirt02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="845317709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FootstepDirt00.wav</ShortName>
+					<CachePath>SFX/FootstepDirt00_D8334050.wem</CachePath>
+				</File>
+				<File Id="868101729" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FootstepDirt01.wav</ShortName>
+					<CachePath>SFX/FootstepDirt01_1CBA49A5.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="3657550167" Name="New_Parametric_EQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
-				<Event Id="467174588" Name="Play_Waterfall" MaxAttenuation="70" DurationType="Infinite">
+				<Event Id="779807780" Name="Play_Footstep_Dirt" DurationType="OneShot" DurationMin="0.38671455" DurationMax="0.9179165">
 					<MediaRefs>
-						<MediaRef Id="816109488"/>
+						<MediaRef Id="820998479"/>
+						<MediaRef Id="845317709"/>
+						<MediaRef Id="868101729"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3657550167"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="152105657" Type="User" Language="SFX" Hash="{F2BE5407-A4D7-BA4A-14A4-A11E854B3EAD}">
+		<SoundBank Id="152105657" Type="User" Language="SFX" Hash="{A81D4D04-B535-78BE-59B4-42B471D66A4C}">
 			<ShortName>TitleScreen</ShortName>
 			<Path>TitleScreen.bnk</Path>
 			<Media>
 				<File Id="810247583" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Predawn - Looping.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping_FE3C364F.wem</CachePath>
+					<CachePath>SFX/Predawn - Looping_73C9ECD9.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -77,7 +97,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4B35675E-A660-276F-5A47-E7E26E92F585}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -140,13 +160,13 @@
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{F1A3171D-D04D-5A0F-E8E6-C4B13E908DAF}">
+		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{91B76FF8-2F81-474D-837C-14139BF5E1B3}">
 			<ShortName>Cavern</ShortName>
 			<Path>Cavern.bnk</Path>
 			<Media>
 				<File Id="528585997" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Pirouette - Looping.wav</ShortName>
-					<CachePath>SFX/Pirouette - Looping_6384875E.wem</CachePath>
+					<CachePath>SFX/Pirouette - Looping_98219793.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -157,13 +177,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{6FB227C8-57B9-A41B-50DB-1D7549223644}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{EDDA43AB-AA4A-C850-73E2-4A9D110962A0}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
 				<File Id="754771720" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Currents - Looping - Seamless.wav</ShortName>
 					<CachePath>SFX/Currents - Looping - Seamless_56336C98.wem</CachePath>
+				</File>
+				<File Id="816109488" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Waterfall.wav</ShortName>
+					<CachePath>SFX/Waterfall_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -172,8 +196,13 @@
 						<MediaRef Id="754771720"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="467174588" Name="Play_Waterfall" MaxAttenuation="70" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="816109488"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A0C1E6C5-FDE8-65A4-3271-844E75296CFA}</FileHash>
+	<FileHash>{7C59D4EB-84EA-DA6B-F2A4-9B5EB0875743}</FileHash>
 </SoundBanksInfo>

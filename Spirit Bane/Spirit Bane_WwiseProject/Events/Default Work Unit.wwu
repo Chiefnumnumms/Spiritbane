@@ -3,105 +3,132 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Waterfall" ID="{CA15283E-90EB-42BC-8DB0-6F79A3738CED}">
+				<Folder Name="Music" ID="{4A347CDF-E669-416F-9A4D-680F4B47CC7A}" ShortID="360689540">
 					<ChildrenList>
-						<Action Name="" ID="{F34AD601-73A0-44C6-9F11-9EBB46991AE9}" ShortID="403821850">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Waterfall" ID="{6EAB7D4F-2A61-4A7B-8B23-5AA8BBE23DAA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_Music_Shibuya" ID="{78F68F12-47BB-4C07-9453-4236089B0DEE}">
+							<ChildrenList>
+								<Action Name="" ID="{D01A8C5F-CDCD-4A1D-B5A2-8A54516D75D8}" ShortID="488548815">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Shibuya" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Rocks" ID="{9D2A9B70-8346-47C0-9C80-79B5AF155F5A}">
+							<ChildrenList>
+								<Action Name="" ID="{2EA70BB5-2AC2-4484-97C4-72909F692015}" ShortID="866207918">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Rocks" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Menu" ID="{E2EC6755-6694-4DEC-9A0F-FB5E6A046443}">
+							<ChildrenList>
+								<Action Name="" ID="{24AB7E12-72BE-4E51-B04E-AB13BAF53396}" ShortID="381057772">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Menu" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Boss" ID="{E05AA2F8-2704-4BC0-B351-95A284FECE24}">
+							<ChildrenList>
+								<Action Name="" ID="{DC922AEC-FBA7-40A0-87B8-956E24D72540}" ShortID="207640329">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Boss" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Finale" ID="{E5C5C858-1830-45A3-961C-E6CC53A2F28F}">
+							<ChildrenList>
+								<Action Name="" ID="{673D8FDD-C59D-4732-BCEA-CD49C0784606}" ShortID="339463002">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Finale" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Village" ID="{2C3D7D3F-379C-4273-B487-4601352818FD}">
+							<ChildrenList>
+								<Action Name="" ID="{F5537951-4F1B-41EB-A8E8-5797A7B90901}" ShortID="696076954">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Village" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Cavern" ID="{859F91A1-D1A2-4A10-902B-A33B10C91BFE}">
+							<ChildrenList>
+								<Action Name="" ID="{6393982F-A302-4512-A12F-7CC1348D554A}" ShortID="268772157">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Cavern" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Music_Cavern_Alt" ID="{29CE800A-D410-40AB-980F-CB0E73FB8145}">
+							<ChildrenList>
+								<Action Name="" ID="{6989F1DC-9100-4AA9-87F6-78528B7F1E29}" ShortID="347239354">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Cavern_Alt" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Boss" ID="{E05AA2F8-2704-4BC0-B351-95A284FECE24}">
+				</Folder>
+				<Folder Name="Player" ID="{1D6DC66B-AD2B-4AF4-8711-389CA2D9EEC3}" ShortID="1058699026">
 					<ChildrenList>
-						<Action Name="" ID="{DC922AEC-FBA7-40A0-87B8-956E24D72540}" ShortID="207640329">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Boss" ID="{5FE418C1-9376-4454-AF9B-5E27C6A760AF}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Folder Name="Footstep" ID="{C0344B4B-F9D8-4019-93AD-87C337B8A4A2}" ShortID="276889945">
+							<ChildrenList>
+								<Event Name="Play_Footstep_Dirt" ID="{AAAB4F5C-BE69-49E6-9A4E-F99D93B2116C}">
+									<ChildrenList>
+										<Action Name="" ID="{A090256F-4819-4337-A663-803A69459DEC}" ShortID="51528090">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Dirt" ID="{0F153C54-87DF-41DC-9B0B-86711E2B03D1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Cavern" ID="{859F91A1-D1A2-4A10-902B-A33B10C91BFE}">
+				</Folder>
+				<Folder Name="Environment" ID="{DF1DFC83-A1D0-4459-9DEF-CC184053307E}" ShortID="105941716">
 					<ChildrenList>
-						<Action Name="" ID="{6393982F-A302-4512-A12F-7CC1348D554A}" ShortID="268772157">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Cavern" ID="{ED5CE5BE-BDC9-43E9-800E-496E4FC3D82D}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Play_Waterfall" ID="{CA15283E-90EB-42BC-8DB0-6F79A3738CED}">
+							<ChildrenList>
+								<Action Name="" ID="{F34AD601-73A0-44C6-9F11-9EBB46991AE9}" ShortID="403821850">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Waterfall" ID="{6EAB7D4F-2A61-4A7B-8B23-5AA8BBE23DAA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Cavern_Alt" ID="{29CE800A-D410-40AB-980F-CB0E73FB8145}">
-					<ChildrenList>
-						<Action Name="" ID="{6989F1DC-9100-4AA9-87F6-78528B7F1E29}" ShortID="347239354">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Cavern_Alt" ID="{C012025F-3B5F-48B7-BF93-921A547A281E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Finale" ID="{E5C5C858-1830-45A3-961C-E6CC53A2F28F}">
-					<ChildrenList>
-						<Action Name="" ID="{673D8FDD-C59D-4732-BCEA-CD49C0784606}" ShortID="339463002">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Finale" ID="{5A725D74-B870-4366-B7D6-A2E9DCE8ACA1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Menu" ID="{E2EC6755-6694-4DEC-9A0F-FB5E6A046443}">
-					<ChildrenList>
-						<Action Name="" ID="{24AB7E12-72BE-4E51-B04E-AB13BAF53396}" ShortID="381057772">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Menu" ID="{D0E5E87F-D6BB-497E-AD96-1931EDBE4432}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Rocks" ID="{9D2A9B70-8346-47C0-9C80-79B5AF155F5A}">
-					<ChildrenList>
-						<Action Name="" ID="{2EA70BB5-2AC2-4484-97C4-72909F692015}" ShortID="866207918">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Rocks" ID="{DB5AF274-4E9C-44FF-B155-A1D68A7F1227}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Shibuya" ID="{78F68F12-47BB-4C07-9453-4236089B0DEE}">
-					<ChildrenList>
-						<Action Name="" ID="{D01A8C5F-CDCD-4A1D-B5A2-8A54516D75D8}" ShortID="488548815">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Shibuya" ID="{B564F555-7CBE-40E6-AA8E-881AA7FE5B2E}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Music_Village" ID="{2C3D7D3F-379C-4273-B487-4601352818FD}">
-					<ChildrenList>
-						<Action Name="" ID="{F5537951-4F1B-41EB-A8E8-5797A7B90901}" ShortID="696076954">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Village" ID="{8F5AC893-54E2-4CE9-A9B4-36B0E3426EEB}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

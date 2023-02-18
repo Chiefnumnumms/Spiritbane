@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_FOOTSTEP_DIRT = 779807780U;
         static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
         static const AkUniqueID PLAY_MUSIC_CAVERN = 3247040845U;
         static const AkUniqueID PLAY_MUSIC_FINALE = 3315549719U;
