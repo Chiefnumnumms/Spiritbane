@@ -601,6 +601,16 @@
 												<Value>-1</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OutputBusHighpass" Type="int16">
+											<ValueList>
+												<Value>34</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OutputBusLowpass" Type="int16">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>-430</Value>
@@ -608,7 +618,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-1</Value>
+												<Value>-2</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -637,6 +647,42 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close" ID="{8728857D-EE11-41F5-A985-3FE0A2A40962}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Jumping" ID="{FF22FC36-6CBB-427D-8655-994196585DFA}" ShortID="376156329">
+									<PropertyList>
+										<Property Name="OutputBusVolume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+											<ObjectRef Name="New_Pitch_Shifter_01" ID="{88679CDD-2FA4-4FB2-9097-E1C2599D016A}" WorkUnitID="{880EFFD4-F96D-4EA9-97B4-90A0D2BCDAD9}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PM_SDGS_213 Footstep Step Dry Grass Skid Drag" ID="{6A0A4126-4BF8-43E9-BDA4-BC8C170E7B66}">
+											<PropertyList>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PM_SDGS_213 Footstep Step Dry Grass Skid Drag.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="731857351"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PM_SDGS_213 Footstep Step Dry Grass Skid Drag" ID="{6A0A4126-4BF8-43E9-BDA4-BC8C170E7B66}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

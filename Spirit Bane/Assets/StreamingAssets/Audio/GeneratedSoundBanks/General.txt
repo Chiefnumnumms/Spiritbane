@@ -1,12 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
-	779807780	Play_Footstep_Dirt			\Default Work Unit\Player\Footstep\Play_Footstep_Dirt	
-	2323405115	Play_Landing			\Default Work Unit\Player\Footstep\Play_Landing	
+	779807780	Play_Footstep_Dirt			\Default Work Unit\Player\Foot\Play_Footstep_Dirt	
+	2323405115	Play_Landing			\Default Work Unit\Player\Foot\Play_Landing	
+	2756694246	Play_Jumping			\Default Work Unit\Player\Foot\Play_Jumping	
 
 Effect plug-ins	ID	Name	Type				Notes
+	484763476	New_Pitch_Shifter_01	Wwise Pitch Shifter			
 	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	622781877	Landing	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close_D8D246B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Landing		40800
+	731857351	Jumping	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\PM_SDGS_213 Footstep Step Dry Grass Skid Drag_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Jumping		141666
 	820998479	FootstepDirt02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt02		42988
 	845317709	FootstepDirt00	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt00_D8334050.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt00		76366
 	868101729	FootstepDirt01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt01_1CBA49A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt01		46564
