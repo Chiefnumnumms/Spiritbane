@@ -118,7 +118,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Swing"",
+                    ""name"": ""Agreskoul"",
                     ""type"": ""Button"",
                     ""id"": ""e21d7de9-f7bb-4f08-a662-72589ea86d11"",
                     ""expectedControlType"": ""Button"",
@@ -157,7 +157,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Swing"",
+                    ""action"": ""Agreskoul"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -337,7 +337,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerActions_Swing = m_PlayerActions.FindAction("Swing", throwIfNotFound: true);
+        m_PlayerActions_Agreskoul = m_PlayerActions.FindAction("Agreskoul", throwIfNotFound: true);
         // SwingingActions
         m_SwingingActions = asset.FindActionMap("SwingingActions", throwIfNotFound: true);
         m_SwingingActions_Swing = m_SwingingActions.FindAction("Swing", throwIfNotFound: true);
@@ -445,14 +445,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Sprint;
     private readonly InputAction m_PlayerActions_Jump;
-    private readonly InputAction m_PlayerActions_Swing;
+    private readonly InputAction m_PlayerActions_Agreskoul;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Sprint => m_Wrapper.m_PlayerActions_Sprint;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
-        public InputAction @Swing => m_Wrapper.m_PlayerActions_Swing;
+        public InputAction @Agreskoul => m_Wrapper.m_PlayerActions_Agreskoul;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -468,9 +468,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
-                @Swing.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwing;
-                @Swing.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwing;
-                @Swing.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwing;
+                @Agreskoul.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAgreskoul;
+                @Agreskoul.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAgreskoul;
+                @Agreskoul.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnAgreskoul;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -481,9 +481,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Swing.started += instance.OnSwing;
-                @Swing.performed += instance.OnSwing;
-                @Swing.canceled += instance.OnSwing;
+                @Agreskoul.started += instance.OnAgreskoul;
+                @Agreskoul.performed += instance.OnAgreskoul;
+                @Agreskoul.canceled += instance.OnAgreskoul;
             }
         }
     }
@@ -627,7 +627,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnSprint(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnSwing(InputAction.CallbackContext context);
+        void OnAgreskoul(InputAction.CallbackContext context);
     }
     public interface ISwingingActionsActions
     {

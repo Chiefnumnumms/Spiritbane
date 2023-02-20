@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+
 public class PlayerLocomotion : MonoBehaviour
 {
     InputManager inputManager;
@@ -10,6 +11,7 @@ public class PlayerLocomotion : MonoBehaviour
     AnimationManager animationManager;
     Swinging swingingManager;
     ObjectGrapple grapplingManager;
+    Agreskoul agreskoulManager;
 
     Vector3 moveDir;
     [SerializeField]
@@ -61,7 +63,9 @@ public class PlayerLocomotion : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         animationManager = GetComponent<AnimationManager>();
         inputManager = GetComponent<InputManager>();
+        agreskoulManager = GetComponent<Agreskoul>();
         playerRb = GetComponent<Rigidbody>();
+
         if(playerCamera == null)
         {
             playerCamera = Camera.main.transform;
@@ -73,6 +77,36 @@ public class PlayerLocomotion : MonoBehaviour
         myTransform = transform;
 
         lastStepTime = Time.time;
+
+        // Subscribe To Relevant Button Input
+        inputManager.OnAgreskoulStarted += AgreskoulPressed;       
+        inputManager.OnAgreskoulPerformed += AgreskoulReleased;
+        
+        inputManager.OnJumpStarted += HandleJump;
+        inputManager.OnSprintStarted += inputManager.HandleSprintingInput;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe To Relevant Button Input
+        inputManager.OnAgreskoulStarted -= AgreskoulPressed;
+        inputManager.OnAgreskoulPerformed -= AgreskoulReleased;
+        inputManager.OnJumpStarted -= HandleJump;
+        inputManager.OnSprintStarted -= inputManager.HandleSprintingInput;
+    }
+
+    private void AgreskoulPressed()
+    {
+        // Launch Sword On Button Press
+        agreskoulManager.ExecuteSwordSwing();
+        Debug.Log("Extended Blade");
+    }
+
+    private void AgreskoulReleased()
+    {
+        // Bring Sword Back Upon Release
+        agreskoulManager.RetractBlade();
+        Debug.Log("Retracted Blade");
     }
 
     //-----------------------------------------------------------------------------
@@ -90,8 +124,6 @@ public class PlayerLocomotion : MonoBehaviour
         {
             return;
         }
-
-
 
         HandleMovement();
         HandleRotation();
@@ -287,8 +319,17 @@ public class PlayerLocomotion : MonoBehaviour
                 playerVel.y = jumpingVel;
                 playerRb.velocity = playerVel;
             }
-      
         }
+    }
+
+    public void HandleAgreskoulAction()
+    {
+        agreskoulManager.ExecuteSwordSwing();
+    }
+
+    public void HandleAgreskoulReleaseAction()
+    {
+        agreskoulManager.RetractBlade();
     }
 
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)

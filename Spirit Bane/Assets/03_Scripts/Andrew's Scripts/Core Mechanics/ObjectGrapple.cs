@@ -86,7 +86,6 @@ public class ObjectGrapple : MonoBehaviour
         if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, maxGrappleDistance, whatIsGrappable))
         {
             isGrappling = true;
-            Debug.Log("GRAPPLING");
 
             if (!swingingManager.isSwinging)
             {
@@ -99,8 +98,6 @@ public class ObjectGrapple : MonoBehaviour
                 // EXECUTE THE GRAPPLE WITH A DELAY TIMER
                 Invoke(nameof(ExecuteGrapple), grappleDelayTime);
 
-
-                Debug.Log("GRAPPLING EXECUTED");
             }
         }
         else
@@ -109,7 +106,6 @@ public class ObjectGrapple : MonoBehaviour
 
             // STOP THE GRAPPLE GIVEN A DELAY
             Invoke(nameof(StopGrapple), grappleDelayTime);
-            Debug.Log("GRAPPLING STOPPED");
         }
 
         // ENABLE LINE RENDERER

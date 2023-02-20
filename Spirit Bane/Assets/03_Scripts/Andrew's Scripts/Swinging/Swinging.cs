@@ -7,6 +7,7 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 //using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
@@ -23,7 +24,7 @@ public class Swinging : MonoBehaviour
 
     [Header("Swinging")]
     private float maxSwingDistance = 25f;
-    private Vector3 swingPoint;
+    public Vector3 swingPoint;
     private SpringJoint springJoint;
 
     [Header("In Air Movement")]
@@ -107,6 +108,7 @@ public class Swinging : MonoBehaviour
  
         lineRenderer.positionCount = 2;
         currentGrapplePosition = gunTip.position;
+
     }
 
     public void CheckForSwingPoints()
@@ -287,5 +289,7 @@ public class Swinging : MonoBehaviour
             grapplePoints.Add(gp);
         }
     }
+
+  
 
 }

@@ -1,9 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
 
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
 {
+
+    // Public Actions
+    public Action OnAgreskoulStarted;
+    public Action OnAgreskoulPerformed;
+
+    public Action OnJumpStarted;
+    public Action OnSprintStarted;
+
+    // OnAction - Invoke Subscritions On Sprint Canceled Input
+    public void OnAgreskoul(InputAction.CallbackContext context)
+    {
+        // Avoid Double Calling
+        if (!context.started) return;
+
+        // Invoke Subscriptions To The Action If Not Null
+        OnAgreskoulStarted?.Invoke();
+    }
+
+    // OnAction - Invoke Subscritions On Action Performed Input
+    public void OnAgreskoulReleased(InputAction.CallbackContext context)
+    {
+        // Avoid Double Calling
+        if (!context.performed) return;
+
+        // Invoke Subscriptions To The Action If Not Null
+        OnAgreskoulPerformed?.Invoke();
+    }
+
+    // OnAction - Invoke Subscritions On Sprint Canceled Input
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        // Avoid Double Calling
+        if (!context.started) return;
+
+        // Invoke Subscriptions To The Action If Not Null
+        OnJumpStarted?.Invoke();
+    }
+
+    // OnAction - Invoke Subscritions On Sprint Canceled Input
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        // Avoid Double Calling
+        if (!context.started) return;
+
+        // Invoke Subscriptions To The Action If Not Null
+        OnSprintStarted?.Invoke();
+    }
+
+
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
     AnimationManager animationManager;
@@ -11,6 +62,7 @@ public class InputManager : MonoBehaviour
     ObjectGrapple grapplingManager;
     ItemPickup itemPickup;
     PlayerStats characterManager;
+    Agreskoul agreskoulManager;
 
     private void Awake()
     {
@@ -20,6 +72,7 @@ public class InputManager : MonoBehaviour
         grapplingManager = GetComponent<ObjectGrapple>();
         itemPickup = FindObjectOfType<ItemPickup>();
         characterManager = GetComponent<PlayerStats>();
+        agreskoulManager = GetComponent<Agreskoul>();
     }
 
     public Vector2 movementInput;
@@ -38,6 +91,9 @@ public class InputManager : MonoBehaviour
     public bool s_Pressed;
     public bool d_Pressed;
 
+    // AGRESKOUL
+    public bool agreskoul_Pressed;
+
     // GRAPPLING - AA
     public bool grapple_Pressed;
 
@@ -54,6 +110,11 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Sprint.performed += inputContext => sprintPressed = true;
             playerControls.PlayerActions.Sprint.canceled += inputContext => sprintPressed = false;
             playerControls.PlayerActions.Jump.performed += inputContext => jumpPressed = true;
+            
+            // AGRESKOUL
+            playerControls.PlayerActions.Agreskoul.performed += inputContext => agreskoul_Pressed = true;
+            playerControls.PlayerActions.Agreskoul.canceled += inputContext => agreskoul_Pressed = false;
+
 
             // SWINGING - AA
             playerControls.SwingingActions.Swing.performed += inputContext => swing_Pressed = true;               
@@ -108,6 +169,9 @@ public class InputManager : MonoBehaviour
 
         // ITEM PICKUP - AA
         HandlePickupInput();
+
+        // AGRESKOUL
+        HandleAgreskoulInput();
     }
 
     //-----------------------------------------------------------------------------
@@ -122,7 +186,7 @@ public class InputManager : MonoBehaviour
 
     //---------------------------------------------------------------------
     // adjusts the bool to handle sprinting when the sprint button is held
-    private void HandleSprintingInput()
+    public void HandleSprintingInput()
     {
         if (sprintPressed && moveAmount > 0.5f)
         {
@@ -167,6 +231,19 @@ public class InputManager : MonoBehaviour
             // GRAPPLE
             grapplingManager.StartGrapple();
             grappleObject_Pressed = false;
+        }
+    }
+
+    private void HandleAgreskoulInput()
+    {
+        if (agreskoul_Pressed)
+        {
+            agreskoulManager.ExecuteSwordSwing();
+        }
+        else
+        {
+            agreskoulManager.RetractBlade();
+            agreskoul_Pressed = false;
         }
     }
 
