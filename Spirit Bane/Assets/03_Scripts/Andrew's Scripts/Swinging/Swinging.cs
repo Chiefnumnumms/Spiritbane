@@ -134,7 +134,6 @@ public class Swinging : MonoBehaviour
             gunTip.LookAt(lookAtPoint);
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
-
         {
             hitPoint = sphereCastHit.point;
             HighlightGrapplePoint(maxIndicationDistance);
@@ -263,7 +262,7 @@ public class Swinging : MonoBehaviour
         RaycastHit hit;
 
         // CAST THE RAY TO CHECK IF IT COLLIDES/HITS A GRAPPLE POINT LAYER GIVEN A SPECIFIC MAX RANGE
-        if (Physics.Raycast(ray, out hit, maxRange) && hit.transform.gameObject.layer == LayerMask.NameToLayer("GrapplePoint"))
+        if (Physics.Raycast(ray, out hit, maxRange) && hit.transform.gameObject.layer == whatIsGrappleable)
         {
             isLookingAtGrapplePoint = true;
 

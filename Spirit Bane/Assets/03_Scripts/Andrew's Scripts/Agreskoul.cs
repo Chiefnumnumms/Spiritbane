@@ -1,25 +1,32 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Agreskoul : MonoBehaviour 
+public class Agreskoul : MonoBehaviour
 {
     [Header("Agreskoul")]
-    public Transform energy;
-    public List<Transform> bladePieces = new List<Transform>();
-    [SerializeField] private float scaleFactor;
+    [SerializeField] private float bladeExtentionSpeed;
     [SerializeField] private float speedDecrement;
-    private GameObject swordTip;
-    public float bladeExtentionSpeed;
-    private float maxExtentionDistance = 50.0f;
+    [SerializeField] private float scaleFactor;
+    [SerializeField] private float maxExtentionDistance = 50.0f;
+    [SerializeField] private Transform energy;
+    [SerializeField] private Transform weaponPivot;
+    [SerializeField] private List<Transform> bladePieces = new List<Transform>();
 
     private Swinging swingingManager;
     private InputManager inputManager;
+    private GameObject swordTip;
 
     private Vector3 originalBladeScale;
     private Vector3 originalEnergyScale;
+    private Quaternion originalPivotRotation;
+
+    private bool isBladeExtended = false;
+    private float bladeRetractionDelay = 0.5f;
+    private float bladeRetractionTimer = 0.0f;
 
     private void Awake()
     {
@@ -41,18 +48,7 @@ public class Agreskoul : MonoBehaviour
         swingingManager = GetComponent<Swinging>();
         inputManager = GetComponent<InputManager>();
 
-    }
-
-    private void Update()
-    {
-        //if (inputManager.swing_Pressed)
-        //{
-        //    ExecuteSwordSwing();
-        //}
-        //else
-        //{
-        //    RetractBlade();
-        //}
+        originalPivotRotation = weaponPivot.transform.rotation;
     }
 
     public void ExecuteSwordSwing()
@@ -61,11 +57,16 @@ public class Agreskoul : MonoBehaviour
         Vector3 target = swingingManager.swingPoint;
         Vector3 distance = target - swordTip.transform.position;
 
+        if (distance.magnitude >= maxExtentionDistance) return;
+
         // IF PAST MAX DISTANCE
         if (distance.magnitude >= maxExtentionDistance)
         {
             target = maxExtentionDistance * distance.normalized;
         }
+
+        // CALCULATE THE ROTATION TO FACE THE TARGET
+        Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
 
         // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
         scaleFactor = distance.magnitude / energy.transform.localScale.y;
@@ -79,8 +80,11 @@ public class Agreskoul : MonoBehaviour
         // CALCULATE THE NEW SIZE OF THE Y VALUE
         Vector3 newSize = new Vector3(originalEnergyScale.x, newY, originalEnergyScale.z);
 
-        // SLERP MOVEMENT OF BLADE
+        // SLERP MOVEMENT AND ROTATION OF BLADE
         energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, time * Time.deltaTime);
+
+        weaponPivot.LookAt(target);
 
         foreach (Transform t in bladePieces)
         {
@@ -91,6 +95,7 @@ public class Agreskoul : MonoBehaviour
             t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
         }
     }
+
 
     public void RetractBlade()
     {
@@ -106,14 +111,16 @@ public class Agreskoul : MonoBehaviour
             return;
         }
 
-
         float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
 
         // CALCULATE EXTENTION TIME BASED ON DISTANCE
-        float time = scaleFactor * bladeExtentionSpeed;
-        
+        float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
+
         // SLERP BACK INTO ORIGINAL POSITION
         energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time);
+
+        // RETURN BLADE INTO ITS ORIGINAL ROTATION VALUES
+        weaponPivot.transform.rotation = originalPivotRotation;
 
         foreach (Transform t in bladePieces)
         {
@@ -135,24 +142,5 @@ public class Agreskoul : MonoBehaviour
             bladePieces.Add(t.GetComponent<Transform>());
         }
         Debug.Log("Piece Added!");
-    }
-
-    private void SwordExtention(float inScale, float inDuration)
-    {
-        //if (!springJoint) return;
-
-        // CACHING THE SIZE OF THE ENERGY OBJECT ACCORDING TO DISTANCE BETWEEN TIP AND GRAPPLE POINT
-        Vector3 newSize = energy.transform.localScale * inScale;
-
-        // SETTING THE NEW SIZE TO THE NEW SIZE
-        energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, inDuration);
-
-        foreach (Transform t in bladePieces)
-        {
-            newSize = t.localScale / inScale;
-
-            t.localScale = Vector3.Slerp(t.localScale, newSize, inDuration);
-        }
-
     }
 }
