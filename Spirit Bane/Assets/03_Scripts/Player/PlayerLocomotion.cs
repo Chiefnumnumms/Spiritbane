@@ -19,6 +19,11 @@ public class PlayerLocomotion : MonoBehaviour
 
     public Rigidbody playerRb;
 
+    [Header("Wind")]
+    public GameObject windZone;
+    public Vector3 windDir;
+    public float windStr;
+
     [Header("Falling")]
     public float inAirTimer;
     public float leapingVel;
@@ -30,6 +35,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isGrounded;
     public bool isSprinting;
     public bool isJumping;
+    public bool inWindZone;
 
     [Header("Jumping Values")]
     public float jumpHeight = 3f;
@@ -170,6 +176,11 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (swingingManager.isSwinging) return;
         //if (activeGrapple) return;
+
+        if(inWindZone)
+        {
+            playerRb.AddForce(windDir * windStr);
+        }
 
         moveDir = playerCamera.forward * inputManager.vertInput;
         moveDir = moveDir + playerCamera.right * inputManager.horizInput;
@@ -381,5 +392,22 @@ public class PlayerLocomotion : MonoBehaviour
 
             grapplingManager.StopGrapple();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "WindArea")
+        {
+            windZone = other.gameObject;
+            windDir = windZone.GetComponent<WindArea>().windDirection;
+            windStr = windZone.GetComponent<WindArea>().windStrength;
+            inWindZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "WindArea")
+            inWindZone = false;
     }
 }

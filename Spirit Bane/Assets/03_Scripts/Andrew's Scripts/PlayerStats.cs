@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
 
     public HealthBar healthBar;
     AnimationManager animationManager;
+    public Transform player;
 
     public Transform respawnPosition;
 
@@ -97,5 +98,15 @@ public class PlayerStats : MonoBehaviour
 
         // SET CHARACTERS MAX HEALTH BASED ON THE HEALTH LEVEL
         healthBar.SetMaxHealth(maxHealth);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (player.position.y < other.gameObject.transform.position.y - 5)
+            if (other.gameObject.tag == "DeepWater")
+            {
+                Debug.Log("Under The Water");
+                StartCoroutine(Respawn(0f));
+            }
     }
 }

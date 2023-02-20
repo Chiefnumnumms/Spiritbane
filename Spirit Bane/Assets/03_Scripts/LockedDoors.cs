@@ -75,23 +75,30 @@ public class LockedDoors : MonoBehaviour
 
     private void CheckInvForKey()
     {
-        GameObject temp = playersItems.items.Find(x => x.name == keyName);
-
-        if (temp != null)
+        if(playersItems.items.Count != 0)
         {
-            hasKey = true;
-            Debug.Log("It Fucking Works");
+            GameObject temp = playersItems.items.Find(x => x.name == keyName);
+
+            if (temp != null)
+            {
+                hasKey = true;
+                Debug.Log("It Fucking Works");
+            }
         }
     }
 
     private void CheckForInteraction()
     {
-        GameObject temp = interactedItems.interactableObjects.Find(x => x.name == interactableName);
-
-        if (temp != null)
+        
+        if(interactedItems.interactableObjects.Count != 0)
         {
-            hasInteracted = true;
-            Debug.Log("It Fucking Works");
+            GameObject temp = interactedItems.interactableObjects.Find(x => x.name == interactableName);
+
+            if (temp != null)
+            {
+                hasInteracted = true;
+                Debug.Log("It Fucking Works");
+            }
         }
     }
 
