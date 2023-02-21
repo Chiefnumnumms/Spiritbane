@@ -106,7 +106,9 @@ public class PlayerStats : MonoBehaviour
             if (other.gameObject.tag == "DeepWater")
             {
                 Debug.Log("Under The Water");
-                StartCoroutine(Respawn(0f));
+                HandleRespawn();
+                TakeDamage(20);
             }
+
     }
 }
