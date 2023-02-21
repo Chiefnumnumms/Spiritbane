@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8465355391655857689}
   - component: {fileID: 4815791067168948668}
   - component: {fileID: 7291845925277414774}
+  - component: {fileID: -3732581573310819875}
   m_Layer: 0
   m_Name: CrystalCluster_6
   m_TagString: Untagged
@@ -85,3 +86,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3732581573310819875
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093096728116434083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7697966415173604329, guid: 05b41ae5eb5905a40b1b40eb9e11c3ed, type: 3}
