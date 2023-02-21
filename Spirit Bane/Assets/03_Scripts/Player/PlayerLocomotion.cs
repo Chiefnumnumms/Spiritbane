@@ -126,7 +126,7 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
 
-        if(isJumping)
+        if (isJumping)
         {
             return;
         }
@@ -182,6 +182,7 @@ public class PlayerLocomotion : MonoBehaviour
             playerRb.AddForce(windDir * windStr);
         }
 
+
         moveDir = playerCamera.forward * inputManager.vertInput;
         moveDir = moveDir + playerCamera.right * inputManager.horizInput;
         moveDir.Normalize();
@@ -230,7 +231,7 @@ public class PlayerLocomotion : MonoBehaviour
             Quaternion targetRot = Quaternion.LookRotation(targetDir);
             Quaternion playerRot = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
 
-            transform.rotation = playerRot;
+            transform.rotation = targetRot;
         }
         else
         {
@@ -323,7 +324,7 @@ public class PlayerLocomotion : MonoBehaviour
             if (inputManager.jumpPressed)
             {
                 animationManager.animator.SetBool("isJumping", true);
-                animationManager.PlayTargetAnim("Jump", false);
+                animationManager.PlayTargetAnim("Jump", false, true);
 
                 float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
                 Vector3 playerVel = moveDir;
