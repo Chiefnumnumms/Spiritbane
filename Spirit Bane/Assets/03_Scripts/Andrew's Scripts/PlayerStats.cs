@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -13,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     AnimationManager animationManager;
     public Transform player;
+
+    public List<GameObject> killZones;
 
     public Transform respawnPosition;
 
@@ -100,15 +103,17 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (player.position.y < other.gameObject.transform.position.y - 5)
-            if (other.gameObject.tag == "DeepWater")
+        foreach (GameObject water in killZones)
+        {
+            if (player.position.y < water.transform.position.y)
             {
                 Debug.Log("Under The Water");
                 HandleRespawn();
                 TakeDamage(20);
             }
-
+                
+        }
     }
 }
