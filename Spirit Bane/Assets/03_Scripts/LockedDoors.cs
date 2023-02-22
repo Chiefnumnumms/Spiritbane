@@ -7,15 +7,17 @@ using UnityEngine;
 public class LockedDoors : MonoBehaviour
 {
     [SerializeField]
-    private string keyName;
+    private List<string> keyNames;
 
     [SerializeField]
-    private string interactableName;
+    private List<string> interactableNames;
 
     private bool hasKey = false;
     private bool hasInteracted = false;
 
     private bool doorOpened = false;
+
+    public bool cavernDoor;
 
 
     public Ray ray;
@@ -52,7 +54,7 @@ public class LockedDoors : MonoBehaviour
 
     private void Update()
     {
-        if(keyName != "")
+        if(keyNames.Count != 0)
         {
             if (!hasKey)
             {
@@ -60,7 +62,7 @@ public class LockedDoors : MonoBehaviour
             }
         }
 
-        if(interactableName != "")
+        if(interactableNames.Count != 0)
         {
             if(!hasInteracted)
             {
@@ -69,7 +71,7 @@ public class LockedDoors : MonoBehaviour
         }
 
         HandleDoorOpening();
-
+        HandleCavernEnterance();
 
     }
 
@@ -77,13 +79,17 @@ public class LockedDoors : MonoBehaviour
     {
         if(playersItems.items.Count != 0)
         {
-            GameObject temp = playersItems.items.Find(x => x.name == keyName);
-
-            if (temp != null)
+            foreach (GameObject items in playersItems.items)
             {
-                hasKey = true;
-                Debug.Log("It Fucking Works");
+                GameObject temp = playersItems.items.Find(x => x.name == items.name);
+
+                if (temp != null)
+                {
+                    hasKey = true;
+                    Debug.Log("It Fucking Works");
+                }
             }
+            
         }
     }
 
@@ -92,12 +98,15 @@ public class LockedDoors : MonoBehaviour
         
         if(interactedItems.interactableObjects.Count != 0)
         {
-            GameObject temp = interactedItems.interactableObjects.Find(x => x.name == interactableName);
+            foreach(GameObject interactables in interactedItems.interactableObjects)
+            {
+                GameObject temp = interactedItems.interactableObjects.Find(x => x.name == interactables.name);
 
-            if (temp != null)
+                if (temp != null)
             {
                 hasInteracted = true;
                 Debug.Log("It Fucking Works");
+            }
             }
         }
     }
@@ -137,7 +146,13 @@ public class LockedDoors : MonoBehaviour
                 }
             }
         }
+
     }
 
-    
+    private void HandleCavernEnterance()
+    {
+
+    }
+
+
 }
