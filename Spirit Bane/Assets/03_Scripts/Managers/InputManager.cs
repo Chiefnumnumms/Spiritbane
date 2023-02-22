@@ -170,8 +170,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
         // ITEM PICKUP - AA
         HandlePickupInput();
 
-        // AGRESKOUL
-        HandleAgreskoulInput();
     }
 
     //-----------------------------------------------------------------------------
@@ -213,14 +211,16 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
     // HANDLES ALL SWINGING MECHANICS - AA
     private void HandleSwingingInput()
     {
-        if (swing_Pressed) // PLAYER SWINGING
+        if (agreskoul_Pressed) // PLAYER SWINGING
         {
-            swingingManager.HandleSwingAction();
+            agreskoulManager.HandleSwingAction();
+            agreskoulManager.ExecuteSwordSwing();
         }
         else // NOT SWINGING
         {
-            swingingManager.StopSwing();
-            swing_Pressed = false;
+            agreskoulManager.StopSwing();
+            agreskoulManager.RetractBlade();
+            agreskoul_Pressed = false;
         }
     }
 
@@ -231,19 +231,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
             // GRAPPLE
             grapplingManager.StartGrapple();
             grappleObject_Pressed = false;
-        }
-    }
-
-    private void HandleAgreskoulInput()
-    {
-        if (agreskoul_Pressed)
-        {
-            agreskoulManager.ExecuteSwordSwing();
-        }
-        else
-        {
-            agreskoulManager.RetractBlade();
-            agreskoul_Pressed = false;
         }
     }
 

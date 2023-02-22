@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    InputManager inputManager;
-    Animator animator;
-    PlayerLocomotion playerLocomotion;
-    Swinging swingingManager;
-    ObjectGrapple grappleManager;
+    private InputManager inputManager;
+    private Animator animator;
+    private PlayerLocomotion playerLocomotion;
+    private Swinging swingingManager;
+    private ObjectGrapple grappleManager;
+    private Agreskoul agreskoulManager;
 
     public bool isInteracting;
     public bool canRotate;
@@ -20,6 +21,7 @@ public class PlayerManager : MonoBehaviour
         animator = GetComponent<Animator>();
         swingingManager = GetComponent<Swinging>();
         grappleManager = GetComponent<ObjectGrapple>();
+        agreskoulManager = GetComponent<Agreskoul>();
     }
 
     private void Update()
@@ -27,8 +29,8 @@ public class PlayerManager : MonoBehaviour
         inputManager.HandleAllInputs();
 
         // SWINGING - AA
-        swingingManager.CheckForSwingPoints();
-        swingingManager.HighlightGrapplePoint(swingingManager.maxIndicationDistance);
+        agreskoulManager.CheckForSwingPoints();
+        agreskoulManager.HighlightSwingingPoint(agreskoulManager.maxIndicationDistance);
 
         // GRAPPLING - AA
         grappleManager.CheckForGrappleObject();
