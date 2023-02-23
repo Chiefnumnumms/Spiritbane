@@ -302,17 +302,17 @@ public class Agreskoul : MonoBehaviour
         if (inputManager.d_Pressed) // SWING RIGHT
         {
             // APPLY HORIZONTAL FORCE TO THE RIGIDBODY
-            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime);
+            rb.AddForce(orientation.right * horizontalThrustForce * Time.deltaTime, ForceMode.VelocityChange);
         }
         else if (inputManager.a_Pressed) // SWING LEFT
         {
             // APPLY HORIZONTAL FORCE TO THE RIGIDBODY
-            rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime);
+            rb.AddForce(-orientation.right * horizontalThrustForce * Time.deltaTime, ForceMode.VelocityChange);
         }
         else if (inputManager.w_Pressed) // SWING FORWARD
         {
             // APPLY FORWARD FORCE TO THE RIGIDBODY
-            rb.AddForce(orientation.forward * forwardThrustForce * Time.deltaTime);
+            rb.AddForce(orientation.forward * forwardThrustForce * Time.deltaTime, ForceMode.VelocityChange);
         }
 
         // WHEN THE MOUSE BUTTON IS BEING HELD TO SWING, THE CABLE SLOWLY SHRINKS
