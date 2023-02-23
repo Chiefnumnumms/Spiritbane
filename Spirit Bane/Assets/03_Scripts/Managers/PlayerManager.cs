@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
 
     public bool isInteracting;
     public bool canRotate;
+    public bool isInAir;
 
     private void Awake()
     {
@@ -50,6 +51,11 @@ public class PlayerManager : MonoBehaviour
         isInteracting = animator.GetBool("isInteracting");
         playerLocomotion.isJumping = animator.GetBool("isJumping");
         canRotate = animator.GetBool("canRotate");
-        animator.SetBool("isGrounded", playerLocomotion.isGrounded);        
+        animator.SetBool("isGrounded", playerLocomotion.isGrounded);  
+        
+        if(isInAir)
+        {
+            playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+        }
     }
 }

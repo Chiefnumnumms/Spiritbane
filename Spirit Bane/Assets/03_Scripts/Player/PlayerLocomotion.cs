@@ -27,9 +27,15 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Falling")]
     public float inAirTimer;
     public float leapingVel;
-    public float fallingVel;
+    public float fallingVel = 30;
     public float rayCastHeightOffset = 1f;
     public LayerMask groundLayer;
+
+    [Header("Ground And Air Detection")]
+    [SerializeField]
+    private float groundDetectionRayStartPoint = 0.5f;
+    [SerializeField]
+    private float minimumDistanceNeededToStartFall = 1f;
 
     [Header("Movement Flags")]
     public bool isGrounded;
@@ -282,7 +288,7 @@ public class PlayerLocomotion : MonoBehaviour
             playerRb.AddForce(-Vector3.up * fallingVel * inAirTimer);
         }
 
-        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, groundLayer))
+        if (Physics.SphereCast(rayCastOrigin, 0.28f, -Vector3.up, out hit, 1.25f, groundLayer))
         {
             if (transform.position.y == origY) { isGrounded = true; playerManager.isInteracting = false; }
 
@@ -300,9 +306,9 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = false;
         }
 
-        if(isGrounded && !isJumping)
+        if (isGrounded && !isJumping)
         {
-            if(playerManager.isInteracting || inputManager.moveAmount > 0)
+            if (playerManager.isInteracting || inputManager.moveAmount > 0)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime / 0.1f);
             }
