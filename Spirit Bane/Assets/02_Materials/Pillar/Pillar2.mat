@@ -45,6 +45,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmissiveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a0c7cc3e699f6ec41930f007c6c0e962, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -89,6 +93,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmissiveIntensity: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
