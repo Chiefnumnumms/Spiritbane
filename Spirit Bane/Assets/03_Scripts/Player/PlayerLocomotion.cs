@@ -35,7 +35,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     private float groundDetectionRayStartPoint = 0.5f;
     [SerializeField]
-    private float minimumDistanceNeededToStartFall = 1f;
+    private float maximumDistanceNeededToStartFall = 1f;
 
     [Header("Movement Flags")]
     public bool isGrounded;
@@ -288,7 +288,7 @@ public class PlayerLocomotion : MonoBehaviour
             playerRb.AddForce(-Vector3.up * fallingVel * inAirTimer);
         }
 
-        if (Physics.SphereCast(rayCastOrigin, 0.28f, -Vector3.up, out hit, 1.25f, groundLayer))
+        if (Physics.SphereCast(rayCastOrigin, 0.28f, -Vector3.up, out hit, maximumDistanceNeededToStartFall, groundLayer))
         {
             if (transform.position.y == origY) { isGrounded = true; playerManager.isInteracting = false; }
 
