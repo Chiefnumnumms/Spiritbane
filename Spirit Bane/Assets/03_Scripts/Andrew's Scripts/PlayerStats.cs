@@ -21,6 +21,11 @@ public class PlayerStats : MonoBehaviour
 
     public CameraShake cameraShake;
 
+    [SerializeField]
+    private GameObject gameOverScreen;
+    [SerializeField]
+    private CursorDisable cursorDisable;
+
     private void Awake()
     {
         animationManager = GetComponentInChildren<AnimationManager>();
@@ -73,15 +78,29 @@ public class PlayerStats : MonoBehaviour
             animationManager.PlayTargetAnim("Death", true);
             Debug.Log("PLAYER IS DEAD");
 
+            if(isDead)
+            {
+                gameOverScreen.SetActive(true);
+                cursorDisable.enabled = false;
+                Cursor.lockState = CursorLockMode.Confined;
+                Time.timeScale = 0f;
+            }
             // RESPAWN TO PROPER POINT
-            StartCoroutine(Respawn(3.5f));
+            //StartCoroutine(Respawn(3.5f));
 
-            cameraShake.ScreenShake(transform.right);
+            //cameraShake.ScreenShake(transform.right);
         }
     }
 
     public void HandleRespawn()
     {
+        if(isDead)
+        {
+            gameOverScreen.SetActive(false);
+            cursorDisable.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
+        }
         transform.position = respawnPosition.position;
         isDead = false;
         HandleHealthCalculation();
@@ -90,7 +109,6 @@ public class PlayerStats : MonoBehaviour
     public IEnumerator Respawn(float duration)
     {
         yield return new WaitForSeconds(duration);
-
         HandleRespawn();
     }
 

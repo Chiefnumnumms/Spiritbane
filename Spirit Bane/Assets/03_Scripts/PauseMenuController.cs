@@ -1,13 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class PauseMenuController : MonoBehaviour
 {
     public static bool gamePaused;
 
     [SerializeField]
+    private InputManager inputManager;
+    
+    [SerializeField]
+    private CursorDisable cursorDisable;
+
+    [SerializeField]
     private GameObject pauseMenuUI;
+
+
+    [Header("Additional Ui Components")]
+    [SerializeField]
+    private GameObject healthBar;
+    [SerializeField]
+    private GameObject itemCounter;
+    [SerializeField]
+    private GameObject itemDisplay;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -28,6 +46,12 @@ public class PauseMenuController : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        healthBar.SetActive(true);
+        itemCounter.SetActive(true);
+        itemDisplay.SetActive(true);
+        inputManager.enabled = true;
+        cursorDisable.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         gamePaused = false;
     }
@@ -35,7 +59,13 @@ public class PauseMenuController : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        healthBar.SetActive(false);
+        itemCounter.SetActive(false);
+        itemDisplay.SetActive(false);
+        inputManager.enabled = false;
+        cursorDisable.enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        Time.timeScale = Mathf.Epsilon;
         gamePaused = true;
     }
 }
