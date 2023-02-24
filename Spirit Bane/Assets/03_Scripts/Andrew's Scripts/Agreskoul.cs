@@ -62,6 +62,8 @@ public class Agreskoul : MonoBehaviour
     private List<SpringJoint> springJointsList = new List<SpringJoint>();
     private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
+    public Transform swordLookAt;
+
     #endregion
 
     #region Grapple Attributes
@@ -106,6 +108,8 @@ public class Agreskoul : MonoBehaviour
 
         // CACHE ALL VALUES
         CacheAllValues();
+
+        weaponPivot.LookAt(swordLookAt);
     }
 
     private void Start()
@@ -129,6 +133,17 @@ public class Agreskoul : MonoBehaviour
         // GRAPPLING SETTINGS
         //HandleGrappleCoolDown();
         //HandleFreezePlayer();
+
+        if (swingPointHit == Vector3.zero)
+        {
+            weaponPivot.LookAt(swordLookAt);
+        }
+        else if (swingPointHit != null)
+        {
+            weaponPivot.LookAt(swingPointHit);
+        }
+
+
 
         CheckForPoint();
         HighlightSwingingPoint(maxIndicationDistance);
@@ -197,25 +212,6 @@ public class Agreskoul : MonoBehaviour
 
             // SLERP MOVEMENT AND ROTATION OF BLADE
             energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
-
-            if (!isBladeExtended)
-            {
-                // LOOK AT THE GRAPPLE POINT
-                weaponPivot.LookAt(null);
-            }
-            else
-            {
-                weaponPivot.LookAt(target);
-            }
-
-            //foreach (Transform t in bladePieces)
-            //{
-            //    newY = t.localScale.y / scaleFactor;
-
-            //    Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
-
-            //    t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
-            //}
         }
     }
 
@@ -283,7 +279,6 @@ public class Agreskoul : MonoBehaviour
 
         if (!isBladeExtended)
         {
-
             // RETURN INTO ORIGINAL POSITION
             pivotTransform = originalPivotTransform;
             pivotTransform.rotation = originalPivotRotation;
@@ -536,11 +531,11 @@ public class Agreskoul : MonoBehaviour
         {
             hitPoint = sphereCastHit.point;
             HighlightSwingingPoint(maxIndicationDistance);
-            weaponPivot.transform.LookAt(lookAtPoint);
         }
         else                                              // NOTHING IN THE WAY 
         {
             hitPoint = Vector3.zero;
+            weaponPivot.LookAt(swordLookAt);
         }
 
 
