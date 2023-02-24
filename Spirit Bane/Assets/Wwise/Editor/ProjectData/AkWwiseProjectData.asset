@@ -196,7 +196,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\General
     guid: 0220347ab5f56b4489c58f538193df7d
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585249218710929100
+=======
+    m_lastTime: -8585243548113553472
+>>>>>>> Stashed changes
     List:
     - name: Credits
       guid: 29cd4dcf34b19b44a6f0eab5853f751c
@@ -345,8 +349,32 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
+<<<<<<< Updated upstream
     m_lastTime: -8585243587350841203
+=======
+    m_lastTime: -8585243554409531359
+>>>>>>> Stashed changes
     List:
+    - name: Action
+      guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      id: 209137191
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      Path: Events\Default Work Unit\Player\Action
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Environment
       guid: 83fc1ddfd0a159449defcc184053307e
       id: 1229948536
@@ -398,6 +426,118 @@ MonoBehaviour:
         ObjectType: 4
         guid: df7c344a69e66f419a4d680f4b47cc7a
       Path: Events\Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Attack
+      guid: f9d1927f637be04db0df762132c76309
+      id: 1519321238
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_Attack
+        ObjectType: 3
+        guid: f9d1927f637be04db0df762132c76309
+      Path: Events\Default Work Unit\Player\Action\Play_Attack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Death
+      guid: ddc889c3884ad343abf9dca637a9dfb5
+      id: 1172822028
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Vocals
+        ObjectType: 4
+        guid: 85283c72003a5e4ebd7fc2075b51a25a
+      - ElementName: Play_Death
+        ObjectType: 3
+        guid: ddc889c3884ad343abf9dca637a9dfb5
+      Path: Events\Default Work Unit\Player\Vocals\Play_Death
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dodge
+      guid: 1ee7b56abdf7594d88867a0987cbb2b8
+      id: 3338421947
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_Dodge
+        ObjectType: 3
+        guid: 1ee7b56abdf7594d88867a0987cbb2b8
+      Path: Events\Default Work Unit\Player\Action\Play_Dodge
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hurt
+      guid: c4909a61fc224d4b9a49e4acc95ec84e
+      id: 2955259529
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Vocals
+        ObjectType: 4
+        guid: 85283c72003a5e4ebd7fc2075b51a25a
+      - ElementName: Play_Hurt
+        ObjectType: 3
+        guid: c4909a61fc224d4b9a49e4acc95ec84e
+      Path: Events\Default Work Unit\Player\Vocals\Play_Hurt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_HutBurning
+      guid: aa7e7872b71b9e4dbb3db21345850fce
+      id: 2101153226
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: Play_HutBurning
+        ObjectType: 3
+        guid: aa7e7872b71b9e4dbb3db21345850fce
+      Path: Events\Default Work Unit\Environment\Play_HutBurning
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -630,6 +770,118 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Shield
+      guid: afbffcae8e5c8c4eadf8b2075bbf9455
+      id: 1988178265
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_Shield
+        ObjectType: 3
+        guid: afbffcae8e5c8c4eadf8b2075bbf9455
+      Path: Events\Default Work Unit\Player\Action\Play_Shield
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Swing
+      guid: b8c0b0104e5a8f4f85276813ed8a8122
+      id: 989180208
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_Swing
+        ObjectType: 3
+        guid: b8c0b0104e5a8f4f85276813ed8a8122
+      Path: Events\Default Work Unit\Player\Action\Play_Swing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_SwordExtend
+      guid: df872188d96f58429fbb5fcf10eefc67
+      id: 962029321
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_SwordExtend
+        ObjectType: 3
+        guid: df872188d96f58429fbb5fcf10eefc67
+      Path: Events\Default Work Unit\Player\Action\Play_SwordExtend
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_SwordRetract
+      guid: f5280cf5c7186c45a8d7dbf7bfd06ffd
+      id: 1737963444
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Play_SwordRetract
+        ObjectType: 3
+        guid: f5280cf5c7186c45a8d7dbf7bfd06ffd
+      Path: Events\Default Work Unit\Player\Action\Play_SwordRetract
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Torch
+      guid: fa301d932da7b04ca89a3e25ef4dad0d
+      id: 2025845440
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: Play_Torch
+        ObjectType: 3
+        guid: fa301d932da7b04ca89a3e25ef4dad0d
+      Path: Events\Default Work Unit\Environment\Play_Torch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Walk
       guid: 2a52d4fe85f72c49b75eeef0fb1d15e4
       id: 1589278981
@@ -687,6 +939,26 @@ MonoBehaviour:
         ObjectType: 4
         guid: 6bc66d1d2badf44a8711389ca2d9eec3
       Path: Events\Default Work Unit\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Vocals
+      guid: 85283c72003a5e4ebd7fc2075b51a25a
+      id: 206361915
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Vocals
+        ObjectType: 4
+        guid: 85283c72003a5e4ebd7fc2075b51a25a
+      Path: Events\Default Work Unit\Player\Vocals
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -796,8 +1068,13 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585262450874415388
     List: []
+<<<<<<< Updated upstream
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
+=======
+  ExpandedFileSystemItemIds: 0200000003000000040000000500000007000000080000000a0000001b0000001c0000001d0000002400000025000000
+  ExpandedWaapiItemIds: 1c0000001d00000025000000
+>>>>>>> Stashed changes
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
