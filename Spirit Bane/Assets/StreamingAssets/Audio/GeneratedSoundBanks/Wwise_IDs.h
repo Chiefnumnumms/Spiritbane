@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_ATTACK = 1519321238U;
+        static const AkUniqueID PLAY_DEATH = 1172822028U;
+        static const AkUniqueID PLAY_DODGE = 3338421947U;
+        static const AkUniqueID PLAY_HURT = 2955259529U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
         static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
@@ -23,6 +27,10 @@ namespace AK
         static const AkUniqueID PLAY_MUSIC_SHIBUYA = 925456677U;
         static const AkUniqueID PLAY_MUSIC_VILLAGE = 4125690526U;
         static const AkUniqueID PLAY_RUN = 2822207957U;
+        static const AkUniqueID PLAY_SHIELD = 1988178265U;
+        static const AkUniqueID PLAY_SWING = 989180208U;
+        static const AkUniqueID PLAY_SWORDEXTEND = 962029321U;
+        static const AkUniqueID PLAY_SWORDRETRACT = 1737963444U;
         static const AkUniqueID PLAY_WALK = 1589278981U;
         static const AkUniqueID PLAY_WATERFALL = 467174588U;
     } // namespace EVENTS

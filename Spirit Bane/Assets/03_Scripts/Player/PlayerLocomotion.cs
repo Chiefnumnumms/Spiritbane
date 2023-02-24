@@ -216,6 +216,31 @@ public class PlayerLocomotion : MonoBehaviour
         playerLand.Post(gameObject);
     }
 
+    private void ShieldSFX()
+    {
+        playerShield.Post(gameObject);
+    }
+
+    private void DodgeSFX()
+    {
+        playerDodge.Post(gameObject);
+    }
+
+    private void AttackSFX()
+    {
+        playerAttack.Post(gameObject);
+    }
+
+    private void HurtSFX()
+    {
+        playerHurt.Post(gameObject);
+    }
+
+    private void DeadSFX()
+    {
+        playerDead.Post(gameObject);
+    }
+
     //------------------------------------------------------------------------------------
     // adjusts the players movement based on cameras direction and what the users input is
     private void HandleMovement()

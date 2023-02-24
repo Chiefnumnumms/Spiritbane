@@ -427,43 +427,77 @@
 						<WorkUnit Name="Player" ID="{2DF27AF8-1E47-49FC-A62F-B8B81FEF18AD}" PersistMode="Reference"/>
 					</ChildrenList>
 				</ActorMixer>
-				<Sound Name="Waterfall" ID="{6EAB7D4F-2A61-4A7B-8B23-5AA8BBE23DAA}" ShortID="1010693448">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-6</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="WaterfallAttenuation" ID="{F40A20AA-EA1D-407B-9E84-2D5B347408EB}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-						</Reference>
-						<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-							<ObjectRef Name="New_Pitch_Shifter" ID="{546B5ECA-94EB-4D66-98DA-DB8C078A3F3D}" WorkUnitID="{880EFFD4-F96D-4EA9-97B4-90A0D2BCDAD9}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-						</Reference>
-					</ReferenceList>
+				<Folder Name="Sound Effects" ID="{9CE28280-4563-45F7-A9B9-BF25DF019A4B}" ShortID="917048941">
 					<ChildrenList>
-						<AudioFileSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}">
-							<Language>SFX</Language>
-							<AudioFile>Waterfall.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="816109488"/>
-							</MediaIDList>
-						</AudioFileSource>
+						<Sound Name="Waterfall" ID="{6EAB7D4F-2A61-4A7B-8B23-5AA8BBE23DAA}" ShortID="1010693448">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="WaterfallAttenuation" ID="{F40A20AA-EA1D-407B-9E84-2D5B347408EB}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="New_Pitch_Shifter" ID="{546B5ECA-94EB-4D66-98DA-DB8C078A3F3D}" WorkUnitID="{880EFFD4-F96D-4EA9-97B4-90A0D2BCDAD9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}">
+									<Language>SFX</Language>
+									<AudioFile>Waterfall.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="816109488"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
+				<Folder Name="Enemy" ID="{D8B95D0B-95C4-4EDE-B7CD-3AAAB04BA602}" ShortID="865986528">
+					<ChildrenList>
+						<Folder Name="CavernAmbience" ID="{20849306-D0EB-4CA1-8B22-8C8DF3B21C65}" ShortID="41188635">
+							<ChildrenList>
+								<Sound Name="ApproachingEvil" ID="{85500664-0D5C-48B2-B19C-163DB51858E2}" ShortID="14511229">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ApproachingEvil" ID="{D06B2237-F504-44E8-9AB0-1F3A9E3A60A3}">
+											<Language>SFX</Language>
+											<AudioFile>ApproachingEvil.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="188206054"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ApproachingEvil" ID="{D06B2237-F504-44E8-9AB0-1F3A9E3A60A3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 				<Folder Name="Player" ID="{0930A1AF-0283-447A-A4E4-A7CAA37CA757}" ShortID="296636623">
 					<ChildrenList>
 						<Folder Name="Foot" ID="{0FDDA285-BC05-4577-A110-97C1804203EB}" ShortID="814861554">
@@ -1477,7 +1511,213 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Vocals" ID="{9DFD4F4D-797E-463C-A394-779F7341EF34}" ShortID="561187628">
+							<ChildrenList>
+								<RandomSequenceContainer Name="Attack" ID="{83779B01-E78C-4AB1-A298-CDC9F9B4D96A}" ShortID="847744046">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Dodge" ID="{226F867B-6B14-49D2-86CD-02E13AB8AAA6}" ShortID="72534675">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Hurt" ID="{49CDFFC6-F57C-4A34-853A-E892C25FF4DB}" ShortID="288190577">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Death" ID="{FB0163C0-CE85-4ECB-BF10-891AFE90AF63}" ShortID="109865351">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Shield" ID="{437A4207-27F5-4D52-AF5E-BA4D17321DA4}" ShortID="82735049">
+							<ChildrenList>
+								<Sound Name="Shield" ID="{2FF83B8B-06B6-462C-AF9C-38DD81BC6287}" ShortID="384731994">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Shield" ID="{E9420BD3-D841-4689-AB14-165C50C7CA43}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="1.1213188556524"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.47918657554147"/>
+												<Property Name="LoopBegin" Type="Real64" Value="1.88476999141574"/>
+												<Property Name="LoopEnd" Type="Real64" Value="12.2152181722134"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.620304047807713"/>
+												<Property Name="TrimEnd" Type="Real64" Value="13.5989733557845"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Shield.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="210361976"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Shield" ID="{E9420BD3-D841-4689-AB14-165C50C7CA43}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Tiny-Transitions-2_013" ID="{68A68C8B-8743-426E-83FB-F0F7823FC560}" ShortID="487587438">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tiny-Transitions-2_013" ID="{A3E013E4-8CBA-433D-970E-189144074B9E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0382956946645536"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0666345087163233"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.134800845219229"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.412061674590597"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Tiny-Transitions-2_013.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="423531381"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tiny-Transitions-2_013" ID="{A3E013E4-8CBA-433D-970E-189144074B9E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Sword" ID="{FF464B9F-911F-45FB-8651-EA2970DC3008}" ShortID="898066838">
+							<ChildrenList>
+								<RandomSequenceContainer Name="Extend" ID="{85F3DF2B-6BB0-4F10-B255-4376EDF8D607}" ShortID="428093884">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="0021_Tape_Measure_2" ID="{ABCBB574-706F-4635-B4C3-3770D14E2475}" ShortID="334691240">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="0021_Tape_Measure_2" ID="{8B97B822-0058-4F19-BBA3-E65CD9AC6544}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.375963829787235"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.187981914893616"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="18.7511960106383"/>
+														<Property Name="TrimEnd" Type="Real64" Value="20.0670694148936"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>0021_Tape_Measure_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="9431120"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="0021_Tape_Measure_2" ID="{8B97B822-0058-4F19-BBA3-E65CD9AC6544}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Retract" ID="{E56E367E-083C-43A6-869B-36D07E96A1EE}" ShortID="480139207">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="0021_Tape_Measure_2" ID="{A503E5F4-4DA5-4040-A0F3-A81F2EE613F5}" ShortID="702237754">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="0021_Tape_Measure_2" ID="{7E3B85B0-5E6B-405B-B3BE-92889820569A}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.328968351063828"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.281972872340425"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="12.8691812542896"/>
+														<Property Name="TrimEnd" Type="Real64" Value="14.2229542381606"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>0021_Tape_Measure_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="328170692"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="0021_Tape_Measure_2" ID="{7E3B85B0-5E6B-405B-B3BE-92889820569A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
+				</Folder>
+				<Folder Name="NPC" ID="{D8D88CAA-E789-436B-9009-0AF37854696D}" ShortID="680282744">
+					<PropertyList>
+						<Property Name="Inclusion" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 				</Folder>
 			</ChildrenList>
 		</WorkUnit>

@@ -3,11 +3,8 @@
 //  Author:  Kevin Howell  
 //  Date: February 14, 2023
 //  Purpose:  Script To Control Keneu's State
-using UnityEngine;
-using Cinemachine;
 using System;
-using System.Collections.Generic;
-using UnityEngine.ProBuilder.Shapes;
+using UnityEngine;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Keneu's State Controller Requiring Animator Component
@@ -235,13 +232,6 @@ public class KeneuStateMachine : StateMachine
     #region Private Functions
     //-------------------------------------------------------------------------
     // Private Functions
-
-    /*
-    private void SwitchActionMap()
-    {
-        InputReader.SwitchCurrentActionMap("Menu");
-    }
-    */
 
 
     //-------------------------------------------------------------------------

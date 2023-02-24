@@ -9,10 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{C88FB926-3708-FDBB-7656-74148DFFACE6}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{B8E0D20F-897E-04A3-0F2B-73DF0BA211C1}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
+				<File Id="9431120" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>0021_Tape_Measure_2.wav</ShortName>
+					<CachePath>SFX/0021_Tape_Measure_2_B1543A83.wem</CachePath>
+				</File>
 				<File Id="105827010" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtRun03.wav</ShortName>
 					<CachePath>SFX/FootstepDirtRun03_32314FAC.wem</CachePath>
@@ -28,6 +32,10 @@
 				<File Id="204581653" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepGrassRun02.wav</ShortName>
 					<CachePath>SFX/FootstepGrassRun02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="210361976" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shield.wav</ShortName>
+					<CachePath>SFX/Shield_1F8DF1EF.wem</CachePath>
 				</File>
 				<File Id="219181942" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtWalk02.wav</ShortName>
@@ -57,6 +65,10 @@
 					<ShortName>FootstepGrassRun03.wav</ShortName>
 					<CachePath>SFX/FootstepGrassRun03_10C4C929.wem</CachePath>
 				</File>
+				<File Id="328170692" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>0021_Tape_Measure_2.wav</ShortName>
+					<CachePath>SFX/0021_Tape_Measure_2_8B1D6945.wem</CachePath>
+				</File>
 				<File Id="360164538" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DirtLand01.wav</ShortName>
 					<CachePath>SFX/DirtLand01_10C4C929.wem</CachePath>
@@ -68,6 +80,10 @@
 				<File Id="416701398" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DirtLand02.wav</ShortName>
 					<CachePath>SFX/DirtLand02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="423531381" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tiny-Transitions-2_013.wav</ShortName>
+					<CachePath>SFX/Tiny-Transitions-2_013_B4063A78.wem</CachePath>
 				</File>
 				<File Id="463548081" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtWalk01.wav</ShortName>
@@ -111,8 +127,36 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="1519321238" Name="Play_Attack" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1172822028" Name="Play_Death" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3338421947" Name="Play_Dodge" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2955259529" Name="Play_Hurt" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3689126666" Name="Play_Jump" DurationType="OneShot" DurationMin="0.28232864" DurationMax="0.49345013">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="105827010"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="300380951"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="277900346"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="201672138"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
 							<MediaRefs>
@@ -165,6 +209,30 @@
 								<MediaRef Id="615821067"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="360164538"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="847000799"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="416701398"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="615821067"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="2822207957" Name="Play_Run" DurationType="OneShot" DurationMin="0.20247917" DurationMax="0.4002876">
@@ -185,10 +253,63 @@
 								<MediaRef Id="987910952"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="256972731"/>
+								<MediaRef Id="386798029"/>
+								<MediaRef Id="575935162"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="204581653"/>
+								<MediaRef Id="262163859"/>
+								<MediaRef Id="987910952"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="1988178265" Name="Play_Shield" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="210361976"/>
+						<MediaRef Id="423531381"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="989180208" Name="Play_Swing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="962029321" Name="Play_SwordExtend" DurationType="OneShot" DurationMin="1.3158734" DurationMax="1.3158734">
+					<MediaRefs>
+						<MediaRef Id="9431120"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1737963444" Name="Play_SwordRetract" DurationType="OneShot" DurationMin="1.353773" DurationMax="1.353773">
+					<MediaRefs>
+						<MediaRef Id="328170692"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1589278981" Name="Play_Walk" DurationType="OneShot" DurationMin="0.3762199" DurationMax="0.744">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="219181942"/>
+								<MediaRef Id="249008179"/>
+								<MediaRef Id="463548081"/>
+								<MediaRef Id="519165778"/>
+								<MediaRef Id="861330104"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="135368119"/>
+								<MediaRef Id="281058671"/>
+								<MediaRef Id="471656445"/>
+								<MediaRef Id="489972195"/>
+								<MediaRef Id="949635772"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2385628198" Id="2195636714" Default="true"/>
 							<MediaRefs>
@@ -397,5 +518,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3A48CC16-ABFD-B73A-669B-A0785EBCEDE6}</FileHash>
+	<FileHash>{4B93880D-5356-068D-23CD-36C4C173BC57}</FileHash>
 </SoundBanksInfo>

@@ -177,6 +177,99 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Vocals" ID="{723C2885-3A00-4E5E-BD7F-C2075B51A25A}" ShortID="429326324">
+							<ChildrenList>
+								<Event Name="Play_Death" ID="{C389C8DD-4A88-43D3-ABF9-DCA637A9DFB5}">
+									<ChildrenList>
+										<Action Name="" ID="{708AF48C-E65C-4683-A8DF-08A0E9EA3EDD}" ShortID="1001262502">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Death" ID="{FB0163C0-CE85-4ECB-BF10-891AFE90AF63}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Hurt" ID="{619A90C4-22FC-4B4D-9A49-E4ACC95EC84E}">
+									<ChildrenList>
+										<Action Name="" ID="{D51903CE-7DD9-4D6B-8A49-98F42A7BE1C0}" ShortID="471029823">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hurt" ID="{49CDFFC6-F57C-4A34-853A-E892C25FF4DB}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Action" ID="{B3087ADE-541C-4BD3-89E5-BB3C8EB2E241}" ShortID="1018442660">
+							<ChildrenList>
+								<Event Name="Play_Attack" ID="{7F92D1F9-7B63-4DE0-B0DF-762132C76309}">
+									<ChildrenList>
+										<Action Name="" ID="{1D8A75E7-9437-4D31-845A-DA179A0D8EB2}" ShortID="346422036">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Attack" ID="{83779B01-E78C-4AB1-A298-CDC9F9B4D96A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Dodge" ID="{6AB5E71E-F7BD-4D59-8886-7A0987CBB2B8}">
+									<ChildrenList>
+										<Action Name="" ID="{F4AD05C4-CEA8-45B0-9DB9-383056791A0B}" ShortID="853343656">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Dodge" ID="{226F867B-6B14-49D2-86CD-02E13AB8AAA6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Shield" ID="{AEFCBFAF-5C8E-4E8C-ADF8-B2075BBF9455}">
+									<ChildrenList>
+										<Action Name="" ID="{E4613CE4-6502-48FC-982B-2A54938C2078}" ShortID="607164796">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Tiny-Transitions-2_013" ID="{68A68C8B-8743-426E-83FB-F0F7823FC560}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{792C0A9F-1F47-4D67-B669-1F478073CB97}" ShortID="222354259">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Shield" ID="{2FF83B8B-06B6-462C-AF9C-38DD81BC6287}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Swing" ID="{10B0C0B8-5A4E-4F8F-8527-6813ED8A8122}"/>
+								<Event Name="Play_SwordExtend" ID="{882187DF-6FD9-4258-9FBB-5FCF10EEFC67}">
+									<ChildrenList>
+										<Action Name="" ID="{99620D36-7C7F-4A19-8DFE-0F15EF63ED51}" ShortID="280041024">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Extend" ID="{85F3DF2B-6BB0-4F10-B255-4376EDF8D607}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SwordRetract" ID="{F50C28F5-18C7-456C-A8D7-DBF7BFD06FFD}">
+									<ChildrenList>
+										<Action Name="" ID="{DB99CDD7-0430-46AD-8940-651096DB4021}" ShortID="108087540">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Retract" ID="{E56E367E-083C-43A6-869B-36D07E96A1EE}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{DF1DFC83-A1D0-4459-9DEF-CC184053307E}" ShortID="105941716">
@@ -192,6 +285,8 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Torch" ID="{931D30FA-A72D-4CB0-A89A-3E25EF4DAD0D}"/>
+						<Event Name="Play_HutBurning" ID="{72787EAA-1BB7-4D9E-BB3D-B21345850FCE}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
