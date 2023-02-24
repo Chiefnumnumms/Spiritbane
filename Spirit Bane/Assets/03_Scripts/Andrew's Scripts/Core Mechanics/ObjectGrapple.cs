@@ -42,12 +42,15 @@ public class ObjectGrapple : MonoBehaviour
     public bool isGrappling;
     public bool freezePlayer;
 
+    Agreskoul agreskoulManager;
+
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();
+        agreskoulManager = GetComponent<Agreskoul>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -70,7 +73,7 @@ public class ObjectGrapple : MonoBehaviour
         if (isGrappling)
         {
             // CONTINOUSLY UPDATE THE STARTING POSITION AS THE GUNTIP POSITION
-            lineRenderer.SetPosition(0, gunTip.position);
+            //lineRenderer.SetPosition(0, gunTip.position);
         }
     }
 
@@ -79,7 +82,7 @@ public class ObjectGrapple : MonoBehaviour
         // DONT ALLOW PLAYER TO GRAPPLE IF COOL DOWN IS IN EFFECT
         if (grapplingCdTimer > 0) return;
         if (swingingManager.isSwinging) return;
-
+        agreskoulManager.ExecuteSwordSwing();
 
         RaycastHit hit;
 
