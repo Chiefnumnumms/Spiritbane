@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
         inputManager.HandleAllInputs();
 
         // SWINGING - AA
-        agreskoulManager.CheckForSwingPoints();
+        agreskoulManager.CheckForPoint();
         agreskoulManager.HighlightSwingingPoint(agreskoulManager.maxIndicationDistance);
 
         // GRAPPLING - AA

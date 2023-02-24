@@ -4,10 +4,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR.Haptics;
+using UnityEngine.LowLevel;
 using UnityEngine.UIElements;
 
 public class Agreskoul : MonoBehaviour
 {
+    private enum Mechanic { SWINGING, OBJECTGRAPPLE, ENEMYHOOK}
+
+    [SerializeField] private PlayerLocomotion playerLocomotion;
+    private AnimationManager animationManager;
+    private InputManager inputManager;
+
     [Header("Agreskoul")]
     [SerializeField] private float bladeExtentionSpeed;
     [SerializeField] private float speedDecrement;
@@ -19,10 +26,12 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private float falingVelocityReductionTimer;
     [SerializeField] private float reductionRate;
 
+    #region Swinging Attributes
+
     [Header("Swinging Attributes")]
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform playerModel;
-    [SerializeField] private LayerMask validSwingPoint;
+    [SerializeField] private LayerMask isValidSwingPoint;
     [SerializeField] private float maxSwingDistance = 25f;
     [SerializeField] public Vector3 swingPointHit;
     [SerializeField] private SpringJoint springJoint;
@@ -44,18 +53,37 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private Material originalMaterial;
 
     [SerializeField] private bool isSwinging;
-    [SerializeField] private bool isLookingAtGrapplePoint;
+    [SerializeField] private bool isLookingAtSwingingPoint;
 
     private Vector3 currentSwingingPosition;
     [SerializeField] public float maxIndicationDistance = 25.0f;
 
-    private List<GameObject> grapplePoints = new List<GameObject>();
-    private List<SpringJoint> sprintJointsList = new List<SpringJoint>();
+    private List<GameObject> swingingPoints = new List<GameObject>();
+    private List<SpringJoint> springJointsList = new List<SpringJoint>();
     private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
-    private AnimationManager animationManager;
-    [SerializeField] private PlayerLocomotion playerLocomotion;
-    private InputManager inputManager;
+    #endregion
+
+    #region Grapple Attributes
+
+    //[Header("Grappling")]
+    //public float maxGrappleDistance;
+    //public float grappleDelayTime;
+    //public float overShootYAxis;
+    //public float forwardBoostVelocity;
+    //public LayerMask isValidObjectGrapple;
+    //[SerializeField] private bool isLookingAtObjectGrapplePoint;
+
+
+    //private Vector3 grapplePoint;
+
+    //[Header("Grapple Cooldown Settings")]
+    //public float grapplingCd;
+    //public float grapplingCdTimer;
+    //public bool isGrappling;
+    //public bool freezePlayer;
+
+    #endregion
 
     private float originalFallingVelocity;
     private Vector3 originalBladeScale;
@@ -64,6 +92,7 @@ public class Agreskoul : MonoBehaviour
     private Transform originalPivotTransform;
     public Transform pivotTransform;
     private GameObject swordTip;
+    private const float MAX_FALLING_VELOCITY = 1.5f;
 
     private bool isBladeExtended;
 
@@ -97,7 +126,11 @@ public class Agreskoul : MonoBehaviour
             playerLocomotion.fallingVel = originalFallingVelocity;
         }
 
-        CheckForSwingPoints();
+        // GRAPPLING SETTINGS
+        //HandleGrappleCoolDown();
+        //HandleFreezePlayer();
+
+        CheckForPoint();
         HighlightSwingingPoint(maxIndicationDistance);
     }
 
@@ -204,7 +237,6 @@ public class Agreskoul : MonoBehaviour
 
     public IEnumerator SlowInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
     {
-       
         // CACHE VALUES OF ORIGINAL FALLING VLOCITY
         float originalVelocity = playerLocomotion.fallingVel;
         float inAirTimer = playerLocomotion.inAirTimer;
@@ -213,8 +245,22 @@ public class Agreskoul : MonoBehaviour
         {
             // SLOWLY REDUCE THE FALLING VELOCITY BASED ON THE TIMER
             //playerLocomotion.fallingVel -= reductionRate * Time.deltaTime;
+
             playerLocomotion.fallingVel = 1.5f;
 
+            //while (inAirTimer < speedReductionTimer)
+            //{
+            //    // RETURN BACK INTO ORIGINAL VELOCITY
+            //    if (playerLocomotion.fallingVel >= MAX_FALLING_VELOCITY)
+            //    {
+            //        playerLocomotion.fallingVel += originalVelocity * Time.deltaTime;
+            //        yield return null;
+            //    }
+
+            //    // SLOWLY REDUCE THE FALLING VELOCITY BASED ON THE TIMER
+            //    playerLocomotion.fallingVel -= reductionRate * Time.deltaTime;
+            //    yield return null;
+            //}
             yield return new WaitForSeconds(speedReductionTimer);
 
             // RESET THE FALLING VELOCITY TO ITS ORIGINAL VALUE
@@ -350,12 +396,12 @@ public class Agreskoul : MonoBehaviour
         RaycastHit hit;
 
         // CAST THE RAY TO CHECK IF IT COLLIDES/HITS A GRAPPLE POINT LAYER GIVEN A SPECIFIC MAX RANGE
-        if (Physics.Raycast(ray, out hit, maxRange) && hit.transform.gameObject.layer == validSwingPoint)
+        if (Physics.Raycast(ray, out hit, maxRange) && hit.transform.gameObject.layer == isValidSwingPoint)
         {
-            isLookingAtGrapplePoint = true;
+            isLookingAtSwingingPoint = true;
 
             // PLAYER IS LOOKING AT A VALID GRAPPLE POINT
-            if (isLookingAtGrapplePoint)
+            if (isLookingAtSwingingPoint)
             {
                 // CHANGE THE MATERIAL OF THE POINT PLAYER IS LOOKING TOWARDS
                 MeshRenderer grapplePointRenderer = hit.transform.gameObject.GetComponent<MeshRenderer>();
@@ -373,7 +419,7 @@ public class Agreskoul : MonoBehaviour
 
         foreach (GameObject sp in swingingPointObjects)
         {
-            grapplePoints.Add(sp);
+            swingingPoints.Add(sp);
         }
     }
 
@@ -382,20 +428,25 @@ public class Agreskoul : MonoBehaviour
         if (!isSwinging)
         {
             // DESTROY ALL SPRINT JOINTS WHEN THE PLAYER IS NO LONGER GRAPPLING
-            foreach (SpringJoint springJoint in sprintJointsList)
+            foreach (SpringJoint springJoint in springJointsList)
             {
                 Destroy(springJoint);
             }
-            sprintJointsList.Clear();
+            springJointsList.Clear();
         }
 
     }
 
     private void StartSwing()
     {
+        // IF THE PLAYER IS GRAPPLING THEN DONT EXECUTE THE SWING MECHANIC
+        //if (isGrappling) return;
+
         // IF PREDICTION POINT DOESN'T FIND ANYTHING EXIT
         if (predictionHit.point == Vector3.zero) return;
 
+        // IF NOT LOOKING AT A VALID SWING POINT
+        //if (!isLookingAtSwingingPoint) return;
 
         // IF THERE IS NO JOINT CURRENTLY
         if (springJoint == null)
@@ -444,7 +495,7 @@ public class Agreskoul : MonoBehaviour
         if (springJoint != null) InAirMovement();
     }
 
-    public void CheckForSwingPoints()
+    public void CheckForPoint()
     {
         if (springJoint != null) return;
 
@@ -453,24 +504,39 @@ public class Agreskoul : MonoBehaviour
         RaycastHit raycastHit;
 
         // HANDLE SPHERE CAST AND RAY CAST 
-        Physics.SphereCast(swordTip.transform.position, predictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, validSwingPoint);
-        Physics.Raycast(swordTip.transform.position, mainCamera.forward, out raycastHit, maxSwingDistance, validSwingPoint);
+        Physics.Raycast(swordTip.transform.position, mainCamera.forward, out raycastHit, maxSwingDistance, isValidSwingPoint);
+        Physics.SphereCast(swordTip.transform.position, predictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, isValidSwingPoint);
+
+        // HANDLE SPHERE CAST AND RAY CAST 
+        //Physics.SphereCast(swordTip.transform.position, predictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxGrappleDistance, isValidObjectGrapple);
+
+        //// CHECK FOR OBJECT GRAPPLE POINT
+        //if(Physics.Raycast(swordTip.transform.position, mainCamera.forward, out raycastHit, maxSwingDistance, isValidSwingPoint))
+        //{
+        //    isLookingAtSwingingPoint = true;
+        //    isLookingAtObjectGrapplePoint = false;
+        //    Debug.Log("Looking at Swinging Point");
+        //}
+
+        //if (Physics.Raycast(swordTip.transform.position, mainCamera.forward, out raycastHit, maxGrappleDistance, isValidObjectGrapple))
+        //{
+        //    isLookingAtObjectGrapplePoint = true;
+        //    isLookingAtSwingingPoint = false;
+        //    Debug.Log("Looking at Object Grapple Point");
+        //}
 
         Vector3 hitPoint;
-
         Vector3 lookAtPoint = raycastHit.point;
-
 
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
             hitPoint = raycastHit.point;
-            swordTip.transform.LookAt(lookAtPoint);
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
         {
             hitPoint = sphereCastHit.point;
             HighlightSwingingPoint(maxIndicationDistance);
-            swordTip.transform.LookAt(lookAtPoint);
+            weaponPivot.transform.LookAt(lookAtPoint);
         }
         else                                              // NOTHING IN THE WAY 
         {
@@ -499,11 +565,104 @@ public class Agreskoul : MonoBehaviour
                 meshes.material = originalMaterial;
             }
         }
+            
 
         predictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
 
     #endregion
 
+
+    //private void HandleGrappleCoolDown()
+    //{
+    //    if (grapplingCdTimer > 0)
+    //    {
+    //        grapplingCdTimer -= Time.deltaTime;
+    //    }
+    //}
+
+    //private void HandleFreezePlayer()
+    //{
+    //    if (freezePlayer)
+    //    {
+    //        playerLocomotion.playerRb.velocity = Vector3.zero;
+    //    }
+    //}
+
+    //public void StartGrapple()
+    //{
+    //    // IF PREDICTION POINT DOESN'T FIND ANYTHING EXIT
+    //    if (predictionHit.point == Vector3.zero) return;
+
+    //    // DONT ALLOW PLAYER TO GRAPPLE IF COOL DOWN IS IN EFFECT
+    //    if (grapplingCdTimer > 0) return;
+
+    //    // DONT EXECUTE GRAPPLING IF THE PLAYER IS SWINGING
+    //    if (isSwinging) return;
+
+    //    // IF ITS NOT A VALID OBJECT GRAPPLE
+    //    //if (!isLookingAtObjectGrapplePoint) return;
+
+    //    RaycastHit hit;
+
+    //    if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, maxGrappleDistance, isValidObjectGrapple))
+    //    {
+    //        isGrappling = true;
+
+    //        if (!isSwinging)
+    //        {
+    //            // FREEZE THE PLAYER FOR A SECOND
+    //            freezePlayer = true;
+
+    //            // STORE THE HIT POINT AS THE GRAPPLE POINT
+    //            grapplePoint = hit.point;
+
+    //            // EXECUTE THE GRAPPLE WITH A DELAY TIMER
+    //            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+
+    //        }
+    //    }
+    //    else
+    //    {
+    //        grapplePoint = mainCamera.position + mainCamera.forward * maxGrappleDistance;
+
+    //        // STOP THE GRAPPLE GIVEN A DELAY
+    //        Invoke(nameof(StopGrapple), grappleDelayTime);
+    //    }
+    //}
+
+    //public void ExecuteGrapple()
+    //{
+    //    freezePlayer = false;
+
+    //    // CALCULATE THE LOWEST POINT OF THE GRAPPLE
+    //    Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
+
+    //    float grapplePointRelativeYPos = grapplePoint.y - lowestPoint.y;
+    //    float highestPointOnArc = grapplePointRelativeYPos + overShootYAxis;
+
+    //    if (grapplePointRelativeYPos < 0) highestPointOnArc = overShootYAxis;
+
+    //    // JUMP TOWARDS THE HIGHEST POINT
+    //    playerLocomotion.JumpToPosition(grapplePoint, highestPointOnArc);
+
+    //    // BOOST THE PLAYER FORWARD
+    //    rb.AddForce(transform.forward * forwardBoostVelocity, ForceMode.Acceleration);
+
+    //    // WAIT A SECOND THEN STOP THE GRAPPLE
+    //    Invoke(nameof(StopGrapple), 1f);
+    //}
+
+    //public void StopGrapple()
+    //{
+    //    //UNFREEZE THE PLAYER
+    //    freezePlayer = false;
+
+    //    // PLAYER IS NO LONGER GRAPPLING
+    //    isGrappling = false;
+
+    //    // RESET THE COOL DOWN TIMER
+    //    grapplingCdTimer = grapplingCd;
+    //}
 
 }
