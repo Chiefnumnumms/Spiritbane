@@ -12,6 +12,19 @@ public class EnemyGrapple : MonoBehaviour
     LineRenderer lineRenderer;
     Rigidbody rb;
 
+    // Since this script is being meshed with the agraskoul script i've marked my updates to the script just as comments for now so it wont interfere with the merging.
+    // the code may not be perfect as i couldnt test properly due to the scripts no longer being on Gaoh but the logic should be more or less correct.
+    // if it isnt working or there are any questions about why i set things up the way i did please shoot me a message im happy to help.
+
+    //Add Names of Pullable objects and the final positions that the objects need to be moved towards
+    //[SerializeField]
+    //IDictionary<GameObject, Vector3> pullableObjects;
+
+    //Add Names of objects that need to be pulled to activate and bools to check if they have been activated by the pull mechanic
+    //[SerializeField]
+    //IDictionary<GameObject, bool> pullableInteractables;
+
+    //bool wasPullableHooked;
     bool isHooking;
     bool wasEnemyHooked;
 
@@ -32,6 +45,7 @@ public class EnemyGrapple : MonoBehaviour
         returnPoint = GameObject.Find("ReturnPoint");
 
         isHooking = false;
+        //wasPullableHooked = false;
         wasEnemyHooked = false;
 
         hookDistance = 0.0f;
@@ -60,6 +74,8 @@ public class EnemyGrapple : MonoBehaviour
 
         ReturnHook();
         BringEnemyTowardsPlayer();
+        //PullObjectToPos();
+        //ActivatePullableObject();
     }
 
     private void StartHooking()
@@ -95,6 +111,7 @@ public class EnemyGrapple : MonoBehaviour
 
     private void BringEnemyTowardsPlayer()
     {
+
         if (wasEnemyHooked)
         {
             // POSITION INFRONT OF GRAPPLE GUN
@@ -104,6 +121,49 @@ public class EnemyGrapple : MonoBehaviour
             // RESET HOOK
             wasEnemyHooked = false;
         }
+    }
+
+    private void PullObjectToPos()
+    {
+        // rather then move the enemy towards the player check the name of the enemy object against the objects against the dictionary
+        // and move it to the position that is stored in the dictonary
+        //if(wasPullableHooked)
+        //{
+        //    foreach (GameObject objects in pullableObjects.Keys)
+        //    {
+        //        if (pullableObjects.ContainsKey(objects))
+        //        {
+        //           Vector3 finalEnemyPos;
+        //           pullableObjects.TryGetValue(objects, out finalEnemyPos);
+        //           enemyObj.transform.position = Vector3.MoveTowards(enemyObj.transform.position, finalEnemyPos, maxHookDistance);
+
+        //           wasPullableHooked = false;
+        //        }
+        //    }
+        //}
+
+        // this may need some changes but this is roughly the train of thought to easly check against and move the objects to their intended pos
+    }
+
+    private void ActivatePullableObject()
+    {
+        //Second verse same as the first we check to see if the game object is in our dictonary and if it is set the bool tied to that dictonary 
+        //to true so that we can use it in other scripts to check if the path should be opened
+        //if (wasPullableHooked)
+        //{
+        //    foreach (GameObject interactables in pullableInteractables.Keys)
+        //    {
+        //        if (pullableInteractables.ContainsKey(interactables))
+        //        {
+        //            pullableInteractables[interactables] = true;
+
+        //            //Adjust the color or material of the object that has been interacted with to show that its been adjusted
+        //            interactables.GetComponent<Renderer>().material.SetColor("Red",Color.red);
+
+        //           wasPullableHooked = false;
+        //        }
+        //    }
+        //}
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -117,5 +177,14 @@ public class EnemyGrapple : MonoBehaviour
             wasEnemyHooked = true;
             enemyObj = collider.gameObject;
         }
+
+        //Check to see if you got an object that needs to be moved
+        //if(collider.gameObject.tag.Equals("Pullable"))
+        //{
+        //    Debug.Log("Pullable Was Hooked");
+        //    wasPullableHooked = true;
+        //    enemyObj = collider.gameObject
+        //}
+
     }
 }
