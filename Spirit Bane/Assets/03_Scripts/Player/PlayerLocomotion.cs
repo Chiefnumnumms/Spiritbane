@@ -76,8 +76,8 @@ public class PlayerLocomotion : MonoBehaviour
 
     // Wwise
     [Header("Wwise Events")]
-    public AK.Wwise.Event playerFootstep;
-    public AK.Wwise.Event playerFootstepRun;
+    public AK.Wwise.Event playerWalk;
+    public AK.Wwise.Event playerRun;
     public AK.Wwise.Event playerJump;
     public AK.Wwise.Event playerLand;
     public AK.Wwise.Event playerDodge;
@@ -170,7 +170,7 @@ public class PlayerLocomotion : MonoBehaviour
         // If Sound Not Playing, Play Sound, Record Time, Set Flag For Sound Playing
         if (!stepPlaying)
         {
-            playerFootstep.Post(gameObject);
+            playerWalk.Post(gameObject);
             lastStepTime = Time.time;
             stepPlaying = true;
         }
@@ -189,7 +189,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if(!stepPlaying)
         {
-            playerFootstepRun.Post(gameObject);
+            playerRun.Post(gameObject);
             lastStepTime = Time.time;
             stepPlaying = true;
         }
@@ -212,6 +212,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void LandSFX()
     {
         if (isGrounded) return;
+
         playerLand.Post(gameObject);
     }
 
@@ -339,7 +340,7 @@ public class PlayerLocomotion : MonoBehaviour
             targetPos.y = rayCastHitPoint.y;
             inAirTimer = 0;
             isGrounded = true;
-            LandSFX();
+            //LandSFX();
         }
         else
         {
@@ -371,7 +372,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 animationManager.animator.SetBool("isJumping", true);
                 animationManager.PlayTargetAnim("Jump", false, true);
-                JumpSFX();
+                //JumpSFX();
 
                 float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
                 Vector3 playerVel = moveDir;
