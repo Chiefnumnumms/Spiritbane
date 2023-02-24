@@ -99,34 +99,77 @@
 					<ChildrenList>
 						<Folder Name="Foot" ID="{C0344B4B-F9D8-4019-93AD-87C337B8A4A2}" ShortID="276889945">
 							<ChildrenList>
-								<Event Name="Play_Footstep_Dirt" ID="{AAAB4F5C-BE69-49E6-9A4E-F99D93B2116C}">
+								<Event Name="Play_Jump" ID="{61DF45A5-C7A7-47CC-979C-E308EBF7DC0F}">
 									<ChildrenList>
-										<Action Name="" ID="{A090256F-4819-4337-A663-803A69459DEC}" ShortID="51528090">
+										<Action Name="" ID="{DDE9E566-AF0F-4916-AC27-016332C7BD54}" ShortID="1011226707">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dirt" ID="{0F153C54-87DF-41DC-9B0B-86711E2B03D1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Left Foot" ID="{69BE909F-B5DC-45D8-997C-24E25AF3A3F6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{80BC8FF3-74E6-4EC8-B184-C901BB31289F}" ShortID="287634493">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.05"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Right Foot" ID="{1F694FF4-505E-45B9-8D1B-0A79B4C25D60}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_Landing" ID="{F341D0D4-CA68-4A47-A46D-19B948A42ED1}">
+								<Event Name="Play_Run" ID="{67D85B00-EB30-436D-9C35-C332D3019664}">
 									<ChildrenList>
-										<Action Name="" ID="{02D75F18-DE9E-4A25-A182-51F1579A2DE4}" ShortID="154826100">
+										<Action Name="" ID="{D9DF9B6E-5DD5-40B9-B953-AD06DBD0A767}" ShortID="551200842">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Landing" ID="{2276C82E-70BE-4BA7-86BC-FB876FB03156}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Run" ID="{EB79D4D8-F09D-47A8-BAB9-AF42F369EE8F}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_Jumping" ID="{61DF45A5-C7A7-47CC-979C-E308EBF7DC0F}">
+								<Event Name="Play_Walk" ID="{FED4522A-F785-492C-B75E-EEF0FB1D15E4}">
 									<ChildrenList>
-										<Action Name="" ID="{ADF2A6B4-EF41-46C9-8F65-DF8136EAC15F}" ShortID="937637825">
+										<Action Name="" ID="{C68D6198-715B-409A-B704-7074321B5505}" ShortID="340920936">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Jumping" ID="{FF22FC36-6CBB-427D-8655-994196585DFA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Walk" ID="{123B4A48-68A2-45CB-88B3-6F367DDAF894}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Land" ID="{5B1DD906-7DEF-4A3D-97B2-168D36621201}">
+									<ChildrenList>
+										<Action Name="" ID="{EFA7CD43-9CE8-4857-80DA-F53B22F7A4A4}" ShortID="416584386">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Left Foot" ID="{AA62BF1E-4555-4B66-A418-C423653733AC}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{77F04115-7C83-4E7E-813D-C0C77D9D97BA}" ShortID="833036754">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.12">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AC6B8F07-250E-40ED-9395-B81A3CBE377D}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="0.08"/>
+																	<Property Name="Min" Type="Real64" Value="-0.05"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Right Foot" ID="{80A535BA-0CE6-4B1A-A84D-CCDEF2CD68AD}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

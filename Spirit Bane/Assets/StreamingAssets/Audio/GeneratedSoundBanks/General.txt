@@ -1,16 +1,39 @@
 Event	ID	Name			Wwise Object Path	Notes
-	779807780	Play_Footstep_Dirt			\Default Work Unit\Player\Foot\Play_Footstep_Dirt	
-	2323405115	Play_Landing			\Default Work Unit\Player\Foot\Play_Landing	
-	2756694246	Play_Jumping			\Default Work Unit\Player\Foot\Play_Jumping	
+	1589278981	Play_Walk			\Default Work Unit\Player\Foot\Play_Walk	
+	2822207957	Play_Run			\Default Work Unit\Player\Foot\Play_Run	
+	3689126666	Play_Jump			\Default Work Unit\Player\Foot\Play_Jump	
+	4285282925	Play_Land			\Default Work Unit\Player\Foot\Play_Land	
 
-Effect plug-ins	ID	Name	Type				Notes
-	484763476	New_Pitch_Shifter_01	Wwise Pitch Shifter			
-	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	2195636714	Dirt	Footsteps			
+	4248645337	Grass	Footsteps			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	622781877	Landing	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close_D8D246B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Landing		40800
-	731857351	Jumping	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\PM_SDGS_213 Footstep Step Dry Grass Skid Drag_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Jumping		141666
-	820998479	FootstepDirt02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt02		42988
-	845317709	FootstepDirt00	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt00_D8334050.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt00		76366
-	868101729	FootstepDirt01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt01_1CBA49A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt01		46564
+	105827010	FootstepDirtRun03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun03_32314FAC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Jump\Left Foot\FootstepDirtRun03		27550
+	135368119	FootstepGrassWalk05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkGrass\FootstepGrassWalk05		71520
+	201672138	FootstepGrassRun01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Jump\Right Foot\FootstepGrassRun01		35832
+	204581653	FootstepGrassRun02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunGrass\FootstepGrassRun02		36064
+	219181942	FootstepDirtWalk02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkDirt\FootstepDirtWalk02		50016
+	249008179	FootstepDirtWalk04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkDirt\FootstepDirtWalk04		46432
+	256972731	FootstepDirtRun02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun02_8A3DC13A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunDirt\FootstepDirtRun02		25490
+	262163859	FootstepGrassRun05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunGrass\FootstepGrassRun05		37352
+	277900346	FootstepDirtRun04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun04_AD57414A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Jump\Right Foot\FootstepDirtRun04		25524
+	281058671	FootstepGrassWalk02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkGrass\FootstepGrassWalk02		46728
+	300380951	FootstepGrassRun03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Jump\Left Foot\FootstepGrassRun03		37934
+	360164538	DirtLand01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\DirtLand01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Land\Left Foot\DirtLand01		115808
+	386798029	FootstepDirtRun05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun05_E0A16D41.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunDirt\FootstepDirtRun05		23284
+	416701398	DirtLand02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\DirtLand02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Land\Right Foot\DirtLand02		114272
+	463548081	FootstepDirtWalk01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkDirt\FootstepDirtWalk01		41824
+	471656445	FootstepGrassWalk01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkGrass\FootstepGrassWalk01		53234
+	489972195	FootstepGrassWalk04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkGrass\FootstepGrassWalk04		62098
+	519165778	FootstepDirtWalk05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkDirt\FootstepDirtWalk05		45152
+	575935162	FootstepDirtRun01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun01_737D72D6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunDirt\FootstepDirtRun01		33298
+	615821067	GrassLand02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\GrassLand02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Land\Right Foot\GrassLand02		66144
+	847000799	GrassLand01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\GrassLand01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Land\Left Foot\GrassLand01		94048
+	861330104	FootstepDirtWalk03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkDirt\FootstepDirtWalk03		46432
+	949635772	FootstepGrassWalk03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Walk\WalkGrass\FootstepGrassWalk03		54614
+	987910952	FootstepGrassRun04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Foot\Run\RunGrass\FootstepGrassRun04		19534
 

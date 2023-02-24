@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68875832222403252}
-  m_LocalRotation: {x: 0.16204382, y: -0.11584319, z: 0.019159207, w: 0.979773}
+  m_LocalRotation: {x: 0.16204378, y: -0.1158439, z: 0.019159317, w: 0.9797729}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644070545531176233}
-  m_LocalRotation: {x: 0.14179988, y: -0.11621374, z: 0.016765667, w: 0.98290694}
+  m_LocalRotation: {x: 0.14179985, y: -0.116214454, z: 0.016765771, w: 0.9829069}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -315,6 +315,7 @@ Transform:
   - {fileID: 4625741182663170261}
   - {fileID: 6745673079060035575}
   - {fileID: 8852595981365641261}
+  - {fileID: 4287977529830938604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -346,7 +347,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4625741180849272013}
-  m_LocalRotation: {x: 0.16204382, y: -0.11584316, z: 0.019159203, w: 0.979773}
+  m_LocalRotation: {x: 0.1620438, y: -0.11584388, z: 0.019159319, w: 0.9797729}
   m_LocalPosition: {x: 226.77232, y: 303.68335, z: 122.68489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -567,6 +568,63 @@ Transform:
   m_Father: {fileID: 6357733607258519719}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4872717862818784391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4287977529830938604}
+  - component: {fileID: 7007220927169400611}
+  m_Layer: 0
+  m_Name: Wwise
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4287977529830938604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872717862818784391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6357733607258519719}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7007220927169400611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872717862818784391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0a82e83b773914bb0607aa93d404ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 886864cf27dc25e40ae3dbd322a3e0f4,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &4882367034705438552
 GameObject:
   m_ObjectHideFlags: 3
@@ -591,7 +649,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4882367034705438552}
-  m_LocalRotation: {x: 0.18228787, y: -0.115421854, z: 0.021552762, w: 0.9762092}
+  m_LocalRotation: {x: 0.1822878, y: -0.115422525, z: 0.02155288, w: 0.97620916}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -957,7 +1015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6745673079060035577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9723358, y: 3.5833492, z: -5.0244064}
+  m_LocalPosition: {x: 0.9723413, y: 3.5833492, z: -5.0244026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2066,6 +2124,7 @@ MonoBehaviour:
   a_Pressed: 0
   s_Pressed: 0
   d_Pressed: 0
+  agreskoul_Pressed: 0
   grapple_Pressed: 0
   grappleObject_Pressed: 0
 --- !u!114 &5626809694016440713
@@ -2096,6 +2155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   playerRb: {fileID: 5626809694016440723}
+  windZone: {fileID: 0}
+  windDir: {x: 0, y: 0, z: 0}
+  windStr: 0
   inAirTimer: 0
   leapingVel: 1
   fallingVel: 8
@@ -2106,6 +2168,7 @@ MonoBehaviour:
   isGrounded: 1
   isSprinting: 0
   isJumping: 0
+  inWindZone: 0
   jumpHeight: 3
   gravityIntensity: -15
   myTransform: {fileID: 0}
@@ -2115,6 +2178,21 @@ MonoBehaviour:
   rotationSpeed: 15
   activeGrapple: 1
   enableMovementAfterGrapple: 0
+  playerFootstep:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0be5caea2aa056e4e8824a68a457daa5,
+      type: 2}
+  playerJump:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 506d5c1b16542524e89b16627f2c94c4,
+      type: 2}
+  playerLand:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1d176b2695668094e871356dbc965a24,
+      type: 2}
 --- !u!114 &5626809694016440715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,8 +2223,12 @@ MonoBehaviour:
   currentHealth: 0
   isDead: 0
   healthBar: {fileID: 210627796863630409}
+  player: {fileID: 0}
+  killZones: []
   respawnPosition: {fileID: 0}
   cameraShake: {fileID: 5626809694016440727}
+  gameOverScreen: {fileID: 0}
+  cursorDisable: {fileID: 0}
 --- !u!114 &5626809694016440720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2177,9 +2259,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lineRenderer: {fileID: 8852595979966516017}
+  rb: {fileID: 0}
   maxGrappleDistance: 25
   grappleDelayTime: 0.25
   overShootYAxis: 10
+  forwardBoostVelocity: 0
   predictionSphereCastRadius: 0
   predictionPoint: {fileID: 0}
   grapplingCd: 0.1
@@ -2207,6 +2291,7 @@ MonoBehaviour:
   whatIsGrappleable:
     serializedVersion: 2
     m_Bits: 8
+  swingPoint: {x: 0, y: 0, z: 0}
   rb: {fileID: 5626809694016440723}
   orientation: {fileID: 709182687312758867}
   horizontalThrustForce: 55

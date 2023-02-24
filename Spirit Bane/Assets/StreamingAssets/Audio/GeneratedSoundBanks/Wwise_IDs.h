@@ -13,9 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_FOOTSTEP_DIRT = 779807780U;
-        static const AkUniqueID PLAY_JUMPING = 2756694246U;
-        static const AkUniqueID PLAY_LANDING = 2323405115U;
+        static const AkUniqueID PLAY_JUMP = 3689126666U;
+        static const AkUniqueID PLAY_LAND = 4285282925U;
         static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
         static const AkUniqueID PLAY_MUSIC_CAVERN = 3247040845U;
         static const AkUniqueID PLAY_MUSIC_FINALE = 3315549719U;
@@ -23,8 +22,25 @@ namespace AK
         static const AkUniqueID PLAY_MUSIC_ROCKS = 3619110380U;
         static const AkUniqueID PLAY_MUSIC_SHIBUYA = 925456677U;
         static const AkUniqueID PLAY_MUSIC_VILLAGE = 4125690526U;
+        static const AkUniqueID PLAY_RUN = 2822207957U;
+        static const AkUniqueID PLAY_WALK = 1589278981U;
         static const AkUniqueID PLAY_WATERFALL = 467174588U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace FOOTSTEPS
+        {
+            static const AkUniqueID GROUP = 2385628198U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID DIRT = 2195636714U;
+                static const AkUniqueID GRASS = 4248645337U;
+            } // namespace SWITCH
+        } // namespace FOOTSTEPS
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {

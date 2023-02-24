@@ -64,8 +64,15 @@ public class PlayerLocomotion : MonoBehaviour
     // Wwise
     [Header("Wwise Events")]
     public AK.Wwise.Event playerFootstep;
+    public AK.Wwise.Event playerFootstepRun;
     public AK.Wwise.Event playerJump;
     public AK.Wwise.Event playerLand;
+    public AK.Wwise.Event playerDodge;
+    public AK.Wwise.Event playerAttack; 
+    public AK.Wwise.Event playerShield;
+    public AK.Wwise.Event playerHurt;
+    public AK.Wwise.Event playerDead;
+
     private bool stepPlaying = false;
     private float lastStepTime = 0.0f;
     private float currentVelocity = 0.0f;
@@ -157,6 +164,25 @@ public class PlayerLocomotion : MonoBehaviour
         else
         {
             if (Time.time - lastStepTime > 500.0f / playerRb.velocity.magnitude * Time.deltaTime)
+            {
+                stepPlaying = false;
+            }
+        }
+    }
+
+    private void StepRun()
+    {
+        if(playerRb.velocity.magnitude < 1.0f || !isGrounded) return;
+
+        if(!stepPlaying)
+        {
+            playerFootstepRun.Post(gameObject);
+            lastStepTime = Time.time;
+            stepPlaying = true;
+        }
+        else
+        {
+            if(Time.time - lastStepTime > 300.0f / playerRb.velocity.magnitude * Time.deltaTime)
             {
                 stepPlaying = false;
             }
@@ -300,6 +326,7 @@ public class PlayerLocomotion : MonoBehaviour
             targetPos.y = rayCastHitPoint.y;
             inAirTimer = 0;
             isGrounded = true;
+            LandSFX();
         }
         else
         {
@@ -331,6 +358,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 animationManager.animator.SetBool("isJumping", true);
                 animationManager.PlayTargetAnim("Jump", false, true);
+                JumpSFX();
 
                 float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
                 Vector3 playerVel = moveDir;
