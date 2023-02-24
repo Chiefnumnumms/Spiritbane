@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 public class PlayerLocomotion : MonoBehaviour
@@ -37,6 +39,16 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     private float maximumDistanceNeededToStartFall = 1f;
 
+    [Header("Ground & Air Detection Stats")]
+    [SerializeField]
+    float minimumDistanceNeededToBeginFall = 1.0f;    // Minimum Distance needed to play fall animation
+    [SerializeField]
+    float groundDirectionRayDistance = 0.2f;        // Ray check distance
+    [SerializeField]
+    float maxDistance = 1f;
+    Vector3 targetPosition;
+    Vector3 normalVector;
+
     [Header("Movement Flags")]
     public bool isGrounded;
     public bool isSprinting;
@@ -53,6 +65,7 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Movement Speeds")]
     public float walkSpeed = 2;
     public float runSpeed = 5;
+    public float movementSpeed = 5f;
     public float sprintSpeed = 7;
     public float rotationSpeed = 15;
 
@@ -127,7 +140,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if(playerManager.isInteracting)
+        if (playerManager.isInteracting)
         {
             return;
         }
@@ -377,6 +390,109 @@ public class PlayerLocomotion : MonoBehaviour
         Invoke(nameof(ResetMovementRestrictions), 3f);
     }
 
+    //public void HandleFalling(Vector3 moveDirection)
+    //{
+    //    isGrounded = false;
+    //    RaycastHit hit;
+    //    Vector3 origin = myTransform.position;
+    //    origin.y += groundDetectionRayStartPoint;
+
+    //    if (Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
+    //    {
+    //        moveDirection = Vector3.zero;
+    //    }
+
+    //    if (!isGrounded)
+    //    {
+    //        playerRb.AddForce(-Vector3.up * fallingVel);
+    //        playerRb.AddForce(moveDirection * fallingVel / 10f);
+    //    }
+
+    //    Vector3 dir = moveDirection;
+    //    dir.Normalize();
+    //    origin = origin + dir * groundDirectionRayDistance;
+
+    //    targetPosition = myTransform.position;
+
+    //    Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
+    //    if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, groundLayer))
+    //    {
+    //        normalVector = hit.normal;
+    //        Vector3 tp = hit.point;
+    //        isGrounded = true;
+    //        targetPosition.y = tp.y;
+
+    //        if (!isGrounded)
+    //        {
+    //            if (inAirTimer > 0.5f)
+    //            {
+    //                Debug.Log("You were in the air for " + inAirTimer);
+    //                animationManager.PlayTargetAnim("Landing", true);
+    //                inAirTimer = 0;
+    //            }
+    //            else
+    //            {
+    //                animationManager.PlayTargetAnim("Empty", false);
+    //                inAirTimer = 0;
+    //            }
+
+    //            isGrounded = false;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (isGrounded)
+    //        {
+    //            isGrounded = false;
+    //        }
+
+    //        if (isGrounded == false)
+    //        {
+    //            if (playerManager.isInteracting == false)
+    //            {
+    //                animationManager.PlayTargetAnim("Falling Idle", true);
+    //            }
+
+    //            Vector3 vel = playerRb.velocity;
+    //            vel.Normalize();
+    //            playerRb.velocity = vel * (movementSpeed / 2);
+    //            isGrounded = true;
+    //        }
+    //    }
+
+    //    if (playerManager.isInteracting || inputManager.moveAmount > 0)
+    //    {
+    //        myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
+    //    }
+    //    else
+    //    {
+    //        myTransform.position = targetPosition;
+    //    }
+
+    //    // BUG FIX: This now ensures that the player is always going to the target position
+    //    //          instead of behaving oddly when moving around
+    //    //          This ensures players feet are not going under the ground when performing an animation
+    //    if (playerManager.isInteracting || inputManager.moveAmount > 0)
+    //    {
+    //        myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
+    //    }
+    //    else
+    //    {
+    //        myTransform.position = targetPosition;
+    //    }
+
+    //    if (isGrounded)
+    //    {
+    //        if (playerManager.isInteracting || inputManager.moveAmount > 0)
+    //        {
+    //            myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
+    //        }
+    //        else
+    //        {
+    //            myTransform.position = targetPosition;
+    //        }
+    //    }
+    //}
 
     public void SetVelocity()
     {
