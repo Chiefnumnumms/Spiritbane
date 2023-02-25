@@ -9,13 +9,17 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{376ADACC-E85C-3EAE-2F8F-84D6D7A96A38}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{E6B33F16-83EC-52D0-6620-C71A97AC4844}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
 				<File Id="9431120" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0021_Tape_Measure_2.wav</ShortName>
 					<CachePath>SFX/0021_Tape_Measure_2_29758560.wem</CachePath>
+				</File>
+				<File Id="27807858" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Highlight2.wav</ShortName>
+					<CachePath>SFX/Highlight2_1174EA7A.wem</CachePath>
 				</File>
 				<File Id="37203475" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dijoji - Idle - 07.wav</ShortName>
@@ -36,6 +40,14 @@
 				<File Id="105827010" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtRun03.wav</ShortName>
 					<CachePath>SFX/FootstepDirtRun03_32314FAC.wem</CachePath>
+				</File>
+				<File Id="121031980" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Error.wav</ShortName>
+					<CachePath>SFX/Error_A57EB6B5.wem</CachePath>
+				</File>
+				<File Id="122369927" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Unpause.wav</ShortName>
+					<CachePath>SFX/Unpause_0FB15898.wem</CachePath>
 				</File>
 				<File Id="135368119" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepGrassWalk05.wav</ShortName>
@@ -173,6 +185,14 @@
 					<ShortName>FootstepDirtRun01.wav</ShortName>
 					<CachePath>SFX/FootstepDirtRun01_737D72D6.wem</CachePath>
 				</File>
+				<File Id="588598295" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Confirm.wav</ShortName>
+					<CachePath>SFX/Confirm_CB81F541.wem</CachePath>
+				</File>
+				<File Id="609709786" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Highlight1.wav</ShortName>
+					<CachePath>SFX/Highlight1_1FBD0937.wem</CachePath>
+				</File>
 				<File Id="615821067" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GrassLand02.wav</ShortName>
 					<CachePath>SFX/GrassLand02_10C4C929.wem</CachePath>
@@ -185,6 +205,14 @@
 					<ShortName>Dijoji - Walking - 11.wav</ShortName>
 					<CachePath>SFX/Dijoji - Walking - 11_165684D4.wem</CachePath>
 				</File>
+				<File Id="738036070" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pause.wav</ShortName>
+					<CachePath>SFX/Pause_38FAC758.wem</CachePath>
+				</File>
+				<File Id="759351871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Urgent.wav</ShortName>
+					<CachePath>SFX/Urgent_26E52CCD.wem</CachePath>
+				</File>
 				<File Id="838073785" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Charybdis - Looping.wav</ShortName>
 					<CachePath>SFX/Charybdis - Looping_D79FB2B7.wem</CachePath>
@@ -196,6 +224,10 @@
 				<File Id="861330104" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtWalk03.wav</ShortName>
 					<CachePath>SFX/FootstepDirtWalk03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="891131201" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Back.wav</ShortName>
+					<CachePath>SFX/Back_FD27B35F.wem</CachePath>
 				</File>
 				<File Id="949635772" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepGrassWalk03.wav</ShortName>
@@ -225,6 +257,16 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1519321238" Name="Play_Attack" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1292086503" Name="Play_Back" DurationType="OneShot" DurationMin="0.97805464" DurationMax="0.97805464">
+					<MediaRefs>
+						<MediaRef Id="891131201"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4136017490" Name="Play_Confirm" DurationType="OneShot" DurationMin="0.74741036" DurationMax="0.74741036">
+					<MediaRefs>
+						<MediaRef Id="588598295"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1172822028" Name="Play_Death" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2231879068" Name="Play_Dijoji___Death" DurationType="OneShot" DurationMin="7.8657875" DurationMax="7.8657875">
 					<MediaRefs>
@@ -263,6 +305,21 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="3338421947" Name="Play_Dodge" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2713813216" Name="Play_Error" DurationType="OneShot" DurationMin="1.0415736" DurationMax="1.0415736">
+					<MediaRefs>
+						<MediaRef Id="121031980"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="366070907" Name="Play_Highlight1" DurationType="OneShot" DurationMin="0.3444695" DurationMax="0.3444695">
+					<MediaRefs>
+						<MediaRef Id="609709786"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="366070904" Name="Play_Highlight2" DurationType="OneShot" DurationMin="0.3457105" DurationMax="0.3457105">
+					<MediaRefs>
+						<MediaRef Id="27807858"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2955259529" Name="Play_Hurt" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3689126666" Name="Play_Jump" DurationType="OneShot" DurationMin="0.28232864" DurationMax="0.49345013">
 					<SwitchContainers>
@@ -325,6 +382,11 @@
 						<MediaRef Id="838073785"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4233560256" Name="Play_Pause" DurationType="OneShot" DurationMin="0.9626607" DurationMax="0.9626607">
+					<MediaRefs>
+						<MediaRef Id="738036070"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2822207957" Name="Play_Run" DurationType="OneShot" DurationMin="0.20247917" DurationMax="0.4002876">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -365,6 +427,16 @@
 				<Event Id="4114669316" Name="Play_Tension" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="350922585"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="959506991" Name="Play_Unpause" DurationType="OneShot" DurationMin="1.019656" DurationMax="1.019656">
+					<MediaRefs>
+						<MediaRef Id="122369927"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2128578085" Name="Play_Urgent" DurationType="OneShot" DurationMin="1.1593251" DurationMax="1.1593251">
+					<MediaRefs>
+						<MediaRef Id="759351871"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1589278981" Name="Play_Walk" DurationType="OneShot" DurationMin="0.3762199" DurationMax="0.744">
@@ -506,7 +578,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1B7F800F-5EDF-986D-1B09-0929E6989B5E}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1BC31B6F-D5F3-2E02-B43F-8F290758EFC4}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -518,6 +590,15 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="2477392413" Name="OnSnowField">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="930712164" Name="Off"/>
+						<State Id="1651971902" Name="On"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="2385628198" Name="Footsteps">
 					<Switches>
@@ -627,7 +708,7 @@
 			<ShortName>Quest_03</ShortName>
 			<Path>Quest_03.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{A949B3FF-3AC3-93A0-E1A1-8634BA0C9E80}">
+		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{C88C5B83-ACF1-199C-B0E5-800D497EEDB3}">
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 			<Media>
@@ -639,9 +720,17 @@
 					<ShortName>Stream.wav</ShortName>
 					<CachePath>SFX/Stream_81238AE1.wem</CachePath>
 				</File>
+				<File Id="144681919" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PowerDown.wav</ShortName>
+					<CachePath>SFX/PowerDown_401A2872.wem</CachePath>
+				</File>
 				<File Id="228795229" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Explosion.wav</ShortName>
 					<CachePath>SFX/Explosion_C83E93E8.wem</CachePath>
+				</File>
+				<File Id="256000415" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PowerUp.wav</ShortName>
+					<CachePath>SFX/PowerUp_F4FC2F58.wem</CachePath>
 				</File>
 				<File Id="497233989" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DoorOpen.wav</ShortName>
@@ -696,6 +785,16 @@
 				<Event Id="2356524575" Name="Play_Key" DurationType="OneShot" DurationMin="0.5490697" DurationMax="0.5490697">
 					<MediaRefs>
 						<MediaRef Id="590788050"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2298942465" Name="Play_PowerDown" DurationType="OneShot" DurationMin="1.3913484" DurationMax="1.3913484">
+					<MediaRefs>
+						<MediaRef Id="144681919"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2876792902" Name="Play_PowerUp" DurationType="OneShot" DurationMin="1.6019804" DurationMax="1.6019804">
+					<MediaRefs>
+						<MediaRef Id="256000415"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="747309779" Name="Play_Stream01" MaxAttenuation="70" DurationType="Infinite">
@@ -887,5 +986,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{611AB03C-D591-D51E-555B-AE7A05D235A8}</FileHash>
+	<FileHash>{F697D4D7-157A-9721-536A-FF523E3009DA}</FileHash>
 </SoundBanksInfo>

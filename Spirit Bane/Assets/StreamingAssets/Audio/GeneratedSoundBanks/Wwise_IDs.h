@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID PLAY_AMBIENCEWITHFLIES = 2195436581U;
         static const AkUniqueID PLAY_APPROACHINGEVIL = 1419843580U;
         static const AkUniqueID PLAY_ATTACK = 1519321238U;
+        static const AkUniqueID PLAY_BACK = 1292086503U;
         static const AkUniqueID PLAY_BURNING = 2394181555U;
         static const AkUniqueID PLAY_CAVERNLOOP1 = 2803981292U;
         static const AkUniqueID PLAY_CAVERNLOOP2 = 2803981295U;
@@ -33,6 +34,7 @@ namespace AK
         static const AkUniqueID PLAY_CAVERNWIND1 = 1547338064U;
         static const AkUniqueID PLAY_CAVERNWIND2 = 1547338067U;
         static const AkUniqueID PLAY_CLOUDSMOVING = 2654175122U;
+        static const AkUniqueID PLAY_CONFIRM = 4136017490U;
         static const AkUniqueID PLAY_DEATH = 1172822028U;
         static const AkUniqueID PLAY_DIJOJI___DEATH = 2231879068U;
         static const AkUniqueID PLAY_DIJOJI___IDLE = 1246552272U;
@@ -44,9 +46,12 @@ namespace AK
         static const AkUniqueID PLAY_DOORLOCKED = 4269214404U;
         static const AkUniqueID PLAY_DOOROPEN = 3197300806U;
         static const AkUniqueID PLAY_DOOROPEN1 = 1196441091U;
+        static const AkUniqueID PLAY_ERROR = 2713813216U;
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
         static const AkUniqueID PLAY_GENTLEWAVES = 810177169U;
         static const AkUniqueID PLAY_HELLISHAMBIANCE_01 = 3532206737U;
+        static const AkUniqueID PLAY_HIGHLIGHT1 = 366070907U;
+        static const AkUniqueID PLAY_HIGHLIGHT2 = 366070904U;
         static const AkUniqueID PLAY_HURT = 2955259529U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_KEY = 2356524575U;
@@ -58,6 +63,9 @@ namespace AK
         static const AkUniqueID PLAY_MUSIC_ROCKS = 3619110380U;
         static const AkUniqueID PLAY_MUSIC_SHIBUYA = 925456677U;
         static const AkUniqueID PLAY_MUSIC_VILLAGE = 4125690526U;
+        static const AkUniqueID PLAY_PAUSE = 4233560256U;
+        static const AkUniqueID PLAY_POWERDOWN = 2298942465U;
+        static const AkUniqueID PLAY_POWERUP = 2876792902U;
         static const AkUniqueID PLAY_RUN = 2822207957U;
         static const AkUniqueID PLAY_SHIELD = 1988178265U;
         static const AkUniqueID PLAY_SMOULDERING = 50299785U;
@@ -69,12 +77,30 @@ namespace AK
         static const AkUniqueID PLAY_TENSION = 4114669316U;
         static const AkUniqueID PLAY_TORCH = 2025845440U;
         static const AkUniqueID PLAY_TORNADOWINDS = 1142497274U;
+        static const AkUniqueID PLAY_UNPAUSE = 959506991U;
+        static const AkUniqueID PLAY_URGENT = 2128578085U;
         static const AkUniqueID PLAY_WALK = 1589278981U;
         static const AkUniqueID PLAY_WATERFALLS = 2446914439U;
         static const AkUniqueID PLAY_WATERFALLS1 = 528965044U;
         static const AkUniqueID PLAY_WATERFALLS2 = 528965047U;
         static const AkUniqueID PLAY_WINDLOOP = 250515782U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace ONSNOWFIELD
+        {
+            static const AkUniqueID GROUP = 2477392413U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID OFF = 930712164U;
+                static const AkUniqueID ON = 1651971902U;
+            } // namespace STATE
+        } // namespace ONSNOWFIELD
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
