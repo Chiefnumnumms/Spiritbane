@@ -68,21 +68,11 @@ public class ObjectGrapple : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
-    {
-        if (isGrappling)
-        {
-            // CONTINOUSLY UPDATE THE STARTING POSITION AS THE GUNTIP POSITION
-            //lineRenderer.SetPosition(0, gunTip.position);
-        }
-    }
-
     public void StartGrapple()
     {
         // DONT ALLOW PLAYER TO GRAPPLE IF COOL DOWN IS IN EFFECT
         if (grapplingCdTimer > 0) return;
         if (swingingManager.isSwinging) return;
-        agreskoulManager.ExecuteSwordSwing();
 
         RaycastHit hit;
 
@@ -90,18 +80,17 @@ public class ObjectGrapple : MonoBehaviour
         {
             isGrappling = true;
 
-            if (!swingingManager.isSwinging)
-            {
-                // FREEZE THE PLAYER FOR A SECOND
-                freezePlayer = true;
+            // FREEZE THE PLAYER FOR A SECOND
+            freezePlayer = true;
 
-                // STORE THE HIT POINT AS THE GRAPPLE POINT
-                grapplePoint = hit.point;
+            // STORE THE HIT POINT AS THE GRAPPLE POINT
+            grapplePoint = hit.point;
 
-                // EXECUTE THE GRAPPLE WITH A DELAY TIMER
-                Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+            agreskoulManager.ExecuteSwordSwing();
 
-            }
+            // EXECUTE THE GRAPPLE WITH A DELAY TIMER
+            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
+
         }
         else
         {
@@ -151,8 +140,6 @@ public class ObjectGrapple : MonoBehaviour
         // RESET THE COOL DOWN TIMER
         grapplingCdTimer = grapplingCd;
 
-        // DISABLE THE LINE RENDERER
-        lineRenderer.enabled = false;
     }
 
     public void CheckForGrappleObject()

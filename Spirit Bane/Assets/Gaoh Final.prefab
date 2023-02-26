@@ -8518,14 +8518,28 @@ MonoBehaviour:
   horizontalThrustForce: 15
   forwardThrustForce: 5
   extendCableSpeed: 20
-  predictionSphereCastRadius: 5
-  predictionPoint: {fileID: 0}
+  swigingPredictionSphereCastRadius: 0
+  predictionPointSwing: {fileID: 0}
   desiredMaterial: {fileID: 2100000, guid: 1fee984b1c406ff4180fbfe605b34481, type: 2}
   originalMaterial: {fileID: 2100000, guid: bc93643f1788c374a8f05f17098eb664, type: 2}
   isSwinging: 0
   isLookingAtSwingingPoint: 0
   maxIndicationDistance: 25
   swordLookAt: {fileID: 2133846116}
+  maxGrappleDistance: 0
+  grappleDelayTime: 0
+  overShootYAxis: 0
+  forwardBoostVelocity: 0
+  isValidObjectGrapple:
+    serializedVersion: 2
+    m_Bits: 0
+  isLookingAtObjectGrapplePoint: 0
+  grapplePredictionSphereCastRadius: 0
+  predictionPointGrappling: {fileID: 0}
+  grapplingCd: 0
+  grapplingCdTimer: 0
+  isGrappling: 0
+  freezePlayer: 0
   pivotTransform: {fileID: 2588550488405629298}
 --- !u!114 &5773757863828034975
 MonoBehaviour:

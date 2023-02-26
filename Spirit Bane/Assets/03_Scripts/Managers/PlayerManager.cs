@@ -7,8 +7,6 @@ public class PlayerManager : MonoBehaviour
     private InputManager inputManager;
     private Animator animator;
     private PlayerLocomotion playerLocomotion;
-    private Swinging swingingManager;
-    private ObjectGrapple grappleManager;
     private Agreskoul agreskoulManager;
 
     public bool isInteracting;
@@ -20,21 +18,12 @@ public class PlayerManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         animator = GetComponent<Animator>();
-        swingingManager = GetComponent<Swinging>();
-        grappleManager = GetComponent<ObjectGrapple>();
         agreskoulManager = GetComponent<Agreskoul>();
     }
 
     private void Update()
     {
         inputManager.HandleAllInputs();
-
-        // SWINGING - AA
-        agreskoulManager.CheckForPoint();
-        agreskoulManager.HighlightSwingingPoint(agreskoulManager.maxIndicationDistance);
-
-        // GRAPPLING - AA
-        grappleManager.CheckForGrappleObject();
 
         // LOCK CURSOR - AA
         Cursor.lockState = CursorLockMode.Locked;
