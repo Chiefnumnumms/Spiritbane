@@ -3,11 +3,11 @@
 	<States>
 		<WorkUnit Name="Default Work Unit" ID="{6FC7E95D-A378-4691-B8FB-BA95A06FFB9F}" PersistMode="Standalone">
 			<ChildrenList>
-				<StateGroup Name="OnSnowField" ID="{361556E9-67F2-4858-8505-D74F39D4445F}">
+				<StateGroup Name="TargetHit" ID="{361556E9-67F2-4858-8505-D74F39D4445F}">
 					<ChildrenList>
 						<State Name="None" ID="{000A5FAA-BEC2-482E-AA6A-E3EAD8D50899}"/>
-						<State Name="On" ID="{D49F499D-1D72-4B57-B447-2F2D166549BB}"/>
-						<State Name="Off" ID="{D4D16366-F82D-4E25-A249-0FE3C2BEFE10}"/>
+						<State Name="True" ID="{D49F499D-1D72-4B57-B447-2F2D166549BB}"/>
+						<State Name="False" ID="{D4D16366-F82D-4E25-A249-0FE3C2BEFE10}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

@@ -56,6 +56,7 @@ namespace AK
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_KEY = 2356524575U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_MOVING = 1784546604U;
         static const AkUniqueID PLAY_MUSIC_BOSS = 2155613437U;
         static const AkUniqueID PLAY_MUSIC_CAVERN = 3247040845U;
         static const AkUniqueID PLAY_MUSIC_FINALE = 3315549719U;
@@ -71,7 +72,7 @@ namespace AK
         static const AkUniqueID PLAY_SMOULDERING = 50299785U;
         static const AkUniqueID PLAY_STREAM01 = 747309779U;
         static const AkUniqueID PLAY_STREAM02 = 747309776U;
-        static const AkUniqueID PLAY_SWING = 989180208U;
+        static const AkUniqueID PLAY_SWINGING = 318967272U;
         static const AkUniqueID PLAY_SWORDEXTEND = 962029321U;
         static const AkUniqueID PLAY_SWORDRETRACT = 1737963444U;
         static const AkUniqueID PLAY_TENSION = 4114669316U;
@@ -88,9 +89,9 @@ namespace AK
 
     namespace STATES
     {
-        namespace ONSNOWFIELD
+        namespace ONSTATE
         {
-            static const AkUniqueID GROUP = 2477392413U;
+            static const AkUniqueID GROUP = 3065973909U;
 
             namespace STATE
             {
@@ -98,7 +99,7 @@ namespace AK
                 static const AkUniqueID OFF = 930712164U;
                 static const AkUniqueID ON = 1651971902U;
             } // namespace STATE
-        } // namespace ONSNOWFIELD
+        } // namespace ONSTATE
 
     } // namespace STATES
 
@@ -116,6 +117,11 @@ namespace AK
         } // namespace FOOTSTEPS
 
     } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID SPEED = 640949982U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
@@ -136,7 +142,12 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIENCE = 85412153U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID UI = 1551306167U;
+        static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

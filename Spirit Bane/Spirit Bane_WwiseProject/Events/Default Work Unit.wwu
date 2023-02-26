@@ -118,6 +118,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{1D29EA49-2BA6-4B4D-A44F-CE1AEDF33D44}" ShortID="424588919">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Jump" ID="{83779B01-E78C-4AB1-A298-CDC9F9B4D96A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_Run" ID="{67D85B00-EB30-436D-9C35-C332D3019664}">
@@ -205,12 +212,12 @@
 						</Folder>
 						<Folder Name="Action" ID="{B3087ADE-541C-4BD3-89E5-BB3C8EB2E241}" ShortID="1018442660">
 							<ChildrenList>
-								<Event Name="Play_Attack" ID="{7F92D1F9-7B63-4DE0-B0DF-762132C76309}">
+								<Event Name="Play_JumpVocals" ID="{7F92D1F9-7B63-4DE0-B0DF-762132C76309}">
 									<ChildrenList>
 										<Action Name="" ID="{1D8A75E7-9437-4D31-845A-DA179A0D8EB2}" ShortID="346422036">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Attack" ID="{83779B01-E78C-4AB1-A298-CDC9F9B4D96A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Jump" ID="{83779B01-E78C-4AB1-A298-CDC9F9B4D96A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -245,24 +252,70 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_Swing" ID="{10B0C0B8-5A4E-4F8F-8527-6813ED8A8122}"/>
-								<Event Name="Play_SwordExtend" ID="{882187DF-6FD9-4258-9FBB-5FCF10EEFC67}">
+								<Event Name="Play_Retract" ID="{F50C28F5-18C7-456C-A8D7-DBF7BFD06FFD}"/>
+								<Event Name="Play_Swinging" ID="{06E88A67-1365-4C13-A68B-9D366F347327}">
 									<ChildrenList>
-										<Action Name="" ID="{99620D36-7C7F-4A19-8DFE-0F15EF63ED51}" ShortID="280041024">
+										<Action Name="" ID="{4669333A-320F-4E65-AB59-EED783D8A8B0}" ShortID="42010696">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Extend" ID="{85F3DF2B-6BB0-4F10-B255-4376EDF8D607}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Swinging" ID="{A8F9A756-C416-4222-BC6B-7B3B33C78780}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SwordRetract" ID="{F50C28F5-18C7-456C-A8D7-DBF7BFD06FFD}">
+								<Event Name="Play_Moving" ID="{0569CF13-A3F4-455A-9B7A-F698DC3034B3}">
 									<ChildrenList>
-										<Action Name="" ID="{DB99CDD7-0430-46AD-8940-651096DB4021}" ShortID="108087540">
+										<Action Name="" ID="{DF5E7FB3-62BC-4738-931D-FC1CA9B2305A}" ShortID="466575611">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Retract" ID="{E56E367E-083C-43A6-869B-36D07E96A1EE}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Moving" ID="{273D7920-549A-4A77-9C1F-447688B94ECA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Extend" ID="{EB72AF2D-F086-4EB4-872B-233FFA52EA41}">
+									<ChildrenList>
+										<Action Name="" ID="{0D6EF43C-D213-4ADD-9049-5D5F571D5F8B}" ShortID="322835570">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Chain" ID="{66C0260B-2F9E-407A-B3B9-CD7AF1A9C884}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F244FECE-FA0E-49FA-9CA9-0D16C1FBA84A}" ShortID="460279244">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="0021_Tape_Measure_2" ID="{ABCBB574-706F-4635-B4C3-3770D14E2475}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6AB5561F-25AB-4AE7-BBCA-6F23A83F449A}" ShortID="630293101">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Blade" ID="{977C80AE-D9EC-4A48-9F97-D9532A56D9DA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CE725EB6-7A08-41BB-B1A9-19EA61EE2AD3}" ShortID="715285582">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.5"/>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="GrappleSuccess" ID="{52436528-A284-4204-8D8C-31ABBEC132B7}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -455,7 +508,7 @@
 										<Action Name="" ID="{DD757786-8114-4113-ABE8-9ABBFDF21331}" ShortID="380017935">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Explosion" ID="{D3AA8173-D6AE-4CE6-9116-E17CFBB098CD}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="FireAttackExplosion" ID="{D3AA8173-D6AE-4CE6-9116-E17CFBB098CD}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -489,6 +542,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="PowerDown" ID="{1A4BAE2A-EADC-4DEB-897F-4379E6A07A10}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Rockslide" ID="{2B425C4B-5A81-4C60-B35B-47677A4E4ECD}">
+									<ChildrenList>
+										<Action Name="" ID="{EF0F84EB-9859-411F-A6E6-D0E9DE3E25ED}" ShortID="595123716">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Rockslide" ID="{DC5B3B33-6875-45A6-885F-89DDE7A317F1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -759,7 +823,7 @@
 										<Action Name="" ID="{E3E316F7-3BE3-4C9A-8220-382E1BCD4865}" ShortID="716662305">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dijoji - Walking" ID="{F7D27FC3-6657-41A4-900B-3FF19FB3621B}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Dijoji - Walking" ID="{F7D27FC3-6657-41A4-900B-3FF19FB3621B}" WorkUnitID="{839CCD04-5087-46C9-8F87-B68578E7C722}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -770,7 +834,7 @@
 										<Action Name="" ID="{5CE47E5F-E132-4E49-8EEC-E83CA8FDD59C}" ShortID="977083950">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dijoji - Narration" ID="{75520514-F05A-413F-B0F6-78526FAACCE6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Dijoji - Narration" ID="{75520514-F05A-413F-B0F6-78526FAACCE6}" WorkUnitID="{839CCD04-5087-46C9-8F87-B68578E7C722}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -781,7 +845,7 @@
 										<Action Name="" ID="{1DCF60E4-290C-4E92-B508-21C01469B86F}" ShortID="918494410">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dijoji - Idle" ID="{862E73E3-BB2A-4A09-B018-BB4EF4D0D3A4}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Dijoji - Idle" ID="{862E73E3-BB2A-4A09-B018-BB4EF4D0D3A4}" WorkUnitID="{839CCD04-5087-46C9-8F87-B68578E7C722}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -792,7 +856,7 @@
 										<Action Name="" ID="{CC96349E-1C7D-4994-9F3B-D169F3A771BD}" ShortID="1017698193">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dijoji - Death" ID="{8D7F1211-C181-4088-B575-53D4CA23BB3F}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+													<ObjectRef Name="Dijoji - Death" ID="{8D7F1211-C181-4088-B575-53D4CA23BB3F}" WorkUnitID="{839CCD04-5087-46C9-8F87-B68578E7C722}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{E6B33F16-83EC-52D0-6620-C71A97AC4844}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{08FEDB11-243D-C3BC-3672-F600F648E339}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
@@ -113,6 +113,14 @@
 					<ShortName>FootstepGrassRun03.wav</ShortName>
 					<CachePath>SFX/FootstepGrassRun03_10C4C929.wem</CachePath>
 				</File>
+				<File Id="312163438" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Movement01.wav</ShortName>
+					<CachePath>SFX/Movement01_CE35A162.wem</CachePath>
+				</File>
+				<File Id="319906171" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MovementGeneric01.wav</ShortName>
+					<CachePath>SFX/MovementGeneric01_1DBC0264.wem</CachePath>
+				</File>
 				<File Id="328170692" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>0021_Tape_Measure_2.wav</ShortName>
 					<CachePath>SFX/0021_Tape_Measure_2_B12B6D5A.wem</CachePath>
@@ -120,6 +128,10 @@
 				<File Id="340982096" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dijoji - Death (Sudden).wav</ShortName>
 					<CachePath>SFX/Dijoji - Death (Sudden)_8C14605C.wem</CachePath>
+				</File>
+				<File Id="344806617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Movement02.wav</ShortName>
+					<CachePath>SFX/Movement02_4A605407.wem</CachePath>
 				</File>
 				<File Id="350922585" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Tension.wav</ShortName>
@@ -180,6 +192,10 @@
 				<File Id="519165778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtWalk05.wav</ShortName>
 					<CachePath>SFX/FootstepDirtWalk05_10C4C929.wem</CachePath>
+				</File>
+				<File Id="528252189" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MovementGeneric02.wav.wav</ShortName>
+					<CachePath>SFX/MovementGeneric02.wav_5FF37481.wem</CachePath>
 				</File>
 				<File Id="575935162" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtRun01.wav</ShortName>
@@ -377,6 +393,12 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
+				<Event Id="1784546604" Name="Play_Moving" DurationType="OneShot" DurationMin="0.33835652" DurationMax="0.60123134">
+					<MediaRefs>
+						<MediaRef Id="319906171"/>
+						<MediaRef Id="528252189"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="838073785"/>
@@ -413,7 +435,12 @@
 						<MediaRef Id="423531381"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="989180208" Name="Play_Swing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="318967272" Name="Play_Swinging" DurationType="OneShot" DurationMin="0.46514755" DurationMax="0.7740723">
+					<MediaRefs>
+						<MediaRef Id="312163438"/>
+						<MediaRef Id="344806617"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="962029321" Name="Play_SwordExtend" DurationType="OneShot" DurationMin="1.3158734" DurationMax="1.3158734">
 					<MediaRefs>
 						<MediaRef Id="9431120"/>
@@ -578,7 +605,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1BC31B6F-D5F3-2E02-B43F-8F290758EFC4}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F4A01737-A80B-F235-7254-D5789E658B83}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -588,10 +615,18 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="85412153" Name="Ambience"/>
+				<Bus Id="393239870" Name="SFX"/>
+				<Bus Id="1551306167" Name="UI"/>
+				<Bus Id="3170124113" Name="Voice"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="640949982" Name="Speed"/>
+			</GameParameters>
 			<StateGroups>
-				<StateGroup Id="2477392413" Name="OnSnowField">
+				<StateGroup Id="3065973909" Name="OnState">
 					<States>
 						<State Id="748895195" Name="None"/>
 						<State Id="930712164" Name="Off"/>
@@ -986,5 +1021,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F697D4D7-157A-9721-536A-FF523E3009DA}</FileHash>
+	<FileHash>{A47802AE-D81D-0E5B-1BDA-D6E914D6E62D}</FileHash>
 </SoundBanksInfo>

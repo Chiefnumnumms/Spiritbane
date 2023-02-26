@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{7162EB04-C027-40F1-8C28-6F97A0BC37C4}" SchemaVersion="110" RootDocumentID="{EAF03962-9060-44A2-AB6D-66C9430289D4}" ParentDocumentID="{EAF03962-9060-44A2-AB6D-66C9430289D4}">
 	<AudioObjects>
-		<WorkUnit Name="Enemies" ID="{7162EB04-C027-40F1-8C28-6F97A0BC37C4}" OwnerID="{DB8ABCDD-CF9A-4B74-84BB-BEC96D4A4B62}" PersistMode="Nested"/>
+		<WorkUnit Name="Enemies" ID="{7162EB04-C027-40F1-8C28-6F97A0BC37C4}" OwnerID="{DB8ABCDD-CF9A-4B74-84BB-BEC96D4A4B62}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Keneu" ID="{D8B95D0B-95C4-4EDE-B7CD-3AAAB04BA602}" ShortID="865986528">
+					<ChildrenList>
+						<Sound Name="KenueLanding" ID="{8EF8CC4F-A5BC-4901-9007-9B57F8A0BC0F}" ShortID="278697623">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FarExplosion" ID="{D7D597DA-57B1-4BCF-8AF1-54ABE7302DB2}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0454294770206022"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0795015847860538"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.81662757527734"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>FarExplosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="998154598"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FarExplosion" ID="{D7D597DA-57B1-4BCF-8AF1-54ABE7302DB2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

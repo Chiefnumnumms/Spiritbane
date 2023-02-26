@@ -1,6 +1,569 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{839CCD04-5087-46C9-8F87-B68578E7C722}" SchemaVersion="110" RootDocumentID="{EAF03962-9060-44A2-AB6D-66C9430289D4}" ParentDocumentID="{EAF03962-9060-44A2-AB6D-66C9430289D4}">
 	<AudioObjects>
-		<WorkUnit Name="NPCs" ID="{839CCD04-5087-46C9-8F87-B68578E7C722}" OwnerID="{DB8ABCDD-CF9A-4B74-84BB-BEC96D4A4B62}" PersistMode="Nested"/>
+		<WorkUnit Name="NPCs" ID="{839CCD04-5087-46C9-8F87-B68578E7C722}" OwnerID="{DB8ABCDD-CF9A-4B74-84BB-BEC96D4A4B62}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Vocals" ID="{8A9F9D8C-1575-49AA-86CB-DEEF514FD344}" ShortID="711064323">
+					<ChildrenList>
+						<Sound Name="Dijoji - Narration" ID="{75520514-F05A-413F-B0F6-78526FAACCE6}" ShortID="1050057594">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Dijoji - Narration" ID="{1E843283-A71C-44A7-AF45-71635A41AFC8}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.29887620341322"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.298876203413222"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Dijoji - Narration.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="984270625"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Dijoji - Narration" ID="{1E843283-A71C-44A7-AF45-71635A41AFC8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Dijoji - Death" ID="{8D7F1211-C181-4088-B575-53D4CA23BB3F}" ShortID="804095815">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Dijoji - Death (Sudden)" ID="{5D12736E-5B91-4D00-8EC6-2172AFE4B643}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.169987552826202"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.849937764131009"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.35990042260961"/>
+										<Property Name="TrimEnd" Type="Real64" Value="9.22568809429477"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Dijoji - Death (Sudden).wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="340982096"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Dijoji - Death (Sudden)" ID="{5D12736E-5B91-4D00-8EC6-2172AFE4B643}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Dijoji - Walking" ID="{F7D27FC3-6657-41A4-900B-3FF19FB3621B}" ShortID="94600501">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Dijoji - Walking - 01" ID="{598DB929-BE82-481B-9523-F19DDB671BCE}" ShortID="1037829902">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 01" ID="{6792688B-27FF-41F2-8322-471C5F947F36}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.110902537454496"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0689394151744163"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0719367810515648"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.83738528269205"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="518135497"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 01" ID="{6792688B-27FF-41F2-8322-471C5F947F36}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 02" ID="{18005005-64AC-4C93-848F-B67677CA981C}" ShortID="476440594">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 02" ID="{30FD5585-9F3A-4214-9619-94ED80BCF646}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0327692069960578"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0604969975311836"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.610011391772768"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="46414273"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 02" ID="{30FD5585-9F3A-4214-9619-94ED80BCF646}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 04" ID="{6AB83EC1-D7CA-4567-8544-ADF724198310}" ShortID="628536269">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 04" ID="{D7E94B0D-AAF3-49AA-B00A-A05378C1437B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.167454531733454"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.083727265866727"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.334909063466908"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.02067524104201"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="137485673"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 04" ID="{D7E94B0D-AAF3-49AA-B00A-A05378C1437B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 05" ID="{6D4450AB-9571-4FCB-A84A-86D1290FE02E}" ShortID="1066329611">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 05" ID="{AB2D8ED5-8EF1-4444-B719-4968F8BC1CED}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0728933665383745"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.106026714964908"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.192173420873896"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.870302618670289"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="478845902"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 05" ID="{AB2D8ED5-8EF1-4444-B719-4968F8BC1CED}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 06" ID="{C4C44B12-25E7-4BFD-9ACD-4DF0C6C31A18}" ShortID="863402877">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 06" ID="{FF4EF118-0321-4D87-8AA9-1C4CB34C620B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0327449141304699"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.16372457065235"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0400215617150188"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.651259958817125"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="430815870"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 06" ID="{FF4EF118-0321-4D87-8AA9-1C4CB34C620B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 07" ID="{4D21FF33-BA10-4FE4-B9D4-3312EE047D48}" ShortID="1013427976">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 07" ID="{9ADBE18C-54A0-40E9-BE74-C3EE2EABE16F}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0398597769799943"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.117481447941036"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.100698383949459"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.09299704245142"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="261114056"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 07" ID="{9ADBE18C-54A0-40E9-BE74-C3EE2EABE16F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 08" ID="{D1A35C01-6479-4FA5-BE2A-5E988990C745}" ShortID="879393334">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 08" ID="{DC14862E-ACEB-4430-BB21-9D61D79923B6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0436463016268314"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.148397425531227"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.084382849811874"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.753626141423288"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="639572040"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 08" ID="{DC14862E-ACEB-4430-BB21-9D61D79923B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 09" ID="{3939D4E3-7FB2-486E-BF7E-6BF1BB435536}" ShortID="400215287">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 09" ID="{5CC3FEE0-2AEE-4575-BEA3-4EF06B24C8C2}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0494556026319667"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0855962353245577"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0532598797575026"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.572543707393153"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="76649810"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 09" ID="{5CC3FEE0-2AEE-4575-BEA3-4EF06B24C8C2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 10" ID="{EB45DA8B-661D-43D8-BFC3-518F91A979A8}" ShortID="51954443">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 10" ID="{C58060A8-443A-48B4-B2F3-AFFA039615B0}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0469017971689468"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.135187533016376"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.107598240564054"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.728357320741292"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 10.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="980511418"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 10" ID="{C58060A8-443A-48B4-B2F3-AFFA039615B0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Walking - 11" ID="{C2DE25AD-893C-4DBB-B5C0-EE4D180B06C5}" ShortID="137178195">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Walking - 11" ID="{BA122109-EB37-4AB3-B07C-117DE408D0C0}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0620035864319315"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.266615421657305"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0775044830399143"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.880450927333427"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Walking - 11.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="642765256"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Walking - 11" ID="{BA122109-EB37-4AB3-B07C-117DE408D0C0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Dijoji - Idle" ID="{862E73E3-BB2A-4A09-B018-BB4EF4D0D3A4}" ShortID="973772659">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Dijoji - Idle - 01" ID="{97FFEEE8-73FB-403F-99DC-09AF40E23251}" ShortID="647422519">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 01" ID="{E4A3F7DF-164A-4268-803A-966377B20655}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="366092089"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 01" ID="{E4A3F7DF-164A-4268-803A-966377B20655}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 02" ID="{659124AA-8F6A-4378-9D01-99F9685D84DF}" ShortID="357638143">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 02" ID="{B72AAAE1-6E3A-4611-A30B-87F9D4EDE7F8}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="436142020"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 02" ID="{B72AAAE1-6E3A-4611-A30B-87F9D4EDE7F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 03" ID="{79719212-B3F1-4152-B7AE-A712A0EF03BF}" ShortID="444953631">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 03" ID="{0F369C6E-818F-43E3-9D3C-E3CC104DD9C3}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="393155295"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 03" ID="{0F369C6E-818F-43E3-9D3C-E3CC104DD9C3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 04" ID="{DC9330A3-23FB-40DA-90E6-55F7DC71FD88}" ShortID="909886217">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 04" ID="{744983CE-9EBA-466E-9723-F5FF28B99780}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1029759393"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 04" ID="{744983CE-9EBA-466E-9723-F5FF28B99780}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 05" ID="{CA83B701-F819-4A25-B304-33EE095B3159}" ShortID="43348112">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 05" ID="{0B106F93-6449-4AFB-A829-A58B078E577C}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="60282662"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 05" ID="{0B106F93-6449-4AFB-A829-A58B078E577C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 06" ID="{A68D2BE7-F04F-4BA0-A880-F0258ECB0596}" ShortID="106270507">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 06" ID="{6A62C42C-C7AB-4398-807C-15CBC28E5C27}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="206347513"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 06" ID="{6A62C42C-C7AB-4398-807C-15CBC28E5C27}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 07" ID="{5FBAFE44-C980-4F1B-AD85-CEBF0B35FFD3}" ShortID="69871782">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 07" ID="{6114D1B3-5AF9-454D-B65A-B14CD6B4A4E4}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="37203475"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 07" ID="{6114D1B3-5AF9-454D-B65A-B14CD6B4A4E4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dijoji - Idle - 08" ID="{787363E4-BACD-44B6-9486-3EA8E6A2EA7E}" ShortID="1062531220">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dijoji - Idle - 08" ID="{9A622765-C6B4-46E3-9504-254D1C5CE595}">
+											<Language>SFX</Language>
+											<AudioFile>Dijoji - Idle - 08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="252267342"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dijoji - Idle - 08" ID="{9A622765-C6B4-46E3-9504-254D1C5CE595}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

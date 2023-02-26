@@ -9,6 +9,55 @@
 							<ObjectRef Name="System" ID="{B24DC0DC-3EA8-4187-AAE9-656C9B10DEBA}" WorkUnitID="{0E8BE279-E6E8-4A8D-BC7B-F3048183EB29}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Music" ID="{C9177323-615A-4C0B-9B7A-FBD45109F67E}"/>
+						<Bus Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}"/>
+						<Bus Name="Ambience" ID="{28B8B899-0104-4E3B-91CA-13B84238CAD2}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{C9177323-615A-4C0B-9B7A-FBD45109F67E}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="Voice" ID="{830560DD-5C1E-4679-BE24-8803AA52E73B}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Ambience" ID="{28B8B899-0104-4E3B-91CA-13B84238CAD2}"/>
+									<DuckingParam>
+										<Volume>-11</Volume>
+										<FadeInTime>0.200000002980232</FadeInTime>
+										<FadeOutTime>0.200000002980232</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="Music" ID="{C9177323-615A-4C0B-9B7A-FBD45109F67E}"/>
+									<DuckingParam>
+										<Volume>-16</Volume>
+										<FadeInTime>0.200000002980232</FadeInTime>
+										<FadeOutTime>0.200000002980232</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}"/>
+									<DuckingParam>
+										<Volume>-9</Volume>
+										<FadeInTime>0.200000002980232</FadeInTime>
+										<FadeOutTime>0.200000002980232</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="UI" ID="{9D622C29-B101-4FD8-AF56-0DCB95CC57F7}"/>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>
