@@ -58,8 +58,14 @@
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
 										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Dirt" ID="{4D73082B-5EA4-4CE6-B091-F8F40F6C11C1}" WorkUnitID="{863D4E5A-EA0D-4A1C-A6FC-AB59EC4DC0EA}"/>
+										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="Footsteps" ID="{05F7B752-5262-4C79-AC52-6079C26209EA}" WorkUnitID="{863D4E5A-EA0D-4A1C-A6FC-AB59EC4DC0EA}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>

@@ -16,7 +16,31 @@ public abstract class KeneuBaseState : State
     // Enums
 
     public enum StateNames { Default, Grounded, Flying, Dead }
-    public enum PhaseNames { Begin, Phase1, Phase2, Phase3, End }
+    public enum KeneuActions { Idle, Fly, Walk, TakeOff, Strike, Fire, Push }
+
+
+    // Begin - Wait For Gaoh To Trigger BoxCollider Entering The Arena To Transition To Phase1
+    // Phase 1 Loop - Idle > Fly > Strike > Walk > TakeOff
+    //      Fly Away > Dive At Gaoh > Gaoh Use Agreskoul To Pull Tail To Slam Into Ground Twice To Transition Phase
+    // Phase 2 Loop - TakeOff > Fly > Strike/Fire > Walk
+    //      Main Platform Become A Hazard Area Via Tornado Forcing Goah To Use The 4 Smaller Platforms
+    //      Keneu Will Stay Between The Four Platforms In FLying State And Attack By Diving Towards Or Shooting Fireball
+    //      Gaoh Must Reflect Back 3 Fireballs To Transition Phase
+    // Phase 3 Loop - Flying > Fireball/WingPushback
+    //      Keneu Will Power Up While The Main Platform Breaks Into Smaller Platforms & Rocks
+    //      Keneu Will Then Fly Outside Gaohs Reach From The Platforms And Lob Fireballs And Use WingPushback 
+    //      3 Tornados Spawn That Gaoh Needs To Pull Rocks Into Which Fling Into Keneu (3 Times To Transition)
+    // Death
+    //     Cutscene > Credits
+
+    // Idle - Standing Around
+    // Walk - Moving Around The Ground
+    // Hover - Flying Idle
+    // Fly - Flying Moving
+    // TakeOff - Transition To Flight
+    // Land - Transition To Ground
+    // Strike - Keneu Slams Ground Dealing Area Of Effect Damage
+    // Fire - Launch Fireball (Have Telegraph Of Charging Up & For Players Screen)
 
     #endregion
 
@@ -26,8 +50,8 @@ public abstract class KeneuBaseState : State
 
     protected readonly KeneuStateMachine stateMachine;
 
-    protected const float MIN_DISTANCE = 0.5f;
-    protected const float MAX_DISTANCE = 25.0f;
+    //protected const float MIN_DISTANCE = 0.5f;
+    //protected const float MAX_DISTANCE = 25.0f;
 
     //protected const float AnimationDampTime = 0.2f;
     //protected const float AnimationCrossFade = 0.2f;
@@ -36,33 +60,16 @@ public abstract class KeneuBaseState : State
 
     //protected Dictionary<int, AnimationEnumData> animations = new Dictionary<int, AnimationEnumData>(); //AnimHashEnum> animHashDictionary = new Dictionary<int, AnimHashEnum>();
 
-    //protected Vector2 mousePos = Mouse.current.position.ReadValue();
-    //protected bool keyPressed = false;
-
-    //protected bool isSprinting = false;
-    //protected float sprintAdjust = 2.0f;
-
-    //protected float fov;
-    //protected float cameraDist;
-    //protected float sensitivity;
-    //protected float zoomSpeed = 1.0f;
-    //protected float zoomAcceleration = 2.5f;
-    //protected float zoomInnerRange = 3.0f;
-    //protected float zoomOuterRange = 50.0f;
-
-    //private float zoomYAxis = 0.0f;
-    //public float ZoomYAxis
-    /*{
-        get { return zoomYAxis; }
+    private int health = 8;
+    public float Health
+    {
+        get { return health; }
         set
         {
-            if (zoomYAxis == value) return;
+            if (health == value) return;
 
-            zoomYAxis = value;
-            AdjustCameraZoomIndex(ZoomYAxis);
         }
     }
-    */
 
     protected GameObject targetGO { get; private set; }
     protected RaycastHit lastHit { get; private set; }
@@ -313,6 +320,10 @@ public abstract class KeneuBaseState : State
 
     protected void NextPhase()
     {
+        if (stateMachine.CurrentFightState == KeneuStateMachine.FightState.Finish) return;
+        stateMachine.CurrentFightState += 1;
+
+
         //switch(currentPhase)
         //{
 

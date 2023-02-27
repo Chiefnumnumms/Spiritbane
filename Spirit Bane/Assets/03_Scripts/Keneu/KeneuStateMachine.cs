@@ -34,6 +34,7 @@ public class KeneuStateMachine : StateMachine
     // Enums
 
     public enum AnimList { Idle, Walking, Hover, Flying, Takeoff, Strike, Fire }
+    public enum FightState { Prefight, Start, Phase1, Phase2, Phase3, Finish }
 
     #endregion
 
@@ -45,6 +46,7 @@ public class KeneuStateMachine : StateMachine
     public Animator Animator { get; private set; }
     public Transform MainCam { get; private set; }
     public State CurrentState { get; private set; }
+    public FightState CurrentFightState;
 
     [Header("Player Transform For Script Access Ease")]
     public GameObject player;
@@ -119,8 +121,6 @@ public class KeneuStateMachine : StateMachine
     {
         Animator.CrossFade(targetAnimation, crossfadeDuration);
     }
-    /*
-    */
 
         /*
     protected void InitializeAnimationDictionary()
@@ -143,88 +143,6 @@ public class KeneuStateMachine : StateMachine
     }
         */
 
-    /*
-    protected void InitializeAnimationDataArray()
-    { 
-        if (animations.Length > 0) return;
-        
-        animations = new AnimationData[Enum.GetNames(typeof(AnimList)).Length];
-
-        for(int i = 0; i < animations.Length; i++)
-        {
-            AnimList enumID = AnimList.Idle + i;
-            string inName = enumID.ToString();
-            int inHash = GetParameterHash(inName);
-            float inCrossFadeDuration = AnimationCrossFade;
-
-             animations[i] = new AnimationData(enumID, inName, inHash, inCrossFadeDuration);             
-        }
-    }
-    */
-
-    /*
-    public void UpdateAnimatiorValues(float horizMovement, float vertMovement, bool isSprinting)
-    {
-        float snappedHoriz;
-        float snappedVert;
-
-        //snap animations so they dont look broken
-        #region Snapped Horizontal
-        if (horizMovement > 0 && horizMovement < 0.55f)
-        {
-            snappedHoriz = 0.5f;
-        }
-        else if (horizMovement > 0.55f)
-        {
-            snappedHoriz = 1;
-        }
-        else if (horizMovement < 0 && horizMovement > -0.55f)
-        {
-            snappedHoriz = -0.5f;
-        }
-        else if (horizMovement < -0.55f)
-        {
-            snappedHoriz = -1;
-        }
-        else
-        {
-            snappedHoriz = 0;
-        }
-        #endregion
-
-        #region Snapped Vertical
-        if (vertMovement > 0 && vertMovement < 0.55f)
-        {
-            snappedVert = 0.5f;
-        }
-        else if (vertMovement > 0.55f)
-        {
-            snappedVert = 1;
-        }
-        else if (vertMovement < 0 && vertMovement > -0.55f)
-        {
-            snappedVert = -0.5f;
-        }
-        else if (vertMovement < -0.55f)
-        {
-            snappedVert = -1;
-        }
-        else
-        {
-            snappedVert = 0;
-        }
-        #endregion
-
-        if (isSprinting)
-        {
-            snappedHoriz = horizMovement;
-            snappedVert = 2;
-        }
-
-        Animator.SetFloat(horizontal, snappedHoriz, 0.1f, Time.deltaTime);
-        Animator.SetFloat(vertical, snappedVert, 0.1f, Time.deltaTime);
-    }
-    */
 
     #endregion
 
@@ -250,6 +168,8 @@ public class KeneuStateMachine : StateMachine
 
         // Get Current State
         CurrentState = base.currentState;
+
+        CurrentFightState = FightState.Prefight;
 
         // Initialize Animation Array And Dictionary
         //InitializeAnimationDataArray();

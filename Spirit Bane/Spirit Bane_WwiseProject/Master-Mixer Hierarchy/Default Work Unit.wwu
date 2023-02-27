@@ -57,6 +57,59 @@
 							</DuckingList>
 						</Bus>
 						<Bus Name="UI" ID="{9D622C29-B101-4FD8-AF56-0DCB95CC57F7}"/>
+						<Bus Name="Reverbs" ID="{1874C00F-F53D-487F-9B7D-A7F115C908E9}">
+							<ChildrenList>
+								<AuxBus Name="TunnelReverb" ID="{6108F5BE-C89F-40CC-B661-BBC2FC89CCDC}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+											<ObjectRef Name="Tunnel1" ID="{CC44B890-9865-4157-965F-86FED27BC4C6}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="TunnelReverb" ID="{576B85C2-5C13-4195-9549-5B5C318E54B8}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Off" ID="{DBD876D8-AD06-4A58-8627-E5EF934C62FC}"/>
+												<CustomState Name="" ID="{FB34F670-E0E2-4E93-BFF3-AC025C8960D8}" ShortID="469204604">
+													<PropertyList>
+														<Property Name="BusVolume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="On" ID="{D68AD06E-04CC-4C02-B79D-29559569D2F8}"/>
+												<CustomState Name="" ID="{E1F0558B-24C1-4133-820F-FD21D61CDC3D}" ShortID="372485217"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+								</AuxBus>
+								<AuxBus Name="MediumRoomReverb" ID="{E4642F21-963F-4C84-B050-312350081C69}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+											<ObjectRef Name="Medium_Room1" ID="{71B802A7-03E2-4998-B241-B2B84FE9DDFF}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
+								</AuxBus>
+								<AuxBus Name="LargeChurchReverb" ID="{EDA9AF5C-8522-440F-A6C7-447960ED0561}">
+									<ReferenceList>
+										<Reference Name="Effect0" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+											<ObjectRef Name="Large_Church1" ID="{9B6E8B78-EF8C-494C-AADA-D01CF51B5FAC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+									</ReferenceList>
+								</AuxBus>
+							</ChildrenList>
+						</Bus>
+						<Bus Name="Footsteps" ID="{145FCD84-C896-4D89-8DE0-A63468BE8783}">
+							<ReferenceList>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="TunnelReverb" ID="{6108F5BE-C89F-40CC-B661-BBC2FC89CCDC}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

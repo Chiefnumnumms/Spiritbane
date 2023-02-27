@@ -16,14 +16,10 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Public Members
 
-    public float MasterVolume { get { return masterVolume; } set { masterVolume = value; } }
-    public float MusicVolume { get { return musicVolume; } set { musicVolume = value; } }
-    public float AmbienceVolume { get { return ambienceVolume; } set { ambienceVolume = value; } }
-    public float SFXVolume { get { return sfxVolume; } set { sfxVolume = value; } }
-
-    public AudioClip[] Music { get { return instance.music; } }
-    public AudioClip[] Ambience { get { return instance.ambience; } }
-    public AudioClip[] SFX { get { return instance.sfx; } }
+    //public float MasterVolume { get { return masterVolume; } set { masterVolume = value; } }
+    //public float MusicVolume { get { return musicVolume; } set { musicVolume = value; } }
+    //public float AmbienceVolume { get { return ambienceVolume; } set { ambienceVolume = value; } }
+    //public float SFXVolume { get { return sfxVolume; } set { sfxVolume = value; } }
 
     #endregion
 
@@ -32,18 +28,16 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Editor Access Members
 
-    [SerializeField] private AudioMixer mainMixer;
+    //[SerializeField] private AudioMixer mainMixer;
 
-    [SerializeField] private AudioSource musicAudioSource;
-    [SerializeField] private AudioSource ambienceAudioSource;
-    [SerializeField] private AudioSource sfxAudioSource;
+    //[SerializeField] private AudioSource musicAudioSource;
+    //[SerializeField] private AudioSource ambienceAudioSource;
+    //[SerializeField] private AudioSource sfxAudioSource;
 
-    [SerializeField]
-    private AudioClip[] music;
-    [SerializeField]
-    private AudioClip[] ambience;
-    [SerializeField]
-    private AudioClip[] sfx;
+    //private AK.Wwise.RTPC wwwiseMasterVolume;
+    //private AK.Wwise.RTPC wwwiseMusicVolume;
+    //private AK.Wwise.RTPC wwwiseAmbienceVolume;
+    //private AK.Wwise.RTPC wwwiseSFXVolume;
 
     #endregion
 
@@ -52,18 +46,18 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Members
 
-    private AudioMixerGroup masterGroup;
-    private AudioMixerGroup musicGroup;
-    private AudioMixerGroup ambienceGroup;
-    private AudioMixerGroup sfxGroup;
+    //private AudioMixerGroup masterGroup;
+    //private AudioMixerGroup musicGroup;
+    //private AudioMixerGroup ambienceGroup;
+    //private AudioMixerGroup sfxGroup;
 
-    private float masterVolume;
-    private float musicVolume;
-    private float ambienceVolume;
-    private float sfxVolume;
+    //private float masterVolume;
+    //private float musicVolume;
+    //private float ambienceVolume;
+    //private float sfxVolume;
 
-    private float minVolume = -16.0f;
-    private float maxVolume = -80.0f;
+    //private float minVolume = -16.0f;
+    //private float maxVolume = -80.0f;
 
     #endregion
 
@@ -71,6 +65,7 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
+    /*
     private void UpdateMasterVolume()
     {
         instance.mainMixer.SetFloat("masterVolume", masterVolume);
@@ -89,10 +84,12 @@ public class AudioManager : Singleton<AudioManager>
     {
         instance.mainMixer.SetFloat("sfxVolume", sfxVolume);
     }
+    */
     
     #endregion
 
 
+        /*
     public void StartAreaMusic()
     {
         int areaIndex = (int)ScenesManager.instance.CurrentScene.Value;
@@ -110,7 +107,9 @@ public class AudioManager : Singleton<AudioManager>
             instance.AudioFadeIn();
         }
     }
+        */
 
+    /*
     private IEnumerator LerpVolume(float startVol, float endVol, float duration)
     {
         float currentVolume = startVol;
@@ -137,6 +136,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         yield return LerpVolume(minVolume, maxVolume, 1.0f);
     }
+    */
 
     /*
     public void SetMusic(int index)
