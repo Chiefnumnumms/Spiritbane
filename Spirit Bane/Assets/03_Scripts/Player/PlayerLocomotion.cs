@@ -33,19 +33,19 @@ public class PlayerLocomotion : MonoBehaviour
     public float rayCastHeightOffset = 1f;
     public LayerMask groundLayer;
 
-    [Header("Ground And Air Detection")]
-    [SerializeField]
-    private float groundDetectionRayStartPoint = 0.5f;
+    //[Header("Ground And Air Detection")]
+    //[SerializeField]
+    //private float groundDetectionRayStartPoint = 0.5f;
     [SerializeField]
     private float maximumDistanceNeededToStartFall = 1f;
 
     [Header("Ground & Air Detection Stats")]
-    [SerializeField]
-    float minimumDistanceNeededToBeginFall = 1.0f;    // Minimum Distance needed to play fall animation
-    [SerializeField]
-    float groundDirectionRayDistance = 0.2f;        // Ray check distance
-    [SerializeField]
-    float maxDistance = 1f;
+    //[SerializeField]
+    //float minimumDistanceNeededToBeginFall = 1.0f;    // Minimum Distance needed to play fall animation
+    //[SerializeField]
+    //float groundDirectionRayDistance = 0.2f;        // Ray check distance
+    //[SerializeField]
+    //float maxDistance = 1f;
     Vector3 targetPosition;
     Vector3 normalVector;
 
@@ -88,7 +88,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private bool stepPlaying = false;
     private float lastStepTime = 0.0f;
-    private float currentVelocity = 0.0f;
+    //private float currentVelocity = 0.0f;
 
     private void Awake()
     {
