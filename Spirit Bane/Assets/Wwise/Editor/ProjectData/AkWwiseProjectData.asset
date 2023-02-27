@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 1cd685146b0ab947ab4ac2a8b7310a35
     GuidInternal: 
-    m_lastTime: -8585251017505244246
+    m_lastTime: -8585262360107671691
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 225645062012cb489414e4ce8e06914d
     GuidInternal: 
-    m_lastTime: -8585241484339133702
+    m_lastTime: -8585240840230280235
     List:
     - name: Ambience
       guid: 99b8b82804013b4e91ca13b84238cad2
@@ -248,7 +248,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Context
     guid: 24ae6b2aea4e2b4c8ff3731e60a03637
     GuidInternal: 
-    m_lastTime: -8585251017507799430
+    m_lastTime: -8585261360984545464
     List:
     - name: All_In_One
       guid: 3aa955116576054884d980118817ec69
@@ -326,7 +326,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: aa8fa67de0327d44a87acf7f7bbc2535
     GuidInternal: 
-    m_lastTime: -8585242728729520457
+    m_lastTime: -8585241641263876312
     List: []
   - PhysicalPath: SoundBanks\DLC.wwu
     PathAndIcons:
@@ -342,7 +342,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\DLC
     guid: 116956683614064189724eb659f32034
     GuidInternal: 
-    m_lastTime: -8585249298029119634
+    m_lastTime: -8585248564020713967
     List:
     - name: DLC
       guid: 337d7ea97f69e746ab83195e490441d3
@@ -375,7 +375,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\General
     guid: 0220347ab5f56b4489c58f538193df7d
     GuidInternal: 
-    m_lastTime: -8585242702595286231
+    m_lastTime: -8585241641263866311
     List:
     - name: Credits
       guid: 29cd4dcf34b19b44a6f0eab5853f751c
@@ -442,7 +442,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Region
     guid: bc75a5ac78b09043be18cae213300bc7
     GuidInternal: 
-    m_lastTime: -8585242728729500508
+    m_lastTime: -8585241641263856307
     List:
     - name: Arena
       guid: 3b9f04fd02a2c24c8b235ad7b3da2c21
@@ -524,7 +524,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
-    m_lastTime: -8585242276944448152
+    m_lastTime: -8585241642176337194
     List:
     - name: 00_Village
       guid: 8245c475e8ebaa49af452c61ece83e1a
@@ -2753,8 +2753,64 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 41190a9ac754614e84b6ff214f5dcee5
     GuidInternal: 
-    m_lastTime: -8585242652873846905
+    m_lastTime: -8585240840230290242
     List:
+    - name: AmbienceVolume
+      guid: 34419cb1afb3174892fe74b5fec0ae6c
+      id: 1204480359
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: AmbienceVolume
+        ObjectType: 13
+        guid: 34419cb1afb3174892fe74b5fec0ae6c
+      Path: Game Parameters\Default Work Unit\AmbienceVolume
+    - name: MasterVolume
+      guid: ed08a2b94ecaa04a9dee612089f0692c
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: MasterVolume
+        ObjectType: 13
+        guid: ed08a2b94ecaa04a9dee612089f0692c
+      Path: Game Parameters\Default Work Unit\MasterVolume
+    - name: MusicVolume
+      guid: ab41093cb3c33c4086219192b9717858
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: MusicVolume
+        ObjectType: 13
+        guid: ab41093cb3c33c4086219192b9717858
+      Path: Game Parameters\Default Work Unit\MusicVolume
+    - name: SFXVolume
+      guid: 1bcd3f939a21cd418074f20fbed9b643
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: SFXVolume
+        ObjectType: 13
+        guid: 1bcd3f939a21cd418074f20fbed9b643
+      Path: Game Parameters\Default Work Unit\SFXVolume
     - name: Speed
       guid: 88bf49def360da4abd956b74c8716246
       id: 640949982
@@ -2781,7 +2837,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 5de9c76f78a39146b8fbba95a06ffb9f
     GuidInternal: 
-    m_lastTime: -8585241484339093797
+    m_lastTime: -8585240840230200218
     List:
     - name: TargetHit
       guid: e9561536f26758488505d74f39d4445f
@@ -2927,7 +2983,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 5a4e3d860dea1c4aa6fcab59ec4dc0ea
     GuidInternal: 
-    m_lastTime: -8585243749955423557
+    m_lastTime: -8585243173671667529
     List:
     - name: Footsteps
       guid: 52b7f7056252794cac526079c26209ea
@@ -2991,11 +3047,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 609ea4e07217fc47ba8171e3552b8205
     GuidInternal: 
-    m_lastTime: -8585251017505254223
+    m_lastTime: -8585262360107681710
     List: []
-  ExpandedFileSystemItemIds: 8700000088000000890000008c0000009800000099000000
-  ExpandedWaapiItemIds: 870000008800000089000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
