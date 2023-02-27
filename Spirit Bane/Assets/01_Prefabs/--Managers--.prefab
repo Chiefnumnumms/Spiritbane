@@ -662,13 +662,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc002a17aac6fd4b8012a95d04fc89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMixer: {fileID: 0}
-  musicAudioSource: {fileID: 0}
-  ambienceAudioSource: {fileID: 0}
-  sfxAudioSource: {fileID: 0}
-  music: []
-  ambience: []
-  sfx: []
+  wwwiseMasterVolume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  wwwiseMusicVolume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  wwwiseAmbienceVolume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  wwwiseSFXVolume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!114 &2771780275087675316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugLog: 0
+  PlayerGO: {fileID: 3165465247428423631, guid: 3bb18ee9ba987404c928162fb4d2bb33,
+    type: 3}
 --- !u!1 &9193008984872681925
 GameObject:
   m_ObjectHideFlags: 0

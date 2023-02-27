@@ -80,8 +80,8 @@ public class PlayerLocomotion : MonoBehaviour
     public AK.Wwise.Event playerRun;
     public AK.Wwise.Event playerJump;
     public AK.Wwise.Event playerLand;
-    public AK.Wwise.Event playerDodge;
-    public AK.Wwise.Event playerAttack; 
+    //public AK.Wwise.Event playerDodge;
+    //public AK.Wwise.Event playerAttack; 
     public AK.Wwise.Event playerShield;
     public AK.Wwise.Event playerHurt;
     public AK.Wwise.Event playerDead;
@@ -221,6 +221,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerShield.Post(gameObject);
     }
 
+    /*
     private void DodgeSFX()
     {
         playerDodge.Post(gameObject);
@@ -230,6 +231,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         playerAttack.Post(gameObject);
     }
+    */
 
     private void HurtSFX()
     {

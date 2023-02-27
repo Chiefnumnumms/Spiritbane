@@ -24,7 +24,6 @@ namespace AK
         static const AkUniqueID PLAY_AMBIENCEWITHCROWS = 3576974750U;
         static const AkUniqueID PLAY_AMBIENCEWITHFLIES = 2195436581U;
         static const AkUniqueID PLAY_APPROACHINGEVIL = 1419843580U;
-        static const AkUniqueID PLAY_ATTACK = 1519321238U;
         static const AkUniqueID PLAY_BACK = 1292086503U;
         static const AkUniqueID PLAY_BURNING = 2394181555U;
         static const AkUniqueID PLAY_CAVERNLOOP1 = 2803981292U;
@@ -48,12 +47,14 @@ namespace AK
         static const AkUniqueID PLAY_DOOROPEN1 = 1196441091U;
         static const AkUniqueID PLAY_ERROR = 2713813216U;
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
+        static const AkUniqueID PLAY_EXTEND = 3226574718U;
         static const AkUniqueID PLAY_GENTLEWAVES = 810177169U;
         static const AkUniqueID PLAY_HELLISHAMBIANCE_01 = 3532206737U;
         static const AkUniqueID PLAY_HIGHLIGHT1 = 366070907U;
         static const AkUniqueID PLAY_HIGHLIGHT2 = 366070904U;
         static const AkUniqueID PLAY_HURT = 2955259529U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
+        static const AkUniqueID PLAY_JUMPVOCALS = 3510422748U;
         static const AkUniqueID PLAY_KEY = 2356524575U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
         static const AkUniqueID PLAY_MOVING = 1784546604U;
@@ -67,14 +68,14 @@ namespace AK
         static const AkUniqueID PLAY_PAUSE = 4233560256U;
         static const AkUniqueID PLAY_POWERDOWN = 2298942465U;
         static const AkUniqueID PLAY_POWERUP = 2876792902U;
+        static const AkUniqueID PLAY_RETRACT = 3938687889U;
+        static const AkUniqueID PLAY_ROCKSLIDE = 4289292640U;
         static const AkUniqueID PLAY_RUN = 2822207957U;
         static const AkUniqueID PLAY_SHIELD = 1988178265U;
         static const AkUniqueID PLAY_SMOULDERING = 50299785U;
         static const AkUniqueID PLAY_STREAM01 = 747309779U;
         static const AkUniqueID PLAY_STREAM02 = 747309776U;
         static const AkUniqueID PLAY_SWINGING = 318967272U;
-        static const AkUniqueID PLAY_SWORDEXTEND = 962029321U;
-        static const AkUniqueID PLAY_SWORDRETRACT = 1737963444U;
         static const AkUniqueID PLAY_TENSION = 4114669316U;
         static const AkUniqueID PLAY_TORCH = 2025845440U;
         static const AkUniqueID PLAY_TORNADOWINDS = 1142497274U;
@@ -89,9 +90,21 @@ namespace AK
 
     namespace STATES
     {
-        namespace ONSTATE
+        namespace TARGETHIT
         {
-            static const AkUniqueID GROUP = 3065973909U;
+            static const AkUniqueID GROUP = 3822001633U;
+
+            namespace STATE
+            {
+                static const AkUniqueID FALSE = 2452206122U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TRUE = 3053630529U;
+            } // namespace STATE
+        } // namespace TARGETHIT
+
+        namespace TUNNELREVERB
+        {
+            static const AkUniqueID GROUP = 4134938995U;
 
             namespace STATE
             {
@@ -99,7 +112,7 @@ namespace AK
                 static const AkUniqueID OFF = 930712164U;
                 static const AkUniqueID ON = 1651971902U;
             } // namespace STATE
-        } // namespace ONSTATE
+        } // namespace TUNNELREVERB
 
     } // namespace STATES
 
@@ -120,6 +133,10 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID AMBIENCEVOLUME = 1204480359U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
+        static const AkUniqueID SFXVOLUME = 988953028U;
         static const AkUniqueID SPEED = 640949982U;
     } // namespace GAME_PARAMETERS
 
@@ -143,12 +160,21 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID AMBIENCE = 85412153U;
+        static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID REVERBS = 3545700988U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID UI = 1551306167U;
         static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID LARGECHURCHREVERB = 2776856307U;
+        static const AkUniqueID MEDIUMROOMREVERB = 2347912553U;
+        static const AkUniqueID TUNNELREVERB = 4134938995U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

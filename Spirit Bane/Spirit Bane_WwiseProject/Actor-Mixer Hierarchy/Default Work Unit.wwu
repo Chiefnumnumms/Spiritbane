@@ -1303,124 +1303,6 @@
 								<ActiveSource Name="DirtCollapsing" ID="{608040A8-BA3C-44B4-9BEA-DE92B90C02FC}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="DistantBlast00" ID="{497015FB-25D7-4A2D-93B4-46A00BD0BF2C}" ShortID="554964611">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DistantBlast00" ID="{4A09CEA1-D446-4899-A7F4-16B4C3182361}">
-									<Language>SFX</Language>
-									<AudioFile>DistantBlast00.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="608624364"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DistantBlast00" ID="{4A09CEA1-D446-4899-A7F4-16B4C3182361}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="DistantBlast01" ID="{5C349B96-6E82-45A1-9D15-C9EEE7B9C997}" ShortID="110180328">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DistantBlast01" ID="{8FF97194-981A-4CA6-900B-71CDECA39A57}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.164989434759641"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.742452456418383"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.48540180929742"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>DistantBlast01.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="89047868"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DistantBlast01" ID="{8FF97194-981A-4CA6-900B-71CDECA39A57}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="DistantBlast02" ID="{657515B6-D438-4016-AE53-5B2C7C347740}" ShortID="760456013">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DistantBlast02" ID="{51233FF9-ACD9-47D0-AC55-55509D221059}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0713774432118331"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.663810221870048"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="2.24838946117274"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>DistantBlast02.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="285092035"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DistantBlast02" ID="{51233FF9-ACD9-47D0-AC55-55509D221059}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="DistantBlast03" ID="{5EA73513-04B2-44E5-B209-602FB4599059}" ShortID="200324337">
-							<PropertyList>
-								<Property Name="Lowpass" Type="int16">
-									<ValueList>
-										<Value>58</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Pitch" Type="int32">
-									<ValueList>
-										<Value>-100</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DistantBlast03" ID="{0E091DAE-7DA0-4047-A03C-2A7AFE450353}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.121805170364501"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.68653823296355"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.91991184627575"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>DistantBlast03.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="727224735"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DistantBlast03" ID="{0E091DAE-7DA0-4047-A03C-2A7AFE450353}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Door Open2" ID="{AAF93AAC-CCC1-4196-87C7-70641BDD4049}" ShortID="364805153">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1443,7 +1325,7 @@
 								<ActiveSource Name="Door Open2" ID="{B46CD121-1B59-451D-88B6-966B1FA6B256}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<RandomSequenceContainer Name="New Random Container" ID="{211E45FC-B704-41DA-8A55-540BF29EA114}" ShortID="304186803">
+						<RandomSequenceContainer Name="Distant Blasts" ID="{211E45FC-B704-41DA-8A55-540BF29EA114}" ShortID="304186803">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -1452,6 +1334,126 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DistantBlast03" ID="{5EA73513-04B2-44E5-B209-602FB4599059}" ShortID="200324337">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>58</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DistantBlast03" ID="{0E091DAE-7DA0-4047-A03C-2A7AFE450353}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.121805170364501"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.68653823296355"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.91991184627575"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DistantBlast03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="727224735"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DistantBlast03" ID="{0E091DAE-7DA0-4047-A03C-2A7AFE450353}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DistantBlast02" ID="{657515B6-D438-4016-AE53-5B2C7C347740}" ShortID="760456013">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DistantBlast02" ID="{51233FF9-ACD9-47D0-AC55-55509D221059}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0713774432118331"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.663810221870048"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.24838946117274"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DistantBlast02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="285092035"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DistantBlast02" ID="{51233FF9-ACD9-47D0-AC55-55509D221059}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DistantBlast00" ID="{497015FB-25D7-4A2D-93B4-46A00BD0BF2C}" ShortID="554964611">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DistantBlast00" ID="{4A09CEA1-D446-4899-A7F4-16B4C3182361}">
+											<Language>SFX</Language>
+											<AudioFile>DistantBlast00.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="608624364"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DistantBlast00" ID="{4A09CEA1-D446-4899-A7F4-16B4C3182361}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DistantBlast01" ID="{5C349B96-6E82-45A1-9D15-C9EEE7B9C997}" ShortID="110180328">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DistantBlast01" ID="{8FF97194-981A-4CA6-900B-71CDECA39A57}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.164989434759641"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.742452456418383"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.48540180929742"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DistantBlast01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="89047868"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DistantBlast01" ID="{8FF97194-981A-4CA6-900B-71CDECA39A57}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
