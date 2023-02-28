@@ -49,7 +49,7 @@ namespace AK
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
         static const AkUniqueID PLAY_EXTEND = 3226574718U;
         static const AkUniqueID PLAY_GENTLEWAVES = 810177169U;
-        static const AkUniqueID PLAY_HELLISHAMBIANCE_01 = 3532206737U;
+        static const AkUniqueID PLAY_HELLISHAMBIANCE = 1651018485U;
         static const AkUniqueID PLAY_HIGHLIGHT1 = 366070907U;
         static const AkUniqueID PLAY_HIGHLIGHT2 = 366070904U;
         static const AkUniqueID PLAY_HURT = 2955259529U;
@@ -70,6 +70,7 @@ namespace AK
         static const AkUniqueID PLAY_POWERUP = 2876792902U;
         static const AkUniqueID PLAY_RETRACT = 3938687889U;
         static const AkUniqueID PLAY_ROCKSLIDE = 4289292640U;
+        static const AkUniqueID PLAY_RUMBLE = 1002643937U;
         static const AkUniqueID PLAY_RUN = 2822207957U;
         static const AkUniqueID PLAY_SHIELD = 1988178265U;
         static const AkUniqueID PLAY_SMOULDERING = 50299785U;
@@ -86,6 +87,41 @@ namespace AK
         static const AkUniqueID PLAY_WATERFALLS1 = 528965044U;
         static const AkUniqueID PLAY_WATERFALLS2 = 528965047U;
         static const AkUniqueID PLAY_WINDLOOP = 250515782U;
+        static const AkUniqueID STOP_AMBIENCEBARREN = 1456054886U;
+        static const AkUniqueID STOP_AMBIENCEHARSHWIND = 1475806466U;
+        static const AkUniqueID STOP_AMBIENCEUNSETTLING = 316427125U;
+        static const AkUniqueID STOP_AMBIENCEWINDY1 = 2504372076U;
+        static const AkUniqueID STOP_AMBIENCEWINDY2 = 2504372079U;
+        static const AkUniqueID STOP_AMBIENCEWITHBIRDS = 1221364184U;
+        static const AkUniqueID STOP_AMBIENCEWITHCRICKETS = 2406167132U;
+        static const AkUniqueID STOP_AMBIENCEWITHCRICKETS1 = 566249189U;
+        static const AkUniqueID STOP_AMBIENCEWITHCROWS = 2894160692U;
+        static const AkUniqueID STOP_AMBIENCEWITHFLIES = 3489787751U;
+        static const AkUniqueID STOP_APPROACHINGEVIL = 234682830U;
+        static const AkUniqueID STOP_BURNING = 3057916297U;
+        static const AkUniqueID STOP_CAVERNLOOP1 = 3129933230U;
+        static const AkUniqueID STOP_CAVERNLOOP2 = 3129933229U;
+        static const AkUniqueID STOP_CAVERNLOOP3 = 3129933228U;
+        static const AkUniqueID STOP_CAVERNLOOP4 = 3129933227U;
+        static const AkUniqueID STOP_CAVERNWIND1 = 4169572746U;
+        static const AkUniqueID STOP_CAVERNWIND2 = 4169572745U;
+        static const AkUniqueID STOP_CLOUDSMOVING = 1250982740U;
+        static const AkUniqueID STOP_DISTANTRUMBLE1 = 2457077713U;
+        static const AkUniqueID STOP_DISTANTWAVES = 1140336907U;
+        static const AkUniqueID STOP_GENTLEWAVES = 1242407983U;
+        static const AkUniqueID STOP_HELLISHAMBIANCE = 3648382727U;
+        static const AkUniqueID STOP_RUMBLE = 3415675391U;
+        static const AkUniqueID STOP_SHIELD = 2979613131U;
+        static const AkUniqueID STOP_SMOULDERING = 3599247759U;
+        static const AkUniqueID STOP_STREAM01 = 2635806761U;
+        static const AkUniqueID STOP_STREAM02 = 2635806762U;
+        static const AkUniqueID STOP_TENSION = 149375838U;
+        static const AkUniqueID STOP_TORCH = 3065143382U;
+        static const AkUniqueID STOP_TORNADOWINDS = 4263412676U;
+        static const AkUniqueID STOP_WATERFALLS = 1759669397U;
+        static const AkUniqueID STOP_WATERFALLS1 = 2976968382U;
+        static const AkUniqueID STOP_WATERFALLS2 = 2976968381U;
+        static const AkUniqueID STOP_WINDLOOP = 689692788U;
     } // namespace EVENTS
 
     namespace STATES

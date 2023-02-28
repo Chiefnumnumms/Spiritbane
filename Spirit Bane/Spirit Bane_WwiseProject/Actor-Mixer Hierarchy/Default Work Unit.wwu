@@ -3157,6 +3157,7 @@
 										</Sound>
 										<Sound Name="Movement01" ID="{8D7194E1-B284-42D1-B4EA-8C2ED956392E}" ShortID="986132805">
 											<PropertyList>
+												<Property Name="LoopCount" Type="int32" Value="1"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-1260</Value>
@@ -3176,6 +3177,8 @@
 													<PropertyList>
 														<Property Name="FadeInDuration" Type="Real64" Value="0.0571737982039091"/>
 														<Property Name="FadeOutDuration" Type="Real64" Value="0.105662968832541"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.0796090861067089"/>
+														<Property Name="LoopEnd" Type="Real64" Value="0.180929741151611"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 														<Property Name="TrimEnd" Type="Real64" Value="0.283697834125726"/>
 													</PropertyList>
@@ -3191,6 +3194,62 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="TargetHit" ID="{361556E9-67F2-4858-8505-D74F39D4445F}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="True" ID="{D49F499D-1D72-4B57-B447-2F2D166549BB}"/>
+												<CustomState Name="" ID="{4995F953-52A0-428A-AAA0-EAE0970B9DA9}" ShortID="63080604"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="False" ID="{D4D16366-F82D-4E25-A249-0FE3C2BEFE10}"/>
+												<CustomState Name="" ID="{2B3ABC16-5B8C-4ACE-8C67-5619F7AAE63A}" ShortID="788506312"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{2CFEFFBC-12B0-47EF-9195-D117A8C1C0B9}" ShortID="117352010">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Pitch"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Speed" ID="{DE49BF88-60F3-4ADA-BD95-6B74C8716246}" WorkUnitID="{9A0A1941-54C7-4E61-84B6-FF214F5DCEE5}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{A88864AE-5977-46E1-B1AA-C501721BA865}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="65537"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-929</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>2064</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
@@ -3229,44 +3288,6 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="ApproachingEvil" ID="{D06B2237-F504-44E8-9AB0-1F3A9E3A60A3}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="CaveEntrance" ID="{C375BCEC-7871-4453-A389-F8B58036AFB0}" ShortID="737758026">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="CaveEntrance" ID="{30ACF13C-BFF3-4554-B2C3-F93317D52385}">
-									<PropertyList>
-										<Property Name="LoopEnd" Type="Real64" Value="119.006015004433"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>CaveEntrance.WAV</AudioFile>
-									<MediaIDList>
-										<MediaID ID="391077106"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="CaveEntrance" ID="{30ACF13C-BFF3-4554-B2C3-F93317D52385}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="CavernLoop1" ID="{189D9D02-CF42-4DAB-8B0F-510A07D715A3}" ShortID="1066237599">
@@ -3400,6 +3421,8 @@
 							<ChildrenList>
 								<AudioFileSource Name="CavernLoop4" ID="{BF234BAD-D634-4738-9095-F3632064F14B}">
 									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.678961061946903"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.452640707964598"/>
 										<Property Name="LoopBegin" Type="Real64" Value="0.725509219858156"/>
 										<Property Name="LoopEnd" Type="Real64" Value="41.9435017730496"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>

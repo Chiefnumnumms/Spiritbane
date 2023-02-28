@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 1cd685146b0ab947ab4ac2a8b7310a35
     GuidInternal: 
-    m_lastTime: -8585262450874415388
+    m_lastTime: -8585240794453305005
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 225645062012cb489414e4ce8e06914d
     GuidInternal: 
-    m_lastTime: -8585240950748074407
+    m_lastTime: -8585240794453536526
     List:
     - name: Ambience
       guid: 99b8b82804013b4e91ca13b84238cad2
@@ -248,7 +248,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Context
     guid: 24ae6b2aea4e2b4c8ff3731e60a03637
     GuidInternal: 
-    m_lastTime: -8585258259182505724
+    m_lastTime: -8585240794453429634
     List:
     - name: All_In_One
       guid: 3aa955116576054884d980118817ec69
@@ -326,7 +326,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: aa8fa67de0327d44a87acf7f7bbc2535
     GuidInternal: 
-    m_lastTime: -8585242325752504736
+    m_lastTime: -8585240794453419657
     List: []
   - PhysicalPath: SoundBanks\DLC.wwu
     PathAndIcons:
@@ -342,7 +342,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\DLC
     guid: 116956683614064189724eb659f32034
     GuidInternal: 
-    m_lastTime: -8585250213509397004
+    m_lastTime: -8585240829556492243
     List:
     - name: DLC
       guid: 337d7ea97f69e746ab83195e490441d3
@@ -375,7 +375,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\General
     guid: 0220347ab5f56b4489c58f538193df7d
     GuidInternal: 
-    m_lastTime: -8585242325752504736
+    m_lastTime: -8585240829557200495
     List:
     - name: Credits
       guid: 29cd4dcf34b19b44a6f0eab5853f751c
@@ -442,7 +442,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Region
     guid: bc75a5ac78b09043be18cae213300bc7
     GuidInternal: 
-    m_lastTime: -8585242325752504736
+    m_lastTime: -8585240794453406980
     List:
     - name: Arena
       guid: 3b9f04fd02a2c24c8b235ad7b3da2c21
@@ -524,7 +524,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
-    m_lastTime: -8585240950748084372
+    m_lastTime: -8585239851113896002
     List:
     - name: 00_Village
       guid: 8245c475e8ebaa49af452c61ece83e1a
@@ -650,29 +650,6 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: Ambience
-      guid: 38374e9cdd24a1419bc4e61dd3348d58
-      id: 85412153
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
-      - ElementName: Environment
-        ObjectType: 4
-        guid: 83fc1ddfd0a159449defcc184053307e
-      - ElementName: 03_Arena
-        ObjectType: 4
-        guid: 477fd6ee40af524c9dc4f7aa5098bd04
-      - ElementName: Ambience
-        ObjectType: 4
-        guid: 38374e9cdd24a1419bc4e61dd3348d58
-      Path: Events\Default Work Unit\Environment\03_Arena\Ambience
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Ambience
       guid: ea067d45a336bd4ba4055421cf1eb763
       id: 85412153
       PathAndIcons:
@@ -692,6 +669,29 @@ MonoBehaviour:
         ObjectType: 4
         guid: ea067d45a336bd4ba4055421cf1eb763
       Path: Events\Default Work Unit\Environment\01_Cavern\Ambience
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Ambience
+      guid: 38374e9cdd24a1419bc4e61dd3348d58
+      id: 85412153
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -803,6 +803,55 @@ MonoBehaviour:
         ObjectType: 4
         guid: c5f140e601f99e438f973d5ab7590bbf
       Path: Events\Default Work Unit\NPC
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OneShot
+      guid: 74185e4707112b4892762bb6716380c0
+      id: 1360693519
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 74e96e0ae716224da518b7d40eaf06cf
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: 74185e4707112b4892762bb6716380c0
+      Path: Events\Default Work Unit\Environment\00_Village\SFX\OneShot
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: OneShot
+      guid: fe165ec80b18994abb82ce317b6a3afd
+      id: 1360693519
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1129,32 +1178,6 @@ MonoBehaviour:
         ObjectType: 3
         guid: 69662e4c5d2d7942a480f3b8d88ffc19
       Path: Events\Default Work Unit\Environment\00_Village\SFX\Play_Burning
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_CaveEntrance
-      guid: 4d117ee5f6f00f41a35d6e914b1a2707
-      id: 2281913731
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
-      - ElementName: Environment
-        ObjectType: 4
-        guid: 83fc1ddfd0a159449defcc184053307e
-      - ElementName: 01_Cavern
-        ObjectType: 4
-        guid: 93b34b60964da94ca5e56c90535442b6
-      - ElementName: Ambience
-        ObjectType: 4
-        guid: ea067d45a336bd4ba4055421cf1eb763
-      - ElementName: Play_CaveEntrance
-        ObjectType: 3
-        guid: 4d117ee5f6f00f41a35d6e914b1a2707
-      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Play_CaveEntrance
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1566,10 +1589,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_DoorLocked
         ObjectType: 3
         guid: b7306fe8fd44c447b261dad210943234
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_DoorLocked
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_DoorLocked
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1589,10 +1615,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_DoorOpen
         ObjectType: 3
         guid: 52f46d8e6cbb494c9f13778b0f00a79c
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_DoorOpen
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_DoorOpen
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1615,10 +1644,13 @@ MonoBehaviour:
       - ElementName: SFX
         ObjectType: 4
         guid: 74e96e0ae716224da518b7d40eaf06cf
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: 74185e4707112b4892762bb6716380c0
       - ElementName: Play_DoorOpen1
         ObjectType: 3
         guid: 301f843028aed540a681fed7767ed2ff
-      Path: Events\Default Work Unit\Environment\00_Village\SFX\Play_DoorOpen1
+      Path: Events\Default Work Unit\Environment\00_Village\SFX\OneShot\Play_DoorOpen1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1658,10 +1690,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_Explosion
         ObjectType: 3
         guid: 91c96a030b255c43babff849de2606ca
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_Explosion
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_Explosion
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1714,9 +1749,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_HellishAmbiance_01
+    - name: Play_HellishAmbiance
       guid: 621f44ee62526e47890329557b005054
-      id: 3532206737
+      id: 1651018485
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -1733,10 +1768,10 @@ MonoBehaviour:
       - ElementName: Ambience
         ObjectType: 4
         guid: 38374e9cdd24a1419bc4e61dd3348d58
-      - ElementName: Play_HellishAmbiance_01
+      - ElementName: Play_HellishAmbiance
         ObjectType: 3
         guid: 621f44ee62526e47890329557b005054
-      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Play_HellishAmbiance_01
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Play_HellishAmbiance
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1865,10 +1900,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_Key
         ObjectType: 3
         guid: d8ecc5c849540546ac3663b65512ac07
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_Key
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_Key
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2114,10 +2152,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_PowerDown
         ObjectType: 3
         guid: f2387e9ef527c04ca24f47a3c4121bd8
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_PowerDown
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_PowerDown
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2137,10 +2178,13 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_PowerUp
         ObjectType: 3
         guid: 69707115aaa100448970e1ae15f28532
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_PowerUp
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_PowerUp
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2183,10 +2227,39 @@ MonoBehaviour:
       - ElementName: VariousSFX
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
+        ObjectType: 4
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_Rockslide
         ObjectType: 3
         guid: 4b5c422b815a604cb35b47677a4e4ecd
-      Path: Events\Default Work Unit\Environment\VariousSFX\Play_Rockslide
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_Rockslide
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Rumble
+      guid: a083e47ac9af104184531c26031afdd5
+      id: 1002643937
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Play_Rumble
+        ObjectType: 3
+        guid: a083e47ac9af104184531c26031afdd5
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Play_Rumble
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2644,6 +2717,1043 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_AmbienceBarren
+      guid: c4456b6e71df9d4cb10874290a7fbbdb
+      id: 1456054886
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceBarren
+        ObjectType: 3
+        guid: c4456b6e71df9d4cb10874290a7fbbdb
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceBarren
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceHarshWind
+      guid: 8fac43f3a41ddd4eb335a2d48ee78ff4
+      id: 1475806466
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceHarshWind
+        ObjectType: 3
+        guid: 8fac43f3a41ddd4eb335a2d48ee78ff4
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceHarshWind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceUnsettling
+      guid: 0a4ed525938a0840a6db8121fa43532e
+      id: 316427125
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceUnsettling
+        ObjectType: 3
+        guid: 0a4ed525938a0840a6db8121fa43532e
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceUnsettling
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWindy1
+      guid: 40f271c95a675d4c9e31f537307038c8
+      id: 2504372076
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceWindy1
+        ObjectType: 3
+        guid: 40f271c95a675d4c9e31f537307038c8
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceWindy1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWindy2
+      guid: 0e79c8c179d2ff4dab020be665d395c8
+      id: 2504372079
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceWindy2
+        ObjectType: 3
+        guid: 0e79c8c179d2ff4dab020be665d395c8
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceWindy2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWithBirds
+      guid: cad854310544b14dae4da0d66edd2e35
+      id: 1221364184
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_AmbienceWithBirds
+        ObjectType: 3
+        guid: cad854310544b14dae4da0d66edd2e35
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_AmbienceWithBirds
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWithCrickets
+      guid: b37207d53f39a9428d56955217b4aeca
+      id: 2406167132
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_AmbienceWithCrickets
+        ObjectType: 3
+        guid: b37207d53f39a9428d56955217b4aeca
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_AmbienceWithCrickets
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWithCrickets1
+      guid: a5216559160ea44f949dee0adc8cc786
+      id: 566249189
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_AmbienceWithCrickets1
+        ObjectType: 3
+        guid: a5216559160ea44f949dee0adc8cc786
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_AmbienceWithCrickets1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWithCrows
+      guid: cd54fc52ad66584681f516a1e35c86f6
+      id: 2894160692
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_AmbienceWithCrows
+        ObjectType: 3
+        guid: cd54fc52ad66584681f516a1e35c86f6
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_AmbienceWithCrows
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_AmbienceWithFlies
+      guid: 43bfb03e1b80324dab0df09a1c0f9baa
+      id: 3489787751
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_AmbienceWithFlies
+        ObjectType: 3
+        guid: 43bfb03e1b80324dab0df09a1c0f9baa
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_AmbienceWithFlies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_ApproachingEvil
+      guid: ba5b4bcac97a8b458d939dfac1ec7806
+      id: 234682830
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: a2e9cdf42e011242939635c105c38372
+      - ElementName: Stop_ApproachingEvil
+        ObjectType: 3
+        guid: ba5b4bcac97a8b458d939dfac1ec7806
+      Path: Events\Default Work Unit\Enemy\Stop_ApproachingEvil
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Burning
+      guid: 6cee104f0c1ce44dbfafcc8b9492afc8
+      id: 3057916297
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 74e96e0ae716224da518b7d40eaf06cf
+      - ElementName: Stop_Burning
+        ObjectType: 3
+        guid: 6cee104f0c1ce44dbfafcc8b9492afc8
+      Path: Events\Default Work Unit\Environment\00_Village\SFX\Stop_Burning
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernLoop1
+      guid: dc500994ed472545a74a2b0b159f6d98
+      id: 3129933230
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernLoop1
+        ObjectType: 3
+        guid: dc500994ed472545a74a2b0b159f6d98
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernLoop1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernLoop2
+      guid: 44b9309952a3384dbe1abc8542195836
+      id: 3129933229
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernLoop2
+        ObjectType: 3
+        guid: 44b9309952a3384dbe1abc8542195836
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernLoop2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernLoop3
+      guid: 326afec141bbd64dadd9a1f563fbf875
+      id: 3129933228
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernLoop3
+        ObjectType: 3
+        guid: 326afec141bbd64dadd9a1f563fbf875
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernLoop3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernLoop4
+      guid: 485307892d28f4438e58b5a14f852005
+      id: 3129933227
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernLoop4
+        ObjectType: 3
+        guid: 485307892d28f4438e58b5a14f852005
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernLoop4
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernWind1
+      guid: cdf46e7d0b525149a8f4070a7013f6d3
+      id: 4169572746
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernWind1
+        ObjectType: 3
+        guid: cdf46e7d0b525149a8f4070a7013f6d3
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernWind1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CavernWind2
+      guid: b52e861f20a2494ba0af9457c0e62903
+      id: 4169572745
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 01_Cavern
+        ObjectType: 4
+        guid: 93b34b60964da94ca5e56c90535442b6
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: ea067d45a336bd4ba4055421cf1eb763
+      - ElementName: Stop_CavernWind2
+        ObjectType: 3
+        guid: b52e861f20a2494ba0af9457c0e62903
+      Path: Events\Default Work Unit\Environment\01_Cavern\Ambience\Stop_CavernWind2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_CloudsMoving
+      guid: f6ef3195c444124c9f83ae6f6291e603
+      id: 1250982740
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Stop_CloudsMoving
+        ObjectType: 3
+        guid: f6ef3195c444124c9f83ae6f6291e603
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Stop_CloudsMoving
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_DistantRumble1
+      guid: 4e24f55180b7a747bd93ec599fc4bda1
+      id: 2457077713
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 02_Rocks
+        ObjectType: 4
+        guid: a75b2bba3c7e4241b9c3b9495bc60bef
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 6498948a2755d241968e5a5e7cc74270
+      - ElementName: Stop_DistantRumble1
+        ObjectType: 3
+        guid: 4e24f55180b7a747bd93ec599fc4bda1
+      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_DistantRumble1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_DistantWaves
+      guid: 044047eadde9654cbd625d3b651cc61f
+      id: 1140336907
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_DistantWaves
+        ObjectType: 3
+        guid: 044047eadde9654cbd625d3b651cc61f
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_DistantWaves
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_GentleWaves
+      guid: 37eaab68eb465c47919b8529d1f41c96
+      id: 1242407983
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: da1aa85aeee8b847b1f360bd17f4a75b
+      - ElementName: Stop_GentleWaves
+        ObjectType: 3
+        guid: 37eaab68eb465c47919b8529d1f41c96
+      Path: Events\Default Work Unit\Environment\00_Village\Ambience\Stop_GentleWaves
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_HellishAmbiance
+      guid: 47225976b95e1245893d826f7a62a007
+      id: 3648382727
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Stop_HellishAmbiance
+        ObjectType: 3
+        guid: 47225976b95e1245893d826f7a62a007
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Stop_HellishAmbiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Boss
+      guid: edc73613eaabbd4b912c3bb83a23db9a
+      id: 2869039319
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Boss
+        ObjectType: 3
+        guid: edc73613eaabbd4b912c3bb83a23db9a
+      Path: Events\Default Work Unit\Music\Stop_Music_Boss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Cavern
+      guid: 96f1251ecc2b8642a9ba4762c2ccd464
+      id: 3426450879
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Cavern
+        ObjectType: 3
+        guid: 96f1251ecc2b8642a9ba4762c2ccd464
+      Path: Events\Default Work Unit\Music\Stop_Music_Cavern
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Cavern_Alt
+      guid: f2406a1e242bbf4b912cd0bd73291f36
+      id: 2113698287
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Cavern_Alt
+        ObjectType: 3
+        guid: f2406a1e242bbf4b912cd0bd73291f36
+      Path: Events\Default Work Unit\Music\Stop_Music_Cavern_Alt
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Finale
+      guid: acfb93c9fac0a641a55364c2db1f9dad
+      id: 3175010305
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Finale
+        ObjectType: 3
+        guid: acfb93c9fac0a641a55364c2db1f9dad
+      Path: Events\Default Work Unit\Music\Stop_Music_Finale
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Menu
+      guid: 89a9f476b8a5e244a1a625ac576b6915
+      id: 106912753
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Menu
+        ObjectType: 3
+        guid: 89a9f476b8a5e244a1a625ac576b6915
+      Path: Events\Default Work Unit\Music\Stop_Music_Menu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Rocks
+      guid: 878dc3b997176e4fb628f3793459412a
+      id: 1830697422
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Rocks
+        ObjectType: 3
+        guid: 878dc3b997176e4fb628f3793459412a
+      Path: Events\Default Work Unit\Music\Stop_Music_Rocks
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Shibuya
+      guid: 441481d2b46a544a9cc2fba6c04a757e
+      id: 3884003395
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Shibuya
+        ObjectType: 3
+        guid: 441481d2b46a544a9cc2fba6c04a757e
+      Path: Events\Default Work Unit\Music\Stop_Music_Shibuya
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Music_Village
+      guid: 23a53393e3762b4da8ea092d73fac7f8
+      id: 3829418516
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Music
+        ObjectType: 4
+        guid: df7c344a69e66f419a4d680f4b47cc7a
+      - ElementName: Stop_Music_Village
+        ObjectType: 3
+        guid: 23a53393e3762b4da8ea092d73fac7f8
+      Path: Events\Default Work Unit\Music\Stop_Music_Village
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Rumble
+      guid: 0263c8e9c033b747a7082ff23655ec6d
+      id: 3415675391
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Stop_Rumble
+        ObjectType: 3
+        guid: 0263c8e9c033b747a7082ff23655ec6d
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Stop_Rumble
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Shield
+      guid: baf3579f05edfc4e8e50ad47dfe04961
+      id: 2979613131
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Player
+        ObjectType: 4
+        guid: 6bc66d1d2badf44a8711389ca2d9eec3
+      - ElementName: Action
+        ObjectType: 4
+        guid: de7a08b31c54d34b89e5bb3c8eb2e241
+      - ElementName: Stop_Shield
+        ObjectType: 3
+        guid: baf3579f05edfc4e8e50ad47dfe04961
+      Path: Events\Default Work Unit\Player\Action\Stop_Shield
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Smouldering
+      guid: 09a530c12d326f478d9ed043923c53ca
+      id: 3599247759
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 74e96e0ae716224da518b7d40eaf06cf
+      - ElementName: Stop_Smouldering
+        ObjectType: 3
+        guid: 09a530c12d326f478d9ed043923c53ca
+      Path: Events\Default Work Unit\Environment\00_Village\SFX\Stop_Smouldering
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Stream01
+      guid: 489cd9a09fb5e143858362fae0222cfc
+      id: 2635806761
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Stream01
+        ObjectType: 3
+        guid: 489cd9a09fb5e143858362fae0222cfc
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Stream01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Stream02
+      guid: 885d5b8c324e3642a603821642181535
+      id: 2635806762
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Stream02
+        ObjectType: 3
+        guid: 885d5b8c324e3642a603821642181535
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Stream02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Tension
+      guid: 1c793e7e96863646b6ecefdbc62a8e11
+      id: 149375838
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: a2e9cdf42e011242939635c105c38372
+      - ElementName: Stop_Tension
+        ObjectType: 3
+        guid: 1c793e7e96863646b6ecefdbc62a8e11
+      Path: Events\Default Work Unit\Enemy\Stop_Tension
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Torch
+      guid: 78c1cd282d0f4d4cbce7a23dfc19c65f
+      id: 3065143382
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Torch
+        ObjectType: 3
+        guid: 78c1cd282d0f4d4cbce7a23dfc19c65f
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Torch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_TornadoWinds
+      guid: 12634d4c34d2cd4aa305ba0787821bee
+      id: 4263412676
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Stop_TornadoWinds
+        ObjectType: 3
+        guid: 12634d4c34d2cd4aa305ba0787821bee
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Stop_TornadoWinds
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Waterfalls
+      guid: 362ced9eeb7c6c4489d02c4aca53996d
+      id: 1759669397
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Waterfalls
+        ObjectType: 3
+        guid: 362ced9eeb7c6c4489d02c4aca53996d
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Waterfalls
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Waterfalls1
+      guid: 2faf50d9d28e3a45bbdd6f753cebdee7
+      id: 2976968382
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Waterfalls1
+        ObjectType: 3
+        guid: 2faf50d9d28e3a45bbdd6f753cebdee7
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Waterfalls1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Waterfalls2
+      guid: c807faaf5678e74ca3ddf5d7c6fb829c
+      id: 2976968381
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: VariousSFX
+        ObjectType: 4
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: Stop_Waterfalls2
+        ObjectType: 3
+        guid: c807faaf5678e74ca3ddf5d7c6fb829c
+      Path: Events\Default Work Unit\Environment\VariousSFX\Stop_Waterfalls2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_WindLoop
+      guid: d7769dbf523f3a46aecceb2214d45c77
+      id: 689692788
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 03_Arena
+        ObjectType: 4
+        guid: 477fd6ee40af524c9dc4f7aa5098bd04
+      - ElementName: Ambience
+        ObjectType: 4
+        guid: 38374e9cdd24a1419bc4e61dd3348d58
+      - ElementName: Stop_WindLoop
+        ObjectType: 3
+        guid: d7769dbf523f3a46aecceb2214d45c77
+      Path: Events\Default Work Unit\Environment\03_Arena\Ambience\Stop_WindLoop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI
       guid: bd34926df839e0479122296491d0257e
       id: 1551306167
@@ -2678,26 +3788,6 @@ MonoBehaviour:
         ObjectType: 4
         guid: d17aff887d60aa4888eb7ba77d33f7c7
       Path: Events\Default Work Unit\Environment\VariousSFX
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Vocals
-      guid: c4e82567f7762c408d10d949fc5e9aea
-      id: 206361915
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
-      - ElementName: Enemy
-        ObjectType: 4
-        guid: a2e9cdf42e011242939635c105c38372
-      - ElementName: Vocals
-        ObjectType: 4
-        guid: c4e82567f7762c408d10d949fc5e9aea
-      Path: Events\Default Work Unit\Enemy\Vocals
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2741,6 +3831,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Vocals
+      guid: c4e82567f7762c408d10d949fc5e9aea
+      id: 206361915
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: a2e9cdf42e011242939635c105c38372
+      - ElementName: Vocals
+        ObjectType: 4
+        guid: c4e82567f7762c408d10d949fc5e9aea
+      Path: Events\Default Work Unit\Enemy\Vocals
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -2753,8 +3863,64 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 41190a9ac754614e84b6ff214f5dcee5
     GuidInternal: 
-    m_lastTime: -8585240950748084372
+    m_lastTime: -8585240829555182432
     List:
+    - name: AmbienceVolume
+      guid: 34419cb1afb3174892fe74b5fec0ae6c
+      id: 1204480359
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: AmbienceVolume
+        ObjectType: 13
+        guid: 34419cb1afb3174892fe74b5fec0ae6c
+      Path: Game Parameters\Default Work Unit\AmbienceVolume
+    - name: MasterVolume
+      guid: ed08a2b94ecaa04a9dee612089f0692c
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: MasterVolume
+        ObjectType: 13
+        guid: ed08a2b94ecaa04a9dee612089f0692c
+      Path: Game Parameters\Default Work Unit\MasterVolume
+    - name: MusicVolume
+      guid: ab41093cb3c33c4086219192b9717858
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: MusicVolume
+        ObjectType: 13
+        guid: ab41093cb3c33c4086219192b9717858
+      Path: Game Parameters\Default Work Unit\MusicVolume
+    - name: SFXVolume
+      guid: 1bcd3f939a21cd418074f20fbed9b643
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 41190a9ac754614e84b6ff214f5dcee5
+      - ElementName: SFXVolume
+        ObjectType: 13
+        guid: 1bcd3f939a21cd418074f20fbed9b643
+      Path: Game Parameters\Default Work Unit\SFXVolume
     - name: Speed
       guid: 88bf49def360da4abd956b74c8716246
       id: 640949982
@@ -2781,7 +3947,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 5de9c76f78a39146b8fbba95a06ffb9f
     GuidInternal: 
-    m_lastTime: -8585240950746263311
+    m_lastTime: -8585240794453327245
     List:
     - name: TargetHit
       guid: e9561536f26758488505d74f39d4445f
@@ -2927,7 +4093,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 5a4e3d860dea1c4aa6fcab59ec4dc0ea
     GuidInternal: 
-    m_lastTime: -8585243587350605492
+    m_lastTime: -8585240829556801193
     List:
     - name: Footsteps
       guid: 52b7f7056252794cac526079c26209ea
@@ -2991,11 +4157,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 609ea4e07217fc47ba8171e3552b8205
     GuidInternal: 
-    m_lastTime: -8585262450874415388
+    m_lastTime: -8585240794453317279
     List: []
-  ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedFileSystemItemIds: 020000000300000004000000050000000e0000001100000015000000a3000000a9000000ab000000af000000
+  ExpandedWaapiItemIds: 020000000300000012000000150000002f00000035000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

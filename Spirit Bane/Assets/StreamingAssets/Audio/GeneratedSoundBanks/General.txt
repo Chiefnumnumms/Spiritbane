@@ -1,5 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	32291984	Play_Dijoji___Narration			\Default Work Unit\NPC\Vocals\Play_Dijoji___Narration	
+	149375838	Stop_Tension			\Default Work Unit\Enemy\Stop_Tension	
+	234682830	Stop_ApproachingEvil			\Default Work Unit\Enemy\Stop_ApproachingEvil	
 	318967272	Play_Swinging			\Default Work Unit\Player\Action\Play_Swinging	
 	366070904	Play_Highlight2			\Default Work Unit\UI\Play_Highlight2	
 	366070907	Play_Highlight1			\Default Work Unit\UI\Play_Highlight1	
@@ -18,6 +20,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2713813216	Play_Error			\Default Work Unit\UI\Play_Error	
 	2822207957	Play_Run			\Default Work Unit\Player\Foot\Play_Run	
 	2955259529	Play_Hurt			\Default Work Unit\Player\Vocals\Play_Hurt	
+	2979613131	Stop_Shield			\Default Work Unit\Player\Action\Stop_Shield	
 	3226574718	Play_Extend			\Default Work Unit\Player\Action\Play_Extend	
 	3338421947	Play_Dodge			\Default Work Unit\Player\Action\Play_Dodge	
 	3510422748	Play_JumpVocals			\Default Work Unit\Player\Action\Play_JumpVocals	
@@ -34,6 +37,17 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 Switch	ID	Name	Switch Group			Notes
 	2195636714	Dirt	Footsteps			
 	4248645337	Grass	Footsteps			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3822001633	TargetHit			\Default Work Unit\TargetHit	
+
+State	ID	Name	State Group			Notes
+	748895195	None	TargetHit			
+	2452206122	False	TargetHit			
+	3053630529	True	TargetHit			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	640949982	Speed			\Default Work Unit\Speed	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	9431120	0021_Tape_Measure_2	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\0021_Tape_Measure_2_29758560.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Sword\Extend\0021_Tape_Measure_2		252744
