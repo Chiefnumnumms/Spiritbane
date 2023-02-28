@@ -227,13 +227,13 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
         if (grappleObject_Pressed)
         {
             // GRAPPLE
-            agreskoulManager.StartGrapple();
             agreskoulManager.ExecuteSwordSwing();
+            agreskoulManager.StartGrapple();
         }
         else
         {
             agreskoulManager.RetractBlade();
-            grappleObject_Pressed = false;
+            agreskoul_Pressed = false;
         }
     }
 

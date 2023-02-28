@@ -106,6 +106,7 @@ public class Agreskoul : MonoBehaviour
     private const float MAX_FALLING_VELOCITY = 1.5f;
 
     private bool isBladeExtended;
+    public bool keepBladeExtended;
 
     #endregion
 
@@ -147,10 +148,12 @@ public class Agreskoul : MonoBehaviour
         {
             weaponPivot.LookAt(swordLookAt);
         }
-        else if (swingPointHit != null)
+        else if (swingPointHit != null && isSwinging)
         {
             weaponPivot.LookAt(swingPointHit);
         }
+
+
 
         CheckForSwingPoints();
         CheckForGrappleObject();
@@ -176,16 +179,54 @@ public class Agreskoul : MonoBehaviour
         originalFallingVelocity = playerLocomotion.fallingVel;
 
         isBladeExtended = false;
+        keepBladeExtended = false;
     }
 
     #region AGRESKOUL MAIN
 
     public void ExecuteSwordSwing()
     {
-        isBladeExtended = true;
-
-        if (isBladeExtended)
+        if (isGrappling)
         {
+            keepBladeExtended = true;
+
+            // CALCULATE DISTANCE AND TIME
+            Vector3 target = grapplePointHit;
+            Vector3 distance = target - swordTip.transform.position;
+
+            if (distance.magnitude >= maxExtentionDistance) return;
+
+            // IF PAST MAX DISTANCE
+            if (distance.magnitude >= maxExtentionDistance)
+            {
+                target = maxExtentionDistance * distance.normalized;
+            }
+
+            weaponPivot.LookAt(target);
+
+            // CALCULATE THE ROTATION TO FACE THE TARGET
+            Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
+
+            // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
+            scaleFactor = distance.magnitude / energy.transform.localScale.y;
+
+            // CALCULATE THE NEW Y VALUE BASED ON THE SCALE FACTOR
+            float newY = energy.transform.localScale.y * scaleFactor;
+
+            // CALCULATE EXTENTION TIME BASED ON DISTANCE
+            float time = distance.magnitude * bladeExtentionSpeed / speedDecrement;
+
+            // CALCULATE THE NEW SIZE OF THE Y VALUE
+            Vector3 newSize = new Vector3(originalEnergyScale.x, newY, originalEnergyScale.z);
+
+            // SLERP MOVEMENT AND ROTATION OF BLADE
+            energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
+
+        }
+        else if (isSwinging)
+        {
+            keepBladeExtended = true;
+
             // PLAY ANIMATION
             if (playerLocomotion.inAirTimer <= 0)
             {
@@ -221,13 +262,16 @@ public class Agreskoul : MonoBehaviour
 
             // SLERP MOVEMENT AND ROTATION OF BLADE
             energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
+
         }
+
+        isBladeExtended = false;
+
     }
 
     private void HandleInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
     {
         // ERROR CHECK
-        //if (playerLocomotion.isGrounded) return;
 
         // START THE COURUTINE
         StartCoroutine(SlowInAirVelocity(playerLocomotion, speedReductionTimer, reductionRate));
@@ -284,7 +328,6 @@ public class Agreskoul : MonoBehaviour
 
     public void RetractBlade()
     {
-        isBladeExtended = false;
 
         if (!isBladeExtended)
         {
@@ -580,8 +623,6 @@ public class Agreskoul : MonoBehaviour
 
         if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, maxGrappleDistance, isValidObjectGrapple))
         {
-            isGrappling = true;
-
             // FREEZE THE PLAYER FOR A SECOND
             freezePlayer = true;
 
@@ -591,12 +632,13 @@ public class Agreskoul : MonoBehaviour
             // EXECUTE THE GRAPPLE WITH A DELAY TIMER
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
 
+            Invoke(nameof(ExecuteSwordSwing), 0.1f);
+
         }
         else
         {
             grapplePointHit = mainCamera.position + mainCamera.forward * maxGrappleDistance;
 
-            // STOP THE GRAPPLE GIVEN A DELAY
             Invoke(nameof(StopGrapple), grappleDelayTime);
         }
     }
@@ -604,6 +646,7 @@ public class Agreskoul : MonoBehaviour
     public void ExecuteGrapple()
     {
         freezePlayer = false;
+        keepBladeExtended = true;
 
         // CALCULATE THE LOWEST POINT OF THE GRAPPLE
         Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
@@ -616,11 +659,17 @@ public class Agreskoul : MonoBehaviour
         // JUMP TOWARDS THE HIGHEST POINT
         playerLocomotion.JumpToPosition(grapplePointHit, highestPointOnArc);
 
+        Vector3 currentPos = transform.position;
+
         // BOOST THE PLAYER FORWARD
         rb.AddForce(transform.forward * forwardBoostVelocity, ForceMode.Acceleration);
 
         // WAIT A SECOND THEN STOP THE GRAPPLE
-        Invoke(nameof(StopGrapple), 1f);
+        Invoke(nameof(StopGrapple), 2.0f);
+
+        // AFTER THE PLAYER REACHES MAX Y HEIGHT RETRACT THE BLADE
+        keepBladeExtended = false;
+
     }
 
     public void StopGrapple()
@@ -650,12 +699,13 @@ public class Agreskoul : MonoBehaviour
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
             hitPoint = raycastHit.point;
-            isLookingAtObjectGrapplePoint = true;
+            grapplePointHit = raycastHit.point;
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
 
         {
             hitPoint = sphereCastHit.point;
+            grapplePointHit = raycastHit.point;
         }
         else                                              // NOTHING IN THE WAY
         {
@@ -667,6 +717,7 @@ public class Agreskoul : MonoBehaviour
         {
             // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
             grapplePredictionPoint.gameObject.SetActive(true);
+            predictionPointSwing.gameObject.SetActive(false);
 
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
             grapplePredictionPoint.position = hitPoint;
