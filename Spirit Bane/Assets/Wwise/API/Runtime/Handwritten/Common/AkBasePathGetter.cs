@@ -195,9 +195,6 @@ public partial class AkBasePathGetter
 
 				if (!SoundBankDest.Contains(platformName))
 				{
-
-					UnityEngine.Debug.Log("Platform:  " + platformName);
-
 					if (LogWarnings)
 						UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder does not match your platform name. You will need to create a custom platform name getter for your game. See section \"Using Wwise Custom Platforms in Unity\" of the Wwise Unity integration documentation for more information");
 				}
