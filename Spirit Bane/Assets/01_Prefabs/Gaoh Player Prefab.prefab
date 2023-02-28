@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6357733607258519719
 Transform:
   m_ObjectHideFlags: 0
@@ -2166,11 +2166,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
-  groundDetectionRayStartPoint: 0.5
   maximumDistanceNeededToStartFall: 1
-  minimumDistanceNeededToBeginFall: 1
-  groundDirectionRayDistance: 0.2
-  maxDistance: 1
   isGrounded: 1
   isSprinting: 0
   isJumping: 0
@@ -2204,16 +2200,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: bb82e4995a0fb524f8006a0034c05b5b,
-      type: 2}
-  playerDodge:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d4dc683895fb8d9449d6c7f18d851ff5,
-      type: 2}
-  playerAttack:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3d006d0440cefdb4c9e789a4271e4fbf,
       type: 2}
   playerShield:
     idInternal: 0

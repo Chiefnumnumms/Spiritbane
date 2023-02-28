@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     public AudioManager AudioManager { get; private set; }
 
     // Cache Reference To Player Game Object
-    public GameObject PlayerGO { get; private set; }
+    //[SerializeField] public GameObject PlayerGO; //{ get; private set; }
 
     // Cache Reference To Camera
     public Camera Cam { get; private set; }
@@ -58,6 +58,9 @@ public class GameManager : Singleton<GameManager>
     [Header("Debug Log Toggle")]
     [SerializeField]
     public bool debugLog = false;      // Turn Debug.Log On Or Off
+
+
+    [SerializeField] public GameObject PlayerGO;
 
     #endregion
 
@@ -157,14 +160,17 @@ public class GameManager : Singleton<GameManager>
             else Debug.Log("Audio Manager Not Cached");
         }
 
+        /*
         PlayerGO = GameObject.FindGameObjectWithTag("Player");
         if(debugLog)
         {
             if (PlayerGO != null) Debug.Log("PlayerGO Cached");
             else Debug.Log("PlayerGO Not Cached");
         }
+        */
 
         Cam = Camera.main;
+
 
         // LOCK CURSOR
         //Cursor.lockState = CursorLockMode.Locked;
@@ -191,6 +197,11 @@ public class GameManager : Singleton<GameManager>
 
         // Show Main Menu
         UpdateGameState(GameState.START);
+
+        // Instantiate Gaoh
+        GameObject.Instantiate(PlayerGO);
+        PlayerGO.SetActive(false);
+
         yield return null;
     }
 

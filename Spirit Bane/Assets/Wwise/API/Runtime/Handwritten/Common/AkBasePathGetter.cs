@@ -16,6 +16,7 @@ in a written agreement between you and Audiokinetic Inc.
 Copyright (c) 2022 Audiokinetic Inc.
 *******************************************************************************/
 
+using System.Diagnostics;
 /// <summary>
 ///     This class is responsible for determining the path where sound banks are located. When using custom platforms, this
 ///     class needs to be extended.

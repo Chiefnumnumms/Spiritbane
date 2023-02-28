@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealthBar : MonoBehaviour
 {
     public Slider slider;
-    float timeUntilBarIsHidden = 1.0f;
+    //float timeUntilBarIsHidden = 1.0f;
 
     public void SetCurrentHealth(int currentHealth)
     {
