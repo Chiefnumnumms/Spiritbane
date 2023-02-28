@@ -105,6 +105,7 @@ public class AkWwiseXMLBuilder
 	{
 		var bChanged = false;
 		var includedEvents = node.SelectNodes("IncludedEvents");
+		//var includedEvents = node.SelectNodes("Events");
 		for (var i = 0; i < includedEvents.Count; i++)
 		{
 			var events = includedEvents[i].SelectNodes("Event");

@@ -582,6 +582,9 @@ public class PlayerLocomotion : MonoBehaviour
             windStr = windZone.GetComponent<WindArea>().windStrength;
             inWindZone = true;
         }
+        else if(other.gameObject.tag == "Finish") ScenesManager.instance.LoadNextScene();
+
+
     }
 
     private void OnTriggerExit(Collider other)

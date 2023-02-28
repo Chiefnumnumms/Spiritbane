@@ -5,7 +5,7 @@
 		<SourceFilesRoot>../../../../Spirit Bane_WwiseProject/.cache/Windows</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>../../../../Spirit Bane_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
@@ -830,7 +830,7 @@
 			<ShortName>Quest_03</ShortName>
 			<Path>Quest_03.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{A5208374-B8E4-35B0-2ACB-BE62AA3A1E1A}">
+		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{AD6CCE66-A143-CEFF-60F6-54C78BB6EF28}">
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 			<Media>
@@ -943,22 +943,22 @@
 						<MediaRef Id="70553141"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2025845440" Name="Play_Torch" MaxAttenuation="100" DurationType="Infinite">
+				<Event Id="2025845440" Name="Play_Torch" MaxAttenuation="8" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1017651419"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2446914439" Name="Play_Waterfalls" MaxAttenuation="70" DurationType="Infinite">
+				<Event Id="2446914439" Name="Play_Waterfalls" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="587741820"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="528965044" Name="Play_Waterfalls1" MaxAttenuation="70" DurationType="Infinite">
+				<Event Id="528965044" Name="Play_Waterfalls1" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="697429768"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="528965047" Name="Play_Waterfalls2" MaxAttenuation="70" DurationType="Infinite">
+				<Event Id="528965047" Name="Play_Waterfalls2" MaxAttenuation="10" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="13885093"/>
 					</MediaRefs>
@@ -1027,7 +1027,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{050C5B10-F2BC-FAEA-2549-3BA6FB9B848D}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{69D27945-D72C-2592-B426-23C7C0BAD4B0}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
@@ -1089,7 +1089,7 @@
 						<MediaRef Id="255595790"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2394181555" Name="Play_Burning" MaxAttenuation="100" DurationType="Infinite">
+				<Event Id="2394181555" Name="Play_Burning" MaxAttenuation="8" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="220572888"/>
 					</MediaRefs>
@@ -1117,5 +1117,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{55534A1E-3B10-7137-4E00-2F48DA4E644F}</FileHash>
+	<FileHash>{38E8A848-A9D6-AE12-8D6B-EBBBBAD15317}</FileHash>
 </SoundBanksInfo>
