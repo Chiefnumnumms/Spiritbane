@@ -61,6 +61,8 @@ public class GameManager : Singleton<GameManager>
 
 
     [SerializeField] public GameObject PlayerGO;
+    public GameObject setupParentTransform;
+    public Camera mainMenuCamera;
 
     #endregion
 
@@ -199,15 +201,23 @@ public class GameManager : Singleton<GameManager>
         UpdateGameState(GameState.START);
 
         // Instantiate Gaoh
-        GameObject.Instantiate(PlayerGO);
-        PlayerGO.SetActive(false);
+        setupParentTransform = GameObject.Instantiate(PlayerGO, setupParentTransform.transform, true);
+        setupParentTransform.SetActive(false);
+
+        mainMenuCamera.gameObject.SetActive(true);
 
         yield return null;
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         ScenesManager.instance.LoadNewGame();
+
+        setupParentTransform.SetActive(true);
+        PlayerGO.SetActive(true);
+        Debug.Log("Gaoh To True");
+
+        mainMenuCamera.gameObject.SetActive(false);
     }
 
     private void GoToMainMenu()

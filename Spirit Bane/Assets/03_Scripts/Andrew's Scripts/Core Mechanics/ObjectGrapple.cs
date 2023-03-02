@@ -11,7 +11,6 @@ public enum GrappleMode
 public class ObjectGrapple : MonoBehaviour
 {
     [Header("References")]
-    private PlayerManager playerManager;
     private InputManager inputManager;
     private PlayerLocomotion playerLocomotion;
     private Swinging swingingManager;
@@ -46,7 +45,6 @@ public class ObjectGrapple : MonoBehaviour
 
     private void Start()
     {
-        playerManager = GetComponent<PlayerManager>();
         inputManager = GetComponent<InputManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         swingingManager = GetComponent<Swinging>();

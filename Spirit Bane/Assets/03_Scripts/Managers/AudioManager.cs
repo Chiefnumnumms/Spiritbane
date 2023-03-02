@@ -52,7 +52,6 @@ public class AudioManager : Singleton<AudioManager>
 
     #endregion
 
-
     #region Private Members
     //-------------------------------------------------------------------------
     // Private Members
@@ -76,87 +75,26 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
-    private void UpdateMasterVolume(float value)
+    public void UpdateMasterVolume(float value)
     {
         wwwiseMasterVolume.SetGlobalValue(value);
     }
 
-    private void UpdateMusicVolume(float value)
+    public void UpdateMusicVolume(float value)
     {
         wwwiseMusicVolume.SetGlobalValue(value);
     }
-    private void UpdateAmbienceVolume(float value)
+
+    public void UpdateAmbienceVolume(float value)
     {
         wwwiseAmbienceVolume.SetGlobalValue(value);
     }
 
-    private void UpdateSFXVolume(float value)
+    public void UpdateSFXVolume(float value)
     {
         wwwiseSFXVolume.SetGlobalValue(value);
     }
     
     #endregion
 
-
-        /*
-    public void StartAreaMusic()
-    {
-        int areaIndex = (int)ScenesManager.instance.CurrentScene.Value;
-
-        AudioClip areaMusic = music[areaIndex];
-
-        if (areaMusic)
-        {
-            instance.StartCoroutine(AudioFadeOut());
-
-            // Play The Level Music For The Current Level
-            instance.musicAudioSource.loop = true;
-            instance.musicAudioSource.clip = areaMusic;
-            instance.musicAudioSource.Play();
-            instance.AudioFadeIn();
-        }
-    }
-        */
-
-    /*
-    private IEnumerator LerpVolume(float startVol, float endVol, float duration)
-    {
-        float currentVolume = startVol;
-        float currentTime = 0.0f;
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            currentTime = Mathf.Clamp(currentTime, 0.0f, duration);
-            currentVolume = Mathf.Lerp(startVol, endVol, currentTime / duration);
-            instance.mainMixer.SetFloat("masterVolume", currentVolume);
-
-            yield return null;
-        }
-
-        yield return null;
-    }
-
-    public void AudioFadeIn()
-    {
-        instance.StartCoroutine(LerpVolume(maxVolume, minVolume, 1.5f));
-    }
-
-    public IEnumerator AudioFadeOut()
-    {
-        yield return LerpVolume(minVolume, maxVolume, 1.0f);
-    }
-    */
-
-    /*
-    public void SetMusic(int index)
-    {
-        if (music.Length < index) return;
-
-        instance.StartCoroutine(AudioFadeOut());
-        musicAudioSource.clip = music[index];
-        musicAudioSource.enabled = true;
-
-
-    }
-    */
 }
