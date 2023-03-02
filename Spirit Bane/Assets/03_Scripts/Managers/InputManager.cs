@@ -213,7 +213,7 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
     {
         if (agreskoul_Pressed) // PLAYER SWINGING
         {
-            agreskoulManager.ExecuteSwordSwing();
+            agreskoulManager.ExecuteSwordAction();
         }
         else // NOT SWINGING
         {
@@ -224,13 +224,13 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
 
     private void HandleGrapplingInput()
     {
-        if (grappleObject_Pressed)
+        if (grappleObject_Pressed && agreskoulManager.reachedTarget)
         {
             // GRAPPLE
-            agreskoulManager.ExecuteSwordSwing();
+            agreskoulManager.ExecuteSwordAction();
             agreskoulManager.StartGrapple();
         }
-        else
+        else if(!agreskoulManager.reachedTarget)
         {
             agreskoulManager.RetractBlade();
             agreskoul_Pressed = false;

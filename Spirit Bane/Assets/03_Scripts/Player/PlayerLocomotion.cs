@@ -130,7 +130,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void AgreskoulPressed()
     {
         // Launch Sword On Button Press
-        agreskoulManager.ExecuteSwordSwing();
+        agreskoulManager.ExecuteSwordAction();
         Debug.Log("Extended Blade");
     }
 
@@ -411,7 +411,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleAgreskoulAction()
     {
-        agreskoulManager.ExecuteSwordSwing();
+        agreskoulManager.ExecuteSwordAction();
     }
 
     public void HandleAgreskoulReleaseAction()

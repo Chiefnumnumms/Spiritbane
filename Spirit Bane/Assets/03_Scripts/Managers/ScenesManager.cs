@@ -67,7 +67,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
     #endregion
 
-
     #region Private Members
     //-------------------------------------------------------------------------
     // Private Members
@@ -75,7 +74,6 @@ public class ScenesManager : Singleton<ScenesManager>
     //private Observable<Scenes> scene = new Observable<Scenes>();
 
     #endregion
-
 
     #region Private Functions
     //-------------------------------------------------------------------------
