@@ -3,30 +3,30 @@
 	<SoundBanks>
 		<WorkUnit Name="General" ID="{7A342002-F5B5-446B-89C5-8F538193DF7D}" OwnerID="{7DA68FAA-32E0-447D-A87A-CF7F7BBC2535}" PersistMode="Nested">
 			<ChildrenList>
-				<SoundBank Name="Credits" ID="{CF4DCD29-B134-449B-A6F0-EAB5853F751C}">
-					<ObjectInclusionList>
-						<ObjectRef Name="Play_Music_Finale" ID="{E5C5C858-1830-45A3-961C-E6CC53A2F28F}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
-					</ObjectInclusionList>
-					<ObjectExclusionList/>
-					<GameSyncExclusionList/>
-				</SoundBank>
 				<SoundBank Name="General" ID="{AF275784-5D26-40F8-A73C-63F7EEAE87D9}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Stop_Music_Finale" ID="{C993FBAC-C0FA-41A6-A553-64C2DB1F9DAD}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Enemy" ID="{F4CDE9A2-012E-4212-9396-35C105C38372}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="NPC" ID="{E640F1C5-F901-439E-8F97-3D5AB7590BBF}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Music_Finale" ID="{E5C5C858-1830-45A3-961C-E6CC53A2F28F}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="UI" ID="{6D9234BD-39F8-47E0-9122-296491D0257E}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Player" ID="{1D6DC66B-AD2B-4AF4-8711-389CA2D9EEC3}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Boss" ID="{1336C7ED-ABEA-4BBD-912C-3BB83A23DB9A}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_Boss" ID="{E05AA2F8-2704-4BC0-B351-95A284FECE24}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
-				<SoundBank Name="TitleScreen" ID="{4ADC5FFB-0419-4863-99BF-6B8368CF31D7}">
+				<SoundBank Name="Music" ID="{4ADC5FFB-0419-4863-99BF-6B8368CF31D7}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_Music_Village" ID="{2C3D7D3F-379C-4273-B487-4601352818FD}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Cavern" ID="{1E25F196-2BCC-4286-A9BA-4762C2CCD464}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Menu" ID="{76F4A989-A5B8-44E2-A1A6-25AC576B6915}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_Rocks" ID="{9D2A9B70-8346-47C0-9C80-79B5AF155F5A}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_Cavern" ID="{859F91A1-D1A2-4A10-902B-A33B10C91BFE}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Village" ID="{9333A523-76E3-4D2B-A8EA-092D73FAC7F8}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Music_Menu" ID="{E2EC6755-6694-4DEC-9A0F-FB5E6A046443}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music_Rocks" ID="{B9C38D87-1797-4F6E-B628-F3793459412A}" WorkUnitID="{C83DEDA0-15D1-465E-8BA6-7A3AA822D8FE}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
