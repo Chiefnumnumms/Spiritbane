@@ -128,8 +128,7 @@ public class PlayerStats : MonoBehaviour
             if (player.position.y < water.transform.position.y)
             {
                 Debug.Log("Under The Water");
-                HandleRespawn();
-                TakeDamage(20);
+                StartCoroutine(Respawn(0f));
             }
                 
         }
