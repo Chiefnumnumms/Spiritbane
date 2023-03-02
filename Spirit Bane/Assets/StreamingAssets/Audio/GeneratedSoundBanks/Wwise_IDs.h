@@ -63,6 +63,7 @@ namespace AK
         static const AkUniqueID PLAY_MUSIC_FINALE = 3315549719U;
         static const AkUniqueID PLAY_MUSIC_MENU = 1699343283U;
         static const AkUniqueID PLAY_MUSIC_ROCKS = 3619110380U;
+        static const AkUniqueID PLAY_MUSIC_SHIBUYA = 925456677U;
         static const AkUniqueID PLAY_MUSIC_VILLAGE = 4125690526U;
         static const AkUniqueID PLAY_PAUSE = 4233560256U;
         static const AkUniqueID PLAY_POWERDOWN = 2298942465U;
@@ -109,12 +110,6 @@ namespace AK
         static const AkUniqueID STOP_DISTANTWAVES = 1140336907U;
         static const AkUniqueID STOP_GENTLEWAVES = 1242407983U;
         static const AkUniqueID STOP_HELLISHAMBIANCE = 3648382727U;
-        static const AkUniqueID STOP_MUSIC_BOSS = 2869039319U;
-        static const AkUniqueID STOP_MUSIC_CAVERN = 3426450879U;
-        static const AkUniqueID STOP_MUSIC_FINALE = 3175010305U;
-        static const AkUniqueID STOP_MUSIC_MENU = 106912753U;
-        static const AkUniqueID STOP_MUSIC_ROCKS = 1830697422U;
-        static const AkUniqueID STOP_MUSIC_VILLAGE = 3829418516U;
         static const AkUniqueID STOP_RUMBLE = 3415675391U;
         static const AkUniqueID STOP_SHIELD = 2979613131U;
         static const AkUniqueID STOP_SMOULDERING = 3599247759U;
@@ -187,9 +182,14 @@ namespace AK
         static const AkUniqueID ALL_IN_ONE = 2451497209U;
         static const AkUniqueID ARENA = 680256650U;
         static const AkUniqueID CAVERN = 3631438710U;
+        static const AkUniqueID CREDITS = 2201105581U;
+        static const AkUniqueID DLC = 529873620U;
         static const AkUniqueID GENERAL = 133642231U;
-        static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID QUEST_01 = 2307651649U;
+        static const AkUniqueID QUEST_02 = 2307651650U;
+        static const AkUniqueID QUEST_03 = 2307651651U;
         static const AkUniqueID ROCKS = 1863277117U;
+        static const AkUniqueID TITLESCREEN = 152105657U;
         static const AkUniqueID VILLAGE = 3945572659U;
     } // namespace BANKS
 
