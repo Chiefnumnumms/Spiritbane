@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{62957F20-C9F2-E0D6-BE67-0B5E86F93FE3}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{EDADEF5C-10F6-CF89-98D3-26157F21AFF9}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
@@ -120,6 +120,10 @@
 				<File Id="277900346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepDirtRun04.wav</ShortName>
 					<CachePath>SFX/FootstepDirtRun04_AD57414A.wem</CachePath>
+				</File>
+				<File Id="280765531" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Predawn - Looping 02.wav</ShortName>
+					<CachePath>SFX/Predawn - Looping 02_9081FD18.wem</CachePath>
 				</File>
 				<File Id="281058671" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepGrassWalk02.wav</ShortName>
@@ -455,6 +459,11 @@
 						<MediaRef Id="838073785"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3315549719" Name="Play_Music_Finale" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="280765531"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4233560256" Name="Play_Pause" DurationType="OneShot" DurationMin="0.9626607" DurationMax="0.9626607">
 					<MediaRefs>
 						<MediaRef Id="738036070"/>
@@ -533,6 +542,8 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="234682830" Name="Stop_ApproachingEvil" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3175010305" Name="Stop_Music_Finale" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2979613131" Name="Stop_Shield" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="149375838" Name="Stop_Tension" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
@@ -548,68 +559,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="152105657" Type="User" Language="SFX" Hash="{F3BADAF9-1020-EF85-8E71-43C35DEFD2E4}">
-			<ShortName>TitleScreen</ShortName>
-			<Path>TitleScreen.bnk</Path>
-			<Media>
-				<File Id="528585997" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Pirouette - Looping.wav</ShortName>
-					<CachePath>SFX/Pirouette - Looping_98219793.wem</CachePath>
-				</File>
-				<File Id="754771720" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Currents - Looping - Seamless.wav</ShortName>
-					<CachePath>SFX/Currents - Looping - Seamless_56336C98.wem</CachePath>
-				</File>
-				<File Id="810247583" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Predawn - Looping.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping_73C9ECD9.wem</CachePath>
-				</File>
-				<File Id="925631500" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Sea Dragon - Looping.wav</ShortName>
-					<CachePath>SFX/Sea Dragon - Looping_D79FB2B7.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="3247040845" Name="Play_Music_Cavern" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="528585997"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1699343283" Name="Play_Music_Menu" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="810247583"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3619110380" Name="Play_Music_Rocks" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="925631500"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="4125690526" Name="Play_Music_Village" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="754771720"/>
-					</MediaRefs>
-				</Event>
-			</Events>
-		</SoundBank>
-		<SoundBank Id="529873620" Type="User" Language="SFX" Hash="{A040B852-D0F7-76DC-4AC0-B5E5D9F02553}">
-			<ShortName>DLC</ShortName>
-			<Path>DLC.bnk</Path>
-			<Media>
-				<File Id="963530319" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Shibuya - Looping.wav</ShortName>
-					<CachePath>SFX/Shibuya - Looping_D79FB2B7.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="925456677" Name="Play_Music_Shibuya" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="963530319"/>
-					</MediaRefs>
-				</Event>
-			</Events>
-		</SoundBank>
-		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{AA712C29-1DD6-9C9C-7196-3489540172AB}">
+		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{9C096EBD-F606-431B-464E-72FC48BFD6B8}">
 			<ShortName>Arena</ShortName>
 			<Path>Arena.bnk</Path>
 			<Media>
@@ -667,7 +617,7 @@
 				<Event Id="689692788" Name="Stop_WindLoop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CA60344E-84CD-3349-96CB-55D9B1133544}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{01E7A55E-BB52-6517-1F2D-2AC8899D385C}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -750,7 +700,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{228B84CD-33A9-3459-9C77-DE8FA83DFEBD}">
+		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{16CB3FDF-C696-B431-4D9C-BC3BD3E3611F}">
 			<ShortName>Rocks</ShortName>
 			<Path>Rocks.bnk</Path>
 			<Media>
@@ -828,36 +778,7 @@
 				<Event Id="2457077713" Name="Stop_DistantRumble1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2201105581" Type="User" Language="SFX" Hash="{0890FB0A-1380-C499-62F6-B7B43B3B70F0}">
-			<ShortName>Credits</ShortName>
-			<Path>Credits.bnk</Path>
-			<Media>
-				<File Id="280765531" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Predawn - Looping 02.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping 02_9081FD18.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="3315549719" Name="Play_Music_Finale" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="280765531"/>
-					</MediaRefs>
-				</Event>
-			</Events>
-		</SoundBank>
-		<SoundBank Id="2307651649" Type="User" Language="SFX" Hash="{68B9A84A-88CB-7817-21DC-77B6C6FB24C7}">
-			<ShortName>Quest_01</ShortName>
-			<Path>Quest_01.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="2307651650" Type="User" Language="SFX" Hash="{B33F0ED0-909F-DAAE-31CC-23725D716CA6}">
-			<ShortName>Quest_02</ShortName>
-			<Path>Quest_02.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="2307651651" Type="User" Language="SFX" Hash="{80F1972E-511C-274E-1B81-60B8889A664D}">
-			<ShortName>Quest_03</ShortName>
-			<Path>Quest_03.bnk</Path>
-		</SoundBank>
-		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{2A8381CC-D4E5-F732-7DC1-160564FAA59B}">
+		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{2433E937-1D10-19FC-8CDB-E6FDCDB4CB01}">
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 			<Media>
@@ -998,7 +919,7 @@
 				<Event Id="2976968381" Name="Stop_Waterfalls2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{C9A44F40-9FD1-1AFC-F45C-C091258A293F}">
+		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{EA59E4B1-96CF-9A06-4EE6-F64BFAAC6CA6}">
 			<ShortName>Cavern</ShortName>
 			<Path>Cavern.bnk</Path>
 			<Media>
@@ -1066,7 +987,7 @@
 				<Event Id="4169572745" Name="Stop_CavernWind2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{5E19C175-5ABF-3209-B5F2-BDA286A25779}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{6607F053-0803-ADA3-1F71-673E02AFDC93}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
@@ -1163,6 +1084,54 @@
 				<Event Id="3599247759" Name="Stop_Smouldering" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="3991942870" Type="User" Language="SFX" Hash="{6F385958-0B4E-2D8B-251C-57933C4B68BE}">
+			<ShortName>Music</ShortName>
+			<Path>Music.bnk</Path>
+			<Media>
+				<File Id="528585997" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Pirouette - Looping.wav</ShortName>
+					<CachePath>SFX/Pirouette - Looping_98219793.wem</CachePath>
+				</File>
+				<File Id="754771720" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Currents - Looping - Seamless.wav</ShortName>
+					<CachePath>SFX/Currents - Looping - Seamless_56336C98.wem</CachePath>
+				</File>
+				<File Id="810247583" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Predawn - Looping.wav</ShortName>
+					<CachePath>SFX/Predawn - Looping_73C9ECD9.wem</CachePath>
+				</File>
+				<File Id="925631500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sea Dragon - Looping.wav</ShortName>
+					<CachePath>SFX/Sea Dragon - Looping_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3247040845" Name="Play_Music_Cavern" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="528585997"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1699343283" Name="Play_Music_Menu" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="810247583"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3619110380" Name="Play_Music_Rocks" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="925631500"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4125690526" Name="Play_Music_Village" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="754771720"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3426450879" Name="Stop_Music_Cavern" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="106912753" Name="Stop_Music_Menu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1830697422" Name="Stop_Music_Rocks" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3829418516" Name="Stop_Music_Village" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5D86383E-87DE-B197-E034-C2F88E0A7E75}</FileHash>
+	<FileHash>{9C81B776-1EFF-62BA-7712-DC6ABAD6B7C7}</FileHash>
 </SoundBanksInfo>
