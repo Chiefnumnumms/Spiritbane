@@ -135,6 +135,12 @@ public class GameManager : Singleton<GameManager>
         OnGameStateChanged?.Invoke(newState);
     }
 
+    public void InitalizeGaoh()
+    {
+        PlayerGO.transform.position = PlayerGO.GetComponentInChildren<PlayerStats>().respawnPosition.position;
+        PlayerGO.SetActive(enabled);      
+    }
+
     #endregion
 
     #region Protected Functions
