@@ -67,6 +67,7 @@ public class ScenesManager : Singleton<ScenesManager>
 
     #endregion
 
+
     #region Private Members
     //-------------------------------------------------------------------------
     // Private Members
@@ -74,6 +75,7 @@ public class ScenesManager : Singleton<ScenesManager>
     //private Observable<Scenes> scene = new Observable<Scenes>();
 
     #endregion
+
 
     #region Private Functions
     //-------------------------------------------------------------------------
@@ -148,6 +150,7 @@ public class ScenesManager : Singleton<ScenesManager>
                 break;
             case Scenes.StartingVillage:
                 SceneManager.LoadScene(Scenes.StartingVillage.ToString());
+                GameManager.instance.
                 break;
             case Scenes.CrystalCavernsWhitebox:
                 SceneManager.LoadScene(Scenes.CrystalCavernsWhitebox.ToString());
@@ -210,5 +213,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
         // Anything Needed To Do When Switching CurrentScene
     }
+
     #endregion
 }

@@ -6,6 +6,13 @@
 				<Folder Name="Keneu" ID="{D8B95D0B-95C4-4EDE-B7CD-3AAAB04BA602}" ShortID="865986528">
 					<ChildrenList>
 						<Sound Name="KenueLanding" ID="{8EF8CC4F-A5BC-4901-9007-9B57F8A0BC0F}" ShortID="278697623">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
