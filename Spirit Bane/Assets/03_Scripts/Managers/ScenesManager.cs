@@ -150,7 +150,6 @@ public class ScenesManager : Singleton<ScenesManager>
                 break;
             case Scenes.StartingVillage:
                 SceneManager.LoadScene(Scenes.StartingVillage.ToString());
-                GameManager.instance.
                 break;
             case Scenes.CrystalCavernsWhitebox:
                 SceneManager.LoadScene(Scenes.CrystalCavernsWhitebox.ToString());
