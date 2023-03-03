@@ -48,22 +48,22 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
-    private void UpdateMasterVolume(float value)
+    public void UpdateMasterVolume(float value)
     {
         wwwiseMasterVolume.SetGlobalValue(value);
     }
 
-    private void UpdateMusicVolume(float value)
+    public void UpdateMusicVolume(float value)
     {
         wwwiseMusicVolume.SetGlobalValue(value);
     }
 
-    private void UpdateAmbienceVolume(float value)
+    public void UpdateAmbienceVolume(float value)
     {
         wwwiseAmbienceVolume.SetGlobalValue(value);
     }
 
-    private void UpdateSFXVolume(float value)
+    public void UpdateSFXVolume(float value)
     {
         wwwiseSFXVolume.SetGlobalValue(value);
     }
