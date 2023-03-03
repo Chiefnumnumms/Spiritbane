@@ -5,6 +5,7 @@
 //  Purpose:  Script To Handle Game Audio
 
 using UnityEngine;
+using UnityEngine.UI;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Audio Manager
@@ -21,6 +22,10 @@ public class AudioManager : Singleton<AudioManager>
 
     #endregion
 
+    #region Private Members
+
+
+    #endregion
 
     #region Editor Access Members
     //-------------------------------------------------------------------------
@@ -32,42 +37,10 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AK.Wwise.RTPC wwwiseAmbienceVolume;
     [SerializeField] private AK.Wwise.RTPC wwwiseSFXVolume;
 
-    /*
-    [Header("Wwise Audio Buses")]
-    public AK.Wwise.AuxBus main;
-    public AK.Wwise.AuxBus music;
-    public AK.Wwise.AuxBus ambience;
-    public AK.Wwise.AuxBus sfx;
-
-    [Header("Gaoh Wwise Events And Property")]
-    [SerializeField] private AK.Wwise.RTPC wwiseSwingSpeed;
-    public AK.Wwise.Event playerWalk;
-    public AK.Wwise.Event playerRun;
-    public AK.Wwise.Event playerJump;
-    public AK.Wwise.Event playerLand;
-    public AK.Wwise.Event playerShield;
-    public AK.Wwise.Event playerHurt;
-    public AK.Wwise.Event playerDead;
-    */
-
-    #endregion
-
-    #region Private Members
-    //-------------------------------------------------------------------------
-    // Private Members
-
-    //private AudioMixerGroup masterGroup;
-    //private AudioMixerGroup musicGroup;
-    //private AudioMixerGroup ambienceGroup;
-    //private AudioMixerGroup sfxGroup;
-
-    //private float masterVolume;
-    //private float musicVolume;
-    //private float ambienceVolume;
-    //private float sfxVolume;
-
-    //private float minVolume = -16.0f;
-    //private float maxVolume = -80.0f;
+    [SerializeField] private Slider masterVolume_Slider;
+    [SerializeField] private Slider musicVolume_Slider;
+    [SerializeField] private Slider ambienceVolume_Slider;
+    [SerializeField] private Slider sfxVolume_Slider;
 
     #endregion
 
@@ -75,22 +48,22 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
-    public void UpdateMasterVolume(float value)
+    private void UpdateMasterVolume(float value)
     {
         wwwiseMasterVolume.SetGlobalValue(value);
     }
 
-    public void UpdateMusicVolume(float value)
+    private void UpdateMusicVolume(float value)
     {
         wwwiseMusicVolume.SetGlobalValue(value);
     }
 
-    public void UpdateAmbienceVolume(float value)
+    private void UpdateAmbienceVolume(float value)
     {
         wwwiseAmbienceVolume.SetGlobalValue(value);
     }
 
-    public void UpdateSFXVolume(float value)
+    private void UpdateSFXVolume(float value)
     {
         wwwiseSFXVolume.SetGlobalValue(value);
     }

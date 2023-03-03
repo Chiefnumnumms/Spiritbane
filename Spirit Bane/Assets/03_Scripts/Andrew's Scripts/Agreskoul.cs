@@ -1,13 +1,6 @@
-using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR.Haptics;
-using UnityEngine.LowLevel;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
 
 public class Agreskoul : MonoBehaviour
 {

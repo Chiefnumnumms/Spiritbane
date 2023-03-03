@@ -196,6 +196,10 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 73710722cc06fb24dbcea73c60a2d979,
       type: 2}
+  masterVolume_Slider: {fileID: 0}
+  musicVolume_Slider: {fileID: 0}
+  ambienceVolume_Slider: {fileID: 0}
+  sfxVolume_Slider: {fileID: 0}
 --- !u!114 &2771780275087675316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +216,6 @@ MonoBehaviour:
   PlayerGO: {fileID: 6847044204718152707, guid: 5b7b950f00e31294fb9e375da62c0a9c,
     type: 3}
   setupParentTransform: {fileID: 9193008984872681925}
-  mainMenuCamera: {fileID: 0}
 --- !u!1 &9193008984872681925
 GameObject:
   m_ObjectHideFlags: 0

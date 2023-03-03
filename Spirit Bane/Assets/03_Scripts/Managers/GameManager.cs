@@ -50,7 +50,6 @@ public class GameManager : Singleton<GameManager>
 
     #endregion
 
-
     #region Editor Access Members
     //-------------------------------------------------------------------------
     // Editor Access Members
@@ -62,10 +61,8 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] public GameObject PlayerGO;
     public GameObject setupParentTransform;
-    public Camera mainMenuCamera;
 
     #endregion
-
 
     #region Private Members
     //-------------------------------------------------------------------------
@@ -173,17 +170,12 @@ public class GameManager : Singleton<GameManager>
 
         Cam = Camera.main;
 
-
-        // LOCK CURSOR
-        //Cursor.lockState = CursorLockMode.Locked;
-
         StartCoroutine(InitializeGame());
                 
         //base.Initialize();
     }
 
     #endregion
-
 
     #region Private Functions
     //-------------------------------------------------------------------------
@@ -204,8 +196,6 @@ public class GameManager : Singleton<GameManager>
         setupParentTransform = GameObject.Instantiate(PlayerGO, setupParentTransform.transform, true);
         setupParentTransform.SetActive(false);
 
-        mainMenuCamera.gameObject.SetActive(true);
-
         yield return null;
     }
 
@@ -216,8 +206,6 @@ public class GameManager : Singleton<GameManager>
         setupParentTransform.SetActive(true);
         PlayerGO.SetActive(true);
         Debug.Log("Gaoh To True");
-
-        mainMenuCamera.gameObject.SetActive(false);
     }
 
     private void GoToMainMenu()
