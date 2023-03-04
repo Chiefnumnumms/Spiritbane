@@ -12,7 +12,9 @@ public class ObjectHazard : MonoBehaviour
     public List<GameObject> hazardObjects = new List<GameObject>();
     public List<Rigidbody> hazardRigidBody = new List<Rigidbody>();
 
+  
     public float fallingForce = 3.0f;
+    public float fallingHazardDuration = 5.0f;
 
     CameraShake cameraShake;
 
@@ -28,7 +30,7 @@ public class ObjectHazard : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Player Found Dropping Load!");
-            StartCoroutine(DropAllHazards(2.0f));
+            StartCoroutine(DropAllHazards(fallingHazardDuration));
         }
     }
 
@@ -82,5 +84,4 @@ public class ObjectHazard : MonoBehaviour
     {
         cameraShake.ScreenShake(transform.position);
     }
-
 }
