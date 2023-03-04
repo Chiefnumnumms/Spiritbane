@@ -58,10 +58,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     public bool debugLog = false;      // Turn Debug.Log On Or Off
 
-
-    [SerializeField] public GameObject PlayerGO;
-    public GameObject setupParentTransform;
-
     #endregion
 
     #region Private Members
@@ -193,8 +189,8 @@ public class GameManager : Singleton<GameManager>
         UpdateGameState(GameState.START);
 
         // Instantiate Gaoh
-        setupParentTransform = GameObject.Instantiate(PlayerGO, setupParentTransform.transform, true);
-        setupParentTransform.SetActive(false);
+        //setupParentTransform = GameObject.Instantiate(PlayerGO, setupParentTransform.transform, true);
+        //setupParentTransform.SetActive(false);
 
         yield return null;
     }
@@ -202,10 +198,6 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         ScenesManager.instance.LoadNewGame();
-
-        setupParentTransform.SetActive(true);
-        PlayerGO.SetActive(true);
-        Debug.Log("Gaoh To True");
     }
 
     private void GoToMainMenu()
