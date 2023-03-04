@@ -82,7 +82,7 @@ public class Agreskoul : MonoBehaviour
     [Header("Prediction Point Grappling")]
     public RaycastHit grapplePredictionHit;
     public float grapplePredictionSphereCastRadius;
-    public Transform grapplePredictionPoint;
+    public Transform predictionPointGrapple;
 
 
     #endregion
@@ -126,6 +126,10 @@ public class Agreskoul : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
+
+        predictionPointSwing = GameObject.Find("PredictionPoint").GetComponent<Transform>();
+        predictionPointGrapple = GameObject.Find("PredictionPoint").GetComponent<Transform>();
+
     }
 
     private void Update()
@@ -673,15 +677,15 @@ public class Agreskoul : MonoBehaviour
         if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
         {
             // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
-            grapplePredictionPoint.gameObject.SetActive(true);
+            predictionPointGrapple.gameObject.SetActive(true);
             predictionPointSwing.gameObject.SetActive(false);
 
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
-            grapplePredictionPoint.position = hitPoint;
+            predictionPointGrapple.position = hitPoint;
         }
         else
         {
-            grapplePredictionPoint.gameObject.SetActive(false);
+            predictionPointGrapple.gameObject.SetActive(false);
         }
 
     }
