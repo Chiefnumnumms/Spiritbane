@@ -14,11 +14,8 @@ public class PlayerStats : MonoBehaviour
     public HealthBar healthBar;
     AnimationManager animationManager;
     public Transform player;
-
     public List<GameObject> killZones;
-
     public Transform respawnPosition;
-
     public CameraShake cameraShake;
 
     [SerializeField]
@@ -30,6 +27,8 @@ public class PlayerStats : MonoBehaviour
     {
         animationManager = GetComponentInChildren<AnimationManager>();
         cameraShake = FindObjectOfType<CameraShake>();
+
+        respawnPosition = GameObject.Find("Respawn Point").GetComponent<Transform>();
     }
 
     private void Start()
@@ -86,7 +85,7 @@ public class PlayerStats : MonoBehaviour
                 Time.timeScale = 0f;
             }
             // RESPAWN TO PROPER POINT
-            //StartCoroutine(Respawn(3.5f));
+            StartCoroutine(Respawn(3.5f));
 
             //cameraShake.ScreenShake(transform.right);
         }
