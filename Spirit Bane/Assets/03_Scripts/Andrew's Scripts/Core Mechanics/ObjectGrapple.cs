@@ -84,8 +84,6 @@ public class ObjectGrapple : MonoBehaviour
             // STORE THE HIT POINT AS THE GRAPPLE POINT
             grapplePoint = hit.point;
 
-            agreskoulManager.ExecuteSwordAction();
-
             // EXECUTE THE GRAPPLE WITH A DELAY TIMER
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
 

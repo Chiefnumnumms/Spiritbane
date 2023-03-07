@@ -105,6 +105,19 @@ public class Agreskoul : MonoBehaviour
 
     #endregion
 
+    #region Pulling Attributes
+
+    [Header("Pull Mechanic Settings")]
+    [SerializeField] Vector3 pullPointHit;
+    [SerializeField] float maxPullDistance;
+    [SerializeField] LayerMask objectPullLayer;
+    [SerializeField] bool isLookingAtPullPoint;
+    [SerializeField] GameObject pullBoxCollider;
+
+    private bool isPullingObject;
+    #endregion
+
+    private GameObject goTarget;
 
     private void Awake()
     {
@@ -156,6 +169,13 @@ public class Agreskoul : MonoBehaviour
         CheckForGrappleObject();
 
         HandleSwingAction();
+
+        HandlePullPointLookAt();
+
+        if (inputManager.agreskoul_Pressed && isLookingAtPullPoint)
+        {
+            ChooseMechanicTarget(pullPointHit);
+        }
     }
 
     private void CacheAllValues()
@@ -178,14 +198,13 @@ public class Agreskoul : MonoBehaviour
         isBladeExtended = false;
         keepBladeExtended = false;
         reachedTarget = false;
+
     }
 
     #region AGRESKOUL MAIN
 
     public void ChooseMechanicTarget(Vector3 target)
     {
-        keepBladeExtended = true;
-
         // CALCULATE DISTANCE AND TIME
         Vector3 distance = target - swordTip.transform.position;
 
@@ -197,10 +216,10 @@ public class Agreskoul : MonoBehaviour
             target = maxExtentionDistance * distance.normalized;
         }
 
-        weaponPivot.LookAt(target);
-
         // CALCULATE THE ROTATION TO FACE THE TARGET
-        Quaternion.LookRotation(target - transform.position);
+        //Quaternion.LookRotation(target);
+
+        weaponPivot.LookAt(target);
 
         // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
         scaleFactor = distance.magnitude / energy.transform.localScale.y;
@@ -227,10 +246,12 @@ public class Agreskoul : MonoBehaviour
         }
         else if (isSwinging)
         {
-            ChooseMechanicTarget(swingPointHit);
+            ChooseMechanicTarget(goTarget.transform.position);
         }
-
-        isBladeExtended = false;
+        //else if (isPullingObject)
+        //{
+        //    ChooseMechanicTarget(pullPointHit);
+        //}
     }
 
     private void HandleInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
@@ -291,46 +312,43 @@ public class Agreskoul : MonoBehaviour
     public void RetractBlade()
     {
 
-        if (!isBladeExtended)
+        // RETURN INTO ORIGINAL POSITION
+        pivotTransform = originalPivotTransform;
+        pivotTransform.rotation = originalPivotRotation;
+
+        if (energy.transform.localScale.y <= originalEnergyScale.y)
         {
-            // RETURN INTO ORIGINAL POSITION
-            pivotTransform = originalPivotTransform;
-            pivotTransform.rotation = originalPivotRotation;
-
-            if (energy.transform.localScale.y <= originalEnergyScale.y)
-            {
-
-                foreach (Transform t in bladePieces)
-                {
-                    t.localScale = originalBladeScale;
-                }
-
-                energy.transform.localScale = originalEnergyScale;
-                return;
-            }
-
-            float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
-
-            // CALCULATE EXTENTION TIME BASED ON DISTANCE
-            float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
-
-            // SLERP BACK INTO ORIGINAL POSITION
-            energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time / 3.0f);
-
-            // RETURN BLADE INTO ITS ORIGINAL ROTATION VALUES
-            weaponPivot.transform.rotation = originalPivotRotation;
 
             foreach (Transform t in bladePieces)
             {
-                float newY = t.localScale.y / scaleFactor;
-
-                Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
-
-                t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
+                t.localScale = originalBladeScale;
             }
 
-            HandleInAirVelocity(playerLocomotion, falingVelocityReductionTimer, reductionRate);
+            energy.transform.localScale = originalEnergyScale;
+            return;
         }
+
+        float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
+
+        // CALCULATE EXTENTION TIME BASED ON DISTANCE
+        float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
+
+        // SLERP BACK INTO ORIGINAL POSITION
+        energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time / 3.0f);
+
+        // RETURN BLADE INTO ITS ORIGINAL ROTATION VALUES
+        weaponPivot.transform.rotation = originalPivotRotation;
+
+        foreach (Transform t in bladePieces)
+        {
+            float newY = t.localScale.y / scaleFactor;
+
+            Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
+
+            t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
+        }
+
+        HandleInAirVelocity(playerLocomotion, falingVelocityReductionTimer, reductionRate);
 
     }
 
@@ -343,7 +361,7 @@ public class Agreskoul : MonoBehaviour
             // ADD ALL TRANSFORMS INTO THE LISTS
             bladePieces.Add(t.GetComponent<Transform>());
         }
-        Debug.Log("Piece Added!");
+        //Debug.Log("Piece Added!");
     }
 
     public void HandleSwingAction()
@@ -519,19 +537,21 @@ public class Agreskoul : MonoBehaviour
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
             hitPoint = raycastHit.point;
+            goTarget = raycastHit.transform.gameObject;
             isLookingAtSwingingPoint = true;
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
         {
             hitPoint = sphereCastHit.point;
+            goTarget = sphereCastHit.transform.gameObject;
         }
         else                                              // NOTHING IN THE WAY 
         {
             hitPoint = Vector3.zero;
+            goTarget = null;
             weaponPivot.LookAt(swordLookAt);
             isLookingAtSwingingPoint = false;
         }
-
 
         if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
         {
@@ -688,6 +708,28 @@ public class Agreskoul : MonoBehaviour
             predictionPointGrapple.gameObject.SetActive(false);
         }
 
+    }
+
+    #endregion
+
+    #region PULL ACTIONS
+
+    public void HandlePullPointLookAt()
+    {
+        RaycastHit raycastHit;
+
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out raycastHit, maxPullDistance, objectPullLayer))
+        {
+            isLookingAtPullPoint = true;
+
+            pullPointHit = raycastHit.point;
+        }
+        else
+        {
+            isLookingAtPullPoint = false;
+            RetractBlade();
+            
+        }
     }
 
     #endregion
