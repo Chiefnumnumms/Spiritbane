@@ -89,7 +89,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -139,7 +139,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -235,7 +235,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-13</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -288,7 +288,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -333,7 +333,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-25</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1456,6 +1456,41 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" ShortID="611093700">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="DistantRumble" ID="{4D66FB39-E14A-4C79-828D-2FC9A6116850}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="DistantRumble1" ID="{E40A2EAE-D7AE-4B55-85AE-1A41509E16DD}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0899904912836767"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.554941362916007"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.10467194928685"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>DistantRumble1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="710746973"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="DistantRumble1" ID="{E40A2EAE-D7AE-4B55-85AE-1A41509E16DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Gaoh" ID="{0930A1AF-0283-447A-A4E4-A7CAA37CA757}" ShortID="296636623">
@@ -3264,7 +3299,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="ApproachingEvil" ID="{ED76980D-D386-4C57-BD3F-F7F08FD9362E}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3302,7 +3337,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="CavernLoop1" ID="{F4BF030E-D618-4894-81EF-888E787B540B}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3336,7 +3371,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="CavernLoop2" ID="{D0C29FEC-9FF1-4379-BB23-513FB14697C9}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3370,7 +3405,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="CavernLoop3" ID="{2389D6F2-F15B-4F9B-956E-DCB7CC963191}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3409,7 +3444,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="CavernLoop4" ID="{3D82A742-522A-4909-91F3-B94960D788D1}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3450,7 +3485,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Wind1" ID="{4804F028-F67F-4C18-B83B-ED923E90CA03}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3484,7 +3519,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Wind2" ID="{1310C611-B179-45FC-A292-CFA8821E4199}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3518,7 +3553,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Tension" ID="{ABE1632C-21CA-4331-BC03-0645CC85107C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3565,7 +3600,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Birds" ID="{D705DC0E-977C-472E-BC16-63E4908C96AF}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3599,7 +3634,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Crickets1" ID="{8A09F288-5DE0-4203-ACB9-4A4B76B095C5}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3626,6 +3661,9 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Crows" ID="{627D860D-635E-4C54-A034-104516EDDA52}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
 								</Reference>
@@ -3661,6 +3699,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Flies" ID="{6114A998-3C62-412A-AF11-F142C33CF446}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
 								</Reference>
@@ -3683,6 +3724,9 @@
 						</Sound>
 						<Sound Name="DistantWaves" ID="{8ED88D0C-B9C9-4ACD-93E4-4F7C6AB0F008}" ShortID="340245">
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="DistantWaves" ID="{E14C69D2-DD40-4A5A-B5FE-510FA18EBA1B}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
 								</Reference>
@@ -3705,6 +3749,9 @@
 						</Sound>
 						<Sound Name="GentleWaves" ID="{704F0099-C1C1-48C9-BCF7-4611B960BA25}" ShortID="299127459">
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="GentleWaves" ID="{DACF36F7-9093-4830-8A75-B043D726E840}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
 								</Reference>
@@ -3741,7 +3788,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Barren" ID="{3ACC6CB8-75EE-4C41-B41B-0BB3249345C2}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3775,7 +3822,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="HarshWind" ID="{AD957504-325A-4357-9A0B-B91A74C86B29}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3808,7 +3855,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Unsettling" ID="{0B14D392-3E60-4ABB-97B3-797FB52737F8}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3837,7 +3884,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Windy1" ID="{BF1CF591-DF6B-474B-B91B-D3866A4BAEEA}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3874,7 +3921,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Windy2" ID="{9BB73D58-993E-472C-9926-5C986DDCF193}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3912,7 +3959,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Crickets" ID="{F1536936-D283-4E5C-8F4E-D13B47C6D1B7}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -3934,40 +3981,6 @@
 								<ActiveSource Name="AmbienceWithCrickets1" ID="{F51649F1-B5E3-465A-89A7-DD9FEC155FD2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" ShortID="611093700">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="DistantRumble1" ID="{E40A2EAE-D7AE-4B55-85AE-1A41509E16DD}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0899904912836767"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.554941362916007"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.10467194928685"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>DistantRumble1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="710746973"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="DistantRumble1" ID="{E40A2EAE-D7AE-4B55-85AE-1A41509E16DD}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="ArenaAmbience" ID="{20D63209-04F5-4530-B359-121866EA2F4A}" ShortID="221377014">
@@ -3980,7 +3993,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="CloudsMoving" ID="{9ADDB483-EB8E-46CF-9E70-1F62C1027A9E}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -4021,7 +4034,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="TornadoWinds" ID="{9230E32D-80F2-4DAB-BE92-585122E61A60}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -4055,7 +4068,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="WindLoop" ID="{6CF7EF5B-BAEE-4349-A6B6-809181A75F27}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -4090,7 +4103,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="HellishAmbience" ID="{3DF7151E-5546-4FB6-B5AF-8CD868F0C780}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
@@ -4120,7 +4133,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="AmbienceAttenuation" ID="{738371BB-0356-4969-8548-F255F57FFB2C}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+									<ObjectRef Name="Rumble" ID="{ED81CA8E-75BA-4351-A8E7-5D54EB13E5D4}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>

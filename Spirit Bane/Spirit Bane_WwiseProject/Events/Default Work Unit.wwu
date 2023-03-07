@@ -479,17 +479,6 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_DistantRumble1" ID="{05E6292D-D17D-4C90-8116-2EBBCD260BF6}">
-											<ChildrenList>
-												<Action Name="" ID="{07D3486C-9A8D-4B9F-9B6B-820257E129A3}" ShortID="838578344">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
 										<Event Name="Play_AmbienceWithCrickets1" ID="{93B62AEF-824C-4861-B76F-853DE5E84819}">
 											<ChildrenList>
 												<Action Name="" ID="{FA744E97-FE38-48E9-A49D-D319FA6AC919}" ShortID="861489341">
@@ -568,20 +557,6 @@
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="AmbienceWindy1" ID="{16A6968C-D6CC-4C5F-A3E4-0361B664ADAA}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Stop_DistantRumble1" ID="{51F5244E-B780-47A7-BD93-EC599FC4BDA1}">
-											<ChildrenList>
-												<Action Name="" ID="{D4ED921D-59D3-4A53-86BD-4797701E4617}" ShortID="1057587544">
-													<PropertyList>
-														<Property Name="ActionType" Type="int16" Value="2"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -873,6 +848,31 @@
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="Rockslide" ID="{DC5B3B33-6875-45A6-885F-89DDE7A317F1}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_DistantRumble1" ID="{05E6292D-D17D-4C90-8116-2EBBCD260BF6}">
+											<ChildrenList>
+												<Action Name="" ID="{07D3486C-9A8D-4B9F-9B6B-820257E129A3}" ShortID="838578344">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Stop_DistantRumble1" ID="{51F5244E-B780-47A7-BD93-EC599FC4BDA1}">
+											<ChildrenList>
+												<Action Name="" ID="{D4ED921D-59D3-4A53-86BD-4797701E4617}" ShortID="1057587544">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="DistantRumble1" ID="{9C06344C-FC95-43E0-9865-73B2B6ED17A0}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
