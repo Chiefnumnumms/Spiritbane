@@ -58,8 +58,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
     PlayerControls playerControls;
     PlayerLocomotion playerLocomotion;
     AnimationManager animationManager;
-    Swinging swingingManager;
-    ObjectGrapple grapplingManager;
     ItemPickup itemPickup;
     PlayerStats characterManager;
     Agreskoul agreskoulManager;
@@ -68,8 +66,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
     {
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
-        swingingManager = GetComponent<Swinging>();
-        grapplingManager = GetComponent<ObjectGrapple>();
         itemPickup = FindObjectOfType<ItemPickup>();
         characterManager = GetComponent<PlayerStats>();
         agreskoulManager = GetComponent<Agreskoul>();
@@ -223,7 +219,7 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
 
     private void HandleGrapplingInput()
     {
-        if (grappleObject_Pressed && agreskoulManager.reachedTarget)
+        if (grappleObject_Pressed)
         {
             // GRAPPLE
             agreskoulManager.StartGrapple();

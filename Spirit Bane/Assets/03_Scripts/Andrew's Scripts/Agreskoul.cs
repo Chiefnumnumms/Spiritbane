@@ -217,9 +217,7 @@ public class Agreskoul : MonoBehaviour
         }
 
         // CALCULATE THE ROTATION TO FACE THE TARGET
-        //Quaternion.LookRotation(target);
-
-        weaponPivot.LookAt(target);
+        Quaternion.LookRotation(target - transform.position);
 
         // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
         scaleFactor = distance.magnitude / energy.transform.localScale.y;
@@ -242,16 +240,27 @@ public class Agreskoul : MonoBehaviour
     {
         if (isGrappling)
         {
+            if (isSwinging) return;
+            if (isPullingObject) return;
+
             ChooseMechanicTarget(grapplePointHit);
         }
-        else if (isSwinging)
+
+        if (isSwinging)
         {
-            ChooseMechanicTarget(goTarget.transform.position);
+            if (isGrappling) return;
+            if (isPullingObject) return;
+
+            ChooseMechanicTarget(swingPointHit);
         }
-        //else if (isPullingObject)
-        //{
-        //    ChooseMechanicTarget(pullPointHit);
-        //}
+
+        if (isPullingObject)
+        {
+            if (isSwinging) return;
+            if (isGrappling) return;
+
+            ChooseMechanicTarget(pullPointHit);
+        }
     }
 
     private void HandleInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
@@ -578,7 +587,7 @@ public class Agreskoul : MonoBehaviour
     #endregion
 
     #region GRAPPLING ACTIONS
-
+    
     private void HandleGrappleCoolDown()
     {
         if (grapplingCdTimer > 0)
@@ -726,9 +735,7 @@ public class Agreskoul : MonoBehaviour
         }
         else
         {
-            isLookingAtPullPoint = false;
-            RetractBlade();
-            
+            isLookingAtPullPoint = false;            
         }
     }
 
