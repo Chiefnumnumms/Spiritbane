@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 1cd685146b0ab947ab4ac2a8b7310a35
     GuidInternal: 
-    m_lastTime: -8585240794453305005
+    m_lastTime: -8585262360107671691
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 225645062012cb489414e4ce8e06914d
     GuidInternal: 
-    m_lastTime: -8585237152536682220
+    m_lastTime: -8585234555914984774
     List:
     - name: Ambience
       guid: 99b8b82804013b4e91ca13b84238cad2
@@ -248,7 +248,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Context
     guid: 24ae6b2aea4e2b4c8ff3731e60a03637
     GuidInternal: 
-    m_lastTime: -8585237326739640586
+    m_lastTime: -8585237227796523346
     List:
     - name: All_In_One
       guid: 3aa955116576054884d980118817ec69
@@ -278,7 +278,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: aa8fa67de0327d44a87acf7f7bbc2535
     GuidInternal: 
-    m_lastTime: -8585237326739610655
+    m_lastTime: -8585237227796513338
     List: []
   - PhysicalPath: SoundBanks\General.wwu
     PathAndIcons:
@@ -294,7 +294,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\General
     guid: 0220347ab5f56b4489c58f538193df7d
     GuidInternal: 
-    m_lastTime: -8585237326739570774
+    m_lastTime: -8585237227796503336
     List:
     - name: General
       guid: 845727af265df840a73c63f7eeae87d9
@@ -344,7 +344,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit\Region
     guid: bc75a5ac78b09043be18cae213300bc7
     GuidInternal: 
-    m_lastTime: -8585240794453406980
+    m_lastTime: -8585241641263856307
     List:
     - name: Arena
       guid: 3b9f04fd02a2c24c8b235ad7b3da2c21
@@ -426,7 +426,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a0ed3dc8d1155e468ba67a3aa822d8fe
     GuidInternal: 
-    m_lastTime: -8585239830049366868
+    m_lastTime: -8585234555914994777
     List:
     - name: 00_Village
       guid: 8245c475e8ebaa49af452c61ece83e1a
@@ -1413,16 +1413,16 @@ MonoBehaviour:
       - ElementName: Environment
         ObjectType: 4
         guid: 83fc1ddfd0a159449defcc184053307e
-      - ElementName: 02_Rocks
+      - ElementName: VariousSFX
         ObjectType: 4
-        guid: a75b2bba3c7e4241b9c3b9495bc60bef
-      - ElementName: Ambience
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
         ObjectType: 4
-        guid: 6498948a2755d241968e5a5e7cc74270
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Play_DistantRumble1
         ObjectType: 3
         guid: 2d29e6057dd1904c81162ebbcd260bf6
-      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Play_DistantRumble1
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Play_DistantRumble1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -2551,29 +2551,6 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: SFX
-      guid: 74e96e0ae716224da518b7d40eaf06cf
-      id: 393239870
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
-      - ElementName: Environment
-        ObjectType: 4
-        guid: 83fc1ddfd0a159449defcc184053307e
-      - ElementName: 00_Village
-        ObjectType: 4
-        guid: 8245c475e8ebaa49af452c61ece83e1a
-      - ElementName: SFX
-        ObjectType: 4
-        guid: 74e96e0ae716224da518b7d40eaf06cf
-      Path: Events\Default Work Unit\Environment\00_Village\SFX
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: SFX
       guid: ef6ad7c4017fbf46b7a0d969b0a958cd
       id: 393239870
       PathAndIcons:
@@ -2593,6 +2570,29 @@ MonoBehaviour:
         ObjectType: 4
         guid: ef6ad7c4017fbf46b7a0d969b0a958cd
       Path: Events\Default Work Unit\Environment\03_Arena\SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX
+      guid: 74e96e0ae716224da518b7d40eaf06cf
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 83fc1ddfd0a159449defcc184053307e
+      - ElementName: 00_Village
+        ObjectType: 4
+        guid: 8245c475e8ebaa49af452c61ece83e1a
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 74e96e0ae716224da518b7d40eaf06cf
+      Path: Events\Default Work Unit\Environment\00_Village\SFX
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3120,16 +3120,16 @@ MonoBehaviour:
       - ElementName: Environment
         ObjectType: 4
         guid: 83fc1ddfd0a159449defcc184053307e
-      - ElementName: 02_Rocks
+      - ElementName: VariousSFX
         ObjectType: 4
-        guid: a75b2bba3c7e4241b9c3b9495bc60bef
-      - ElementName: Ambience
+        guid: d17aff887d60aa4888eb7ba77d33f7c7
+      - ElementName: OneShot
         ObjectType: 4
-        guid: 6498948a2755d241968e5a5e7cc74270
+        guid: fe165ec80b18994abb82ce317b6a3afd
       - ElementName: Stop_DistantRumble1
         ObjectType: 3
         guid: 4e24f55180b7a747bd93ec599fc4bda1
-      Path: Events\Default Work Unit\Environment\02_Rocks\Ambience\Stop_DistantRumble1
+      Path: Events\Default Work Unit\Environment\VariousSFX\OneShot\Stop_DistantRumble1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -3694,6 +3694,26 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: Vocals
+      guid: c4e82567f7762c408d10d949fc5e9aea
+      id: 206361915
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: a2e9cdf42e011242939635c105c38372
+      - ElementName: Vocals
+        ObjectType: 4
+        guid: c4e82567f7762c408d10d949fc5e9aea
+      Path: Events\Default Work Unit\Enemy\Vocals
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Vocals
       guid: 60d8bd614e782848aa1135e3a26a042d
       id: 206361915
       PathAndIcons:
@@ -3733,26 +3753,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Vocals
-      guid: c4e82567f7762c408d10d949fc5e9aea
-      id: 206361915
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a0ed3dc8d1155e468ba67a3aa822d8fe
-      - ElementName: Enemy
-        ObjectType: 4
-        guid: a2e9cdf42e011242939635c105c38372
-      - ElementName: Vocals
-        ObjectType: 4
-        guid: c4e82567f7762c408d10d949fc5e9aea
-      Path: Events\Default Work Unit\Enemy\Vocals
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -3765,7 +3765,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 41190a9ac754614e84b6ff214f5dcee5
     GuidInternal: 
-    m_lastTime: -8585239986886432299
+    m_lastTime: -8585240840230290242
     List:
     - name: AmbienceVolume
       guid: 34419cb1afb3174892fe74b5fec0ae6c
@@ -3849,7 +3849,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 5de9c76f78a39146b8fbba95a06ffb9f
     GuidInternal: 
-    m_lastTime: -8585240794453327245
+    m_lastTime: -8585240840230200218
     List:
     - name: TargetHit
       guid: e9561536f26758488505d74f39d4445f
@@ -3995,7 +3995,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 5a4e3d860dea1c4aa6fcab59ec4dc0ea
     GuidInternal: 
-    m_lastTime: -8585240829556801193
+    m_lastTime: -8585243173671667529
     List:
     - name: Footsteps
       guid: 52b7f7056252794cac526079c26209ea
@@ -4059,11 +4059,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 609ea4e07217fc47ba8171e3552b8205
     GuidInternal: 
-    m_lastTime: -8585240794453317279
+    m_lastTime: -8585262360107681710
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000400000005000000080000000b0000000d0000000f00000011000000
+  ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
