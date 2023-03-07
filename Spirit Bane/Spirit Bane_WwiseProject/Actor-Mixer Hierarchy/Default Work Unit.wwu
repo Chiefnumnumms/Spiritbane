@@ -768,36 +768,6 @@
 								<ActiveSource Name="Waterfall" ID="{3AFA98BC-D5E9-414B-B259-DD3472FC30A2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Smouldering" ID="{7BD3E959-7551-4636-A56F-B8DC59D1FAA2}" ShortID="201536402">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>5</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="BurningHouse2" ID="{CD1D697D-1D72-4769-AC62-336D43EC0257}">
-									<Language>SFX</Language>
-									<AudioFile>BurningHouse2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="970169347"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="BurningHouse2" ID="{CD1D697D-1D72-4769-AC62-336D43EC0257}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Burning" ID="{D2C26557-4220-42DA-87A7-9665DEAA349A}" ShortID="409571455">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -3770,6 +3740,39 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="GentleWaves" ID="{D6140ED1-27B3-4B21-9C09-D6D2F590D5AB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Smouldering" ID="{7BD3E959-7551-4636-A56F-B8DC59D1FAA2}" ShortID="201536402">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Smouldering" ID="{365007CA-9090-4533-BC04-10C4F0A69139}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BurningHouse2" ID="{CD1D697D-1D72-4769-AC62-336D43EC0257}">
+									<Language>SFX</Language>
+									<AudioFile>BurningHouse2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="970169347"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BurningHouse2" ID="{CD1D697D-1D72-4769-AC62-336D43EC0257}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
