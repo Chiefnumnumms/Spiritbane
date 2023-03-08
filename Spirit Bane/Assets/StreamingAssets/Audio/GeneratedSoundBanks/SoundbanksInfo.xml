@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{A70A6679-8400-BA4A-1A2C-1E729F8E1B19}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{62965D68-FE8B-82EB-701E-595366E1E6AD}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
@@ -295,7 +295,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1419843580" Name="Play_ApproachingEvil" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1419843580" Name="Play_ApproachingEvil" MaxAttenuation="25" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="188206054"/>
 					</MediaRefs>
@@ -502,7 +502,7 @@
 						<MediaRef Id="344806617"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4114669316" Name="Play_Tension" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="4114669316" Name="Play_Tension" MaxAttenuation="8" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="350922585"/>
 					</MediaRefs>
@@ -559,7 +559,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{AA712C29-1DD6-9C9C-7196-3489540172AB}">
+		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{46ED5142-6DAE-2428-2D5B-E55A4E8133A7}">
 			<ShortName>Arena</ShortName>
 			<Path>Arena.bnk</Path>
 			<Media>
@@ -585,27 +585,27 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2654175122" Name="Play_CloudsMoving" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2654175122" Name="Play_CloudsMoving" MaxAttenuation="55" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="602706397"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1651018485" Name="Play_HellishAmbiance" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1651018485" Name="Play_HellishAmbiance" MaxAttenuation="25" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1056081411"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1002643937" Name="Play_Rumble" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1002643937" Name="Play_Rumble" MaxAttenuation="25" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="980418596"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1142497274" Name="Play_TornadoWinds" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1142497274" Name="Play_TornadoWinds" MaxAttenuation="120" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="539292821"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="250515782" Name="Play_WindLoop" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="250515782" Name="Play_WindLoop" MaxAttenuation="120" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="254733641"/>
 					</MediaRefs>
@@ -696,7 +696,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{228B84CD-33A9-3459-9C77-DE8FA83DFEBD}">
+		<SoundBank Id="1863277117" Type="User" Language="SFX" Hash="{41D3BAB1-2EF8-09F7-A162-9D71BB23774C}">
 			<ShortName>Rocks</ShortName>
 			<Path>Rocks.bnk</Path>
 			<Media>
@@ -707,10 +707,6 @@
 				<File Id="325199335" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AmbienceWithCrickets1.wav</ShortName>
 					<CachePath>SFX/AmbienceWithCrickets1_D79FB2B7.wem</CachePath>
-				</File>
-				<File Id="710746973" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>DistantRumble1.wav</ShortName>
-					<CachePath>SFX/DistantRumble1_F3BA5A6C.wem</CachePath>
 				</File>
 				<File Id="766787791" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AmbienceWindy1.wav</ShortName>
@@ -730,39 +726,34 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3391836132" Name="Play_AmbienceBarren" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="3391836132" Name="Play_AmbienceBarren" MaxAttenuation="35" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1020639171"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3835338236" Name="Play_AmbienceHarshWind" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="3835338236" Name="Play_AmbienceHarshWind" MaxAttenuation="60" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="194733684"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1341156043" Name="Play_AmbienceUnsettling" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1341156043" Name="Play_AmbienceUnsettling" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="779607158"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1277691666" Name="Play_AmbienceWindy1" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1277691666" Name="Play_AmbienceWindy1" MaxAttenuation="25" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="766787791"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1277691665" Name="Play_AmbienceWindy2" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1277691665" Name="Play_AmbienceWindy2" MaxAttenuation="120" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="888555903"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2621757959" Name="Play_AmbienceWithCrickets1" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2621757959" Name="Play_AmbienceWithCrickets1" MaxAttenuation="80" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="325199335"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2910817771" Name="Play_DistantRumble1" MaxAttenuation="28" DurationType="OneShot" DurationMin="3.104672" DurationMax="3.104672">
-					<MediaRefs>
-						<MediaRef Id="710746973"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1456054886" Name="Stop_AmbienceBarren" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -771,10 +762,9 @@
 				<Event Id="2504372076" Name="Stop_AmbienceWindy1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2504372079" Name="Stop_AmbienceWindy2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="566249189" Name="Stop_AmbienceWithCrickets1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="2457077713" Name="Stop_DistantRumble1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{2A8381CC-D4E5-F732-7DC1-160564FAA59B}">
+		<SoundBank Id="2451497209" Type="User" Language="SFX" Hash="{E0140B2F-F5AA-8371-C951-5060DA63ABA1}">
 			<ShortName>All_In_One</ShortName>
 			<Path>All_In_One.bnk</Path>
 			<Media>
@@ -814,6 +804,10 @@
 					<ShortName>Waterfalls1.wav</ShortName>
 					<CachePath>SFX/Waterfalls1_F1895BC4.wem</CachePath>
 				</File>
+				<File Id="710746973" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DistantRumble1.wav</ShortName>
+					<CachePath>SFX/DistantRumble1_1EC33E6E.wem</CachePath>
+				</File>
 				<File Id="789397276" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Rockslide.wav</ShortName>
 					<CachePath>SFX/Rockslide_CC33F7D7.wem</CachePath>
@@ -837,6 +831,11 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="2910817771" Name="Play_DistantRumble1" MaxAttenuation="48" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="710746973"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4269214404" Name="Play_DoorLocked" DurationType="OneShot" DurationMin="1.6435109" DurationMax="1.6435109">
 					<MediaRefs>
 						<MediaRef Id="833412354"/>
@@ -887,7 +886,7 @@
 						<MediaRef Id="70553141"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2025845440" Name="Play_Torch" MaxAttenuation="8" DurationType="Infinite">
+				<Event Id="2025845440" Name="Play_Torch" MaxAttenuation="20" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1017651419"/>
 					</MediaRefs>
@@ -907,6 +906,7 @@
 						<MediaRef Id="13885093"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2457077713" Name="Stop_DistantRumble1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2635806761" Name="Stop_Stream01" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2635806762" Name="Stop_Stream02" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3065143382" Name="Stop_Torch" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -915,7 +915,7 @@
 				<Event Id="2976968381" Name="Stop_Waterfalls2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{C9A44F40-9FD1-1AFC-F45C-C091258A293F}">
+		<SoundBank Id="3631438710" Type="User" Language="SFX" Hash="{96C1DA88-DC07-0EFE-141B-794B9DA38828}">
 			<ShortName>Cavern</ShortName>
 			<Path>Cavern.bnk</Path>
 			<Media>
@@ -945,32 +945,32 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="2803981292" Name="Play_CavernLoop1" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2803981292" Name="Play_CavernLoop1" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1059882694"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2803981295" Name="Play_CavernLoop2" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2803981295" Name="Play_CavernLoop2" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="984794928"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2803981294" Name="Play_CavernLoop3" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2803981294" Name="Play_CavernLoop3" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="235954058"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2803981289" Name="Play_CavernLoop4" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="2803981289" Name="Play_CavernLoop4" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="604660159"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1547338064" Name="Play_CavernWind1" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1547338064" Name="Play_CavernWind1" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="103310809"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1547338067" Name="Play_CavernWind2" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="1547338067" Name="Play_CavernWind2" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1044195738"/>
 					</MediaRefs>
@@ -983,7 +983,7 @@
 				<Event Id="4169572745" Name="Stop_CavernWind2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{5E19C175-5ABF-3209-B5F2-BDA286A25779}">
+		<SoundBank Id="3945572659" Type="User" Language="SFX" Hash="{6B97AB63-74E9-234C-77A2-68C039DA3F4D}">
 			<ShortName>Village</ShortName>
 			<Path>Village.bnk</Path>
 			<Media>
@@ -1025,32 +1025,32 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3428916602" Name="Play_AmbienceWithBirds" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="3428916602" Name="Play_AmbienceWithBirds" MaxAttenuation="40" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="813311178"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="244217522" Name="Play_AmbienceWithCrickets" MaxAttenuation="28" DurationType="Infinite">
+				<Event Id="244217522" Name="Play_AmbienceWithCrickets" MaxAttenuation="60" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="404293089"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3576974750" Name="Play_AmbienceWithCrows" DurationType="Infinite">
+				<Event Id="3576974750" Name="Play_AmbienceWithCrows" MaxAttenuation="40" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="151760755"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2195436581" Name="Play_AmbienceWithFlies" DurationType="Infinite">
+				<Event Id="2195436581" Name="Play_AmbienceWithFlies" MaxAttenuation="30" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="255595790"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2394181555" Name="Play_Burning" MaxAttenuation="8" DurationType="Infinite">
+				<Event Id="2394181555" Name="Play_Burning" MaxAttenuation="20" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="220572888"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2668988825" Name="Play_DistantWaves" DurationType="OneShot" DurationMin="72.39769" DurationMax="72.39769">
+				<Event Id="2668988825" Name="Play_DistantWaves" MaxAttenuation="40" DurationType="OneShot" DurationMin="72.39769" DurationMax="72.39769">
 					<MediaRefs>
 						<MediaRef Id="949941544"/>
 					</MediaRefs>
@@ -1060,12 +1060,12 @@
 						<MediaRef Id="695462874"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="810177169" Name="Play_GentleWaves" DurationType="OneShot" DurationMin="77.3559" DurationMax="77.3559">
+				<Event Id="810177169" Name="Play_GentleWaves" MaxAttenuation="35" DurationType="OneShot" DurationMin="77.3559" DurationMax="77.3559">
 					<MediaRefs>
 						<MediaRef Id="1020830710"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="50299785" Name="Play_Smouldering" DurationType="Infinite">
+				<Event Id="50299785" Name="Play_Smouldering" MaxAttenuation="45" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="970169347"/>
 					</MediaRefs>
@@ -1080,7 +1080,7 @@
 				<Event Id="3599247759" Name="Stop_Smouldering" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3991942870" Type="User" Language="SFX" Hash="{5B86866F-1F7C-FDE7-D9B2-D85C4715419D}">
+		<SoundBank Id="3991942870" Type="User" Language="SFX" Hash="{3CCD155E-7F0A-CCC9-1DFF-42B319605754}">
 			<ShortName>Music</ShortName>
 			<Path>Music.bnk</Path>
 			<Media>
@@ -1129,5 +1129,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DF2AADBA-F4EF-C6C2-4712-54A18558544E}</FileHash>
+	<FileHash>{56247AC2-31FF-7741-6E75-C20FFE7B24F6}</FileHash>
 </SoundBanksInfo>

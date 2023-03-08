@@ -187,7 +187,6 @@ namespace AK
         static const AkUniqueID ALL_IN_ONE = 2451497209U;
         static const AkUniqueID ARENA = 680256650U;
         static const AkUniqueID CAVERN = 3631438710U;
-        static const AkUniqueID CREDITS = 2201105581U;
         static const AkUniqueID GENERAL = 133642231U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID ROCKS = 1863277117U;
