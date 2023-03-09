@@ -206,10 +206,10 @@ public class Agreskoul : MonoBehaviour
     public void ChooseMechanicTarget(Vector3 target)
     {
         // CALCULATE DISTANCE AND TIME
-        Vector3 distance = target - swordTip.transform.position;
+        Vector3 distance = swordTip.transform.position - target;
 
         if (distance.magnitude >= maxExtentionDistance) return;
-
+        
         // IF PAST MAX DISTANCE
         if (distance.magnitude >= maxExtentionDistance)
         {

@@ -164,7 +164,7 @@ public class KeneuStateMachine : StateMachine
         MainCam = Camera.main.transform;
 
         // Set State To Default State  --  Currently Defaults To Player Move State
-        SwitchState(new KeneuGroundState(this));
+        //SwitchState(new KeneuGroundState(this));
 
         // Get Current State
         CurrentState = base.currentState;

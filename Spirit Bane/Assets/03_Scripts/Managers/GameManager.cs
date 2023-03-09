@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     public AudioManager AudioManager { get; private set; }
 
     // Cache Reference To Player Game Object
-    //[SerializeField] public GameObject PlayerGO; //{ get; private set; }
+    [SerializeField] public GameObject PlayerGO; 
 
     // Cache Reference To Camera
     public Camera Cam { get; private set; }

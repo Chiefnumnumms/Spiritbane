@@ -67,6 +67,11 @@ public class PlayerLocomotion : MonoBehaviour
     public bool activeGrapple = true;
     public bool enableMovementAfterGrapple;
 
+    [Header("In Air Movement")]
+    [SerializeField] private Transform orientation;
+    [SerializeField] private float horizontalThrustForce;
+    [SerializeField] private float forwardThrustForce;
+
     // Wwise
     [Header("Wwise Events")]
     public AK.Wwise.Event playerWalk;

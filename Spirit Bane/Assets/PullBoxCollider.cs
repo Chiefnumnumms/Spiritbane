@@ -7,7 +7,7 @@ public class PullBoxCollider : MonoBehaviour
     [SerializeField] private GameObject pullDisc;
     [SerializeField] private float rotationSpeed = 25.0f;
 
-    private bool spinObject = false;
+    public bool spinObject = false;
 
     private void Update()
     {
