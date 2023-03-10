@@ -16,7 +16,7 @@ public class ScenesManager : Singleton<ScenesManager>
     //-------------------------------------------------------------------------
     // Enums
 
-    public enum Scenes { MainMenu, StartingVillage, CrystalCavernsWhitebox, FloatingRocks, ArenaWhitebox, CoreMechanicDemo, SwordDemo }
+    public enum Scenes { MainMenu, StartingVillage, CrystalCavernsWhitebox, FloatingIslands, ArenaWhitebox, CoreMechanicDemo, SwordDemo }
 
     #endregion
 
@@ -98,7 +98,7 @@ public class ScenesManager : Singleton<ScenesManager>
 
     public void LoadFloatingRocks()
     {
-        UpdateScene(Scenes.FloatingRocks);
+        UpdateScene(Scenes.FloatingIslands);
     }
     public void LoadArena()
     {
@@ -141,7 +141,7 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         CurrentScene.Value = newScene;
 
-        AudioManager.instance.StartAreaMusic();
+        //AudioManager.instance.StartAreaMusic();
     
         switch (newScene)
         {
@@ -154,8 +154,8 @@ public class ScenesManager : Singleton<ScenesManager>
             case Scenes.CrystalCavernsWhitebox:
                 SceneManager.LoadScene(Scenes.CrystalCavernsWhitebox.ToString());
                 break;
-            case Scenes.FloatingRocks:
-                SceneManager.LoadScene(Scenes.FloatingRocks.ToString());
+            case Scenes.FloatingIslands:
+                SceneManager.LoadScene(Scenes.FloatingIslands.ToString());
                 break;
             case Scenes.ArenaWhitebox:
                 SceneManager.LoadScene(Scenes.ArenaWhitebox.ToString());
@@ -212,5 +212,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
         // Anything Needed To Do When Switching CurrentScene
     }
+
     #endregion
 }

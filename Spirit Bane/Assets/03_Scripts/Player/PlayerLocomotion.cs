@@ -11,15 +11,17 @@ public class PlayerLocomotion : MonoBehaviour
     InputManager inputManager;
     PlayerManager playerManager;
     AnimationManager animationManager;
-    Swinging swingingManager;
-    ObjectGrapple grapplingManager;
     Agreskoul agreskoulManager;
+    Animator animator;
 
-    Vector3 moveDir;
     [SerializeField]
     Transform playerCamera;
-
     public Rigidbody playerRb;
+
+    [Header("Locomotion Settings")]
+    public bool isInteracting;
+    public bool canRotate;
+    public bool isInAir;
 
     [Header("Wind")]
     public GameObject windZone;
@@ -29,23 +31,14 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Falling")]
     public float inAirTimer;
     public float leapingVel;
-    public float fallingVel = 30;
+    public float fallingVel = 8;
     public float rayCastHeightOffset = 1f;
     public LayerMask groundLayer;
 
-    [Header("Ground And Air Detection")]
-    [SerializeField]
-    private float groundDetectionRayStartPoint = 0.5f;
     [SerializeField]
     private float maximumDistanceNeededToStartFall = 1f;
 
     [Header("Ground & Air Detection Stats")]
-    [SerializeField]
-    float minimumDistanceNeededToBeginFall = 1.0f;    // Minimum Distance needed to play fall animation
-    [SerializeField]
-    float groundDirectionRayDistance = 0.2f;        // Ray check distance
-    [SerializeField]
-    float maxDistance = 1f;
     Vector3 targetPosition;
     Vector3 normalVector;
 
@@ -68,6 +61,7 @@ public class PlayerLocomotion : MonoBehaviour
     public float movementSpeed = 5f;
     public float sprintSpeed = 7;
     public float rotationSpeed = 15;
+    Vector3 moveDir;
 
     [Header("Grappling & Swinging")]
     private Vector3 velocityToSet;
@@ -76,12 +70,16 @@ public class PlayerLocomotion : MonoBehaviour
 
     // Wwise
     [Header("Wwise Events")]
-    public AK.Wwise.Event playerFootstep;
+    public AK.Wwise.Event playerWalk;
+    public AK.Wwise.Event playerRun;
     public AK.Wwise.Event playerJump;
     public AK.Wwise.Event playerLand;
+    public AK.Wwise.Event playerShield;
+    public AK.Wwise.Event playerHurt;
+    public AK.Wwise.Event playerDead;
+
     private bool stepPlaying = false;
     private float lastStepTime = 0.0f;
-    private float currentVelocity = 0.0f;
 
     private void Awake()
     {
@@ -90,14 +88,12 @@ public class PlayerLocomotion : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         agreskoulManager = GetComponent<Agreskoul>();
         playerRb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
-        if(playerCamera == null)
+        if (playerCamera == null)
         {
             playerCamera = Camera.main.transform;
         }
-        
-        swingingManager = GetComponent<Swinging>();
-        grapplingManager = GetComponent<ObjectGrapple>();
 
         myTransform = transform;
 
@@ -109,6 +105,29 @@ public class PlayerLocomotion : MonoBehaviour
         
         inputManager.OnJumpStarted += HandleJump;
         inputManager.OnSprintStarted += inputManager.HandleSprintingInput;
+    }
+
+    private void Update()
+    {
+        inputManager.HandleAllInputs();
+    }
+
+    private void FixedUpdate()
+    {
+        HandleAllMovements();
+    }
+
+    private void LateUpdate()
+    {
+        isInteracting = animator.GetBool("isInteracting");
+        isJumping = animator.GetBool("isJumping");
+        canRotate = animator.GetBool("canRotate");
+        animator.SetBool("isGrounded", isGrounded);
+
+        if (isInAir)
+        {
+            inAirTimer = inAirTimer + Time.deltaTime;
+        }
     }
 
     private void OnDisable()
@@ -123,7 +142,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void AgreskoulPressed()
     {
         // Launch Sword On Button Press
-        agreskoulManager.ExecuteSwordSwing();
+        agreskoulManager.ExecuteSwordAction();
         Debug.Log("Extended Blade");
     }
 
@@ -140,7 +159,7 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleFallingAndLanding();
 
-        if (playerManager.isInteracting)
+        if (isInteracting)
         {
             return;
         }
@@ -163,13 +182,32 @@ public class PlayerLocomotion : MonoBehaviour
         // If Sound Not Playing, Play Sound, Record Time, Set Flag For Sound Playing
         if (!stepPlaying)
         {
-            playerFootstep.Post(gameObject);
+            playerWalk.Post(gameObject);
             lastStepTime = Time.time;
             stepPlaying = true;
         }
         else
         {
             if (Time.time - lastStepTime > 500.0f / playerRb.velocity.magnitude * Time.deltaTime)
+            {
+                stepPlaying = false;
+            }
+        }
+    }
+
+    private void StepRun()
+    {
+        if(playerRb.velocity.magnitude < 1.0f || !isGrounded) return;
+
+        if(!stepPlaying)
+        {
+            playerRun.Post(gameObject);
+            lastStepTime = Time.time;
+            stepPlaying = true;
+        }
+        else
+        {
+            if(Time.time - lastStepTime > 300.0f / playerRb.velocity.magnitude * Time.deltaTime)
             {
                 stepPlaying = false;
             }
@@ -186,15 +224,29 @@ public class PlayerLocomotion : MonoBehaviour
     private void LandSFX()
     {
         if (isGrounded) return;
+
         playerLand.Post(gameObject);
+    }
+
+    private void ShieldSFX()
+    {
+        playerShield.Post(gameObject);
+    }
+
+    private void HurtSFX()
+    {
+        playerHurt.Post(gameObject);
+    }
+
+    private void DeadSFX()
+    {
+        playerDead.Post(gameObject);
     }
 
     //------------------------------------------------------------------------------------
     // adjusts the players movement based on cameras direction and what the users input is
     private void HandleMovement()
     {
-        if (swingingManager.isSwinging) return;
-        //if (activeGrapple) return;
 
         if(inWindZone)
         {
@@ -233,7 +285,7 @@ public class PlayerLocomotion : MonoBehaviour
     // adjusts the players rotation based on camera direction and player movement
     private void HandleRotation()
     {
-        if (playerManager.canRotate)
+        if (canRotate)
         {
             Vector3 targetDir = Vector3.zero;
 
@@ -280,7 +332,6 @@ public class PlayerLocomotion : MonoBehaviour
     // handles when the player should enter the falling animation state vs the landing state
     private void HandleFallingAndLanding()
     {
-        if (swingingManager.isSwinging) return;
 
         RaycastHit hit;
         Vector3 rayCastOrigin = transform.position;
@@ -292,7 +343,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (!isGrounded && !isJumping)
         {
-            if (!playerManager.isInteracting && !swingingManager.isSwinging)
+            if (isInteracting)
             {
                 animationManager.PlayTargetAnim("Falling Idle", true);
             }
@@ -303,9 +354,9 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (Physics.SphereCast(rayCastOrigin, 0.28f, -Vector3.up, out hit, maximumDistanceNeededToStartFall, groundLayer))
         {
-            if (transform.position.y == origY) { isGrounded = true; playerManager.isInteracting = false; }
+            if (transform.position.y == origY) { isGrounded = true; isInteracting = false; }
 
-            if (!isGrounded && !playerManager.isInteracting)
+            if (!isGrounded && isInteracting)
             {
                 animationManager.PlayTargetAnim("Landing", false);
             }
@@ -321,7 +372,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (isGrounded && !isJumping)
         {
-            if (playerManager.isInteracting || inputManager.moveAmount > 0)
+            if (isInteracting || inputManager.moveAmount > 0)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime / 0.1f);
             }
@@ -336,8 +387,6 @@ public class PlayerLocomotion : MonoBehaviour
     // handles how the player moves when the jump button is pressed
     public void HandleJump()
     {
-        if (swingingManager.isSwinging) return;
-
         if (isGrounded)
         {
             if (inputManager.jumpPressed)
@@ -355,7 +404,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleAgreskoulAction()
     {
-        agreskoulManager.ExecuteSwordSwing();
+        agreskoulManager.ExecuteSwordAction();
     }
 
     public void HandleAgreskoulReleaseAction()
@@ -390,110 +439,6 @@ public class PlayerLocomotion : MonoBehaviour
         Invoke(nameof(ResetMovementRestrictions), 3f);
     }
 
-    //public void HandleFalling(Vector3 moveDirection)
-    //{
-    //    isGrounded = false;
-    //    RaycastHit hit;
-    //    Vector3 origin = myTransform.position;
-    //    origin.y += groundDetectionRayStartPoint;
-
-    //    if (Physics.Raycast(origin, myTransform.forward, out hit, 0.4f))
-    //    {
-    //        moveDirection = Vector3.zero;
-    //    }
-
-    //    if (!isGrounded)
-    //    {
-    //        playerRb.AddForce(-Vector3.up * fallingVel);
-    //        playerRb.AddForce(moveDirection * fallingVel / 10f);
-    //    }
-
-    //    Vector3 dir = moveDirection;
-    //    dir.Normalize();
-    //    origin = origin + dir * groundDirectionRayDistance;
-
-    //    targetPosition = myTransform.position;
-
-    //    Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToBeginFall, Color.red, 0.1f, false);
-    //    if (Physics.Raycast(origin, -Vector3.up, out hit, minimumDistanceNeededToBeginFall, groundLayer))
-    //    {
-    //        normalVector = hit.normal;
-    //        Vector3 tp = hit.point;
-    //        isGrounded = true;
-    //        targetPosition.y = tp.y;
-
-    //        if (!isGrounded)
-    //        {
-    //            if (inAirTimer > 0.5f)
-    //            {
-    //                Debug.Log("You were in the air for " + inAirTimer);
-    //                animationManager.PlayTargetAnim("Landing", true);
-    //                inAirTimer = 0;
-    //            }
-    //            else
-    //            {
-    //                animationManager.PlayTargetAnim("Empty", false);
-    //                inAirTimer = 0;
-    //            }
-
-    //            isGrounded = false;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (isGrounded)
-    //        {
-    //            isGrounded = false;
-    //        }
-
-    //        if (isGrounded == false)
-    //        {
-    //            if (playerManager.isInteracting == false)
-    //            {
-    //                animationManager.PlayTargetAnim("Falling Idle", true);
-    //            }
-
-    //            Vector3 vel = playerRb.velocity;
-    //            vel.Normalize();
-    //            playerRb.velocity = vel * (movementSpeed / 2);
-    //            isGrounded = true;
-    //        }
-    //    }
-
-    //    if (playerManager.isInteracting || inputManager.moveAmount > 0)
-    //    {
-    //        myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
-    //    }
-    //    else
-    //    {
-    //        myTransform.position = targetPosition;
-    //    }
-
-    //    // BUG FIX: This now ensures that the player is always going to the target position
-    //    //          instead of behaving oddly when moving around
-    //    //          This ensures players feet are not going under the ground when performing an animation
-    //    if (playerManager.isInteracting || inputManager.moveAmount > 0)
-    //    {
-    //        myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
-    //    }
-    //    else
-    //    {
-    //        myTransform.position = targetPosition;
-    //    }
-
-    //    if (isGrounded)
-    //    {
-    //        if (playerManager.isInteracting || inputManager.moveAmount > 0)
-    //        {
-    //            myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
-    //        }
-    //        else
-    //        {
-    //            myTransform.position = targetPosition;
-    //        }
-    //    }
-    //}
-
     public void SetVelocity()
     {
         enableMovementAfterGrapple = true;
@@ -513,7 +458,6 @@ public class PlayerLocomotion : MonoBehaviour
             enableMovementAfterGrapple = false;
             ResetMovementRestrictions();
 
-            grapplingManager.StopGrapple();
         }
     }
 
@@ -526,6 +470,9 @@ public class PlayerLocomotion : MonoBehaviour
             windStr = windZone.GetComponent<WindArea>().windStrength;
             inWindZone = true;
         }
+        else if(other.gameObject.tag == "Finish") ScenesManager.instance.LoadNextScene();
+
+
     }
 
     private void OnTriggerExit(Collider other)

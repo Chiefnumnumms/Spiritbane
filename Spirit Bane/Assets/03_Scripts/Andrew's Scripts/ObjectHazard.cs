@@ -60,7 +60,7 @@ public class ObjectHazard : MonoBehaviour
             rb.useGravity = true;
 
             // ADD RANDOM FORCE
-            float randomForce = Random.RandomRange(15, 50);
+            float randomForce = Random.Range(15, 50);
             rb.AddForce(-Vector3.up * randomForce, ForceMode.Impulse);
 
             // DELAY BETWEEN THE CRYSTALS FALLING

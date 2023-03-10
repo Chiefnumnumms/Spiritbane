@@ -1,16 +1,126 @@
 Event	ID	Name			Wwise Object Path	Notes
-	779807780	Play_Footstep_Dirt			\Default Work Unit\Player\Foot\Play_Footstep_Dirt	
-	2323405115	Play_Landing			\Default Work Unit\Player\Foot\Play_Landing	
-	2756694246	Play_Jumping			\Default Work Unit\Player\Foot\Play_Jumping	
+	32291984	Play_Dijoji___Narration			\Default Work Unit\NPC\Vocals\Play_Dijoji___Narration	
+	149375838	Stop_Tension			\Default Work Unit\Enemy\Stop_Tension	
+	234682830	Stop_ApproachingEvil			\Default Work Unit\Enemy\Stop_ApproachingEvil	
+	318967272	Play_Swinging			\Default Work Unit\Player\Action\Play_Swinging	
+	366070904	Play_Highlight2			\Default Work Unit\UI\Play_Highlight2	
+	366070907	Play_Highlight1			\Default Work Unit\UI\Play_Highlight1	
+	959506991	Play_Unpause			\Default Work Unit\UI\Play_Unpause	
+	1172822028	Play_Death			\Default Work Unit\Player\Vocals\Play_Death	
+	1246552272	Play_Dijoji___Idle			\Default Work Unit\NPC\Vocals\Play_Dijoji___Idle	
+	1292086503	Play_Back			\Default Work Unit\UI\Play_Back	
+	1419843580	Play_ApproachingEvil			\Default Work Unit\Enemy\Play_ApproachingEvil	
+	1507466227	Play_Dijoji___Walking			\Default Work Unit\NPC\Vocals\Play_Dijoji___Walking	
+	1589278981	Play_Walk			\Default Work Unit\Player\Foot\Play_Walk	
+	1784546604	Play_Moving			\Default Work Unit\Player\Action\Play_Moving	
+	1988178265	Play_Shield			\Default Work Unit\Player\Action\Play_Shield	
+	2128578085	Play_Urgent			\Default Work Unit\UI\Play_Urgent	
+	2155613437	Play_Music_Boss			\Default Work Unit\Music\Play_Music_Boss	
+	2231879068	Play_Dijoji___Death			\Default Work Unit\NPC\Vocals\Play_Dijoji___Death	
+	2713813216	Play_Error			\Default Work Unit\UI\Play_Error	
+	2822207957	Play_Run			\Default Work Unit\Player\Foot\Play_Run	
+	2869039319	Stop_Music_Boss			\Default Work Unit\Music\Stop_Music_Boss	
+	2955259529	Play_Hurt			\Default Work Unit\Player\Vocals\Play_Hurt	
+	2979613131	Stop_Shield			\Default Work Unit\Player\Action\Stop_Shield	
+	3175010305	Stop_Music_Finale			\Default Work Unit\Music\Stop_Music_Finale	
+	3226574718	Play_Extend			\Default Work Unit\Player\Action\Play_Extend	
+	3315549719	Play_Music_Finale			\Default Work Unit\Music\Play_Music_Finale	
+	3338421947	Play_Dodge			\Default Work Unit\Player\Action\Play_Dodge	
+	3510422748	Play_JumpVocals			\Default Work Unit\Player\Action\Play_JumpVocals	
+	3689126666	Play_Jump			\Default Work Unit\Player\Foot\Play_Jump	
+	3938687889	Play_Retract			\Default Work Unit\Player\Action\Play_Retract	
+	4114669316	Play_Tension			\Default Work Unit\Enemy\Play_Tension	
+	4136017490	Play_Confirm			\Default Work Unit\UI\Play_Confirm	
+	4233560256	Play_Pause			\Default Work Unit\UI\Play_Pause	
+	4285282925	Play_Land			\Default Work Unit\Player\Foot\Play_Land	
 
-Effect plug-ins	ID	Name	Type				Notes
-	484763476	New_Pitch_Shifter_01	Wwise Pitch Shifter			
-	3657550167	New_Parametric_EQ	Wwise Parametric EQ			
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	2195636714	Dirt	Footsteps			
+	4248645337	Grass	Footsteps			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3822001633	TargetHit			\Default Work Unit\TargetHit	
+
+State	ID	Name	State Group			Notes
+	748895195	None	TargetHit			
+	2452206122	False	TargetHit			
+	3053630529	True	TargetHit			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	640949982	Speed			\Default Work Unit\Speed	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	622781877	Landing	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\289_Foley_Footsteps_Rocks_Sneaker_Jump_Land_On_Two_Feet_Close_D8D246B0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Landing		40800
-	731857351	Jumping	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\PM_SDGS_213 Footstep Step Dry Grass Skid Drag_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Jumping		141666
-	820998479	FootstepDirt02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt02		42988
-	845317709	FootstepDirt00	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt00_D8334050.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt00		76366
-	868101729	FootstepDirt01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirt01_1CBA49A5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Dirt\FootstepDirt01		46564
+	9431120	0021_Tape_Measure_2	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\0021_Tape_Measure_2_29758560.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Sword\Extend\0021_Tape_Measure_2		252744
+	27807858	Highlight2	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Highlight2_F1F3C731.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Highlight2		33284
+	37203475	Dijoji - Idle - 07	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 07		357088
+	46414273	Dijoji - Walking - 02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 02_17706990.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 02		107704
+	60282662	Dijoji - Idle - 05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 05		373148
+	76649810	Dijoji - Walking - 09	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 09_C9C02E34.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 09		91696
+	102435855	Dodge00	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dodge00_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Vocals\Dodge\Dodge00		114784
+	105827010	FootstepDirtRun03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun03_32314FAC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Jump\Left Foot\FootstepDirtRun03		27550
+	121031980	Error	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Error_DA6FE88C.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Error		100088
+	122369927	Unpause	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Unpause_AE803C21.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Unpause		97982
+	128690428	Blade	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Blade_1BCCA3A4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Sword\Extend\Blade		37176
+	135368119	FootstepGrassWalk05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkGrass\FootstepGrassWalk05		71520
+	137485673	Dijoji - Walking - 04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 04_8B2C5A3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 04		121068
+	188206054	ApproachingEvil	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\ApproachingEvil_7B6D4752.wem		\Actor-Mixer Hierarchy\Default Work Unit\CavernAmbience\ApproachingEvil		18940564
+	199812577	Male_Shout-of-Pain_132	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Male_Shout-of-Pain_132_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Vocals\Death\Male_Shout-of-Pain_132		91296
+	201672138	FootstepGrassRun01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Jump\Right Foot\FootstepGrassRun01		35832
+	204581653	FootstepGrassRun02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunGrass\FootstepGrassRun02		36064
+	206347513	Dijoji - Idle - 06	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 06		335968
+	210361976	Shield	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Shield_8CEE31AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Shield\Shield		2492048
+	219181942	FootstepDirtWalk02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkDirt\FootstepDirtWalk02		50016
+	249008179	FootstepDirtWalk04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkDirt\FootstepDirtWalk04		46432
+	251221922	Little Fighter Guy - Vocalizations - Crash Bump Fall_10	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Little Fighter Guy - Vocalizations - Crash Bump Fall_10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Vocals\Hurt\Little Fighter Guy - Vocalizations - Crash Bump Fall_10		36190
+	252267342	Dijoji - Idle - 08	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 08		390856
+	256972731	FootstepDirtRun02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun02_8A3DC13A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunDirt\FootstepDirtRun02		25490
+	261114056	Dijoji - Walking - 07	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 07_5676FA98.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 07		175136
+	262163859	FootstepGrassRun05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunGrass\FootstepGrassRun05		37352
+	277900346	FootstepDirtRun04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun04_AD57414A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Jump\Right Foot\FootstepDirtRun04		25524
+	280765531	Music_Finale	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Predawn - Looping 02_9081FD18.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\Music_Finale		25081196
+	281058671	FootstepGrassWalk02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkGrass\FootstepGrassWalk02		46728
+	300380951	FootstepGrassRun03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Jump\Left Foot\FootstepGrassRun03		37934
+	312163438	Movement01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Movement01_86A52E97.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Movement\Swinging\Movement01		54564
+	319906171	MovementGeneric01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\MovementGeneric01_5014B35A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Movement\Moving\MovementGeneric01		43840
+	340982096	Dijoji - Death	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Death (Sudden)_6CA563E5.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Death		1510328
+	344806617	Movement02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Movement02_700E0433.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Movement\Swinging\Movement02		88108
+	350922585	Tension	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Tension_2FC27539.wem		\Actor-Mixer Hierarchy\Default Work Unit\CavernAmbience\Tension		2143256
+	360164538	DirtLand01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\DirtLand01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Land\Left Foot\DirtLand01		115808
+	366092089	Dijoji - Idle - 01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 01		478516
+	386798029	FootstepDirtRun05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun05_E0A16D41.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunDirt\FootstepDirtRun05		23284
+	393155295	Dijoji - Idle - 03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 03		412048
+	416701398	DirtLand02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\DirtLand02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Land\Right Foot\DirtLand02		114272
+	423531381	Tiny-Transitions-2_013	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Tiny-Transitions-2_013_D2FCB36B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Shield\Tiny-Transitions-2_013		53328
+	430815870	Dijoji - Walking - 06	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 06_C5E96CDF.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 06		107920
+	436142020	Dijoji - Idle - 02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 02		345184
+	463548081	FootstepDirtWalk01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkDirt\FootstepDirtWalk01		41824
+	471656445	FootstepGrassWalk01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkGrass\FootstepGrassWalk01		53234
+	478845902	Dijoji - Walking - 05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 05_359C47A1.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 05		119716
+	484917371	Little Fighter Guy - Vocalizations - Jump Lift Push_09	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Little Fighter Guy - Vocalizations - Jump Lift Push_09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Vocals\Jump\Little Fighter Guy - Vocalizations - Jump Lift Push_09		32260
+	489972195	FootstepGrassWalk04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkGrass\FootstepGrassWalk04		62098
+	518135497	Dijoji - Walking - 01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 01_351756AB.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 01		311524
+	519165778	FootstepDirtWalk05	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkDirt\FootstepDirtWalk05		45152
+	528252189	MovementGeneric02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\MovementGeneric02.wav_C6201169.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Movement\Moving\MovementGeneric02		40528
+	554868091	Little Fighter Guy - Vocalizations - Crash Bump Fall_01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Little Fighter Guy - Vocalizations - Crash Bump Fall_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Vocals\Hurt\Little Fighter Guy - Vocalizations - Crash Bump Fall_01		39088
+	575935162	FootstepDirtRun01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtRun01_737D72D6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunDirt\FootstepDirtRun01		33298
+	588598295	Confirm	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Confirm_FA57BC56.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Confirm		71848
+	609709786	Highlight1	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Highlight1_7F74E32C.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Highlight1		33164
+	615821067	GrassLand02	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\GrassLand02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Land\Right Foot\GrassLand02		66144
+	639572040	Dijoji - Walking - 08	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 08_8E579A34.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 08		118152
+	642765256	Dijoji - Walking - 11	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 11_C9090CC9.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 11		141736
+	715940055	Chain	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Chain_C1DE4CBC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Sword\Extend\Chain		193900
+	738036070	Pause	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Pause_B6FB2996.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Pause		92512
+	759351871	Urgent	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Urgent_A042C5B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Urgent		222684
+	838073785	Music_Boss	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Charybdis - Looping_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\Music_Boss		29980308
+	847000799	GrassLand01	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\GrassLand01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Land\Left Foot\GrassLand01		94048
+	861330104	FootstepDirtWalk03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepDirtWalk03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkDirt\FootstepDirtWalk03		46432
+	891131201	Back	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Back_5DC13C12.wem		\Actor-Mixer Hierarchy\Default Work Unit\NonWorld\UI\Back		93990
+	949635772	FootstepGrassWalk03	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassWalk03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Walk\WalkGrass\FootstepGrassWalk03		54614
+	980511418	Dijoji - Walking - 10	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Walking - 10_9FD780AF.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Walking\Dijoji - Walking - 10		109600
+	984270625	Dijoji - Narration	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Narration_222B66E5.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Narration		11089240
+	987910952	FootstepGrassRun04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\FootstepGrassRun04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gaoh\Foot\Run\RunGrass\FootstepGrassRun04		19534
+	1029759393	Dijoji - Idle - 04	C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Spirit Bane_WwiseProject\.cache\Windows\SFX\Dijoji - Idle - 04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\NPCs\Vocals\Dijoji - Idle\Dijoji - Idle - 04		305512
 

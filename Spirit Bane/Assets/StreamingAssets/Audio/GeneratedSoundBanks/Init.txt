@@ -1,5 +1,43 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3822001633	TargetHit			\Default Work Unit\TargetHit	
+	4134938995	TunnelReverb			\Default Work Unit\TunnelReverb	
+
+State	ID	Name	State Group			Notes
+	748895195	None	TargetHit			
+	2452206122	False	TargetHit			
+	3053630529	True	TargetHit			
+	748895195	None	TunnelReverb			
+	930712164	Off	TunnelReverb			
+	1651971902	On	TunnelReverb			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	469204604	Off	TunnelReverb	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\TunnelReverb		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	988953028	SFXVolume			\Default Work Unit\SFXVolume	
+	1204480359	AmbienceVolume			\Default Work Unit\AmbienceVolume	
+	2346531308	MusicVolume			\Default Work Unit\MusicVolume	
+	2918011349	MasterVolume			\Default Work Unit\MasterVolume	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
+	2385628198	Footsteps			\Default Work Unit\Master Audio Bus\Footsteps	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	3545700988	Reverbs			\Default Work Unit\Master Audio Bus\Reverbs	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	2347912553	MediumRoomReverb			\Default Work Unit\Master Audio Bus\Reverbs\MediumRoomReverb	
+	2776856307	LargeChurchReverb			\Default Work Unit\Master Audio Bus\Reverbs\LargeChurchReverb	
+	4134938995	TunnelReverb			\Default Work Unit\Master Audio Bus\Reverbs\TunnelReverb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	702543456	Tunnel1	Wwise Matrix Reverb			
+	1904434771	Medium_Room1	Wwise Matrix Reverb			
+	2662085913	Large_Church1	Wwise Matrix Reverb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

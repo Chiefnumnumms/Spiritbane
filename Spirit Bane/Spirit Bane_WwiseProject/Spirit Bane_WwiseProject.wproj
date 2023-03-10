@@ -3,7 +3,6 @@
 	<ProjectInfo>
 		<Project Name="Spirit Bane_WwiseProject" ID="{5F18BE36-E068-49C0-BB0E-166905F745AA}">
 			<Platforms>
-				<Platform Name="Mac" ReferencePlatform="Mac" ID="{E96B7621-E6BA-40F4-99E6-5F882B4CF53E}"/>
 				<Platform Name="Windows" ReferencePlatform="Windows" ID="{E871AC07-DC06-4F53-9AF1-3D5EBBEEE6CB}"/>
 			</Platforms>
 			<LanguageList>
@@ -15,14 +14,17 @@
 			<PropertyList>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
-						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
+						<Value Platform="Windows">C:\Users\user\Desktop\Spirit Bane Project\Spiritbane\Spirit Bane\Assets\StreamingAssets\Audio\GeneratedSoundBanks</Value>
+					</ValueList>
+				</Property>
+				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
+					<ValueList>
+						<Value Platform="Windows">256</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True"/>
@@ -31,32 +33,32 @@
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="..\..\Spirit Bane\Assets\StreamingAssets\Audio\GeneratedSoundBanks"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
 						<Value Platform="Windows">..\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
-						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
-						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
-						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
-						<Value Platform="Mac"></Value>
 						<Value Platform="Windows"></Value>
+					</ValueList>
+				</Property>
+				<Property Name="VolumeThreshold" Type="Real64">
+					<ValueList>
+						<Value Platform="Windows">-80</Value>
 					</ValueList>
 				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2022.1|Build=8100|VersionName=v2022.1.1|Config=Release"/>

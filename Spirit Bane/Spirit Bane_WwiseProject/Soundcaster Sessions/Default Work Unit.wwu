@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{15B8AF65-7460-4CB1-8C9A-E84D531A7C81}" SchemaVersion="110">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{15B8AF65-7460-4CB1-8C9A-E84D531A7C81}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{15B8AF65-7460-4CB1-8C9A-E84D531A7C81}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="MainSoundcasterSession" ID="{57C71409-D2A4-4B92-B225-C78148C05546}">
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="MusicVolume" ID="{3C0941AB-C3B3-403C-8621-9192B9717858}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXVolume" ID="{933FCD1B-219A-41CD-8074-F20FBED9B643}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="AmbienceVolume" ID="{B19C4134-B3AF-4817-92FE-74B5FEC0AE6C}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MasterVolume" ID="{B9A208ED-CA4E-4AA0-9DEE-612089F0692C}"/>
+							<Value>56.7901234567901</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Speed" ID="{DE49BF88-60F3-4ADA-BD95-6B74C8716246}"/>
+							<Value>99.8628257887517</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Dirt" ID="{4D73082B-5EA4-4CE6-B091-F8F40F6C11C1}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

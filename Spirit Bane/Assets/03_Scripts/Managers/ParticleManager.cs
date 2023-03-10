@@ -16,10 +16,12 @@ public class ParticleManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        /*
         if(playerTransform == null)
         {
             playerTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
+        */
         if(particleList.Count == 0)
         {
             foreach (GameObject particle in GameObject.FindGameObjectsWithTag("Particle"))

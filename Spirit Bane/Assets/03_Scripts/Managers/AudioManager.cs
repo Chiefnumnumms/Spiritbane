@@ -4,9 +4,7 @@
 //  Date: January 24, 2023
 //  Purpose:  Script To Handle Game Audio
 
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 
 //-------------------------------------------------------------------------
 // This Class Represents The Audio Manager
@@ -16,14 +14,10 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Public Members
 
-    public float MasterVolume { get { return masterVolume; } set { masterVolume = value; } }
-    public float MusicVolume { get { return musicVolume; } set { musicVolume = value; } }
-    public float AmbienceVolume { get { return ambienceVolume; } set { ambienceVolume = value; } }
-    public float SFXVolume { get { return sfxVolume; } set { sfxVolume = value; } }
-
-    public AudioClip[] Music { get { return instance.music; } }
-    public AudioClip[] Ambience { get { return instance.ambience; } }
-    public AudioClip[] SFX { get { return instance.sfx; } }
+    public float MasterVolume { get { return wwwiseMasterVolume.GetGlobalValue(); } set { UpdateMasterVolume(value); } }
+    public float MusicVolume { get { return wwwiseMusicVolume.GetGlobalValue(); } set { UpdateMusicVolume(value); } }
+    public float AmbienceVolume { get { return wwwiseAmbienceVolume.GetGlobalValue(); } set { UpdateAmbienceVolume(value); } }
+    public float SFXVolume { get { return wwwiseSFXVolume.GetGlobalValue(); } set { UpdateSFXVolume(value); } }
 
     #endregion
 
@@ -32,18 +26,29 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Editor Access Members
 
-    [SerializeField] private AudioMixer mainMixer;
+    [Header("Volume Property Values")]
+    [SerializeField] private AK.Wwise.RTPC wwwiseMasterVolume;
+    [SerializeField] private AK.Wwise.RTPC wwwiseMusicVolume;
+    [SerializeField] private AK.Wwise.RTPC wwwiseAmbienceVolume;
+    [SerializeField] private AK.Wwise.RTPC wwwiseSFXVolume;
 
-    [SerializeField] private AudioSource musicAudioSource;
-    [SerializeField] private AudioSource ambienceAudioSource;
-    [SerializeField] private AudioSource sfxAudioSource;
+    /*
+    [Header("Wwise Audio Buses")]
+    public AK.Wwise.AuxBus main;
+    public AK.Wwise.AuxBus music;
+    public AK.Wwise.AuxBus ambience;
+    public AK.Wwise.AuxBus sfx;
 
-    [SerializeField]
-    private AudioClip[] music;
-    [SerializeField]
-    private AudioClip[] ambience;
-    [SerializeField]
-    private AudioClip[] sfx;
+    [Header("Gaoh Wwise Events And Property")]
+    [SerializeField] private AK.Wwise.RTPC wwiseSwingSpeed;
+    public AK.Wwise.Event playerWalk;
+    public AK.Wwise.Event playerRun;
+    public AK.Wwise.Event playerJump;
+    public AK.Wwise.Event playerLand;
+    public AK.Wwise.Event playerShield;
+    public AK.Wwise.Event playerHurt;
+    public AK.Wwise.Event playerDead;
+    */
 
     #endregion
 
@@ -52,18 +57,18 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Members
 
-    private AudioMixerGroup masterGroup;
-    private AudioMixerGroup musicGroup;
-    private AudioMixerGroup ambienceGroup;
-    private AudioMixerGroup sfxGroup;
+    //private AudioMixerGroup masterGroup;
+    //private AudioMixerGroup musicGroup;
+    //private AudioMixerGroup ambienceGroup;
+    //private AudioMixerGroup sfxGroup;
 
-    private float masterVolume;
-    private float musicVolume;
-    private float ambienceVolume;
-    private float sfxVolume;
+    //private float masterVolume;
+    //private float musicVolume;
+    //private float ambienceVolume;
+    //private float sfxVolume;
 
-    private float minVolume = -16.0f;
-    private float maxVolume = -80.0f;
+    //private float minVolume = -16.0f;
+    //private float maxVolume = -80.0f;
 
     #endregion
 
@@ -71,28 +76,29 @@ public class AudioManager : Singleton<AudioManager>
     //-------------------------------------------------------------------------
     // Private Functions
 
-    private void UpdateMasterVolume()
+    private void UpdateMasterVolume(float value)
     {
-        instance.mainMixer.SetFloat("masterVolume", masterVolume);
+        wwwiseMasterVolume.SetGlobalValue(value);
     }
 
-    private void UpdateMusicVolume()
+    private void UpdateMusicVolume(float value)
     {
-        instance.mainMixer.SetFloat("musicVolume", musicVolume);
+        wwwiseMusicVolume.SetGlobalValue(value);
     }
-    private void UpdateAmbienceVolume()
+    private void UpdateAmbienceVolume(float value)
     {
-        instance.mainMixer.SetFloat("ambienceVolume", ambienceVolume);
+        wwwiseAmbienceVolume.SetGlobalValue(value);
     }
 
-    private void UpdateEffectsVolume()
+    private void UpdateSFXVolume(float value)
     {
-        instance.mainMixer.SetFloat("sfxVolume", sfxVolume);
+        wwwiseSFXVolume.SetGlobalValue(value);
     }
     
     #endregion
 
 
+        /*
     public void StartAreaMusic()
     {
         int areaIndex = (int)ScenesManager.instance.CurrentScene.Value;
@@ -110,7 +116,9 @@ public class AudioManager : Singleton<AudioManager>
             instance.AudioFadeIn();
         }
     }
+        */
 
+    /*
     private IEnumerator LerpVolume(float startVol, float endVol, float duration)
     {
         float currentVolume = startVol;
@@ -137,6 +145,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         yield return LerpVolume(minVolume, maxVolume, 1.0f);
     }
+    */
 
     /*
     public void SetMusic(int index)

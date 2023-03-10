@@ -16,6 +16,7 @@ in a written agreement between you and Audiokinetic Inc.
 Copyright (c) 2022 Audiokinetic Inc.
 *******************************************************************************/
 
+using System.Diagnostics;
 /// <summary>
 ///     This class is responsible for determining the path where sound banks are located. When using custom platforms, this
 ///     class needs to be extended.
@@ -194,8 +195,8 @@ public partial class AkBasePathGetter
 
 				if (!SoundBankDest.Contains(platformName))
 				{
-					if (LogWarnings)
-						UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder does not match your platform name. You will need to create a custom platform name getter for your game. See section \"Using Wwise Custom Platforms in Unity\" of the Wwise Unity integration documentation for more information");
+					if (LogWarnings) { }
+						// IGNORED // UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder does not match your platform name. You will need to create a custom platform name getter for your game. See section \"Using Wwise Custom Platforms in Unity\" of the Wwise Unity integration documentation for more information");
 				}
 
 				return SoundBankDest;
