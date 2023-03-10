@@ -4165,6 +4165,154 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Keneu" ID="{D8B95D0B-95C4-4EDE-B7CD-3AAAB04BA602}" ShortID="865986528">
+					<ChildrenList>
+						<Sound Name="KenueLanding" ID="{8EF8CC4F-A5BC-4901-9007-9B57F8A0BC0F}" ShortID="278697623">
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Keneu" ID="{D0E43837-479A-4873-A1E3-19FF0ABF999A}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FarExplosion" ID="{D7D597DA-57B1-4BCF-8AF1-54ABE7302DB2}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0454294770206022"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0795015847860538"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.81662757527734"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>FarExplosion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="998154598"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FarExplosion" ID="{D7D597DA-57B1-4BCF-8AF1-54ABE7302DB2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Folder Name="Vocals" ID="{649EA664-A646-4D6A-81D2-1CD90B93EEF6}" ShortID="818964699">
+							<ChildrenList>
+								<Sound Name="Keneu_Narration" ID="{9C89A52F-96CD-4769-92A1-7AEFBE9010AD}" ShortID="265472317">
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Keneu" ID="{D0E43837-479A-4873-A1E3-19FF0ABF999A}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Voice" ID="{830560DD-5C1E-4679-BE24-8803AA52E73B}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keneu_Narration" ID="{FB1E221E-5A06-4A71-8B0D-C934060A4BE5}">
+											<Language>SFX</Language>
+											<AudioFile>Keneu_Narration.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="158756178"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Keneu_Narration" ID="{FB1E221E-5A06-4A71-8B0D-C934060A4BE5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Keneu_Noise1" ID="{B7162D2A-347D-433D-9FE1-7D665C7A082A}" ShortID="938533832">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Keneu" ID="{D0E43837-479A-4873-A1E3-19FF0ABF999A}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keneu_Noise1" ID="{23C6F880-3EA8-4641-B367-6AFAAF3369C8}">
+											<Language>SFX</Language>
+											<AudioFile>Keneu_Noise1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="405922010"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Keneu_Noise1" ID="{23C6F880-3EA8-4641-B367-6AFAAF3369C8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Keneu_Noise2" ID="{C64CBE93-F2AA-4712-8EA1-F0E7C359D77B}" ShortID="426289947">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Keneu" ID="{D0E43837-479A-4873-A1E3-19FF0ABF999A}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keneu_Noise2" ID="{231B3C5E-0A4D-4CB7-A613-6C519EE60225}">
+											<Language>SFX</Language>
+											<AudioFile>Keneu_Noise2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1070705270"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Keneu_Noise2" ID="{231B3C5E-0A4D-4CB7-A613-6C519EE60225}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Keneu_Noise3" ID="{1EEFE94C-7048-4C86-BAD4-DEE45DF4D6C6}" ShortID="669321326">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Keneu" ID="{D0E43837-479A-4873-A1E3-19FF0ABF999A}" WorkUnitID="{90951C77-DFD2-4D09-B8AA-443B898C02EF}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2A0ADBEE-22BF-4DD6-8562-37E7D7DC2DA2}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX" ID="{649649A0-94C2-4FBD-80BF-CB495CF85B58}" WorkUnitID="{06455622-1220-48CB-9414-E4CE8E06914D}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Keneu_Noise3" ID="{A680F209-C415-406B-AA51-D63D96118287}">
+											<Language>SFX</Language>
+											<AudioFile>Keneu_Noise3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1029918297"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Keneu_Noise3" ID="{A680F209-C415-406B-AA51-D63D96118287}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -55,6 +55,11 @@ namespace AK
         static const AkUniqueID PLAY_HURT = 2955259529U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_JUMPVOCALS = 3510422748U;
+        static const AkUniqueID PLAY_KENEU_NARRATION = 1309108021U;
+        static const AkUniqueID PLAY_KENEU_NOISE1 = 809615382U;
+        static const AkUniqueID PLAY_KENEU_NOISE2 = 809615381U;
+        static const AkUniqueID PLAY_KENEU_NOISE3 = 809615380U;
+        static const AkUniqueID PLAY_KENUELANDING = 825223995U;
         static const AkUniqueID PLAY_KEY = 2356524575U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
         static const AkUniqueID PLAY_MOVING = 1784546604U;
@@ -109,6 +114,11 @@ namespace AK
         static const AkUniqueID STOP_DISTANTWAVES = 1140336907U;
         static const AkUniqueID STOP_GENTLEWAVES = 1242407983U;
         static const AkUniqueID STOP_HELLISHAMBIANCE = 3648382727U;
+        static const AkUniqueID STOP_KENEU_NARRATION = 522769831U;
+        static const AkUniqueID STOP_KENEU_NOISE1 = 2885065572U;
+        static const AkUniqueID STOP_KENEU_NOISE2 = 2885065575U;
+        static const AkUniqueID STOP_KENEU_NOISE3 = 2885065574U;
+        static const AkUniqueID STOP_KENUELANDING = 2879476157U;
         static const AkUniqueID STOP_MUSIC_BOSS = 2869039319U;
         static const AkUniqueID STOP_MUSIC_CAVERN = 3426450879U;
         static const AkUniqueID STOP_MUSIC_FINALE = 3175010305U;

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{62965D68-FE8B-82EB-701E-595366E1E6AD}">
+		<SoundBank Id="133642231" Type="User" Language="SFX" Hash="{5B2CBFE8-27A6-4317-AD8E-582C7AFAC8A5}">
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<Media>
@@ -64,6 +64,10 @@
 				<File Id="137485673" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dijoji - Walking - 04.wav</ShortName>
 					<CachePath>SFX/Dijoji - Walking - 04_8B2C5A3B.wem</CachePath>
+				</File>
+				<File Id="158756178" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keneu_Narration.wav</ShortName>
+					<CachePath>SFX/Keneu_Narration_10C4C929.wem</CachePath>
 				</File>
 				<File Id="188206054" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ApproachingEvil.wav</ShortName>
@@ -121,10 +125,6 @@
 					<ShortName>FootstepDirtRun04.wav</ShortName>
 					<CachePath>SFX/FootstepDirtRun04_AD57414A.wem</CachePath>
 				</File>
-				<File Id="280765531" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Predawn - Looping 02.wav</ShortName>
-					<CachePath>SFX/Predawn - Looping 02_9081FD18.wem</CachePath>
-				</File>
 				<File Id="281058671" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootstepGrassWalk02.wav</ShortName>
 					<CachePath>SFX/FootstepGrassWalk02_10C4C929.wem</CachePath>
@@ -168,6 +168,10 @@
 				<File Id="393155295" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dijoji - Idle - 03.wav</ShortName>
 					<CachePath>SFX/Dijoji - Idle - 03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="405922010" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keneu_Noise1.wav</ShortName>
+					<CachePath>SFX/Keneu_Noise1_10C4C929.wem</CachePath>
 				</File>
 				<File Id="416701398" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>DirtLand02.wav</ShortName>
@@ -289,9 +293,21 @@
 					<ShortName>FootstepGrassRun04.wav</ShortName>
 					<CachePath>SFX/FootstepGrassRun04_10C4C929.wem</CachePath>
 				</File>
+				<File Id="998154598" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FarExplosion.wav</ShortName>
+					<CachePath>SFX/FarExplosion_9E251C80.wem</CachePath>
+				</File>
 				<File Id="1029759393" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dijoji - Idle - 04.wav</ShortName>
 					<CachePath>SFX/Dijoji - Idle - 04_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1029918297" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keneu_Noise3.wav</ShortName>
+					<CachePath>SFX/Keneu_Noise3_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1070705270" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keneu_Noise2.wav</ShortName>
+					<CachePath>SFX/Keneu_Noise2_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -420,6 +436,31 @@
 						<MediaRef Id="484917371"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1309108021" Name="Play_Keneu_Narration" MaxAttenuation="100" DurationType="OneShot" DurationMin="15.043265" DurationMax="15.043265">
+					<MediaRefs>
+						<MediaRef Id="158756178"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="809615382" Name="Play_Keneu_Noise1" MaxAttenuation="100" DurationType="OneShot" DurationMin="8.30288" DurationMax="8.30288">
+					<MediaRefs>
+						<MediaRef Id="405922010"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="809615381" Name="Play_Keneu_Noise2" MaxAttenuation="100" DurationType="OneShot" DurationMin="7.5576873" DurationMax="7.5576873">
+					<MediaRefs>
+						<MediaRef Id="1070705270"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="809615380" Name="Play_Keneu_Noise3" MaxAttenuation="100" DurationType="OneShot" DurationMin="10.769229" DurationMax="10.769229">
+					<MediaRefs>
+						<MediaRef Id="1029918297"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="825223995" Name="Play_KenueLanding" MaxAttenuation="100" DurationType="OneShot" DurationMin="2.8166275" DurationMax="2.8166275">
+					<MediaRefs>
+						<MediaRef Id="998154598"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4285282925" Name="Play_Land" DurationType="OneShot" DurationMin="0.8334819" DurationMax="1.5365245">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -457,11 +498,6 @@
 				<Event Id="2155613437" Name="Play_Music_Boss" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="838073785"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3315549719" Name="Play_Music_Finale" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="280765531"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="4233560256" Name="Play_Pause" DurationType="OneShot" DurationMin="0.9626607" DurationMax="0.9626607">
@@ -542,8 +578,12 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="234682830" Name="Stop_ApproachingEvil" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="522769831" Name="Stop_Keneu_Narration" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2885065572" Name="Stop_Keneu_Noise1" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2885065575" Name="Stop_Keneu_Noise2" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2885065574" Name="Stop_Keneu_Noise3" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2879476157" Name="Stop_KenueLanding" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2869039319" Name="Stop_Music_Boss" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="3175010305" Name="Stop_Music_Finale" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2979613131" Name="Stop_Shield" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="149375838" Name="Stop_Tension" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
@@ -559,13 +599,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{46ED5142-6DAE-2428-2D5B-E55A4E8133A7}">
+		<SoundBank Id="680256650" Type="User" Language="SFX" Hash="{40C24660-53C3-9422-1F83-E2EA7D342C56}">
 			<ShortName>Arena</ShortName>
 			<Path>Arena.bnk</Path>
 			<Media>
 				<File Id="254733641" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WindLoop.wav</ShortName>
 					<CachePath>SFX/WindLoop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="280765531" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Predawn - Looping 02.wav</ShortName>
+					<CachePath>SFX/Predawn - Looping 02_9081FD18.wem</CachePath>
 				</File>
 				<File Id="539292821" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>TornadoWinds.wav</ShortName>
@@ -595,6 +639,11 @@
 						<MediaRef Id="1056081411"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3315549719" Name="Play_Music_Finale" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="280765531"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1002643937" Name="Play_Rumble" MaxAttenuation="25" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="980418596"/>
@@ -612,6 +661,7 @@
 				</Event>
 				<Event Id="1250982740" Name="Stop_CloudsMoving" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3648382727" Name="Stop_HellishAmbiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3175010305" Name="Stop_Music_Finale" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3415675391" Name="Stop_Rumble" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4263412676" Name="Stop_TornadoWinds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="689692788" Name="Stop_WindLoop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -1129,5 +1179,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{56247AC2-31FF-7741-6E75-C20FFE7B24F6}</FileHash>
+	<FileHash>{3C9FCDA8-FCD9-2149-84CF-D5DE90099230}</FileHash>
 </SoundBanksInfo>

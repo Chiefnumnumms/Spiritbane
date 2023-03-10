@@ -1457,7 +1457,110 @@
 				</Folder>
 				<Folder Name="Enemy" ID="{F4CDE9A2-012E-4212-9396-35C105C38372}" ShortID="1023021930">
 					<ChildrenList>
-						<Folder Name="Vocals" ID="{6725E8C4-76F7-402C-8D10-D949FC5E9AEA}" ShortID="872675871"/>
+						<Folder Name="Vocals" ID="{6725E8C4-76F7-402C-8D10-D949FC5E9AEA}" ShortID="872675871">
+							<ChildrenList>
+								<Event Name="Play_Keneu_Noise3" ID="{CFC51D5B-ECDB-45B8-86C6-62B95AB58302}">
+									<ChildrenList>
+										<Action Name="" ID="{9DCCF590-7C91-4294-A44C-58DA12275CEC}" ShortID="493079292">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise3" ID="{1EEFE94C-7048-4C86-BAD4-DEE45DF4D6C6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Keneu_Noise3" ID="{1DD3A5F5-47CC-443A-AE69-62A6680D08D7}">
+									<ChildrenList>
+										<Action Name="" ID="{2E1C3E78-1C96-451D-B070-1138CAC4FECF}" ShortID="1027676322">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise3" ID="{1EEFE94C-7048-4C86-BAD4-DEE45DF4D6C6}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Keneu_Noise1" ID="{DC4F06B5-8339-4B09-90B6-9F0690C2979F}">
+									<ChildrenList>
+										<Action Name="" ID="{ECF7F549-DCBF-4D03-BE7C-E14C32A939AC}" ShortID="617429968">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise1" ID="{B7162D2A-347D-433D-9FE1-7D665C7A082A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Keneu_Noise2" ID="{B506156F-BDAA-4032-994A-92FBBB2FAD51}">
+									<ChildrenList>
+										<Action Name="" ID="{555C9F37-3D78-4583-A8C1-8F13CC1C39D1}" ShortID="982490218">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise2" ID="{C64CBE93-F2AA-4712-8EA1-F0E7C359D77B}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Keneu_Noise2" ID="{9AE69F33-22EA-4677-B883-7EC45363D3A2}">
+									<ChildrenList>
+										<Action Name="" ID="{692051AE-653E-453B-BB4E-209ABEF68765}" ShortID="432191608">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise2" ID="{C64CBE93-F2AA-4712-8EA1-F0E7C359D77B}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Keneu_Narration" ID="{6445B20C-BB9F-4765-BA48-A9C1D3DD79FF}">
+									<ChildrenList>
+										<Action Name="" ID="{770EDB74-D4A2-4C2E-AA13-0BED91246E6C}" ShortID="554621265">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Narration" ID="{9C89A52F-96CD-4769-92A1-7AEFBE9010AD}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Keneu_Noise1" ID="{1D6BFDB7-4045-4C9A-B0A8-3DC5F1DA0AF6}">
+									<ChildrenList>
+										<Action Name="" ID="{32A4C702-324A-49F6-AA63-45A3AA30761E}" ShortID="685654822">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Noise1" ID="{B7162D2A-347D-433D-9FE1-7D665C7A082A}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Keneu_Narration" ID="{E5DCFE7C-9318-4B04-83FE-EE165268A974}">
+									<ChildrenList>
+										<Action Name="" ID="{83E73728-8080-4ABC-846D-D25249654EFB}" ShortID="600933597">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Keneu_Narration" ID="{9C89A52F-96CD-4769-92A1-7AEFBE9010AD}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 						<Event Name="Play_ApproachingEvil" ID="{B544034B-64BC-4DD8-88F1-7CF319D08EB0}">
 							<ChildrenList>
 								<Action Name="" ID="{A6923B7F-6C46-4B6C-B967-9AA33BAABBDC}" ShortID="1042750365">
@@ -1503,6 +1606,31 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Tension" ID="{770EF334-404D-4539-A8A6-B2B09E11F84B}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_KenueLanding" ID="{609E03EA-3414-4FA4-B3C3-40D4788F6EBF}">
+							<ChildrenList>
+								<Action Name="" ID="{2D834BEE-CB65-4922-AA4F-E51D79FCC701}" ShortID="174250888">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="KenueLanding" ID="{8EF8CC4F-A5BC-4901-9007-9B57F8A0BC0F}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_KenueLanding" ID="{DC091A8C-F800-47CA-BA5E-0F384734C523}">
+							<ChildrenList>
+								<Action Name="" ID="{3886FF1D-82B1-4502-9111-F43B7C8BE669}" ShortID="755190014">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="KenueLanding" ID="{8EF8CC4F-A5BC-4901-9007-9B57F8A0BC0F}" WorkUnitID="{EAF03962-9060-44A2-AB6D-66C9430289D4}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
