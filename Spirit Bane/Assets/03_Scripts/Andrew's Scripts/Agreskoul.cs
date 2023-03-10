@@ -22,6 +22,8 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private float falingVelocityReductionTimer;
     [SerializeField] private float reductionRate;
 
+    [SerializeField] private Transform debugHitPointTransform;
+
     #region Swinging Attributes
 
     [Header("Swinging Attributes")]
@@ -127,19 +129,24 @@ public class Agreskoul : MonoBehaviour
             playerLocomotion.fallingVel = originalFallingVelocity;
         }
 
-        if (swingPointHit == Vector3.zero)
-        {
-            weaponPivot.LookAt(swordLookAt);
-        }
-        else if (swingPointHit != null && isSwinging)
-        {
-            weaponPivot.LookAt(swingPointHit);
-        }
+        //if (swingPointHit == Vector3.zero)
+        //{
+        //    weaponPivot.LookAt(swordLookAt);
+        //}
+        //else if (swingPointHit != null && isSwinging)
+        //{
+        //    weaponPivot.LookAt(swingPointHit);
+        //}
 
         if (inputManager.agreskoul_Pressed)
         {
             HandlePullPointLookAt();
         }
+
+        //if (isLookingAtPullPoint)
+        //{
+        //    weaponPivot.LookAt(debugHitPointTransform);
+        //}
 
         CheckForSwingPoints();
         HandleSwingAction();
@@ -184,16 +191,31 @@ public class Agreskoul : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
 
-        scaleFactor = magnitude / energy.transform.localScale.y;
+        BoxCollider swordTipCollider = GetComponentInChildren<BoxCollider>();
+
+        // Calculate the scaling factor based on the distance between the sword tip and the collider center
+        Vector3 centerOffset = swordTipCollider.bounds.center - swordTip.transform.position;
+        float centerDistance = centerOffset.magnitude;
+        float scaleFactor = magnitude / centerDistance;
+
+        weaponPivot.rotation = targetRotation;
+        weaponPivot.LookAt(target);
 
         Vector3 newSize = originalEnergyScale;
         newSize.y *= scaleFactor;
 
+        // Calculate the time needed to extend the blade based on the target distance and extension speed
         float time = magnitude * bladeExtentionSpeed / speedDecrement;
 
+        // Lerp the energy transform scale to the new size over the calculated time
         energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
+
+        // Rotate the sword to face the target
         weaponPivot.rotation = targetRotation;
     }
+
+
+
 
     public void RetractBlade()
     {
@@ -228,8 +250,7 @@ public class Agreskoul : MonoBehaviour
 
         if (isLookingAtPullPoint)
         {
-            ChooseMechanicTarget(pullPointHit);
-            weaponPivot.LookAt(pullPointHit);
+            ChooseMechanicTarget(debugHitPointTransform.position);
         }
     }
 
@@ -526,6 +547,8 @@ public class Agreskoul : MonoBehaviour
             isLookingAtPullPoint = true;
 
             pullPointHit = raycastHit.point;
+
+            debugHitPointTransform.position = raycastHit.point;
         }
         else
         {
