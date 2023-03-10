@@ -160,9 +160,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
         // SWINGING - AA
         HandleSwingingInput();
 
-        // GRAPPLING - AA
-        HandleGrapplingInput();
-
         // ITEM PICKUP - AA
         HandlePickupInput();
 
@@ -214,15 +211,6 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
         else // NOT SWINGING
         {
             agreskoulManager.RetractBlade();
-        }
-    }
-
-    private void HandleGrapplingInput()
-    {
-        if (grappleObject_Pressed)
-        {
-            // GRAPPLE
-            agreskoulManager.StartGrapple();
         }
     }
 

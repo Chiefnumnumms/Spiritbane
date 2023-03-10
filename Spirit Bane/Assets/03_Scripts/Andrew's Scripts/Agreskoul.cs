@@ -9,6 +9,7 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private PlayerLocomotion playerLocomotion;
     private AnimationManager animationManager;
     private InputManager inputManager;
+    private AgreskoulController agreskoulController;
 
     [Header("Agreskoul")]
     [SerializeField] private float bladeExtentionSpeed;
@@ -58,32 +59,6 @@ public class Agreskoul : MonoBehaviour
     private List<MeshRenderer> meshRenderers = new List<MeshRenderer>();
 
     public Transform swordLookAt;
-
-    #endregion
-
-    #region Grapple Attributes
-
-    [Header("Grappling")]
-    [SerializeField] private float maxGrappleDistance;
-    [SerializeField] private float grappleDelayTime;
-    [SerializeField] private float overShootYAxis;
-    [SerializeField] private float forwardBoostVelocity;
-    [SerializeField] private LayerMask isValidObjectGrapple;
-    [SerializeField] private bool isLookingAtObjectGrapplePoint;
-
-    [SerializeField] private Vector3 grapplePointHit;
-
-    [Header("Grapple Cooldown Settings")]
-    public float grapplingCd;
-    public float grapplingCdTimer;
-    public bool isGrappling;
-    public bool freezePlayer;
-
-    [Header("Prediction Point Grappling")]
-    public RaycastHit grapplePredictionHit;
-    public float grapplePredictionSphereCastRadius;
-    public Transform predictionPointGrapple;
-
 
     #endregion
 
@@ -141,7 +116,6 @@ public class Agreskoul : MonoBehaviour
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
 
         predictionPointSwing = GameObject.Find("PredictionPoint").GetComponent<Transform>();
-        predictionPointGrapple = GameObject.Find("PredictionPoint").GetComponent<Transform>();
 
     }
 
@@ -153,9 +127,6 @@ public class Agreskoul : MonoBehaviour
             playerLocomotion.fallingVel = originalFallingVelocity;
         }
 
-        // GRAPPLING SETTINGS
-        HandleGrappleCoolDown();
-
         if (swingPointHit == Vector3.zero)
         {
             weaponPivot.LookAt(swordLookAt);
@@ -165,21 +136,18 @@ public class Agreskoul : MonoBehaviour
             weaponPivot.LookAt(swingPointHit);
         }
 
-        CheckForSwingPoints();
-        CheckForGrappleObject();
-
-        HandleSwingAction();
-
-        HandlePullPointLookAt();
-
-        if (inputManager.agreskoul_Pressed && isLookingAtPullPoint)
+        if (inputManager.agreskoul_Pressed)
         {
-            ChooseMechanicTarget(pullPointHit);
+            HandlePullPointLookAt();
         }
+
+        CheckForSwingPoints();
+        HandleSwingAction();
     }
 
     private void CacheAllValues()
     {
+
         // CACHE ORIGINAL SCALE OF THE BLADE PIECES
         originalBladeScale = bladePieces[0].localScale;
 
@@ -205,107 +173,114 @@ public class Agreskoul : MonoBehaviour
 
     public void ChooseMechanicTarget(Vector3 target)
     {
-        // CALCULATE DISTANCE AND TIME
         Vector3 distance = swordTip.transform.position - target;
+        float magnitude = distance.magnitude;
 
-        if (distance.magnitude >= maxExtentionDistance) return;
-        
-        // IF PAST MAX DISTANCE
-        if (distance.magnitude >= maxExtentionDistance)
+        if (magnitude >= maxExtentionDistance)
         {
-            target = maxExtentionDistance * distance.normalized;
+            target = swordTip.transform.position - distance.normalized * maxExtentionDistance;
+            magnitude = maxExtentionDistance;
         }
 
-        // CALCULATE THE ROTATION TO FACE THE TARGET
-        Quaternion.LookRotation(target - transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
 
-        // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
-        scaleFactor = distance.magnitude / energy.transform.localScale.y;
+        scaleFactor = magnitude / energy.transform.localScale.y;
 
-        // CALCULATE THE NEW Y VALUE BASED ON THE SCALE FACTOR
-        float newY = energy.transform.localScale.y * scaleFactor;
+        Vector3 newSize = originalEnergyScale;
+        newSize.y *= scaleFactor;
 
-        // CALCULATE EXTENTION TIME BASED ON DISTANCE
-        float time = distance.magnitude * bladeExtentionSpeed / speedDecrement;
+        float time = magnitude * bladeExtentionSpeed / speedDecrement;
 
-        // CALCULATE THE NEW SIZE OF THE Y VALUE
-        Vector3 newSize = new Vector3(originalEnergyScale.x, newY, originalEnergyScale.z);
-
-        // SLERP MOVEMENT AND ROTATION OF BLADE
         energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
+        weaponPivot.rotation = targetRotation;
+    }
 
+    public void RetractBlade()
+    {
+        if (energy.transform.localScale.y <= originalEnergyScale.y)
+        {
+            ResetBladeToOriginalState();
+            return;
+        }
+
+        float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
+        float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
+
+        energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time / 3.0f);
+        weaponPivot.rotation = originalPivotRotation;
+
+        foreach (Transform t in bladePieces)
+        {
+            float newY = t.localScale.y / scaleFactor;
+            Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
+            t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
+        }
+
+        HandleInAirVelocity(playerLocomotion, falingVelocityReductionTimer, reductionRate);
     }
 
     public void ExecuteSwordAction()
     {
-        if (isGrappling)
+        if (isSwinging && !isPullingObject)
         {
-            if (isSwinging) return;
-            if (isPullingObject) return;
-
-            ChooseMechanicTarget(grapplePointHit);
-        }
-
-        if (isSwinging)
-        {
-            if (isGrappling) return;
-            if (isPullingObject) return;
-
             ChooseMechanicTarget(swingPointHit);
         }
 
-        if (isPullingObject)
+        if (isLookingAtPullPoint)
         {
-            if (isSwinging) return;
-            if (isGrappling) return;
-
             ChooseMechanicTarget(pullPointHit);
+            weaponPivot.LookAt(pullPointHit);
         }
+    }
+
+    private void ResetBladeToOriginalState()
+    {
+        pivotTransform = originalPivotTransform;
+        pivotTransform.rotation = originalPivotRotation;
+
+        foreach (Transform t in bladePieces)
+        {
+            t.localScale = originalBladeScale;
+        }
+
+        energy.transform.localScale = originalEnergyScale;
     }
 
     private void HandleInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
     {
         // START THE COURUTINE
         StartCoroutine(SlowInAirVelocity(playerLocomotion, speedReductionTimer, reductionRate));
-
-        // RETURN BACK TO ORIGINAL VELOCITY VALUES
-        if (playerLocomotion.isGrounded)
-        {
-            // ORIGINAL FALLING VELOCITY
-            playerLocomotion.fallingVel = originalFallingVelocity;
-        }
     }
 
     public IEnumerator SlowInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
     {
-        // CACHE VALUES OF ORIGINAL FALLING VLOCITY
+        // CACHE VALUES OF ORIGINAL FALLING VELOCITY
         float originalVelocity = playerLocomotion.fallingVel;
         float inAirTimer = playerLocomotion.inAirTimer;
 
         if (inAirTimer > 0)
         {
-            // SLOWLY REDUCE THE FALLING VELOCITY BASED ON THE TIMER
-            //playerLocomotion.fallingVel -= reductionRate * Time.deltaTime;
-
+            // SET THE FALLING VELOCITY TO 1.5
             playerLocomotion.fallingVel = 1.5f;
 
-            //while (inAirTimer < speedReductionTimer)
-            //{
-            //    // RETURN BACK INTO ORIGINAL VELOCITY
-            //    if (playerLocomotion.fallingVel >= MAX_FALLING_VELOCITY)
-            //    {
-            //        playerLocomotion.fallingVel += originalVelocity * Time.deltaTime;
-            //        yield return null;
-            //    }
+            // WAIT FOR A SECOND BEFORE STARTING TO INCREASE THE FALLING VELOCITY
+            yield return new WaitForSeconds(2.5f);
 
-            //    // SLOWLY REDUCE THE FALLING VELOCITY BASED ON THE TIMER
-            //    playerLocomotion.fallingVel -= reductionRate * Time.deltaTime;
-            //    yield return null;
-            //}
-            yield return new WaitForSeconds(speedReductionTimer);
+            // VERY SLOWLY INCREASE THE FALLING VELOCITY BACK TO ITS ORIGINAL VALUE
+            while (playerLocomotion.fallingVel < originalVelocity)
+            {
+                // INCREASE THE FALLING VELOCITY BY THE REDUCTION RATE PER SECOND
+                playerLocomotion.fallingVel += reductionRate * Time.deltaTime;
 
-            // RESET THE FALLING VELOCITY TO ITS ORIGINAL VALUE
-            playerLocomotion.fallingVel = originalVelocity;
+                // MAKE SURE THE FALLING VELOCITY DOESN'T EXCEED THE ORIGINAL VALUE
+                if (playerLocomotion.fallingVel > originalVelocity)
+                {
+                    playerLocomotion.fallingVel = originalVelocity;
+                }
+
+                yield return null;
+            }
+
             Debug.Log("Falling Velocity To Original >> " + playerLocomotion.fallingVel);
         }
         else
@@ -316,49 +291,6 @@ public class Agreskoul : MonoBehaviour
                 playerLocomotion.fallingVel = originalVelocity;
             }
         }
-    }
-
-    public void RetractBlade()
-    {
-
-        // RETURN INTO ORIGINAL POSITION
-        pivotTransform = originalPivotTransform;
-        pivotTransform.rotation = originalPivotRotation;
-
-        if (energy.transform.localScale.y <= originalEnergyScale.y)
-        {
-
-            foreach (Transform t in bladePieces)
-            {
-                t.localScale = originalBladeScale;
-            }
-
-            energy.transform.localScale = originalEnergyScale;
-            return;
-        }
-
-        float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
-
-        // CALCULATE EXTENTION TIME BASED ON DISTANCE
-        float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
-
-        // SLERP BACK INTO ORIGINAL POSITION
-        energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time / 3.0f);
-
-        // RETURN BLADE INTO ITS ORIGINAL ROTATION VALUES
-        weaponPivot.transform.rotation = originalPivotRotation;
-
-        foreach (Transform t in bladePieces)
-        {
-            float newY = t.localScale.y / scaleFactor;
-
-            Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
-
-            t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
-        }
-
-        HandleInAirVelocity(playerLocomotion, falingVelocityReductionTimer, reductionRate);
-
     }
 
     public void FindAllBladePiecesOnStart()
@@ -491,9 +423,6 @@ public class Agreskoul : MonoBehaviour
 
     public void StartSwing()
     {
-        // IF THE PLAYER IS GRAPPLING THEN DONT EXECUTE THE SWING MECHANIC
-        if (isGrappling) return;
-
         // IF PREDICTION POINT DOESN'T FIND ANYTHING EXIT
         if (swingPredictionHit.point == Vector3.zero) return;
 
@@ -586,141 +515,6 @@ public class Agreskoul : MonoBehaviour
 
     #endregion
 
-    #region GRAPPLING ACTIONS
-    
-    private void HandleGrappleCoolDown()
-    {
-        if (grapplingCdTimer > 0)
-        {
-            grapplingCdTimer -= Time.deltaTime;
-        }
-    }
-
-    private void HandleFreezePlayer()
-    {
-        if (freezePlayer)
-        {
-            playerLocomotion.playerRb.velocity = Vector3.zero;
-        }
-    }
-
-    public void StartGrapple()
-    {
-        // DONT ALLOW PLAYER TO GRAPPLE IF COOL DOWN IS IN EFFECT
-        if (grapplingCdTimer > 0) return;
-        if (isSwinging) return;
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, maxGrappleDistance, isValidObjectGrapple))
-        {
-            // FREEZE THE PLAYER FOR A SECOND
-            freezePlayer = true;
-
-            // STORE THE HIT POINT AS THE GRAPPLE POINT
-            grapplePointHit = hit.point;
-
-            // EXECUTE THE GRAPPLE WITH A DELAY TIMER
-            Invoke(nameof(ExecuteGrapple), grappleDelayTime);
-
-        }
-        else
-        {
-            grapplePointHit = mainCamera.position + mainCamera.forward * maxGrappleDistance;
-
-            Invoke(nameof(StopGrapple), grappleDelayTime);
-        }
-    }
-
-    public void ExecuteGrapple()
-    {
-        freezePlayer = false;
-        keepBladeExtended = true;
-
-        // CALCULATE THE LOWEST POINT OF THE GRAPPLE
-        Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
-
-        float grapplePointRelativeYPos = grapplePointHit.y - lowestPoint.y;
-        float highestPointOnArc = grapplePointRelativeYPos + overShootYAxis;
-
-        if (grapplePointRelativeYPos < 0) highestPointOnArc = overShootYAxis;
-
-        highestPointOnYArc = highestPointOnArc;
-
-        // JUMP TOWARDS THE HIGHEST POINT
-        playerLocomotion.JumpToPosition(grapplePointHit, highestPointOnArc);
-
-        Vector3 currentPos = transform.position;
-
-        // BOOST THE PLAYER FORWARD
-        rb.AddForce(transform.forward * forwardBoostVelocity, ForceMode.Acceleration);
-
-        // WAIT A SECOND THEN STOP THE GRAPPLE
-        Invoke(nameof(StopGrapple), 2.0f);
-
-        // AFTER THE PLAYER REACHES MAX Y HEIGHT RETRACT THE BLADE
-        keepBladeExtended = false;
-
-    }
-
-    public void StopGrapple()
-    {
-        //UNFREEZE THE PLAYER
-        freezePlayer = false;
-
-        // PLAYER IS NO LONGER GRAPPLING
-        isGrappling = false;
-
-        // RESET THE COOL DOWN TIMER
-        grapplingCdTimer = grapplingCd;
-    }
-
-    public void CheckForGrappleObject()
-    {
-        // SETUP RAYCAST VARIABLES
-        RaycastHit sphereCastHit;
-        RaycastHit raycastHit;
-
-        // HANDLE SPHERE CAST AND RAY CAST 
-        Physics.SphereCast(mainCamera.position, grapplePredictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxGrappleDistance, isValidObjectGrapple);
-        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxGrappleDistance, isValidObjectGrapple);
-
-        Vector3 hitPoint;
-
-        if (raycastHit.point != Vector3.zero)               // DIRECT HIT
-        {
-            hitPoint = raycastHit.point;
-        }
-        else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
-
-        {
-            hitPoint = sphereCastHit.point;
-            grapplePointHit = raycastHit.point;
-        }
-        else                                              // NOTHING IN THE WAY
-        {
-            hitPoint = Vector3.zero;
-        }
-
-
-        if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
-        {
-            // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
-            predictionPointGrapple.gameObject.SetActive(true);
-            predictionPointSwing.gameObject.SetActive(false);
-
-            // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
-            predictionPointGrapple.position = hitPoint;
-        }
-        else
-        {
-            predictionPointGrapple.gameObject.SetActive(false);
-        }
-
-    }
-
-    #endregion
-
     #region PULL ACTIONS
 
     public void HandlePullPointLookAt()
@@ -735,7 +529,7 @@ public class Agreskoul : MonoBehaviour
         }
         else
         {
-            isLookingAtPullPoint = false;            
+            isLookingAtPullPoint = false;
         }
     }
 
