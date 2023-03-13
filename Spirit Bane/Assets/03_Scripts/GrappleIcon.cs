@@ -9,7 +9,7 @@ public class GrappleIcon : MonoBehaviour
     public float minSize;
     public float maxSize;
 
-    private float sizeChange = 0.01f;
+    private float sizeChange = 1f;
 
     private void OnEnable()
     {
@@ -20,7 +20,7 @@ public class GrappleIcon : MonoBehaviour
     {
         transform.Rotate(new Vector3( 0, 0, speed * Time.deltaTime));
 
-        transform.localScale += new Vector3(sizeChange, sizeChange, sizeChange);
+        transform.localScale += new Vector3(sizeChange * Time.deltaTime, sizeChange * Time.deltaTime, sizeChange * Time.deltaTime);
 
         if(transform.localScale.x > maxSize || transform.localScale.x < minSize)
         {
