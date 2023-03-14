@@ -547,11 +547,11 @@ public class Agreskoul : MonoBehaviour
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
             predictionPoint.position = pullHitPoint;
         }
-        else                                                // NOTHING FOUND ON HIT POINT
-        {
-            // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
-            predictionPoint.gameObject.SetActive(false);
-        }
+        //else                                                // NOTHING FOUND ON HIT POINT
+        //{
+        //    // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
+        //    predictionPoint.gameObject.SetActive(false);
+        //}
 
         pullPredictionPoint = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
