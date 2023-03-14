@@ -208,7 +208,7 @@ public class InputManager : MonoBehaviour, PlayerControls.IPlayerActionsActions
         {
             agreskoulManager.ExecuteSwordAction();
         }
-        else // NOT SWINGING
+        else
         {
             agreskoulManager.RetractBlade();
         }

@@ -103,8 +103,8 @@ public class PlayerLocomotion : MonoBehaviour
         lastStepTime = Time.time;
 
         // Subscribe To Relevant Button Input
-        inputManager.OnAgreskoulStarted += AgreskoulPressed;       
-        inputManager.OnAgreskoulPerformed += AgreskoulReleased;
+        //inputManager.OnAgreskoulStarted += AgreskoulPressed;       
+        //inputManager.OnAgreskoulPerformed += AgreskoulReleased;
         
         inputManager.OnJumpStarted += HandleJump;
         inputManager.OnSprintStarted += inputManager.HandleSprintingInput;
@@ -136,25 +136,25 @@ public class PlayerLocomotion : MonoBehaviour
     private void OnDisable()
     {
         // Unsubscribe To Relevant Button Input
-        inputManager.OnAgreskoulStarted -= AgreskoulPressed;
-        inputManager.OnAgreskoulPerformed -= AgreskoulReleased;
+        //inputManager.OnAgreskoulStarted -= AgreskoulPressed;
+        //inputManager.OnAgreskoulPerformed -= AgreskoulReleased;
         inputManager.OnJumpStarted -= HandleJump;
         inputManager.OnSprintStarted -= inputManager.HandleSprintingInput;
     }
 
-    private void AgreskoulPressed()
-    {
-        // Launch Sword On Button Press
-        agreskoulManager.ExecuteSwordAction();
-        Debug.Log("Extended Blade");
-    }
+    //private void AgreskoulPressed()
+    //{
+    //    // Launch Sword On Button Press
+    //    agreskoulManager.ExecuteSwordAction();
+    //    Debug.Log("Extended Blade");
+    //}
 
-    private void AgreskoulReleased()
-    {
-        // Bring Sword Back Upon Release
-        agreskoulManager.RetractBlade();
-        Debug.Log("Retracted Blade");
-    }
+    //private void AgreskoulReleased()
+    //{
+    //    // Bring Sword Back Upon Release
+    //    agreskoulManager.RetractBlade();
+    //    Debug.Log("Retracted Blade");
+    //}
 
     //-----------------------------------------------------------------------------
     // calls the methods for the players rotation and movement
@@ -406,15 +406,15 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
-    public void HandleAgreskoulAction()
-    {
-        agreskoulManager.ExecuteSwordAction();
-    }
+    //public void HandleAgreskoulAction()
+    //{
+    //    agreskoulManager.ExecuteSwordAction();
+    //}
 
-    public void HandleAgreskoulReleaseAction()
-    {
-        agreskoulManager.RetractBlade();
-    }
+    //public void HandleAgreskoulReleaseAction()
+    //{
+    //    agreskoulManager.RetractBlade();
+    //}
 
     public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
     {

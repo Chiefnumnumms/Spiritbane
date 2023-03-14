@@ -84,6 +84,7 @@ public class Agreskoul : MonoBehaviour
 
     [SerializeField] private LayerMask isValidPullLayer;
     [SerializeField] private bool isLookingAtPullLayer;
+    [SerializeField] private RaycastHit pullPredictionPoint;
 
     private void Awake()
     {
@@ -162,63 +163,83 @@ public class Agreskoul : MonoBehaviour
 
     public void ChooseMechanicTarget(Vector3 target)
     {
-        Vector3 distance = swordTip.transform.position - target;
-        float magnitude = distance.magnitude;
 
-        if (magnitude >= maxExtentionDistance)
+        // CALCULATE DISTANCE AND TIME
+        Vector3 distance = target - swordTip.transform.position;
+
+        if (distance.magnitude >= maxExtentionDistance) return;
+
+        // IF PAST MAX DISTANCE
+        if (distance.magnitude >= maxExtentionDistance)
         {
-            target = swordTip.transform.position - distance.normalized * maxExtentionDistance;
-            magnitude = maxExtentionDistance;
+            target = maxExtentionDistance * distance.normalized;
         }
 
-        Quaternion targetRotation = Quaternion.LookRotation(target - transform.position);
-
-        BoxCollider swordTipCollider = GetComponentInChildren<BoxCollider>();
-
-        // Calculate the scaling factor based on the distance between the sword tip and the collider center
-        Vector3 centerOffset = swordTipCollider.bounds.center - swordTip.transform.position;
-        float centerDistance = centerOffset.magnitude;
-        float scaleFactor = magnitude / centerDistance;
-
-        weaponPivot.rotation = targetRotation;
         weaponPivot.LookAt(target);
 
-        Vector3 newSize = originalEnergyScale;
-        newSize.y *= scaleFactor;
+        // CALCULATE THE ROTATION TO FACE THE TARGET
+        Quaternion.LookRotation(target - transform.position);
 
-        // Calculate the time needed to extend the blade based on the target distance and extension speed
-        float time = magnitude * bladeExtentionSpeed / speedDecrement;
+        // SET SCALE IN Y DIRECTION OF THE ENERGY TRANSFORM
+        scaleFactor = distance.magnitude / energy.transform.localScale.y;
 
-        // Lerp the energy transform scale to the new size over the calculated time
+        // CALCULATE THE NEW Y VALUE BASED ON THE SCALE FACTOR
+        float newY = energy.transform.localScale.y * scaleFactor;
+
+        // CALCULATE EXTENTION TIME BASED ON DISTANCE
+        float time = distance.magnitude * bladeExtentionSpeed / speedDecrement;
+
+        // CALCULATE THE NEW SIZE OF THE Y VALUE
+        Vector3 newSize = new Vector3(originalEnergyScale.x, newY, originalEnergyScale.z);
+
+        // SLERP MOVEMENT AND ROTATION OF BLADE
         energy.transform.localScale = Vector3.Slerp(energy.transform.localScale, newSize, time);
 
-        // Rotate the sword to face the target
-        weaponPivot.rotation = targetRotation;
     }
 
     public void RetractBlade()
     {
+
+        // RETURN INTO ORIGINAL POSITION
+        pivotTransform = originalPivotTransform;
+        pivotTransform.rotation = originalPivotRotation;
+
         if (energy.transform.localScale.y <= originalEnergyScale.y)
         {
-            ResetBladeToOriginalState();
+
+            foreach (Transform t in bladePieces)
+            {
+                t.localScale = originalBladeScale;
+            }
+
+            energy.transform.localScale = originalEnergyScale;
             return;
         }
 
         float scaleFactor = originalEnergyScale.y / energy.transform.localScale.y;
+
+        // CALCULATE EXTENTION TIME BASED ON DISTANCE
         float time = scaleFactor * bladeExtentionSpeed * Time.deltaTime;
 
+        // SLERP BACK INTO ORIGINAL POSITION
         energy.transform.localScale = Vector3.Slerp(originalEnergyScale, energy.transform.localScale, time / 3.0f);
-        weaponPivot.rotation = originalPivotRotation;
+
+        // RETURN BLADE INTO ITS ORIGINAL ROTATION VALUES
+        weaponPivot.transform.rotation = originalPivotRotation;
 
         foreach (Transform t in bladePieces)
         {
             float newY = t.localScale.y / scaleFactor;
+
             Vector3 newPieceSize = new Vector3(originalBladeScale.x, newY, originalBladeScale.z);
+
             t.localScale = Vector3.Slerp(t.localScale, newPieceSize, time);
         }
 
         HandleInAirVelocity(playerLocomotion, falingVelocityReductionTimer, reductionRate);
+
     }
+
 
     public void ExecuteSwordAction()
     {
@@ -228,18 +249,6 @@ public class Agreskoul : MonoBehaviour
         }
     }
 
-    private void ResetBladeToOriginalState()
-    {
-        pivotTransform = originalPivotTransform;
-        pivotTransform.rotation = originalPivotRotation;
-
-        foreach (Transform t in bladePieces)
-        {
-            t.localScale = originalBladeScale;
-        }
-
-        energy.transform.localScale = originalEnergyScale;
-    }
 
     private void HandleInAirVelocity(PlayerLocomotion playerLocomotion, float speedReductionTimer, float reductionRate)
     {
@@ -479,7 +488,6 @@ public class Agreskoul : MonoBehaviour
         else                                              // NOTHING IN THE WAY 
         {
             hitPoint = Vector3.zero;
-            weaponPivot.LookAt(swordLookAt);
             isLookingAtSwingingPoint = false;
         }
 
@@ -495,11 +503,6 @@ public class Agreskoul : MonoBehaviour
         {
             // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
             predictionPoint.gameObject.SetActive(false);
-
-            foreach (MeshRenderer meshes in meshRenderers)
-            {
-                meshes.material = originalMaterial;
-            }
         }
 
         swingPredictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
@@ -533,7 +536,6 @@ public class Agreskoul : MonoBehaviour
         else                                              // NOTHING IN THE WAY 
         {
             pullHitPoint = Vector3.zero;
-            weaponPivot.LookAt(swordLookAt);
             isLookingAtPullLayer = false;
         }
 
@@ -551,7 +553,7 @@ public class Agreskoul : MonoBehaviour
             predictionPoint.gameObject.SetActive(false);
         }
 
-        swingPredictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
+        pullPredictionPoint = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
 
 }
