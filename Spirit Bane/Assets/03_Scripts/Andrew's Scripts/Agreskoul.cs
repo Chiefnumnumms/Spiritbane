@@ -82,6 +82,9 @@ public class Agreskoul : MonoBehaviour
 
     #endregion
 
+    [SerializeField] private LayerMask isValidPullLayer;
+    [SerializeField] private bool isLookingAtPullLayer;
+
 
     private void Awake()
     {
@@ -508,5 +511,61 @@ public class Agreskoul : MonoBehaviour
     }
 
     #endregion
+
+    public void CheckForPossibleAction()
+    {
+        if (springJoint != null) return;
+
+        // SETUP RAYCAST VARIABLES
+        RaycastHit sphereCastHit;
+        RaycastHit raycastHit;
+
+        // HANDLE SPHERE CAST AND RAY CAST 
+        Physics.SphereCast(mainCamera.position, swigingPredictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, isValidSwingPoint | isValidPullLayer);
+        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxSwingDistance, isValidSwingPoint | isValidPullLayer);
+
+        Vector3 swingHitPoint;
+        Vector3 pullHitPoint;
+
+        if (raycastHit.point != Vector3.zero && raycastHit.transform.gameObject.layer == isValidSwingPoint)               // DIRECT HIT
+        {
+            hitPoint = raycastHit.point;
+            isLookingAtSwingingPoint = true;
+        }
+        else if(raycastHit.point != Vector3.zero && raycastHit.transform.gameObject.layer == isValidPullLayer)
+
+        else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
+        {
+            hitPoint = sphereCastHit.point;
+        }
+        else                                              // NOTHING IN THE WAY 
+        {
+            hitPoint = Vector3.zero;
+            weaponPivot.LookAt(swordLookAt);
+            isLookingAtSwingingPoint = false;
+        }
+
+
+        if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
+        {
+            // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
+            predictionPointSwing.gameObject.SetActive(true);
+
+            // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
+            predictionPointSwing.position = hitPoint;
+        }
+        else                                                // NOTHING FOUND ON HIT POINT
+        {
+            // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
+            predictionPointSwing.gameObject.SetActive(false);
+
+            foreach (MeshRenderer meshes in meshRenderers)
+            {
+                meshes.material = originalMaterial;
+            }
+        }
+
+        swingPredictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
+    }
 
 }
