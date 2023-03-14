@@ -7,7 +7,7 @@ public class KeneuGroundState : KeneuBaseState
     //Public Functions
 
     //-------------------------------------------------------------------------
-    // PlayerMoveState - Constructor For The State
+    // KeneuGroundState - Constructor For The State
     //-------------------------------------------------------------------------
     public KeneuGroundState(KeneuStateMachine stateMachine) : base(stateMachine) { }
 
@@ -16,15 +16,20 @@ public class KeneuGroundState : KeneuBaseState
     //-------------------------------------------------------------------------
     public override void Enter()
     {
-        if (GameManager.instance.debugLog) Debug.Log("Entered Ground State");
+        //if (GameManager.instance.debugLog) Debug.Log("Entered Ground State");
 
         ////////////////////////////////////////
         // Subscribe To Relevant Events
 
+        
 
+        // Find All Places To Move To
+        movePoints = null;
+
+        //movePoints = GameObject.FindGameObjectsWithTag("GroundPoints");
 
         // Crossfade The Animations Transitioning Into State
-        // stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, stateMachine.AnimationCrossFade);
+        // stateMachine.Animator.CrossFadeInFixedTime(LandHash, stateMachine.AnimationCrossFade);
     }
 
     //-------------------------------------------------------------------------
@@ -40,6 +45,8 @@ public class KeneuGroundState : KeneuBaseState
     //-------------------------------------------------------------------------
     public override void Exit()
     {
+        movePoints = null;
+
         ////////////////////////////////////////
         // Unsubscribe From Relevant Events
     }
