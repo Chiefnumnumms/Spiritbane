@@ -108,7 +108,7 @@ public class Agreskoul : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
 
-        predictionPoint = GameObject.Find("PredictionPoint").GetComponent<Transform>();
+        predictionPoint = GameObject.Find("PredictionPointGrapple").GetComponent<Transform>();
         predictionPointPull = GameObject.Find("PredictionPointPull").GetComponent<Transform>();
 
     }

@@ -27,7 +27,7 @@ public class GrapplePoint : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "PredictionPoint")
+        if (collision.transform.tag == "PredictionPointGrapple" || collision.transform.tag == "PredictionPointPull")
         {
             StartCoroutine(ActivateIcon());
         }
@@ -36,7 +36,7 @@ public class GrapplePoint : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.transform.tag == "PredictionPoint")
+        if (collision.transform.tag == "PredictionPointGrapple" || collision.transform.tag == "PredictionPointPull")
         {
             StopCoroutine(ActivateIcon());
         }
