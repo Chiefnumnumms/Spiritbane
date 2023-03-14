@@ -44,7 +44,7 @@ public class Agreskoul : MonoBehaviour
     [Header("Prediction Point")]
     [SerializeField] private RaycastHit swingPredictionHit;
     [SerializeField] private float swigingPredictionSphereCastRadius;
-    [SerializeField] private Transform predictionPointSwing;
+    [SerializeField] private Transform predictionPoint;
 
     [Header("Material Set")]
     [SerializeField] private Material desiredMaterial;
@@ -85,20 +85,6 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private LayerMask isValidPullLayer;
     [SerializeField] private bool isLookingAtPullLayer;
 
-    #region Pulling Attributes
-
-    [Header("Pull Mechanic Settings")]
-    [SerializeField] Vector3 pullPointHit;
-    [SerializeField] float maxPullDistance;
-    [SerializeField] LayerMask objectPullLayer;
-    [SerializeField] bool isLookingAtPullPoint;
-    [SerializeField] GameObject pullBoxCollider;
-
-    private bool isPullingObject;
-    #endregion
-
-    private GameObject goTarget;
-
     private void Awake()
     {
         // FINDS ALL BLADE PIECES ON START
@@ -120,7 +106,7 @@ public class Agreskoul : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
 
-        predictionPointSwing = GameObject.Find("PredictionPoint").GetComponent<Transform>();
+        predictionPoint = GameObject.Find("PredictionPoint").GetComponent<Transform>();
 
     }
 
@@ -142,11 +128,14 @@ public class Agreskoul : MonoBehaviour
         }
 
         CheckForSwingPoints();
+        CheckForPullPoint();
         HandleSwingAction();
     }
 
     private void CacheAllValues()
     {
+
+        rb = GetComponent<Rigidbody>();
 
         // CACHE ORIGINAL SCALE OF THE BLADE PIECES
         originalBladeScale = bladePieces[0].localScale;
@@ -497,15 +486,15 @@ public class Agreskoul : MonoBehaviour
         if (hitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
         {
             // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
-            predictionPointSwing.gameObject.SetActive(true);
+            predictionPoint.gameObject.SetActive(true);
 
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
-            predictionPointSwing.position = hitPoint;
+            predictionPoint.position = hitPoint;
         }
         else                                                // NOTHING FOUND ON HIT POINT
         {
             // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
-            predictionPointSwing.gameObject.SetActive(false);
+            predictionPoint.gameObject.SetActive(false);
 
             foreach (MeshRenderer meshes in meshRenderers)
             {
@@ -518,7 +507,7 @@ public class Agreskoul : MonoBehaviour
 
     #endregion
 
-    public void FindPossibleTargets()
+    public void CheckForPullPoint()
     {
         if (springJoint != null) return;
 
@@ -527,47 +516,39 @@ public class Agreskoul : MonoBehaviour
         RaycastHit raycastHit;
 
         // HANDLE SPHERE CAST AND RAY CAST 
-        Physics.SphereCast(mainCamera.position, swigingPredictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, isValidSwingPoint | isValidPullLayer);
-        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxSwingDistance, isValidSwingPoint | isValidPullLayer);
+        Physics.SphereCast(mainCamera.position, swigingPredictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, isValidPullLayer);
+        Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxSwingDistance, isValidPullLayer);
 
-        Vector3 swingPointHit;
-        Vector3 pullPointHit;
+        Vector3 pullHitPoint;
 
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
-            swingPointHit = raycastHit.point;
-            isLookingAtSwingingPoint = true;
+            pullHitPoint = raycastHit.point;
+            isLookingAtPullLayer = true;
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
         {
-            swingPointHit = sphereCastHit.point;
+            pullHitPoint = sphereCastHit.point;
         }
         else                                              // NOTHING IN THE WAY 
         {
-            swingPointHit = Vector3.zero;
+            pullHitPoint = Vector3.zero;
             weaponPivot.LookAt(swordLookAt);
-            isLookingAtSwingingPoint = false;
+            isLookingAtPullLayer = false;
         }
 
-        // PREDICTION POINT SETTINGS
-
-        if (swingPointHit != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
+        if (pullHitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
         {
             // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
-            predictionPointSwing.gameObject.SetActive(true);
+            predictionPoint.gameObject.SetActive(true);
 
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
-            predictionPointSwing.position = swingPointHit;
+            predictionPoint.position = pullHitPoint;
         }
         else                                                // NOTHING FOUND ON HIT POINT
         {
             // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
-            predictionPointSwing.gameObject.SetActive(false);
-
-            foreach (MeshRenderer meshes in meshRenderers)
-            {
-                meshes.material = originalMaterial;
-            }
+            predictionPoint.gameObject.SetActive(false);
         }
 
         swingPredictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;

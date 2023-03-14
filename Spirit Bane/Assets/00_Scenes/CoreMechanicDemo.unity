@@ -12867,17 +12867,17 @@ PrefabInstance:
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06616233
+      value: 0.06616231
       objectReference: {fileID: 0}
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.030883644
+      value: -0.03088368
       objectReference: {fileID: 0}
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0020488068
+      value: 0.0020488086
       objectReference: {fileID: 0}
     - target: {fileID: 2252350139356303989, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
@@ -12942,12 +12942,12 @@ PrefabInstance:
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03091945
+      value: -0.030919457
       objectReference: {fileID: 0}
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091576
+      value: 0.0014091581
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
@@ -12967,24 +12967,35 @@ PrefabInstance:
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.030919455
+      value: -0.03091946
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091581
+      value: 0.0014091585
       objectReference: {fileID: 0}
     - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: predictionPointSwing
       value: 
       objectReference: {fileID: 1983480681}
+    - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
+        type: 3}
+      propertyPath: debugHitPointTransform
+      value: 
+      objectReference: {fileID: 1878192859}
+    - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
+        type: 3}
+      propertyPath: isValidPullLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8484609251015657540, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_Name
       value: Gaoh Controller
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8616674985112204268, guid: ca8d482db9b094240adafc2829711f10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca8d482db9b094240adafc2829711f10, type: 3}
 --- !u!33 &883988211734448817
 MeshFilter:
