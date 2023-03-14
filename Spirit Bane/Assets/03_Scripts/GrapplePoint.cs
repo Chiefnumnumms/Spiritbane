@@ -16,7 +16,6 @@ public class GrapplePoint : MonoBehaviour
         if (gameObject.tag == "SwingingPoint")
         {
             icon = Instantiate(swingPoint, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
-
         }
         else if (gameObject.tag == "PullPoint")
         {
@@ -32,6 +31,7 @@ public class GrapplePoint : MonoBehaviour
         {
             StartCoroutine(ActivateIcon());
         }
+
     }
 
     private void OnCollisionExit(Collision collision)

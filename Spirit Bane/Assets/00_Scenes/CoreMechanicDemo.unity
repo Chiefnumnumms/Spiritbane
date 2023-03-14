@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentFightState: 0
-  player: {fileID: 0}
+  Player: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
   AnimationDampTime: 0.2
   AnimationCrossFade: 0.2
@@ -1071,7 +1071,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33694
+  m_Name: pb_Mesh113534
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8904,8 +8904,8 @@ GameObject:
   - component: {fileID: 1596579515}
   - component: {fileID: 1596579514}
   m_Layer: 0
-  m_Name: PredictionPointGrappling
-  m_TagString: Untagged
+  m_Name: PredictionPointPull
+  m_TagString: PredictionPointPull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9557,7 +9557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33494
+  m_Name: pb_Mesh113336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12942,60 +12942,39 @@ PrefabInstance:
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.030919457
+      value: -0.030919446
       objectReference: {fileID: 0}
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091581
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 226.77232
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 122.68489
+      value: 0.0014091576
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.045506053
+      value: 0.045506056
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03091946
+      value: -0.030919448
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091585
+      value: 0.0014091579
       objectReference: {fileID: 0}
-    - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
-        type: 3}
-      propertyPath: predictionPointSwing
-      value: 
-      objectReference: {fileID: 1983480681}
     - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: debugHitPointTransform
       value: 
       objectReference: {fileID: 1878192859}
-    - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
-        type: 3}
-      propertyPath: isValidPullLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 8484609251015657540, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_Name
       value: Gaoh Controller
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8616674985112204268, guid: ca8d482db9b094240adafc2829711f10, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca8d482db9b094240adafc2829711f10, type: 3}
 --- !u!33 &883988211734448817
 MeshFilter:

@@ -7496,8 +7496,10 @@ MonoBehaviour:
   maxExtentionDistance: 50
   energy: {fileID: 8309097522063930968}
   weaponPivot: {fileID: 672889777615506741}
+  bladePieces: []
   falingVelocityReductionTimer: 3
   reductionRate: 3.25
+  debugHitPointTransform: {fileID: 0}
   mainCamera: {fileID: 6196296023072377593}
   playerModel: {fileID: 6196296022521891867}
   isValidSwingPoint:
@@ -7505,12 +7507,16 @@ MonoBehaviour:
     m_Bits: 8
   maxSwingDistance: 25
   swingPointHit: {x: 0, y: 0, z: 0}
+  springJoint: {fileID: 0}
+  rb: {fileID: 0}
   orientation: {fileID: 6196296022521891867}
   horizontalThrustForce: 15
   forwardThrustForce: 5
   extendCableSpeed: 20
   swigingPredictionSphereCastRadius: 5
-  predictionPointSwing: {fileID: 0}
+  predictionPoint: {fileID: 0}
+  desiredMaterial: {fileID: 0}
+  originalMaterial: {fileID: 0}
   isSwinging: 0
   isLookingAtSwingingPoint: 0
   maxIndicationDistance: 25
@@ -7518,6 +7524,10 @@ MonoBehaviour:
   pivotTransform: {fileID: 3449362162357858029}
   keepBladeExtended: 0
   reachedTarget: 0
+  isValidPullLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  isLookingAtPullLayer: 0
 --- !u!114 &8834504924306981336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7916,7 +7926,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6560701867870707813}
-  m_LocalRotation: {x: 0.06616233, y: -0.030883644, z: 0.0020488068, w: 0.9973287}
+  m_LocalRotation: {x: 0.06616231, y: -0.03088368, z: 0.0020488086, w: 0.9973287}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8956,7 +8966,6 @@ GameObject:
   - component: {fileID: 4718986301197504931}
   - component: {fileID: 122509556425149994}
   - component: {fileID: 4625783062227434300}
-  - component: {fileID: 8616674985112204268}
   - component: {fileID: 8292929172173623032}
   m_Layer: 0
   m_Name: Blade_Tip
@@ -9050,19 +9059,6 @@ ScaleConstraint:
   m_Sources:
   - sourceTransform: {fileID: 8915208090164761501}
     weight: 1
---- !u!65 &8616674985112204268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8104543749221265747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0.000000059604645, y: -0.00000072456896, z: 0}
 --- !u!114 &8292929172173623032
 MonoBehaviour:
   m_ObjectHideFlags: 0

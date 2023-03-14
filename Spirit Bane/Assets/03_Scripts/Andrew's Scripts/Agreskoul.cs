@@ -45,6 +45,7 @@ public class Agreskoul : MonoBehaviour
     [SerializeField] private RaycastHit swingPredictionHit;
     [SerializeField] private float swigingPredictionSphereCastRadius;
     [SerializeField] private Transform predictionPoint;
+    [SerializeField] private Transform predictionPointPull;
 
     [Header("Material Set")]
     [SerializeField] private Material desiredMaterial;
@@ -108,6 +109,7 @@ public class Agreskoul : MonoBehaviour
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
 
         predictionPoint = GameObject.Find("PredictionPoint").GetComponent<Transform>();
+        predictionPointPull = GameObject.Find("PredictionPointPull").GetComponent<Transform>();
 
     }
 
@@ -542,16 +544,16 @@ public class Agreskoul : MonoBehaviour
         if (pullHitPoint != Vector3.zero)                   // HITPOINT DETECTED A VALID POINT TO GRAPPLE TO
         {
             // GRAPPLE POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
-            predictionPoint.gameObject.SetActive(true);
+            predictionPointPull.gameObject.SetActive(true);
 
             // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
-            predictionPoint.position = pullHitPoint;
+            predictionPointPull.position = pullHitPoint;
         }
-        //else                                                // NOTHING FOUND ON HIT POINT
-        //{
-        //    // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
-        //    predictionPoint.gameObject.SetActive(false);
-        //}
+        else                                                // NOTHING FOUND ON HIT POINT
+        {
+            // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
+            predictionPointPull.gameObject.SetActive(false);
+        }
 
         pullPredictionPoint = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
