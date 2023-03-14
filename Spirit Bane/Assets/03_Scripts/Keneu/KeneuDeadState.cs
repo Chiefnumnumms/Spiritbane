@@ -7,7 +7,7 @@ public class KeneuDeadState : KeneuBaseState
     //Public Functions
 
     //-------------------------------------------------------------------------
-    // PlayerMoveState - Constructor For The State
+    // KeneuDeadState - Constructor For The State
     //-------------------------------------------------------------------------
     public KeneuDeadState(KeneuStateMachine stateMachine) : base(stateMachine) { }
 
@@ -21,9 +21,6 @@ public class KeneuDeadState : KeneuBaseState
         ////////////////////////////////////////
         // Subscribe To Relevant Events
 
-
-        // Crossfade The Animations Transitioning Into State
-        // stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, stateMachine.AnimationCrossFade);
     }
 
     //-------------------------------------------------------------------------
@@ -41,6 +38,7 @@ public class KeneuDeadState : KeneuBaseState
     {
         ////////////////////////////////////////
         // Unsubscribe From Relevant Events
+
     }
 
     #endregion

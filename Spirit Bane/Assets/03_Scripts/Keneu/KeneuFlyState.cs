@@ -7,7 +7,7 @@ public class KeneuFlyState : KeneuBaseState
     //Public Functions
 
     //-------------------------------------------------------------------------
-    // PlayerMoveState - Constructor For The State
+    // KeneuFlyState - Constructor For The State
     //-------------------------------------------------------------------------
     public KeneuFlyState(KeneuStateMachine stateMachine) : base(stateMachine) { }
 
@@ -17,13 +17,16 @@ public class KeneuFlyState : KeneuBaseState
     public override void Enter()
     {
         if (GameManager.instance.debugLog) Debug.Log("Entered Flying State");
-                
+
         ////////////////////////////////////////
         // Subscribe To Relevant Events
 
+        // Find All Places To Move To
+        movePoints = null;
+
         // Crossfade The Animations Transitioning Into State
-        //stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, stateMachine.AnimationCrossFade);
-        
+        //stateMachine.Animator.CrossFadeInFixedTime(TakeOffHash, stateMachine.AnimationCrossFade);
+
     }
 
     //-------------------------------------------------------------------------
@@ -39,6 +42,8 @@ public class KeneuFlyState : KeneuBaseState
     //-------------------------------------------------------------------------
     public override void Exit()
     {
+        movePoints = null;
+
         ////////////////////////////////////////
         // Unsubscribe From Relevant Events
     }
