@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Agreskoul : MonoBehaviour
 {
-    private enum Mechanic { SWINGING, OBJECTGRAPPLE, ENEMYHOOK}
+    private enum Mechanic { SWINGING, OBJECTGRAPPLE, ENEMYHOOK }
 
     [SerializeField] private PlayerLocomotion playerLocomotion;
     private AnimationManager animationManager;
@@ -73,19 +73,16 @@ public class Agreskoul : MonoBehaviour
     private Quaternion originalPivotRotation;
     private Transform originalPivotTransform;
     public Transform pivotTransform;
-    private GameObject swordTip;
+    [SerializeField] private GameObject swordTip;
     private const float MAX_FALLING_VELOCITY = 1.5f;
     private float highestPointOnYArc;
-
-    private bool isBladeExtended;
-    public bool keepBladeExtended;
-    public bool reachedTarget;
 
     #endregion
 
     [SerializeField] private LayerMask isValidPullLayer;
     [SerializeField] private bool isLookingAtPullLayer;
-    [SerializeField] private RaycastHit pullPredictionPoint;
+    [SerializeField] private RaycastHit pullPredictionHit;
+    [SerializeField] public Vector3 pullPointHit;
 
     private void Awake()
     {
@@ -121,7 +118,7 @@ public class Agreskoul : MonoBehaviour
             playerLocomotion.fallingVel = originalFallingVelocity;
         }
 
-        if (swingPointHit == Vector3.zero)
+        if (swingPointHit == Vector3.zero && !isLookingAtPullLayer)
         {
             weaponPivot.LookAt(swordLookAt);
         }
@@ -129,9 +126,14 @@ public class Agreskoul : MonoBehaviour
         {
             weaponPivot.LookAt(swingPointHit);
         }
+        else if (pullPointHit != null && isLookingAtPullLayer)
+        {
+            weaponPivot.LookAt(pullPointHit);
+        }
 
         CheckForSwingPoints();
         CheckForPullPoint();
+
         HandleSwingAction();
     }
 
@@ -154,10 +156,6 @@ public class Agreskoul : MonoBehaviour
 
         // CACHE ORIGINAL FALLING VELOCITY
         originalFallingVelocity = playerLocomotion.fallingVel;
-
-        isBladeExtended = false;
-        keepBladeExtended = false;
-        reachedTarget = false;
 
     }
 
@@ -248,6 +246,11 @@ public class Agreskoul : MonoBehaviour
         if (isSwinging)
         {
             ChooseMechanicTarget(swingPointHit);
+        }
+
+        if (isLookingAtPullLayer)
+        {
+            ChooseMechanicTarget(pullPointHit);
         }
     }
 
@@ -529,11 +532,13 @@ public class Agreskoul : MonoBehaviour
         if (raycastHit.point != Vector3.zero)               // DIRECT HIT
         {
             pullHitPoint = raycastHit.point;
+            pullPointHit = raycastHit.point;
             isLookingAtPullLayer = true;
         }
         else if (sphereCastHit.point != Vector3.zero)      // INDIRECT HIT, PREDITION POINT
         {
             pullHitPoint = sphereCastHit.point;
+            pullPointHit = sphereCastHit.point;
         }
         else                                              // NOTHING IN THE WAY 
         {
@@ -555,7 +560,63 @@ public class Agreskoul : MonoBehaviour
             predictionPointPull.gameObject.SetActive(false);
         }
 
-        pullPredictionPoint = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
+        pullPredictionHit = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
     }
+
+    //public void CheckForPointAdvanced(LayerMask layerMask, RaycastHit hitPoint, out bool isLookingAtPoint, Transform predictionPoint)
+    //{
+    //    if (springJoint != null)
+    //    {
+    //        hitPoint = new RaycastHit();
+    //        isLookingAtPoint = false;
+    //        predictionPoint.gameObject.SetActive(false);
+    //        return;
+    //    }
+
+    //    // SETUP RAYCAST VARIABLES
+    //    RaycastHit sphereCastHit;
+    //    RaycastHit raycastHit;
+
+    //    // HANDLE SPHERE CAST AND RAY CAST 
+    //    Physics.SphereCast(mainCamera.position, swigingPredictionSphereCastRadius, mainCamera.forward, out sphereCastHit, maxSwingDistance, layerMask);
+    //    Physics.Raycast(mainCamera.position, mainCamera.forward, out raycastHit, maxSwingDistance, layerMask);
+
+    //    Vector3 point;
+
+    //    if (raycastHit.point != Vector3.zero)
+    //    {              // DIRECT HIT
+    //        point = raycastHit.point;
+    //        hitPoint = raycastHit;
+    //        isLookingAtPoint = true;
+    //    }
+    //    else if (sphereCastHit.point != Vector3.zero)
+    //    {     // INDIRECT HIT, PREDICTION POINT
+    //        point = sphereCastHit.point;
+    //        hitPoint = sphereCastHit;
+    //    }
+    //    else
+    //    {                                              // NOTHING IN THE WAY 
+    //        point = Vector3.zero;
+    //        hitPoint = new RaycastHit();
+    //        isLookingAtPoint = false;
+    //    }
+
+    //    if (point != Vector3.zero)
+    //    {                        // HITPOINT DETECTED A VALID POINT
+    //                             // POINT DETECTED, SET THE PREDICTION POINT TO ACTIVE
+    //        predictionPoint.gameObject.SetActive(true);
+
+    //        // SET THE PREDICTION POINT TO BE THE SAME POSITION OF WHERE THE PLAYER IS AIMING TOWARDS
+    //        predictionPoint.position = point;
+    //    }
+    //    else
+    //    {                                                // NOTHING FOUND ON HIT POINT
+    //                                                     // DISABLE THE PREDICTION POINT AS NOTHING WAS SCANNED
+    //        predictionPoint.gameObject.SetActive(false);
+    //    }
+
+    //    hitPoint = raycastHit.point == Vector3.zero ? sphereCastHit : raycastHit;
+
+    //}
 
 }

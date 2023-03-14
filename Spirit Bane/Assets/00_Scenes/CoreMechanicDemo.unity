@@ -9715,6 +9715,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1780329280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3197575649770411332, guid: ca8d482db9b094240adafc2829711f10,
+    type: 3}
+  m_PrefabInstance: {fileID: 247549258881843108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782139638
 GameObject:
   m_ObjectHideFlags: 0
@@ -10529,8 +10535,8 @@ GameObject:
   - component: {fileID: 1983480684}
   - component: {fileID: 1983480683}
   m_Layer: 0
-  m_Name: PredictionPoint
-  m_TagString: Untagged
+  m_Name: PredictionPointGrapple
+  m_TagString: PredictionPointGrapple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12867,17 +12873,17 @@ PrefabInstance:
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06616231
+      value: 0.06616233
       objectReference: {fileID: 0}
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03088368
+      value: -0.030883644
       objectReference: {fileID: 0}
     - target: {fileID: 2063445102895787192, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0020488086
+      value: 0.0020488068
       objectReference: {fileID: 0}
     - target: {fileID: 2252350139356303989, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
@@ -12942,28 +12948,33 @@ PrefabInstance:
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.030919446
+      value: -0.030919457
       objectReference: {fileID: 0}
     - target: {fileID: 5216423297343156056, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091576
+      value: 0.0014091581
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.045506056
+      value: 0.045506053
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.030919448
+      value: -0.03091946
       objectReference: {fileID: 0}
     - target: {fileID: 6196296023072377593, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0014091579
+      value: 0.0014091585
       objectReference: {fileID: 0}
+    - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
+        type: 3}
+      propertyPath: swordTip
+      value: 
+      objectReference: {fileID: 1780329280}
     - target: {fileID: 7872877536662722729, guid: ca8d482db9b094240adafc2829711f10,
         type: 3}
       propertyPath: debugHitPointTransform
